@@ -1,0 +1,29 @@
+Start testing: Dec 05 23:48 CET
+----------------------------------------------------------
+1/1 Testing: SampleTest
+1/1 Test: SampleTest
+Command: "/home/andressanchez/Escritorio/GIT/project_template/build/test/example"
+Directory: /home/andressanchez/Escritorio/GIT/project_template/build/test
+"SampleTest" start time: Dec 05 23:48 CET
+Output:
+----------------------------------------------------------
+Running main() from /home/andressanchez/Escritorio/GIT/project_template/build/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ExampleTests
+[ RUN      ] ExampleTests.DemonstrateTestMAcros
+[       OK ] ExampleTests.DemonstrateTestMAcros (0 ms)
+[----------] 1 test from ExampleTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SampleTest" end time: Dec 05 23:48 CET
+"SampleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 05 23:48 CET
