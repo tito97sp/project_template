@@ -1,0 +1,14 @@
+# Target labels
+ nuttx-apps
+# Source files and their labels
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps-complete.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-install.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-mkdir.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-download.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-update.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-patch.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-configure.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-build.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-test.rule

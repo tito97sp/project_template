@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools-complete.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-install.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-mkdir.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-download.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-update.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-patch.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-configure.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-build.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nuttx_tools"
+		],
+		"name" : "nuttx_tools"
+	}
+}

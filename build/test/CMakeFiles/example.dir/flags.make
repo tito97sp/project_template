@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /home/andressanchez/Escritorio/GIT/project_template/build/googletest-src/googletest/include -isystem /home/andressanchez/Escritorio/GIT/project_template/build/googletest-src/googletest 
+CXX_INCLUDES = -isystem /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/include -isystem /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest 
 

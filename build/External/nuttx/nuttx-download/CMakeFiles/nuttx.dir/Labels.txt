@@ -1,0 +1,14 @@
+# Target labels
+ nuttx
+# Source files and their labels
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-complete.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-install.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-mkdir.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-download.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-update.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-patch.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-configure.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-build.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-prefix/src/nuttx-stamp/nuttx-test.rule

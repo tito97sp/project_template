@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b667d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b667d.dir/build.make CMakeFiles/cmTC_b667d.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8787e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8787e.dir/build.make CMakeFiles/cmTC_8787e.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b667d.dir/CheckSymbolExists.c.o
-/usr/bin/clang-6.0    -o CMakeFiles/cmTC_b667d.dir/CheckSymbolExists.c.o   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_b667d
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b667d.dir/link.txt --verbose=1
-/usr/bin/clang-6.0      -rdynamic CMakeFiles/cmTC_b667d.dir/CheckSymbolExists.c.o  -o cmTC_b667d 
-CMakeFiles/cmTC_b667d.dir/CheckSymbolExists.c.o: En la función `main':
+Building C object CMakeFiles/cmTC_8787e.dir/CheckSymbolExists.c.o
+/usr/bin/clang-6.0    -o CMakeFiles/cmTC_8787e.dir/CheckSymbolExists.c.o   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8787e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8787e.dir/link.txt --verbose=1
+/usr/bin/clang-6.0      -rdynamic CMakeFiles/cmTC_8787e.dir/CheckSymbolExists.c.o  -o cmTC_8787e 
+CMakeFiles/cmTC_8787e.dir/CheckSymbolExists.c.o: En la función `main':
 CheckSymbolExists.c:(.text+0x19): referencia a `pthread_create' sin definir
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
-CMakeFiles/cmTC_b667d.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_b667d'
-make[1]: *** [cmTC_b667d] Error 1
+CMakeFiles/cmTC_8787e.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_8787e'
+make[1]: *** [cmTC_8787e] Error 1
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_b667d/fast'
-make: *** [cmTC_b667d/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_8787e/fast'
+make: *** [cmTC_8787e/fast] Error 2
 
 File /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dbfae/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dbfae.dir/build.make CMakeFiles/cmTC_dbfae.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_065ce/fast"
+/usr/bin/make -f CMakeFiles/cmTC_065ce.dir/build.make CMakeFiles/cmTC_065ce.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dbfae.dir/CheckFunctionExists.c.o
-/usr/bin/clang-6.0   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dbfae.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_dbfae
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dbfae.dir/link.txt --verbose=1
-/usr/bin/clang-6.0  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_dbfae.dir/CheckFunctionExists.c.o  -o cmTC_dbfae -lpthreads 
+Building C object CMakeFiles/cmTC_065ce.dir/CheckFunctionExists.c.o
+/usr/bin/clang-6.0   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_065ce.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_065ce
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_065ce.dir/link.txt --verbose=1
+/usr/bin/clang-6.0  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_065ce.dir/CheckFunctionExists.c.o  -o cmTC_065ce -lpthreads 
 /usr/bin/ld: no se puede encontrar -lpthreads
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
-CMakeFiles/cmTC_dbfae.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_dbfae'
-make[1]: *** [cmTC_dbfae] Error 1
+CMakeFiles/cmTC_065ce.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_065ce'
+make[1]: *** [cmTC_065ce] Error 1
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_dbfae/fast'
-make: *** [cmTC_dbfae/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_065ce/fast'
+make: *** [cmTC_065ce/fast] Error 2
 
 

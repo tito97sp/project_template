@@ -4,5 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-subdirs("googletest-build")
+subdirs("src/libraries")
+subdirs("src/modules/hello")
+subdirs("External/googletest/googletest-build")
 subdirs("test")

@@ -179,7 +179,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=project_name
+CMAKE_PROJECT_NAME:STATIC=embedded_project_template
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -236,6 +236,9 @@ DOXYGEN_DOT_EXECUTABLE:FILEPATH=/usr/bin/dot
 //Doxygen documentation generation tool (http://www.doxygen.org)
 DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 
+//External modules source location
+EXTERNAL_MODULES_LOCATION:STRING=
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
@@ -243,14 +246,23 @@ INSTALL_GTEST:BOOL=ON
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 
+//Dependencies for target
+do_nothing_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
-gmock_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build/googlemock
+embedded_project_template_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build
+
+//Value Computed by CMake
+embedded_project_template_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template
+
+//Value Computed by CMake
+gmock_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock
 
 //Dependencies for the target
 gmock_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-gmock_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-src/googlemock
+gmock_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock
 
 //Build all of Google Mock's own tests.
 gmock_build_tests:BOOL=OFF
@@ -259,19 +271,19 @@ gmock_build_tests:BOOL=OFF
 gmock_main_LIB_DEPENDS:STATIC=general;gmock;
 
 //Value Computed by CMake
-googletest-distribution_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build
+googletest-distribution_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build
 
 //Value Computed by CMake
-googletest-distribution_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-src
+googletest-distribution_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src
 
 //Value Computed by CMake
-gtest_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build/googletest
+gtest_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest
 
 //Dependencies for target
 gtest_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-src/googletest
+gtest_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF
@@ -291,6 +303,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Dependencies for target
+hello_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 project_name_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template/build
@@ -353,6 +368,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Path to cache edit program executable.
+CMAKE_EDIT_COMMAND:INTERNAL=/usr/bin/ccmake
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -437,7 +454,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -492,7 +509,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-generated_dir:INTERNAL=/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build/googletest/generated
+generated_dir:INTERNAL=/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_samples

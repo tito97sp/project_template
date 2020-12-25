@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:mega",
+    "configuration": "cpu=atmega2560",
+    "sketch": "../robim/robim_v5/ROBIM_XYZ.ino",
+    "port": "/dev/ttyACM0"
+}

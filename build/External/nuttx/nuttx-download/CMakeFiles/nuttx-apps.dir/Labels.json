@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps-complete.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-install.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-mkdir.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-download.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-update.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-patch.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-configure.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-build.rule"
+		},
+		{
+			"file" : "/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx-apps-prefix/src/nuttx-apps-stamp/nuttx-apps-test.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nuttx-apps"
+		],
+		"name" : "nuttx-apps"
+	}
+}

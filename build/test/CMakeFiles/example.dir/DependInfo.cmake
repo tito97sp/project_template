@@ -10,14 +10,14 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "googletest-src/googletest/include"
-  "googletest-src/googletest"
+  "External/googletest/googletest-src/googletest/include"
+  "External/googletest/googletest-src/googletest"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "/home/andressanchez/Escritorio/GIT/project_template/build/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

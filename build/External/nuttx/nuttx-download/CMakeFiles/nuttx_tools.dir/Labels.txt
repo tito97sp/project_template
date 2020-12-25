@@ -1,0 +1,14 @@
+# Target labels
+ nuttx_tools
+# Source files and their labels
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools-complete.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-install.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-mkdir.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-download.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-update.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-patch.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-configure.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-build.rule
+/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/nuttx_tools-prefix/src/nuttx_tools-stamp/nuttx_tools-test.rule

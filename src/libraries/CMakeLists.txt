@@ -1,0 +1,1 @@
+add_subdirectory(do_nothing_example)
