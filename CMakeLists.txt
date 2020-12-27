@@ -39,7 +39,7 @@ project(${project_name} CXX C)
 
 set(project_contact "andres.sanchez.engineering@gmail.com")
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -52,6 +52,18 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(add_module)
 set(config_module_list)
 
+include(add_git_submodule)
+
+#TODO: Eliminate hardcoded variables
+set(PLATFORM nuttx)
+set(BOARD nucleoh743zi)
+set(CONFIG_DIR ${SOURCE_DIR}/configuration)
+set(CONFIG_FILE ${SOURCE_DIR}/configuration/default.cmake)
+set(NUTTX_CONFIG nsh)
+set(BOARD_VENDOR stm)
+set(BOARD_MODEL h743zi)
+set(BOARD_LABEL nucleo)
+
 
 # external modules
 set(EXTERNAL_MODULES_LOCATION "" CACHE STRING "External modules source location")
@@ -62,9 +74,14 @@ endif()
 
 set_property(GLOBAL PROPERTY MODULE_CONFIG_FILES)
 
+#include(platforms/${PX4_PLATFORM}/cmake/px4_impl_os.cmake)
+list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/platforms/${PLATFORM}/cmake)
 
-set(PLATFORM nuttx)
-set(BOARD nucleoh743zi)
+if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/cmake/init.cmake")
+	include(init)
+endif()
+
+
 
 # include(platforms/${PLATFORM}/cmake/impl_os.cmake)
 # list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/platforms/${PLATFORM}/cmake)
@@ -72,7 +89,8 @@ set(BOARD nucleoh743zi)
 # if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/cmake/init.cmake")
 # 	include(init)
 # endif()
-include(nuttx/nuttx)
+#include(nuttx/nuttx)
+add_subdirectory(${SOURCE_DIR}/platforms/${PLATFORM})
 
 
 #=============================================================================
@@ -81,7 +99,7 @@ include(nuttx/nuttx)
 
 # add libraries 
 #include(add_library)
-add_subdirectory(src/libraries EXCLUDE_FROM_ALL)
+add_subdirectory(src/lib EXCLUDE_FROM_ALL)
 
 # add modules
 list(APPEND config_module_list "hello")

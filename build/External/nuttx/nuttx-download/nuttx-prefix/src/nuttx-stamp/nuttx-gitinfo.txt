@@ -1,3 +1,0 @@
-repository='https://github.com/apache/incubator-nuttx.git'
-module=''
-tag=''

@@ -1,3 +1,0 @@
-repository='https://bitbucket.org/nuttx/tools.git'
-module=''
-tag=''

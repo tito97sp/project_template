@@ -1,5 +1,0 @@
-/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/rebuild_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/edit_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx-apps.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/nuttx/nuttx-download/CMakeFiles/nuttx_tools.dir

@@ -68,6 +68,28 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -91,16 +113,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -122,18 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named git_nuttx_apps
+
+# Build rule for target.
+git_nuttx_apps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 git_nuttx_apps
+.PHONY : git_nuttx_apps
+
+# fast build rule for target.
+git_nuttx_apps/fast:
+	$(MAKE) -f CMakeFiles/git_nuttx_apps.dir/build.make CMakeFiles/git_nuttx_apps.dir/build
+.PHONY : git_nuttx_apps/fast
+
+#=============================================================================
+# Target rules for targets named git_nuttx
+
+# Build rule for target.
+git_nuttx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 git_nuttx
+.PHONY : git_nuttx
+
+# fast build rule for target.
+git_nuttx/fast:
+	$(MAKE) -f CMakeFiles/git_nuttx.dir/build.make CMakeFiles/git_nuttx.dir/build
+.PHONY : git_nuttx/fast
+
+#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -181,6 +207,97 @@ doxygen/fast:
 .PHONY : doxygen/fast
 
 #=============================================================================
+# Target rules for targets named embedded_project_template
+
+# Build rule for target.
+embedded_project_template: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 embedded_project_template
+.PHONY : embedded_project_template
+
+# fast build rule for target.
+embedded_project_template/fast:
+	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
+.PHONY : embedded_project_template/fast
+
+#=============================================================================
+# Target rules for targets named config_file_target
+
+# Build rule for target.
+config_file_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 config_file_target
+.PHONY : config_file_target
+
+# fast build rule for target.
+config_file_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/config_file_target.dir/build.make NuttX/CMakeFiles/config_file_target.dir/build
+.PHONY : config_file_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_config_kconfig_target
+
+# Build rule for target.
+nuttx_config_kconfig_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_kconfig_target
+.PHONY : nuttx_config_kconfig_target
+
+# fast build rule for target.
+nuttx_config_kconfig_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
+.PHONY : nuttx_config_kconfig_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_copy_and_apps_target
+
+# Build rule for target.
+nuttx_copy_and_apps_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_and_apps_target
+.PHONY : nuttx_copy_and_apps_target
+
+# fast build rule for target.
+nuttx_copy_and_apps_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
+.PHONY : nuttx_copy_and_apps_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_context
+
+# Build rule for target.
+nuttx_context: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_context
+.PHONY : nuttx_context
+
+# fast build rule for target.
+nuttx_context/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
+.PHONY : nuttx_context/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_copy_config_dir_target
+
+# Build rule for target.
+nuttx_copy_config_dir_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_config_dir_target
+.PHONY : nuttx_copy_config_dir_target
+
+# fast build rule for target.
+nuttx_copy_config_dir_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build
+.PHONY : nuttx_copy_config_dir_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_config_target
+
+# Build rule for target.
+nuttx_config_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_target
+.PHONY : nuttx_config_target
+
+# fast build rule for target.
+nuttx_config_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
+.PHONY : nuttx_config_target/fast
+
+#=============================================================================
 # Target rules for targets named do_nothing
 
 # Build rule for target.
@@ -190,7 +307,7 @@ do_nothing: cmake_check_build_system
 
 # fast build rule for target.
 do_nothing/fast:
-	$(MAKE) -f src/libraries/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/libraries/do_nothing_example/CMakeFiles/do_nothing.dir/build
+	$(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build
 .PHONY : do_nothing/fast
 
 #=============================================================================
@@ -278,13 +395,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... git_nuttx_apps"
+	@echo "... install/local"
+	@echo "... git_nuttx"
+	@echo "... test"
 	@echo "... doxygen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... embedded_project_template"
+	@echo "... config_file_target"
+	@echo "... nuttx_config_kconfig_target"
+	@echo "... nuttx_copy_and_apps_target"
+	@echo "... nuttx_context"
+	@echo "... nuttx_copy_config_dir_target"
+	@echo "... nuttx_config_target"
 	@echo "... do_nothing"
 	@echo "... hello"
 	@echo "... gmock_main"
