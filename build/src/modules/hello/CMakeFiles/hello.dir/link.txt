@@ -1,2 +1,2 @@
-/usr/bin/ar qc libhello.a  CMakeFiles/hello.dir/hello.cpp.o
-/usr/bin/ranlib libhello.a
+/usr/bin/arm-none-eabi-gcc-ar qc libhello.a  CMakeFiles/hello.dir/hello.cpp.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libhello.a

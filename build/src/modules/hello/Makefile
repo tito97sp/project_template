@@ -182,14 +182,14 @@ hello/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
 
-hello.o: hello.cpp.o
+hello.obj: hello.cpp.obj
 
-.PHONY : hello.o
+.PHONY : hello.obj
 
 # target to build an object file
-hello.cpp.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o
-.PHONY : hello.cpp.o
+hello.cpp.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj
+.PHONY : hello.cpp.obj
 
 hello.i: hello.cpp.i
 
@@ -223,7 +223,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... hello.o"
+	@echo "... hello.obj"
 	@echo "... hello.i"
 	@echo "... hello.s"
 .PHONY : help

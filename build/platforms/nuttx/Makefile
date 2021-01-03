@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,18 +135,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/CMakeFiles/progress.marks
@@ -182,14 +182,29 @@ embedded_project_template/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
 .PHONY : embedded_project_template/fast
 
-__/common/empty.o: __/common/empty.c.o
+# Convenience name for target.
+platforms/nuttx/CMakeFiles/weak_symbols.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+.PHONY : platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
 
-.PHONY : __/common/empty.o
+# Convenience name for target.
+weak_symbols: platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+
+.PHONY : weak_symbols
+
+# fast build rule for target.
+weak_symbols/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
+.PHONY : weak_symbols/fast
+
+__/common/empty.obj: __/common/empty.c.obj
+
+.PHONY : __/common/empty.obj
 
 # target to build an object file
-__/common/empty.c.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o
-.PHONY : __/common/empty.c.o
+__/common/empty.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj
+.PHONY : __/common/empty.c.obj
 
 __/common/empty.i: __/common/empty.c.i
 
@@ -216,14 +231,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... install"
 	@echo "... embedded_project_template"
+	@echo "... install/local"
+	@echo "... weak_symbols"
+	@echo "... test"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... install"
-	@echo "... __/common/empty.o"
+	@echo "... __/common/empty.obj"
 	@echo "... __/common/empty.i"
 	@echo "... __/common/empty.s"
 .PHONY : help

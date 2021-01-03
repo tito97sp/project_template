@@ -68,17 +68,17 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -101,17 +101,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -124,16 +123,17 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,64 +168,184 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-NuttX/CMakeFiles/config_file_target.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/config_file_target.dir/rule
-.PHONY : NuttX/CMakeFiles/config_file_target.dir/rule
+NuttX/CMakeFiles/menuconfig_nuttx.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/menuconfig_nuttx.dir/rule
+.PHONY : NuttX/CMakeFiles/menuconfig_nuttx.dir/rule
 
 # Convenience name for target.
-config_file_target: NuttX/CMakeFiles/config_file_target.dir/rule
+menuconfig_nuttx: NuttX/CMakeFiles/menuconfig_nuttx.dir/rule
 
-.PHONY : config_file_target
+.PHONY : menuconfig_nuttx
 
 # fast build rule for target.
-config_file_target/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/config_file_target.dir/build.make NuttX/CMakeFiles/config_file_target.dir/build
-.PHONY : config_file_target/fast
+menuconfig_nuttx/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/menuconfig_nuttx.dir/build.make NuttX/CMakeFiles/menuconfig_nuttx.dir/build
+.PHONY : menuconfig_nuttx/fast
 
 # Convenience name for target.
-NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
-.PHONY : NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
+NuttX/CMakeFiles/menuconfig.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/menuconfig.dir/rule
+.PHONY : NuttX/CMakeFiles/menuconfig.dir/rule
 
 # Convenience name for target.
-nuttx_config_kconfig_target: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
+menuconfig: NuttX/CMakeFiles/menuconfig.dir/rule
 
-.PHONY : nuttx_config_kconfig_target
+.PHONY : menuconfig
 
 # fast build rule for target.
-nuttx_config_kconfig_target/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
-.PHONY : nuttx_config_kconfig_target/fast
+menuconfig/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/menuconfig.dir/build.make NuttX/CMakeFiles/menuconfig.dir/build
+.PHONY : menuconfig/fast
 
 # Convenience name for target.
-NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
-.PHONY : NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
+NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule
+.PHONY : NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule
 
 # Convenience name for target.
-nuttx_copy_and_apps_target: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
+olddefconfig_nuttx: NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule
 
-.PHONY : nuttx_copy_and_apps_target
+.PHONY : olddefconfig_nuttx
 
 # fast build rule for target.
-nuttx_copy_and_apps_target/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
-.PHONY : nuttx_copy_and_apps_target/fast
+olddefconfig_nuttx/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/olddefconfig_nuttx.dir/build.make NuttX/CMakeFiles/olddefconfig_nuttx.dir/build
+.PHONY : olddefconfig_nuttx/fast
 
 # Convenience name for target.
-NuttX/CMakeFiles/nuttx_context.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_context.dir/rule
-.PHONY : NuttX/CMakeFiles/nuttx_context.dir/rule
+NuttX/CMakeFiles/nuttx_mm_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_mm_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_mm_build.dir/rule
 
 # Convenience name for target.
-nuttx_context: NuttX/CMakeFiles/nuttx_context.dir/rule
+nuttx_mm_build: NuttX/CMakeFiles/nuttx_mm_build.dir/rule
 
-.PHONY : nuttx_context
+.PHONY : nuttx_mm_build
 
 # fast build rule for target.
-nuttx_context/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
-.PHONY : nuttx_context/fast
+nuttx_mm_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_mm_build.dir/build.make NuttX/CMakeFiles/nuttx_mm_build.dir/build
+.PHONY : nuttx_mm_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_c_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_c_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_c_build.dir/rule
+
+# Convenience name for target.
+nuttx_c_build: NuttX/CMakeFiles/nuttx_c_build.dir/rule
+
+.PHONY : nuttx_c_build
+
+# fast build rule for target.
+nuttx_c_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_c_build.dir/build.make NuttX/CMakeFiles/nuttx_c_build.dir/build
+.PHONY : nuttx_c_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_config_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_target.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_config_target.dir/rule
+
+# Convenience name for target.
+nuttx_config_target: NuttX/CMakeFiles/nuttx_config_target.dir/rule
+
+.PHONY : nuttx_config_target
+
+# fast build rule for target.
+nuttx_config_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
+.PHONY : nuttx_config_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/qconfig.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/qconfig.dir/rule
+.PHONY : NuttX/CMakeFiles/qconfig.dir/rule
+
+# Convenience name for target.
+qconfig: NuttX/CMakeFiles/qconfig.dir/rule
+
+.PHONY : qconfig
+
+# fast build rule for target.
+qconfig/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/qconfig.dir/build.make NuttX/CMakeFiles/qconfig.dir/build
+.PHONY : qconfig/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/oldconfig.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/oldconfig.dir/rule
+.PHONY : NuttX/CMakeFiles/oldconfig.dir/rule
+
+# Convenience name for target.
+oldconfig: NuttX/CMakeFiles/oldconfig.dir/rule
+
+.PHONY : oldconfig
+
+# fast build rule for target.
+oldconfig/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/oldconfig.dir/build.make NuttX/CMakeFiles/oldconfig.dir/build
+.PHONY : oldconfig/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_fs_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_fs_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_fs_build.dir/rule
+
+# Convenience name for target.
+nuttx_fs_build: NuttX/CMakeFiles/nuttx_fs_build.dir/rule
+
+.PHONY : nuttx_fs_build
+
+# fast build rule for target.
+nuttx_fs_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_fs_build.dir/build.make NuttX/CMakeFiles/nuttx_fs_build.dir/build
+.PHONY : nuttx_fs_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/oldconfig_nuttx.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/oldconfig_nuttx.dir/rule
+.PHONY : NuttX/CMakeFiles/oldconfig_nuttx.dir/rule
+
+# Convenience name for target.
+oldconfig_nuttx: NuttX/CMakeFiles/oldconfig_nuttx.dir/rule
+
+.PHONY : oldconfig_nuttx
+
+# fast build rule for target.
+oldconfig_nuttx/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/oldconfig_nuttx.dir/build.make NuttX/CMakeFiles/oldconfig_nuttx.dir/build
+.PHONY : oldconfig_nuttx/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_apps_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_apps_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_apps_build.dir/rule
+
+# Convenience name for target.
+nuttx_apps_build: NuttX/CMakeFiles/nuttx_apps_build.dir/rule
+
+.PHONY : nuttx_apps_build
+
+# fast build rule for target.
+nuttx_apps_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_apps_build.dir/build.make NuttX/CMakeFiles/nuttx_apps_build.dir/build
+.PHONY : nuttx_apps_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/olddefconfig.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/olddefconfig.dir/rule
+.PHONY : NuttX/CMakeFiles/olddefconfig.dir/rule
+
+# Convenience name for target.
+olddefconfig: NuttX/CMakeFiles/olddefconfig.dir/rule
+
+.PHONY : olddefconfig
+
+# fast build rule for target.
+olddefconfig/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/olddefconfig.dir/build.make NuttX/CMakeFiles/olddefconfig.dir/build
+.PHONY : olddefconfig/fast
 
 # Convenience name for target.
 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/rule:
@@ -243,19 +363,199 @@ nuttx_copy_config_dir_target/fast:
 .PHONY : nuttx_copy_config_dir_target/fast
 
 # Convenience name for target.
-NuttX/CMakeFiles/nuttx_config_target.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_target.dir/rule
-.PHONY : NuttX/CMakeFiles/nuttx_config_target.dir/rule
+NuttX/CMakeFiles/nuttx_context.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_context.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_context.dir/rule
 
 # Convenience name for target.
-nuttx_config_target: NuttX/CMakeFiles/nuttx_config_target.dir/rule
+nuttx_context: NuttX/CMakeFiles/nuttx_context.dir/rule
 
-.PHONY : nuttx_config_target
+.PHONY : nuttx_context
 
 # fast build rule for target.
-nuttx_config_target/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
-.PHONY : nuttx_config_target/fast
+nuttx_context/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
+.PHONY : nuttx_context/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
+
+# Convenience name for target.
+nuttx_copy_and_apps_target: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
+
+.PHONY : nuttx_copy_and_apps_target
+
+# fast build rule for target.
+nuttx_copy_and_apps_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
+.PHONY : nuttx_copy_and_apps_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
+
+# Convenience name for target.
+nuttx_config_kconfig_target: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
+
+.PHONY : nuttx_config_kconfig_target
+
+# fast build rule for target.
+nuttx_config_kconfig_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
+.PHONY : nuttx_config_kconfig_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_boards_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_boards_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_boards_build.dir/rule
+
+# Convenience name for target.
+nuttx_boards_build: NuttX/CMakeFiles/nuttx_boards_build.dir/rule
+
+.PHONY : nuttx_boards_build
+
+# fast build rule for target.
+nuttx_boards_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_boards_build.dir/build.make NuttX/CMakeFiles/nuttx_boards_build.dir/build
+.PHONY : nuttx_boards_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/qconfig_nuttx.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/qconfig_nuttx.dir/rule
+.PHONY : NuttX/CMakeFiles/qconfig_nuttx.dir/rule
+
+# Convenience name for target.
+qconfig_nuttx: NuttX/CMakeFiles/qconfig_nuttx.dir/rule
+
+.PHONY : qconfig_nuttx
+
+# fast build rule for target.
+qconfig_nuttx/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/qconfig_nuttx.dir/build.make NuttX/CMakeFiles/qconfig_nuttx.dir/build
+.PHONY : qconfig_nuttx/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/config_file_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/config_file_target.dir/rule
+.PHONY : NuttX/CMakeFiles/config_file_target.dir/rule
+
+# Convenience name for target.
+config_file_target: NuttX/CMakeFiles/config_file_target.dir/rule
+
+.PHONY : config_file_target
+
+# fast build rule for target.
+config_file_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/config_file_target.dir/build.make NuttX/CMakeFiles/config_file_target.dir/build
+.PHONY : config_file_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_drivers_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_drivers_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_drivers_build.dir/rule
+
+# Convenience name for target.
+nuttx_drivers_build: NuttX/CMakeFiles/nuttx_drivers_build.dir/rule
+
+.PHONY : nuttx_drivers_build
+
+# fast build rule for target.
+nuttx_drivers_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_drivers_build.dir/build.make NuttX/CMakeFiles/nuttx_drivers_build.dir/build
+.PHONY : nuttx_drivers_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/builtins_clean_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/builtins_clean_target.dir/rule
+.PHONY : NuttX/CMakeFiles/builtins_clean_target.dir/rule
+
+# Convenience name for target.
+builtins_clean_target: NuttX/CMakeFiles/builtins_clean_target.dir/rule
+
+.PHONY : builtins_clean_target
+
+# fast build rule for target.
+builtins_clean_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/builtins_clean_target.dir/build.make NuttX/CMakeFiles/builtins_clean_target.dir/build
+.PHONY : builtins_clean_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_xx_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_xx_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_xx_build.dir/rule
+
+# Convenience name for target.
+nuttx_xx_build: NuttX/CMakeFiles/nuttx_xx_build.dir/rule
+
+.PHONY : nuttx_xx_build
+
+# fast build rule for target.
+nuttx_xx_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_xx_build.dir/build.make NuttX/CMakeFiles/nuttx_xx_build.dir/build
+.PHONY : nuttx_xx_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_sched_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_sched_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_sched_build.dir/rule
+
+# Convenience name for target.
+nuttx_sched_build: NuttX/CMakeFiles/nuttx_sched_build.dir/rule
+
+.PHONY : nuttx_sched_build
+
+# fast build rule for target.
+nuttx_sched_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_sched_build.dir/build.make NuttX/CMakeFiles/nuttx_sched_build.dir/build
+.PHONY : nuttx_sched_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_builtin_list_target.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_builtin_list_target.dir/rule
+
+# Convenience name for target.
+nuttx_builtin_list_target: NuttX/CMakeFiles/nuttx_builtin_list_target.dir/rule
+
+.PHONY : nuttx_builtin_list_target
+
+# fast build rule for target.
+nuttx_builtin_list_target/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build.make NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build
+.PHONY : nuttx_builtin_list_target/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_arch_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_arch_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_arch_build.dir/rule
+
+# Convenience name for target.
+nuttx_arch_build: NuttX/CMakeFiles/nuttx_arch_build.dir/rule
+
+.PHONY : nuttx_arch_build
+
+# fast build rule for target.
+nuttx_arch_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_arch_build.dir/build.make NuttX/CMakeFiles/nuttx_arch_build.dir/build
+.PHONY : nuttx_arch_build/fast
+
+# Convenience name for target.
+NuttX/CMakeFiles/nuttx_binfmt_build.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_binfmt_build.dir/rule
+.PHONY : NuttX/CMakeFiles/nuttx_binfmt_build.dir/rule
+
+# Convenience name for target.
+nuttx_binfmt_build: NuttX/CMakeFiles/nuttx_binfmt_build.dir/rule
+
+.PHONY : nuttx_binfmt_build
+
+# fast build rule for target.
+nuttx_binfmt_build/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/build
+.PHONY : nuttx_binfmt_build/fast
 
 # Help Target
 help:
@@ -264,18 +564,38 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... config_file_target"
-	@echo "... nuttx_config_kconfig_target"
-	@echo "... rebuild_cache"
-	@echo "... nuttx_copy_and_apps_target"
-	@echo "... nuttx_context"
 	@echo "... install/local"
-	@echo "... test"
-	@echo "... nuttx_copy_config_dir_target"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... menuconfig_nuttx"
+	@echo "... menuconfig"
+	@echo "... olddefconfig_nuttx"
 	@echo "... edit_cache"
+	@echo "... nuttx_mm_build"
+	@echo "... nuttx_c_build"
 	@echo "... nuttx_config_target"
+	@echo "... qconfig"
+	@echo "... oldconfig"
+	@echo "... nuttx_fs_build"
+	@echo "... test"
+	@echo "... oldconfig_nuttx"
+	@echo "... install"
+	@echo "... nuttx_apps_build"
+	@echo "... olddefconfig"
+	@echo "... nuttx_copy_config_dir_target"
+	@echo "... nuttx_context"
+	@echo "... nuttx_copy_and_apps_target"
+	@echo "... nuttx_config_kconfig_target"
+	@echo "... nuttx_boards_build"
+	@echo "... qconfig_nuttx"
+	@echo "... config_file_target"
+	@echo "... nuttx_drivers_build"
+	@echo "... builtins_clean_target"
+	@echo "... nuttx_xx_build"
+	@echo "... nuttx_sched_build"
+	@echo "... nuttx_builtin_list_target"
+	@echo "... nuttx_arch_build"
+	@echo "... nuttx_binfmt_build"
 .PHONY : help
 
 

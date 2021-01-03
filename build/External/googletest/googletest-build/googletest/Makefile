@@ -197,14 +197,14 @@ gtest/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-src/gtest-all.o: src/gtest-all.cc.o
+src/gtest-all.obj: src/gtest-all.cc.obj
 
-.PHONY : src/gtest-all.o
+.PHONY : src/gtest-all.obj
 
 # target to build an object file
-src/gtest-all.cc.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-.PHONY : src/gtest-all.cc.o
+src/gtest-all.cc.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+.PHONY : src/gtest-all.cc.obj
 
 src/gtest-all.i: src/gtest-all.cc.i
 
@@ -224,14 +224,14 @@ src/gtest-all.cc.s:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s
 .PHONY : src/gtest-all.cc.s
 
-src/gtest_main.o: src/gtest_main.cc.o
+src/gtest_main.obj: src/gtest_main.cc.obj
 
-.PHONY : src/gtest_main.o
+.PHONY : src/gtest_main.obj
 
 # target to build an object file
-src/gtest_main.cc.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-.PHONY : src/gtest_main.cc.o
+src/gtest_main.cc.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj
+.PHONY : src/gtest_main.cc.obj
 
 src/gtest_main.i: src/gtest_main.cc.i
 
@@ -266,10 +266,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... gtest"
 	@echo "... rebuild_cache"
-	@echo "... src/gtest-all.o"
+	@echo "... src/gtest-all.obj"
 	@echo "... src/gtest-all.i"
 	@echo "... src/gtest-all.s"
-	@echo "... src/gtest_main.o"
+	@echo "... src/gtest_main.obj"
 	@echo "... src/gtest_main.i"
 	@echo "... src/gtest_main.s"
 .PHONY : help

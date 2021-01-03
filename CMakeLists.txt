@@ -9,7 +9,7 @@ include(parse_function_args)
 #=============================================================================
 # git
 #
-#include(px4_git)
+include(add_git_submodule)
 
 execute_process(
 	COMMAND git describe --always --tags
@@ -29,40 +29,21 @@ define_property(GLOBAL PROPERTY MODULE_PATHS
                  FULL_DOCS "List of paths to all project modules"
                  )
 
-
-
-#=============================================================================
-# project definition
-#
-set(project_name embedded_project_template)
-project(${project_name} CXX C)
-
-set(project_contact "andres.sanchez.engineering@gmail.com")
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-
 #=============================================================================
 # configuration
 #
+
+set(CONFIG "stm_nucleo_h743zi_default.cmake" CACHE STRING "desired configuration")
+#set(CONFIG "px4_fmu-v5_default.cmake" CACHE STRING "desired configuration")
+
 include(add_module)
 set(config_module_list)
 
-include(add_git_submodule)
-
-#TODO: Eliminate hardcoded variables
-set(PLATFORM nuttx)
-set(BOARD nucleoh743zi)
-set(CONFIG_DIR ${SOURCE_DIR}/configuration)
-set(CONFIG_FILE ${SOURCE_DIR}/configuration/default.cmake)
-set(NUTTX_CONFIG nsh)
-set(BOARD_VENDOR stm)
-set(BOARD_MODEL h743zi)
-set(BOARD_LABEL nucleo)
+include(add_config)
+include(add_board)
+include(${CONFIG_FILE})
+message(STATUS "config: ${CONFIG}")
+message(STATUS "platform: ${PLATFORM}")
 
 
 # external modules
@@ -74,23 +55,78 @@ endif()
 
 set_property(GLOBAL PROPERTY MODULE_CONFIG_FILES)
 
-#include(platforms/${PX4_PLATFORM}/cmake/px4_impl_os.cmake)
+include(platforms/${PLATFORM}/cmake/impl_os.cmake)
 list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/platforms/${PLATFORM}/cmake)
 
 if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/cmake/init.cmake")
 	include(init)
 endif()
 
+# CMake build type (Debug Release RelWithDebInfo MinSizeRel Coverage)
+if(NOT CMAKE_BUILD_TYPE)
+	if(${PLATFORM} STREQUAL "nuttx")
+		set(PROJECT_BUILD_TYPE "MinSizeRel")
+	else()
+		set(PROJECT_BUILD_TYPE "RelWithDebInfo")
+	endif()
+
+	set(CMAKE_BUILD_TYPE ${PROJECT_BUILD_TYPE} CACHE STRING "Build type" FORCE)
+endif()
+
+if((CMAKE_BUILD_TYPE STREQUAL "Debug") OR (CMAKE_BUILD_TYPE STREQUAL "Coverage"))
+	set(MAX_CUSTOM_OPT_LEVEL -O0)
+elseif(CMAKE_BUILD_TYPE MATCHES "Sanitizer")
+	set(MAX_CUSTOM_OPT_LEVEL -O1)
+else()
+	if(constrained_flash_build)
+		set(MAX_CUSTOM_OPT_LEVEL -Os)
+	else()
+		set(MAX_CUSTOM_OPT_LEVEL -O2)
+	endif()
+endif()
+
+set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug;Release;RelWithDebInfo;MinSizeRel;Coverage;AddressSanitizer;UndefinedBehaviorSanitizer")
+message(STATUS "cmake build type: ${CMAKE_BUILD_TYPE}")
+
+#=============================================================================
+# project definition
+#
+set(project_name embedded_project_template)
+project(${project_name} CXX C ASM)
+
+set(project_contact "andres.sanchez.engineering@gmail.com")
+
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-# include(platforms/${PLATFORM}/cmake/impl_os.cmake)
-# list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/platforms/${PLATFORM}/cmake)
+#=============================================================================
+# get chip and chip manufacturer
+#
+os_determine_build_chip()
+if(NOT CHIP_MANUFACTURER)
+	message(FATAL_ERROR "os_determine_build_chip() needs to set CHIP_MANUFACTURER")
+endif()
+if(NOT CHIP)
+	message(FATAL_ERROR "os_determine_build_chip() needs to set CHIP")
+endif()
 
-# if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/cmake/init.cmake")
-# 	include(init)
-# endif()
-#include(nuttx/nuttx)
-add_subdirectory(${SOURCE_DIR}/platforms/${PLATFORM})
+#=============================================================================
+# build flags
+#
+include(add_common_flags)
+add_common_flags()
+os_add_flags()
+
+#=============================================================================
+# board cmake init (optional)
+#
+if(EXISTS ${BOARD_DIR}/cmake/init.cmake)
+	include(${BOARD_DIR}/cmake/init.cmake)
+endif()
 
 
 #=============================================================================
@@ -98,15 +134,27 @@ add_subdirectory(${SOURCE_DIR}/platforms/${PLATFORM})
 #
 
 # add libraries 
-#include(add_library)
+include(add_custom_library)
 add_subdirectory(src/lib EXCLUDE_FROM_ALL)
 
-# add modules
-list(APPEND config_module_list "hello")
+#add_subdirectory(platforms/${PLATFORM}/src/px4)
+#add_subdirectory(platforms EXCLUDE_FROM_ALL)
+#add_subdirectory(src/modules/uORB EXCLUDE_FROM_ALL) # TODO: platform layer
+
+if(EXISTS "${BOARD_DIR}/CMakeLists.txt")
+	add_subdirectory(${BOARD_DIR})
+endif()
 
 foreach(module ${config_module_list})
-	add_subdirectory(src/modules/${module})
+	add_subdirectory(src/${module})
 endforeach()
+
+# must be the last module before firmware
+#add_subdirectory(src/lib/parameters EXCLUDE_FROM_ALL)
+#target_link_libraries(parameters_interface INTERFACE parameters)
+
+# firmware added last to generate the builtin for included modules
+add_subdirectory(platforms/${PLATFORM})
 
 
 

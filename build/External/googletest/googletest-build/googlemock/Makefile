@@ -197,14 +197,14 @@ gmock/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build
 .PHONY : gmock/fast
 
-src/gmock-all.o: src/gmock-all.cc.o
+src/gmock-all.obj: src/gmock-all.cc.obj
 
-.PHONY : src/gmock-all.o
+.PHONY : src/gmock-all.obj
 
 # target to build an object file
-src/gmock-all.cc.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-.PHONY : src/gmock-all.cc.o
+src/gmock-all.cc.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj
+.PHONY : src/gmock-all.cc.obj
 
 src/gmock-all.i: src/gmock-all.cc.i
 
@@ -224,14 +224,14 @@ src/gmock-all.cc.s:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s
 .PHONY : src/gmock-all.cc.s
 
-src/gmock_main.o: src/gmock_main.cc.o
+src/gmock_main.obj: src/gmock_main.cc.obj
 
-.PHONY : src/gmock_main.o
+.PHONY : src/gmock_main.obj
 
 # target to build an object file
-src/gmock_main.cc.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
-.PHONY : src/gmock_main.cc.o
+src/gmock_main.cc.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj
+.PHONY : src/gmock_main.cc.obj
 
 src/gmock_main.i: src/gmock_main.cc.i
 
@@ -266,10 +266,10 @@ help:
 	@echo "... gmock"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... src/gmock-all.o"
+	@echo "... src/gmock-all.obj"
 	@echo "... src/gmock-all.i"
 	@echo "... src/gmock-all.s"
-	@echo "... src/gmock_main.o"
+	@echo "... src/gmock_main.obj"
 	@echo "... src/gmock_main.i"
 	@echo "... src/gmock_main.s"
 .PHONY : help

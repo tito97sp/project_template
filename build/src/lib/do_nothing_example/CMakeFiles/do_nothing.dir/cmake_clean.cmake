@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o"
+  "CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj"
   "libdo_nothing.pdb"
   "libdo_nothing.a"
 )

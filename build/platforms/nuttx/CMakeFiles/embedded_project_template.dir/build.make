@@ -57,49 +57,62 @@ include platforms/nuttx/CMakeFiles/embedded_project_template.dir/progress.make
 # Include the compile flags for this target's objects.
 include platforms/nuttx/CMakeFiles/embedded_project_template.dir/flags.make
 
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o: platforms/nuttx/CMakeFiles/embedded_project_template.dir/flags.make
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o: ../platforms/common/empty.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/clang-6.0 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/embedded_project_template.dir/__/common/empty.c.o   -c /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj: platforms/nuttx/CMakeFiles/embedded_project_template.dir/flags.make
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj: ../platforms/common/empty.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c
 
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/embedded_project_template.dir/__/common/empty.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/clang-6.0 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c > CMakeFiles/embedded_project_template.dir/__/common/empty.c.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c > CMakeFiles/embedded_project_template.dir/__/common/empty.c.i
 
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/embedded_project_template.dir/__/common/empty.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/clang-6.0 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c -o CMakeFiles/embedded_project_template.dir/__/common/empty.c.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c -o CMakeFiles/embedded_project_template.dir/__/common/empty.c.s
 
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.requires:
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.requires:
 
-.PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.requires
+.PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.requires
 
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.provides: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.requires
-	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.provides.build
-.PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.provides
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.provides: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.requires
+	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.provides.build
+.PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.provides
 
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.provides.build: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.provides.build: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj
 
 
 # Object files for target embedded_project_template
 embedded_project_template_OBJECTS = \
-"CMakeFiles/embedded_project_template.dir/__/common/empty.c.o"
+"CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj"
 
 # External object files for target embedded_project_template
 embedded_project_template_EXTERNAL_OBJECTS =
 
-platforms/nuttx/stm_h743zi_nucleo.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o
-platforms/nuttx/stm_h743zi_nucleo.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make
-platforms/nuttx/stm_h743zi_nucleo.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable stm_h743zi_nucleo.elf"
+platforms/nuttx/stm_nucleo-h743zi_default.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj
+platforms/nuttx/stm_nucleo-h743zi_default.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/apps/libapps.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/arch/arm/src/libarch.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/binfmt/libbinfmt.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/libs/libc/libc.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/boards/libboards.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/libs/libxx/libxx.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/drivers/libdrivers.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/fs/libfs.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/mm/libmm.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/sched/libsched.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: src/modules/hello/libhello.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/libs/libc/libc.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/drivers/libdrivers.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: platforms/nuttx/CMakeFiles/embedded_project_template.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable stm_nucleo-h743zi_default.elf"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/embedded_project_template.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/build: platforms/nuttx/stm_h743zi_nucleo.elf
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/build: platforms/nuttx/stm_nucleo-h743zi_default.elf
 
 .PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
 
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/requires: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.o.requires
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/requires: platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj.requires
 
 .PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/requires
 

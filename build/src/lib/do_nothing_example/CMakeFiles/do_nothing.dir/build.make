@@ -57,38 +57,38 @@ include src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/flags.make
 
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/flags.make
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o: ../src/lib/do_nothing_example/do_nothing_example.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/clang++-6.0  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o -c /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/flags.make
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj: ../src/lib/do_nothing_example/do_nothing_example.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj -c /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp
 
 src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/do_nothing.dir/do_nothing_example.cpp.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp > CMakeFiles/do_nothing.dir/do_nothing_example.cpp.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp > CMakeFiles/do_nothing.dir/do_nothing_example.cpp.i
 
 src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/do_nothing.dir/do_nothing_example.cpp.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp -o CMakeFiles/do_nothing.dir/do_nothing_example.cpp.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/src/lib/do_nothing_example/do_nothing_example.cpp -o CMakeFiles/do_nothing.dir/do_nothing_example.cpp.s
 
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.requires:
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.requires:
 
-.PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.requires
+.PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.requires
 
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.provides: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.requires
-	$(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.provides.build
-.PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.provides
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.provides: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.requires
+	$(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.provides.build
+.PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.provides
 
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.provides.build: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.provides.build: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj
 
 
 # Object files for target do_nothing
 do_nothing_OBJECTS = \
-"CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o"
+"CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj"
 
 # External object files for target do_nothing
 do_nothing_EXTERNAL_OBJECTS =
 
-src/lib/do_nothing_example/libdo_nothing.a: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o
+src/lib/do_nothing_example/libdo_nothing.a: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj
 src/lib/do_nothing_example/libdo_nothing.a: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make
 src/lib/do_nothing_example/libdo_nothing.a: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libdo_nothing.a"
@@ -100,7 +100,7 @@ src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build: src/lib/do_nothing_e
 
 .PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build
 
-src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/requires: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o.requires
+src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/requires: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj.requires
 
 .PHONY : src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/requires
 

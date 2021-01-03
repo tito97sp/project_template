@@ -58,23 +58,23 @@ NuttX/CMakeFiles/nuttx_config_target: NuttX/nuttx_olddefconfig.stamp
 
 
 NuttX/nuttx/.config: NuttX/nuttx/Make.defs
-NuttX/nuttx/.config: ../configuration/nuttx-config/nsh/defconfig
+NuttX/nuttx/.config: ../boards/stm/nucleo_h743zi/nuttx-config/nsh/defconfig
 NuttX/nuttx/.config: NuttX/nuttx_copy_config_dir.stamp
 NuttX/nuttx/.config: ../platforms/nuttx/NuttX/tools/px4_nuttx_make_olddefconfig.sh
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying NuttX compressed config nsh and inflating (make olddefconfig)"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E copy_if_different /home/andressanchez/Escritorio/GIT/project_template/configuration/nuttx-config/nsh/defconfig /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/.config
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E copy_if_different /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/nuttx-config/nsh/defconfig /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/.config
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /home/andressanchez/Escritorio/GIT/project_template/platforms/nuttx/NuttX/tools/px4_nuttx_make_olddefconfig.sh > nuttx_olddefconfig.log
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx_olddefconfig.stamp
 
 NuttX/nuttx_olddefconfig.stamp: NuttX/nuttx/.config
 	@$(CMAKE_COMMAND) -E touch_nocreate NuttX/nuttx_olddefconfig.stamp
 
-NuttX/nuttx_copy_config_dir.stamp: ../configuration/nuttx-config/include/board.h
-NuttX/nuttx_copy_config_dir.stamp: ../configuration/nuttx-config/scripts/script.ld
+NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/include/board.h
+NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/scripts/script.ld
 NuttX/nuttx_copy_config_dir.stamp: ../platforms/nuttx/NuttX/nsh_romfsimg.h
 NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Copying NuttX config nsh"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && cp -aRfl ../../../configuration/nuttx-config ../
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && cp -aRfl ../../../boards/stm/nucleo_h743zi/nuttx-config ../
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E make_directory /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers/Kconfig
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E make_directory /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/src

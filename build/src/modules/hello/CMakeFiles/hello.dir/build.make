@@ -57,38 +57,38 @@ include src/modules/hello/CMakeFiles/hello.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/modules/hello/CMakeFiles/hello.dir/flags.make
 
-src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o: src/modules/hello/CMakeFiles/hello.dir/flags.make
-src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o: ../src/modules/hello/hello.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/clang++-6.0  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hello.dir/hello.cpp.o -c /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp
+src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj: src/modules/hello/CMakeFiles/hello.dir/flags.make
+src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj: ../src/modules/hello/hello.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hello.dir/hello.cpp.obj -c /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp
 
 src/modules/hello/CMakeFiles/hello.dir/hello.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hello.dir/hello.cpp.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp > CMakeFiles/hello.dir/hello.cpp.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp > CMakeFiles/hello.dir/hello.cpp.i
 
 src/modules/hello/CMakeFiles/hello.dir/hello.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hello.dir/hello.cpp.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp -o CMakeFiles/hello.dir/hello.cpp.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp -o CMakeFiles/hello.dir/hello.cpp.s
 
-src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.requires:
+src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.requires:
 
-.PHONY : src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.requires
+.PHONY : src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.requires
 
-src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.provides: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.requires
-	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.provides.build
-.PHONY : src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.provides
+src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.provides: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.requires
+	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.provides.build
+.PHONY : src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.provides
 
-src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.provides.build: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o
+src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.provides.build: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj
 
 
 # Object files for target hello
 hello_OBJECTS = \
-"CMakeFiles/hello.dir/hello.cpp.o"
+"CMakeFiles/hello.dir/hello.cpp.obj"
 
 # External object files for target hello
 hello_EXTERNAL_OBJECTS =
 
-src/modules/hello/libhello.a: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o
+src/modules/hello/libhello.a: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj
 src/modules/hello/libhello.a: src/modules/hello/CMakeFiles/hello.dir/build.make
 src/modules/hello/libhello.a: src/modules/hello/CMakeFiles/hello.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libhello.a"
@@ -100,7 +100,7 @@ src/modules/hello/CMakeFiles/hello.dir/build: src/modules/hello/libhello.a
 
 .PHONY : src/modules/hello/CMakeFiles/hello.dir/build
 
-src/modules/hello/CMakeFiles/hello.dir/requires: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.o.requires
+src/modules/hello/CMakeFiles/hello.dir/requires: src/modules/hello/CMakeFiles/hello.dir/hello.cpp.obj.requires
 
 .PHONY : src/modules/hello/CMakeFiles/hello.dir/requires
 

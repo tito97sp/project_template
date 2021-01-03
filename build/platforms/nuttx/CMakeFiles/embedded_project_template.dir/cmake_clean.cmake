@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/embedded_project_template.dir/__/common/empty.c.o"
-  "stm_h743zi_nucleo.elf.pdb"
-  "stm_h743zi_nucleo.elf"
+  "CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj"
+  "stm_nucleo-h743zi_default.elf.pdb"
+  "stm_nucleo-h743zi_default.elf"
 )
 
 # Per-language clean rules from dependency scanning.

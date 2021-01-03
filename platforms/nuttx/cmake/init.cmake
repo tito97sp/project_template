@@ -39,11 +39,11 @@ if(NOT BINARY_DIR)
 	message(FATAL_ERROR "BINARY_DIR must be set")
 endif()
 
-if(NOT CONFIG_DIR)
-	message(FATAL_ERROR "CONFIG_DIR must be set")
+if(NOT BOARD_DIR)
+	message(FATAL_ERROR "BOARD_DIR must be set")
 endif()
 
-set(NUTTX_CONFIG_DIR ${CONFIG_DIR}/nuttx-config CACHE FILEPATH "NuttX config" FORCE)
+set(NUTTX_CONFIG_DIR ${BOARD_DIR}/nuttx-config CACHE FILEPATH "NuttX config" FORCE)
 
 # # NuttX defconfig
 # #  cmake should trigger reconfigure if defconfig changes
@@ -124,7 +124,7 @@ endif()
 
 if((NOT EXISTS ${BINARY_DIR}/NuttX/nuttx_copy_config_dir.stamp) OR (NOT EXISTS ${BINARY_DIR}/NuttX/nuttx-config/drivers/Kconfig))
 	# copy board's nuttx-config to NuttX/nuttx-config
-	file(RELATIVE_PATH CP_SRC ${CMAKE_SOURCE_DIR} ${CONFIG_DIR}/nuttx-config)
+	file(RELATIVE_PATH CP_SRC ${CMAKE_SOURCE_DIR} ${BOARD_DIR}/nuttx-config)
 	file(RELATIVE_PATH CP_DST ${CMAKE_SOURCE_DIR} ${BINARY_DIR}/NuttX)
 	execute_process(COMMAND ${NUTTX_COPY_CMD} ${NUTTX_COPY_CMD_OPTS} ${CP_SRC} ${CP_DST} WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 

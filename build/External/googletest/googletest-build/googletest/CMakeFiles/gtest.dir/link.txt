@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../../../../lib/libgtestd.a  CMakeFiles/gtest.dir/src/gtest-all.cc.o
-/usr/bin/ranlib ../../../../lib/libgtestd.a
+/usr/bin/arm-none-eabi-gcc-ar qc ../../../../lib/libgtest.a  CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+/usr/bin/arm-none-eabi-gcc-ranlib ../../../../lib/libgtest.a

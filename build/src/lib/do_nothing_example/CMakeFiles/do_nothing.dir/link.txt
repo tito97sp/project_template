@@ -1,2 +1,2 @@
-/usr/bin/ar qc libdo_nothing.a  CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o
-/usr/bin/ranlib libdo_nothing.a
+/usr/bin/arm-none-eabi-gcc-ar qc libdo_nothing.a  CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libdo_nothing.a

@@ -1,1 +1,0 @@
-/usr/bin/clang-6.0 -g  -rdynamic CMakeFiles/embedded_project_template.dir/common/empty.c.o  -o stm_h743zi_nucleo.elf 

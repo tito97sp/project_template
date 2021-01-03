@@ -56,12 +56,12 @@ include NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/progress.make
 NuttX/CMakeFiles/nuttx_copy_config_dir_target: NuttX/nuttx_copy_config_dir.stamp
 
 
-NuttX/nuttx_copy_config_dir.stamp: ../configuration/nuttx-config/include/board.h
-NuttX/nuttx_copy_config_dir.stamp: ../configuration/nuttx-config/scripts/script.ld
+NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/include/board.h
+NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/scripts/script.ld
 NuttX/nuttx_copy_config_dir.stamp: ../platforms/nuttx/NuttX/nsh_romfsimg.h
 NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Copying NuttX config nsh"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && cp -aRfl ../../../configuration/nuttx-config ../
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && cp -aRfl ../../../boards/stm/nucleo_h743zi/nuttx-config ../
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E make_directory /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers/Kconfig
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E make_directory /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/src

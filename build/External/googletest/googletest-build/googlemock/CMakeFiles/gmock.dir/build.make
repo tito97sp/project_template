@@ -57,50 +57,50 @@ include External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/pro
 # Include the compile flags for this target's objects.
 include External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/flags.make
 
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/flags.make
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: External/googletest/googletest-src/googlemock/src/gmock-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/clang++-6.0  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/flags.make
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: External/googletest/googletest-src/googlemock/src/gmock-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc
 
 External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.requires:
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.requires:
 
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.requires
+.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.requires
 
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.provides: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.requires
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.provides.build
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.provides
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.provides: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.requires
+	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.provides.build
+.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.provides
 
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.provides.build: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.provides.build: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj
 
 
 # Object files for target gmock
 gmock_OBJECTS = \
-"CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+"CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
 
 # External object files for target gmock
 gmock_EXTERNAL_OBJECTS =
 
-lib/libgmockd.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
-lib/libgmockd.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make
-lib/libgmockd.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgmockd.a"
+lib/libgmock.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj
+lib/libgmock.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make
+lib/libgmock.a: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgmock.a"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build: lib/libgmockd.a
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build: lib/libgmock.a
 
 .PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build
 
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/requires: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.requires
+External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/requires: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj.requires
 
 .PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/requires
 

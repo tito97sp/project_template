@@ -182,14 +182,14 @@ do_nothing/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build
 .PHONY : do_nothing/fast
 
-do_nothing_example.o: do_nothing_example.cpp.o
+do_nothing_example.obj: do_nothing_example.cpp.obj
 
-.PHONY : do_nothing_example.o
+.PHONY : do_nothing_example.obj
 
 # target to build an object file
-do_nothing_example.cpp.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.o
-.PHONY : do_nothing_example.cpp.o
+do_nothing_example.cpp.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/do_nothing_example.cpp.obj
+.PHONY : do_nothing_example.cpp.obj
 
 do_nothing_example.i: do_nothing_example.cpp.i
 
@@ -223,7 +223,7 @@ help:
 	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... do_nothing_example.o"
+	@echo "... do_nothing_example.obj"
 	@echo "... do_nothing_example.i"
 	@echo "... do_nothing_example.s"
 .PHONY : help

@@ -57,50 +57,50 @@ include External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.di
 # Include the compile flags for this target's objects.
 include External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/flags.make
 
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/flags.make
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: External/googletest/googletest-src/googletest/src/gtest_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/clang++-6.0  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/flags.make
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: External/googletest/googletest-src/googletest/src/gtest_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc
 
 External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 
 External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-src/googletest/src/gtest_main.cc -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires:
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.requires:
 
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
+.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.requires
 
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.provides: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.provides.build
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.provides
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.provides: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.requires
+	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.provides.build
+.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.provides
 
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.provides.build: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.provides.build: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj
 
 
 # Object files for target gtest_main
 gtest_main_OBJECTS = \
-"CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+"CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
 
 # External object files for target gtest_main
 gtest_main_EXTERNAL_OBJECTS =
 
-lib/libgtest_maind.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
-lib/libgtest_maind.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make
-lib/libgtest_maind.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgtest_maind.a"
+lib/libgtest_main.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj
+lib/libgtest_main.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make
+lib/libgtest_main.a: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../../lib/libgtest_main.a"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && $(CMAKE_COMMAND) -P CMakeFiles/gtest_main.dir/cmake_clean_target.cmake
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-build/googletest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gtest_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build: lib/libgtest_maind.a
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build: lib/libgtest_main.a
 
 .PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/requires: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
+External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/requires: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj.requires
 
 .PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/requires
 

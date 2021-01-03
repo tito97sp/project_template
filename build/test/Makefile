@@ -182,14 +182,14 @@ example/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/build
 .PHONY : example/fast
 
-SampleTest.o: SampleTest.cpp.o
+SampleTest.obj: SampleTest.cpp.obj
 
-.PHONY : SampleTest.o
+.PHONY : SampleTest.obj
 
 # target to build an object file
-SampleTest.cpp.o:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/SampleTest.cpp.o
-.PHONY : SampleTest.cpp.o
+SampleTest.cpp.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/SampleTest.cpp.obj
+.PHONY : SampleTest.cpp.obj
 
 SampleTest.i: SampleTest.cpp.i
 
@@ -223,7 +223,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... SampleTest.o"
+	@echo "... SampleTest.obj"
 	@echo "... SampleTest.i"
 	@echo "... SampleTest.s"
 .PHONY : help

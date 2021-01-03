@@ -57,41 +57,41 @@ include test/CMakeFiles/example.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/example.dir/flags.make
 
-test/CMakeFiles/example.dir/SampleTest.cpp.o: test/CMakeFiles/example.dir/flags.make
-test/CMakeFiles/example.dir/SampleTest.cpp.o: ../test/SampleTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/example.dir/SampleTest.cpp.o"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/clang++-6.0  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/example.dir/SampleTest.cpp.o -c /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp
+test/CMakeFiles/example.dir/SampleTest.cpp.obj: test/CMakeFiles/example.dir/flags.make
+test/CMakeFiles/example.dir/SampleTest.cpp.obj: ../test/SampleTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/example.dir/SampleTest.cpp.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/example.dir/SampleTest.cpp.obj -c /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp
 
 test/CMakeFiles/example.dir/SampleTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/example.dir/SampleTest.cpp.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp > CMakeFiles/example.dir/SampleTest.cpp.i
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp > CMakeFiles/example.dir/SampleTest.cpp.i
 
 test/CMakeFiles/example.dir/SampleTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/example.dir/SampleTest.cpp.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/clang++-6.0 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp -o CMakeFiles/example.dir/SampleTest.cpp.s
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && /usr/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/test/SampleTest.cpp -o CMakeFiles/example.dir/SampleTest.cpp.s
 
-test/CMakeFiles/example.dir/SampleTest.cpp.o.requires:
+test/CMakeFiles/example.dir/SampleTest.cpp.obj.requires:
 
-.PHONY : test/CMakeFiles/example.dir/SampleTest.cpp.o.requires
+.PHONY : test/CMakeFiles/example.dir/SampleTest.cpp.obj.requires
 
-test/CMakeFiles/example.dir/SampleTest.cpp.o.provides: test/CMakeFiles/example.dir/SampleTest.cpp.o.requires
-	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/SampleTest.cpp.o.provides.build
-.PHONY : test/CMakeFiles/example.dir/SampleTest.cpp.o.provides
+test/CMakeFiles/example.dir/SampleTest.cpp.obj.provides: test/CMakeFiles/example.dir/SampleTest.cpp.obj.requires
+	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/SampleTest.cpp.obj.provides.build
+.PHONY : test/CMakeFiles/example.dir/SampleTest.cpp.obj.provides
 
-test/CMakeFiles/example.dir/SampleTest.cpp.o.provides.build: test/CMakeFiles/example.dir/SampleTest.cpp.o
+test/CMakeFiles/example.dir/SampleTest.cpp.obj.provides.build: test/CMakeFiles/example.dir/SampleTest.cpp.obj
 
 
 # Object files for target example
 example_OBJECTS = \
-"CMakeFiles/example.dir/SampleTest.cpp.o"
+"CMakeFiles/example.dir/SampleTest.cpp.obj"
 
 # External object files for target example
 example_EXTERNAL_OBJECTS =
 
-test/example: test/CMakeFiles/example.dir/SampleTest.cpp.o
+test/example: test/CMakeFiles/example.dir/SampleTest.cpp.obj
 test/example: test/CMakeFiles/example.dir/build.make
-test/example: lib/libgtest_maind.a
-test/example: lib/libgtestd.a
+test/example: lib/libgtest_main.a
+test/example: lib/libgtest.a
 test/example: test/CMakeFiles/example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable example"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example.dir/link.txt --verbose=$(VERBOSE)
@@ -101,7 +101,7 @@ test/CMakeFiles/example.dir/build: test/example
 
 .PHONY : test/CMakeFiles/example.dir/build
 
-test/CMakeFiles/example.dir/requires: test/CMakeFiles/example.dir/SampleTest.cpp.o.requires
+test/CMakeFiles/example.dir/requires: test/CMakeFiles/example.dir/SampleTest.cpp.obj.requires
 
 .PHONY : test/CMakeFiles/example.dir/requires
 

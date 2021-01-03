@@ -4,8 +4,9 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-subdirs("platforms/nuttx")
 subdirs("src/lib")
 subdirs("src/modules/hello")
+subdirs("boards/stm/nucleo_h743zi/src")
+subdirs("platforms/nuttx")
 subdirs("External/googletest/googletest-build")
 subdirs("test")

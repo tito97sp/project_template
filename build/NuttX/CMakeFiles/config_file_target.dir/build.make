@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/andressanchez/Escritorio/GIT/project_template/build
 # Include the progress variables for this target.
 include NuttX/CMakeFiles/config_file_target.dir/progress.make
 
-NuttX/CMakeFiles/config_file_target: ../configuration/default.cmake
+NuttX/CMakeFiles/config_file_target: ../boards/stm/nucleo_h743zi/default.cmake
 
 
 config_file_target: NuttX/CMakeFiles/config_file_target

@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "MinSizeRel")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -27,20 +27,16 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+  set(CMAKE_CROSSCOMPILING "TRUE")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/cmake_install.cmake")
+  include("/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/cmake_install.cmake")
+  include("/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/test/cmake_install.cmake")
 
 endif()

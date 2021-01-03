@@ -80,15 +80,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : list_install_components/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -113,6 +114,16 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -123,17 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named git_nuttx_apps
-
-# Build rule for target.
-git_nuttx_apps: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 git_nuttx_apps
-.PHONY : git_nuttx_apps
-
-# fast build rule for target.
-git_nuttx_apps/fast:
-	$(MAKE) -f CMakeFiles/git_nuttx_apps.dir/build.make CMakeFiles/git_nuttx_apps.dir/build
-.PHONY : git_nuttx_apps/fast
-
-#=============================================================================
 # Target rules for targets named git_nuttx
 
 # Build rule for target.
@@ -194,6 +181,19 @@ git_nuttx/fast:
 .PHONY : git_nuttx/fast
 
 #=============================================================================
+# Target rules for targets named git_nuttx_apps
+
+# Build rule for target.
+git_nuttx_apps: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 git_nuttx_apps
+.PHONY : git_nuttx_apps
+
+# fast build rule for target.
+git_nuttx_apps/fast:
+	$(MAKE) -f CMakeFiles/git_nuttx_apps.dir/build.make CMakeFiles/git_nuttx_apps.dir/build
+.PHONY : git_nuttx_apps/fast
+
+#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -205,97 +205,6 @@ doxygen: cmake_check_build_system
 doxygen/fast:
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
 .PHONY : doxygen/fast
-
-#=============================================================================
-# Target rules for targets named embedded_project_template
-
-# Build rule for target.
-embedded_project_template: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 embedded_project_template
-.PHONY : embedded_project_template
-
-# fast build rule for target.
-embedded_project_template/fast:
-	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
-.PHONY : embedded_project_template/fast
-
-#=============================================================================
-# Target rules for targets named config_file_target
-
-# Build rule for target.
-config_file_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 config_file_target
-.PHONY : config_file_target
-
-# fast build rule for target.
-config_file_target/fast:
-	$(MAKE) -f NuttX/CMakeFiles/config_file_target.dir/build.make NuttX/CMakeFiles/config_file_target.dir/build
-.PHONY : config_file_target/fast
-
-#=============================================================================
-# Target rules for targets named nuttx_config_kconfig_target
-
-# Build rule for target.
-nuttx_config_kconfig_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_kconfig_target
-.PHONY : nuttx_config_kconfig_target
-
-# fast build rule for target.
-nuttx_config_kconfig_target/fast:
-	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
-.PHONY : nuttx_config_kconfig_target/fast
-
-#=============================================================================
-# Target rules for targets named nuttx_copy_and_apps_target
-
-# Build rule for target.
-nuttx_copy_and_apps_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_and_apps_target
-.PHONY : nuttx_copy_and_apps_target
-
-# fast build rule for target.
-nuttx_copy_and_apps_target/fast:
-	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
-.PHONY : nuttx_copy_and_apps_target/fast
-
-#=============================================================================
-# Target rules for targets named nuttx_context
-
-# Build rule for target.
-nuttx_context: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nuttx_context
-.PHONY : nuttx_context
-
-# fast build rule for target.
-nuttx_context/fast:
-	$(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
-.PHONY : nuttx_context/fast
-
-#=============================================================================
-# Target rules for targets named nuttx_copy_config_dir_target
-
-# Build rule for target.
-nuttx_copy_config_dir_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_config_dir_target
-.PHONY : nuttx_copy_config_dir_target
-
-# fast build rule for target.
-nuttx_copy_config_dir_target/fast:
-	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build
-.PHONY : nuttx_copy_config_dir_target/fast
-
-#=============================================================================
-# Target rules for targets named nuttx_config_target
-
-# Build rule for target.
-nuttx_config_target: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_target
-.PHONY : nuttx_config_target
-
-# fast build rule for target.
-nuttx_config_target/fast:
-	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
-.PHONY : nuttx_config_target/fast
 
 #=============================================================================
 # Target rules for targets named do_nothing
@@ -322,6 +231,370 @@ hello: cmake_check_build_system
 hello/fast:
 	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
+
+#=============================================================================
+# Target rules for targets named embedded_project_template
+
+# Build rule for target.
+embedded_project_template: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 embedded_project_template
+.PHONY : embedded_project_template
+
+# fast build rule for target.
+embedded_project_template/fast:
+	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
+.PHONY : embedded_project_template/fast
+
+#=============================================================================
+# Target rules for targets named weak_symbols
+
+# Build rule for target.
+weak_symbols: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 weak_symbols
+.PHONY : weak_symbols
+
+# fast build rule for target.
+weak_symbols/fast:
+	$(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
+.PHONY : weak_symbols/fast
+
+#=============================================================================
+# Target rules for targets named menuconfig_nuttx
+
+# Build rule for target.
+menuconfig_nuttx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menuconfig_nuttx
+.PHONY : menuconfig_nuttx
+
+# fast build rule for target.
+menuconfig_nuttx/fast:
+	$(MAKE) -f NuttX/CMakeFiles/menuconfig_nuttx.dir/build.make NuttX/CMakeFiles/menuconfig_nuttx.dir/build
+.PHONY : menuconfig_nuttx/fast
+
+#=============================================================================
+# Target rules for targets named menuconfig
+
+# Build rule for target.
+menuconfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menuconfig
+.PHONY : menuconfig
+
+# fast build rule for target.
+menuconfig/fast:
+	$(MAKE) -f NuttX/CMakeFiles/menuconfig.dir/build.make NuttX/CMakeFiles/menuconfig.dir/build
+.PHONY : menuconfig/fast
+
+#=============================================================================
+# Target rules for targets named olddefconfig_nuttx
+
+# Build rule for target.
+olddefconfig_nuttx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 olddefconfig_nuttx
+.PHONY : olddefconfig_nuttx
+
+# fast build rule for target.
+olddefconfig_nuttx/fast:
+	$(MAKE) -f NuttX/CMakeFiles/olddefconfig_nuttx.dir/build.make NuttX/CMakeFiles/olddefconfig_nuttx.dir/build
+.PHONY : olddefconfig_nuttx/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_mm_build
+
+# Build rule for target.
+nuttx_mm_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_mm_build
+.PHONY : nuttx_mm_build
+
+# fast build rule for target.
+nuttx_mm_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_mm_build.dir/build.make NuttX/CMakeFiles/nuttx_mm_build.dir/build
+.PHONY : nuttx_mm_build/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_c_build
+
+# Build rule for target.
+nuttx_c_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_c_build
+.PHONY : nuttx_c_build
+
+# fast build rule for target.
+nuttx_c_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_c_build.dir/build.make NuttX/CMakeFiles/nuttx_c_build.dir/build
+.PHONY : nuttx_c_build/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_config_target
+
+# Build rule for target.
+nuttx_config_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_target
+.PHONY : nuttx_config_target
+
+# fast build rule for target.
+nuttx_config_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
+.PHONY : nuttx_config_target/fast
+
+#=============================================================================
+# Target rules for targets named qconfig
+
+# Build rule for target.
+qconfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 qconfig
+.PHONY : qconfig
+
+# fast build rule for target.
+qconfig/fast:
+	$(MAKE) -f NuttX/CMakeFiles/qconfig.dir/build.make NuttX/CMakeFiles/qconfig.dir/build
+.PHONY : qconfig/fast
+
+#=============================================================================
+# Target rules for targets named oldconfig
+
+# Build rule for target.
+oldconfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oldconfig
+.PHONY : oldconfig
+
+# fast build rule for target.
+oldconfig/fast:
+	$(MAKE) -f NuttX/CMakeFiles/oldconfig.dir/build.make NuttX/CMakeFiles/oldconfig.dir/build
+.PHONY : oldconfig/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_fs_build
+
+# Build rule for target.
+nuttx_fs_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_fs_build
+.PHONY : nuttx_fs_build
+
+# fast build rule for target.
+nuttx_fs_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_fs_build.dir/build.make NuttX/CMakeFiles/nuttx_fs_build.dir/build
+.PHONY : nuttx_fs_build/fast
+
+#=============================================================================
+# Target rules for targets named oldconfig_nuttx
+
+# Build rule for target.
+oldconfig_nuttx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 oldconfig_nuttx
+.PHONY : oldconfig_nuttx
+
+# fast build rule for target.
+oldconfig_nuttx/fast:
+	$(MAKE) -f NuttX/CMakeFiles/oldconfig_nuttx.dir/build.make NuttX/CMakeFiles/oldconfig_nuttx.dir/build
+.PHONY : oldconfig_nuttx/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_apps_build
+
+# Build rule for target.
+nuttx_apps_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_apps_build
+.PHONY : nuttx_apps_build
+
+# fast build rule for target.
+nuttx_apps_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_apps_build.dir/build.make NuttX/CMakeFiles/nuttx_apps_build.dir/build
+.PHONY : nuttx_apps_build/fast
+
+#=============================================================================
+# Target rules for targets named olddefconfig
+
+# Build rule for target.
+olddefconfig: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 olddefconfig
+.PHONY : olddefconfig
+
+# fast build rule for target.
+olddefconfig/fast:
+	$(MAKE) -f NuttX/CMakeFiles/olddefconfig.dir/build.make NuttX/CMakeFiles/olddefconfig.dir/build
+.PHONY : olddefconfig/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_copy_config_dir_target
+
+# Build rule for target.
+nuttx_copy_config_dir_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_config_dir_target
+.PHONY : nuttx_copy_config_dir_target
+
+# fast build rule for target.
+nuttx_copy_config_dir_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build
+.PHONY : nuttx_copy_config_dir_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_context
+
+# Build rule for target.
+nuttx_context: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_context
+.PHONY : nuttx_context
+
+# fast build rule for target.
+nuttx_context/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
+.PHONY : nuttx_context/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_copy_and_apps_target
+
+# Build rule for target.
+nuttx_copy_and_apps_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_copy_and_apps_target
+.PHONY : nuttx_copy_and_apps_target
+
+# fast build rule for target.
+nuttx_copy_and_apps_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
+.PHONY : nuttx_copy_and_apps_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_config_kconfig_target
+
+# Build rule for target.
+nuttx_config_kconfig_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_config_kconfig_target
+.PHONY : nuttx_config_kconfig_target
+
+# fast build rule for target.
+nuttx_config_kconfig_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
+.PHONY : nuttx_config_kconfig_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_boards_build
+
+# Build rule for target.
+nuttx_boards_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_boards_build
+.PHONY : nuttx_boards_build
+
+# fast build rule for target.
+nuttx_boards_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_boards_build.dir/build.make NuttX/CMakeFiles/nuttx_boards_build.dir/build
+.PHONY : nuttx_boards_build/fast
+
+#=============================================================================
+# Target rules for targets named qconfig_nuttx
+
+# Build rule for target.
+qconfig_nuttx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 qconfig_nuttx
+.PHONY : qconfig_nuttx
+
+# fast build rule for target.
+qconfig_nuttx/fast:
+	$(MAKE) -f NuttX/CMakeFiles/qconfig_nuttx.dir/build.make NuttX/CMakeFiles/qconfig_nuttx.dir/build
+.PHONY : qconfig_nuttx/fast
+
+#=============================================================================
+# Target rules for targets named config_file_target
+
+# Build rule for target.
+config_file_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 config_file_target
+.PHONY : config_file_target
+
+# fast build rule for target.
+config_file_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/config_file_target.dir/build.make NuttX/CMakeFiles/config_file_target.dir/build
+.PHONY : config_file_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_drivers_build
+
+# Build rule for target.
+nuttx_drivers_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_drivers_build
+.PHONY : nuttx_drivers_build
+
+# fast build rule for target.
+nuttx_drivers_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_drivers_build.dir/build.make NuttX/CMakeFiles/nuttx_drivers_build.dir/build
+.PHONY : nuttx_drivers_build/fast
+
+#=============================================================================
+# Target rules for targets named builtins_clean_target
+
+# Build rule for target.
+builtins_clean_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 builtins_clean_target
+.PHONY : builtins_clean_target
+
+# fast build rule for target.
+builtins_clean_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/builtins_clean_target.dir/build.make NuttX/CMakeFiles/builtins_clean_target.dir/build
+.PHONY : builtins_clean_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_xx_build
+
+# Build rule for target.
+nuttx_xx_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_xx_build
+.PHONY : nuttx_xx_build
+
+# fast build rule for target.
+nuttx_xx_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_xx_build.dir/build.make NuttX/CMakeFiles/nuttx_xx_build.dir/build
+.PHONY : nuttx_xx_build/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_sched_build
+
+# Build rule for target.
+nuttx_sched_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_sched_build
+.PHONY : nuttx_sched_build
+
+# fast build rule for target.
+nuttx_sched_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_sched_build.dir/build.make NuttX/CMakeFiles/nuttx_sched_build.dir/build
+.PHONY : nuttx_sched_build/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_builtin_list_target
+
+# Build rule for target.
+nuttx_builtin_list_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_builtin_list_target
+.PHONY : nuttx_builtin_list_target
+
+# fast build rule for target.
+nuttx_builtin_list_target/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build.make NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build
+.PHONY : nuttx_builtin_list_target/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_arch_build
+
+# Build rule for target.
+nuttx_arch_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_arch_build
+.PHONY : nuttx_arch_build
+
+# fast build rule for target.
+nuttx_arch_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_arch_build.dir/build.make NuttX/CMakeFiles/nuttx_arch_build.dir/build
+.PHONY : nuttx_arch_build/fast
+
+#=============================================================================
+# Target rules for targets named nuttx_binfmt_build
+
+# Build rule for target.
+nuttx_binfmt_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nuttx_binfmt_build
+.PHONY : nuttx_binfmt_build
+
+# fast build rule for target.
+nuttx_binfmt_build/fast:
+	$(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/build
+.PHONY : nuttx_binfmt_build/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -396,23 +669,44 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... git_nuttx_apps"
+	@echo "... rebuild_cache"
 	@echo "... install/local"
 	@echo "... git_nuttx"
 	@echo "... test"
+	@echo "... list_install_components"
+	@echo "... git_nuttx_apps"
 	@echo "... doxygen"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... embedded_project_template"
-	@echo "... config_file_target"
-	@echo "... nuttx_config_kconfig_target"
-	@echo "... nuttx_copy_and_apps_target"
-	@echo "... nuttx_context"
-	@echo "... nuttx_copy_config_dir_target"
-	@echo "... nuttx_config_target"
 	@echo "... do_nothing"
 	@echo "... hello"
+	@echo "... embedded_project_template"
+	@echo "... weak_symbols"
+	@echo "... menuconfig_nuttx"
+	@echo "... menuconfig"
+	@echo "... olddefconfig_nuttx"
+	@echo "... nuttx_mm_build"
+	@echo "... nuttx_c_build"
+	@echo "... nuttx_config_target"
+	@echo "... qconfig"
+	@echo "... oldconfig"
+	@echo "... nuttx_fs_build"
+	@echo "... oldconfig_nuttx"
+	@echo "... nuttx_apps_build"
+	@echo "... olddefconfig"
+	@echo "... nuttx_copy_config_dir_target"
+	@echo "... nuttx_context"
+	@echo "... nuttx_copy_and_apps_target"
+	@echo "... nuttx_config_kconfig_target"
+	@echo "... nuttx_boards_build"
+	@echo "... qconfig_nuttx"
+	@echo "... config_file_target"
+	@echo "... nuttx_drivers_build"
+	@echo "... builtins_clean_target"
+	@echo "... nuttx_xx_build"
+	@echo "... nuttx_sched_build"
+	@echo "... nuttx_builtin_list_target"
+	@echo "... nuttx_arch_build"
+	@echo "... nuttx_binfmt_build"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"

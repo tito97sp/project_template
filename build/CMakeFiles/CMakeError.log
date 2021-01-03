@@ -1,22 +1,45 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/arm-none-eabi-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a(lib_a-exit.o): In function `exit':
+/build/newlib-jo3xW1/newlib-2.4.0.20160527/build/arm-none-eabi/newlib/libc/stdlib/../../../../../newlib/libc/stdlib/exit.c:70: undefined reference to `_exit'
+collect2: error: ld returned 1 exit status
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/arm-none-eabi-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/libc.a(lib_a-exit.o): In function `exit':
+/build/newlib-jo3xW1/newlib-2.4.0.20160527/build/arm-none-eabi/newlib/libc/stdlib/../../../../../newlib/libc/stdlib/exit.c:70: undefined reference to `_exit'
+collect2: error: ld returned 1 exit status
+
+
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3d965/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3d965.dir/build.make CMakeFiles/cmTC_3d965.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_a0367/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a0367.dir/build.make CMakeFiles/cmTC_a0367.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3d965.dir/CheckSymbolExists.c.o
-/usr/bin/clang-6.0    -o CMakeFiles/cmTC_3d965.dir/CheckSymbolExists.c.o   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_3d965
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d965.dir/link.txt --verbose=1
-/usr/bin/clang-6.0      -rdynamic CMakeFiles/cmTC_3d965.dir/CheckSymbolExists.c.o  -o cmTC_3d965 
-CMakeFiles/cmTC_3d965.dir/CheckSymbolExists.c.o: En la función `main':
-CheckSymbolExists.c:(.text+0x19): referencia a `pthread_create' sin definir
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-CMakeFiles/cmTC_3d965.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_3d965'
-make[1]: *** [cmTC_3d965] Error 1
+Building C object CMakeFiles/cmTC_a0367.dir/CheckSymbolExists.c.obj
+/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard    -o CMakeFiles/cmTC_a0367.dir/CheckSymbolExists.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function 'main':
+/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: 'pthread_create' undeclared (first use in this function)
+   return ((int*)(&pthread_create))[argc];
+                   ^~~~~~~~~~~~~~
+/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_a0367.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_a0367.dir/CheckSymbolExists.c.obj'
+make[1]: *** [CMakeFiles/cmTC_a0367.dir/CheckSymbolExists.c.obj] Error 1
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_3d965/fast'
-make: *** [cmTC_3d965/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_a0367/fast'
+make: *** [cmTC_a0367/fast] Error 2
 
 File /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +59,65 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0ad4e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0ad4e.dir/build.make CMakeFiles/cmTC_0ad4e.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_c0456/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c0456.dir/build.make CMakeFiles/cmTC_c0456.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0ad4e.dir/CheckFunctionExists.c.o
-/usr/bin/clang-6.0   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0ad4e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0ad4e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ad4e.dir/link.txt --verbose=1
-/usr/bin/clang-6.0  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0ad4e.dir/CheckFunctionExists.c.o  -o cmTC_0ad4e -lpthreads 
-/usr/bin/ld: no se puede encontrar -lpthreads
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
-CMakeFiles/cmTC_0ad4e.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_0ad4e'
-make[1]: *** [cmTC_0ad4e] Error 1
+Building C object CMakeFiles/cmTC_c0456.dir/CheckFunctionExists.c.obj
+/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c0456.dir/CheckFunctionExists.c.obj   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c0456
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0456.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DCHECK_FUNCTION_EXISTS=pthread_create  --specs=nosys.specs  CMakeFiles/cmTC_c0456.dir/CheckFunctionExists.c.obj  -o cmTC_c0456 -lpthreads 
+/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c0456.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_c0456'
+make[1]: *** [cmTC_c0456] Error 1
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_0ad4e/fast'
-make: *** [cmTC_0ad4e/fast] Error 2
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_c0456/fast'
+make: *** [cmTC_c0456/fast] Error 2
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e5426/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5426.dir/build.make CMakeFiles/cmTC_e5426.dir/build
+make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5426.dir/CheckFunctionExists.c.obj
+/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e5426.dir/CheckFunctionExists.c.obj   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e5426
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5426.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard -DCHECK_FUNCTION_EXISTS=pthread_create  --specs=nosys.specs  CMakeFiles/cmTC_e5426.dir/CheckFunctionExists.c.obj  -o cmTC_e5426 -lpthread 
+/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/ld: cannot find -lpthread
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e5426.dir/build.make:97: fallo en las instrucciones para el objetivo 'cmTC_e5426'
+make[1]: *** [cmTC_e5426] Error 1
+make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_e5426/fast'
+make: *** [cmTC_e5426/fast] Error 2
+
+
+Determining if compiler accepts -pthread failed with the following output:
+Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dd75b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dd75b.dir/build.make CMakeFiles/cmTC_dd75b.dir/build
+make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dd75b.dir/CheckForPthreads.c.obj
+/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard    -o CMakeFiles/cmTC_dd75b.dir/CheckForPthreads.c.obj   -c /usr/share/cmake-3.10/Modules/CheckForPthreads.c
+/usr/share/cmake-3.10/Modules/CheckForPthreads.c: In function 'main':
+/usr/share/cmake-3.10/Modules/CheckForPthreads.c:11:3: error: unknown type name 'pthread_t'
+   pthread_t thread;
+   ^~~~~~~~~
+/usr/share/cmake-3.10/Modules/CheckForPthreads.c:12:3: warning: implicit declaration of function 'pthread_create' [-Wimplicit-function-declaration]
+   pthread_create(&thread, 0, start_routine, 0);
+   ^~~~~~~~~~~~~~
+/usr/share/cmake-3.10/Modules/CheckForPthreads.c:13:3: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+   pthread_join(thread, 0);
+   ^~~~~~~~~~~~
+CMakeFiles/cmTC_dd75b.dir/build.make:65: fallo en las instrucciones para el objetivo 'CMakeFiles/cmTC_dd75b.dir/CheckForPthreads.c.obj'
+make[1]: *** [CMakeFiles/cmTC_dd75b.dir/CheckForPthreads.c.obj] Error 1
+make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
+Makefile:126: fallo en las instrucciones para el objetivo 'cmTC_dd75b/fast'
+make: *** [cmTC_dd75b/fast] Error 2
 
 

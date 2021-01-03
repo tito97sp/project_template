@@ -5,17 +5,19 @@
 # optionally enable cmake testing (supported only on posix)
 configure_file(${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt.in External/googletest/googletest-download/CMakeLists.txt)
 
-execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" . 
   RESULT_VARIABLE     result
   WORKING_DIRECTORY   ${BINARY_DIR}/External/googletest/googletest-download 
+  OUTPUT_QUIET
 )
 if(result)
   message(FATAL_ERROR "CMake step for googletest failed: ${result}")
 endif()
 
-execute_process(COMMAND ${CMAKE_COMMAND} --build .
+execute_process(COMMAND ${CMAKE_COMMAND} --build . 
   RESULT_VARIABLE     result
   WORKING_DIRECTORY   ${BINARY_DIR}/External/googletest/googletest-download 
+  OUTPUT_QUIET
 )
 if(result)
   message(FATAL_ERROR "Build step for googletest failed: ${result}")
