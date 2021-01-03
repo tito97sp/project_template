@@ -1,3 +1,0 @@
-/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-download/CMakeFiles/rebuild_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-download/CMakeFiles/googletest.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/External/googletest/googletest-download/CMakeFiles/edit_cache.dir

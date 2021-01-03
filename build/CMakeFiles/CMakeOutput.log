@@ -35,28 +35,28 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1d099/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1d099.dir/build.make CMakeFiles/cmTC_1d099.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_3b113/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b113.dir/build.make CMakeFiles/cmTC_3b113.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1d099.dir/testCXXCompiler.cxx.obj
-/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_1d099.dir/testCXXCompiler.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_1d099
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d099.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_1d099.dir/testCXXCompiler.cxx.obj  -o cmTC_1d099 
+Building CXX object CMakeFiles/cmTC_3b113.dir/testCXXCompiler.cxx.obj
+/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_3b113.dir/testCXXCompiler.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_3b113
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b113.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_3b113.dir/testCXXCompiler.cxx.obj  -o cmTC_3b113 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f1f8c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f1f8c.dir/build.make CMakeFiles/cmTC_f1f8c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_dcb7f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dcb7f.dir/build.make CMakeFiles/cmTC_dcb7f.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj
-/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_f1f8c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1f8c.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs -v CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_f1f8c 
+Building CXX object CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj
+/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_dcb7f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcb7f.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs -v CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_dcb7f 
 Using built-in specs.
 Reading specs from /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -68,9 +68,9 @@ Thread model: single
 gcc version 6.3.1 20170620 (15:6.3.1+svn253039-1build1) 
 COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/
 LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_f1f8c'
- /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfxBhSv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_f1f8c /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o
-COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_f1f8c'
+COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_dcb7f'
+ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cclufP5w.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_dcb7f /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o
+COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_dcb7f'
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -78,14 +78,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f1f8c/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f1f8c.dir/build.make CMakeFiles/cmTC_f1f8c.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_dcb7f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_dcb7f.dir/build.make CMakeFiles/cmTC_dcb7f.dir/build]
   ignore line: [make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_f1f8c]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f1f8c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/arm-none-eabi-g++     --specs=nosys.specs -v CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_f1f8c ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/usr/bin/arm-none-eabi-g++     -o CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_dcb7f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dcb7f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/arm-none-eabi-g++     --specs=nosys.specs -v CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_dcb7f ]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -97,13 +97,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 6.3.1 20170620 (15:6.3.1+svn253039-1build1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_f1f8c']
-  link line: [ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfxBhSv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_f1f8c /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_dcb7f']
+  link line: [ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cclufP5w.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_dcb7f /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj -lstdc++ -lm --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o]
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccfxBhSv.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cclufP5w.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -111,13 +111,13 @@ Parsed CXX implicit link information from above output:
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-X] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f1f8c] ==> ignore
+    arg [cmTC_dcb7f] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/crti.o] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o] ==> ignore
     arg [-L/usr/lib/gcc/arm-none-eabi/6.3.1] ==> dir [/usr/lib/gcc/arm-none-eabi/6.3.1]
     arg [-L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib] ==> dir [/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib]
-    arg [CMakeFiles/cmTC_f1f8c.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [CMakeFiles/cmTC_dcb7f.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [--start-group] ==> ignore
@@ -143,14 +143,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2b6c5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2b6c5.dir/build.make CMakeFiles/cmTC_2b6c5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_5e7e1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5e7e1.dir/build.make CMakeFiles/cmTC_5e7e1.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_2b6c5.dir/feature_tests.cxx.obj
-/usr/bin/arm-none-eabi-g++    -std=c++1z -o CMakeFiles/cmTC_2b6c5.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_2b6c5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b6c5.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_2b6c5.dir/feature_tests.cxx.obj  -o cmTC_2b6c5 
+Building CXX object CMakeFiles/cmTC_5e7e1.dir/feature_tests.cxx.obj
+/usr/bin/arm-none-eabi-g++    -std=c++1z -o CMakeFiles/cmTC_5e7e1.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_5e7e1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e7e1.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_5e7e1.dir/feature_tests.cxx.obj  -o cmTC_5e7e1 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -216,14 +216,14 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4721a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4721a.dir/build.make CMakeFiles/cmTC_4721a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2e1de/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2e1de.dir/build.make CMakeFiles/cmTC_2e1de.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4721a.dir/feature_tests.cxx.obj
-/usr/bin/arm-none-eabi-g++    -std=c++14 -o CMakeFiles/cmTC_4721a.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4721a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4721a.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_4721a.dir/feature_tests.cxx.obj  -o cmTC_4721a 
+Building CXX object CMakeFiles/cmTC_2e1de.dir/feature_tests.cxx.obj
+/usr/bin/arm-none-eabi-g++    -std=c++14 -o CMakeFiles/cmTC_2e1de.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_2e1de
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e1de.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_2e1de.dir/feature_tests.cxx.obj  -o cmTC_2e1de 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -289,14 +289,14 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ba1e1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ba1e1.dir/build.make CMakeFiles/cmTC_ba1e1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b59ab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b59ab.dir/build.make CMakeFiles/cmTC_b59ab.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ba1e1.dir/feature_tests.cxx.obj
-/usr/bin/arm-none-eabi-g++    -std=c++11 -o CMakeFiles/cmTC_ba1e1.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ba1e1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba1e1.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_ba1e1.dir/feature_tests.cxx.obj  -o cmTC_ba1e1 
+Building CXX object CMakeFiles/cmTC_b59ab.dir/feature_tests.cxx.obj
+/usr/bin/arm-none-eabi-g++    -std=c++11 -o CMakeFiles/cmTC_b59ab.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b59ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b59ab.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_b59ab.dir/feature_tests.cxx.obj  -o cmTC_b59ab 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -362,14 +362,14 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5483f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5483f.dir/build.make CMakeFiles/cmTC_5483f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0784a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0784a.dir/build.make CMakeFiles/cmTC_0784a.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_5483f.dir/feature_tests.cxx.obj
-/usr/bin/arm-none-eabi-g++    -std=c++98 -o CMakeFiles/cmTC_5483f.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_5483f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5483f.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_5483f.dir/feature_tests.cxx.obj  -o cmTC_5483f 
+Building CXX object CMakeFiles/cmTC_0784a.dir/feature_tests.cxx.obj
+/usr/bin/arm-none-eabi-g++    -std=c++98 -o CMakeFiles/cmTC_0784a.dir/feature_tests.cxx.obj -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_0784a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0784a.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-g++     --specs=nosys.specs  CMakeFiles/cmTC_0784a.dir/feature_tests.cxx.obj  -o cmTC_0784a 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -433,28 +433,28 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_38470/fast"
-/usr/bin/make -f CMakeFiles/cmTC_38470.dir/build.make CMakeFiles/cmTC_38470.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_1d007/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1d007.dir/build.make CMakeFiles/cmTC_1d007.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_38470.dir/testCCompiler.c.obj
-/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_38470.dir/testCCompiler.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_38470
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38470.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_38470.dir/testCCompiler.c.obj  -o cmTC_38470 
+Building C object CMakeFiles/cmTC_1d007.dir/testCCompiler.c.obj
+/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_1d007.dir/testCCompiler.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_1d007
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d007.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_1d007.dir/testCCompiler.c.obj  -o cmTC_1d007 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7b9e1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7b9e1.dir/build.make CMakeFiles/cmTC_7b9e1.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_85238/fast"
+/usr/bin/make -f CMakeFiles/cmTC_85238.dir/build.make CMakeFiles/cmTC_85238.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj
-/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_7b9e1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b9e1.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs -v CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj  -o cmTC_7b9e1 
+Building C object CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj
+/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_85238
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85238.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs -v CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj  -o cmTC_85238 
 Using built-in specs.
 Reading specs from /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/nosys.specs
 rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence
@@ -466,9 +466,9 @@ Thread model: single
 gcc version 6.3.1 20170620 (15:6.3.1+svn253039-1build1) 
 COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/
 LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/
-COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_7b9e1'
- /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cchRdr1Z.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_7b9e1 /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o
-COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_7b9e1'
+COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_85238'
+ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCi3h5d.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_85238 /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o
+COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_85238'
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -476,14 +476,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(arm-none-eabi-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7b9e1/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7b9e1.dir/build.make CMakeFiles/cmTC_7b9e1.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_85238/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_85238.dir/build.make CMakeFiles/cmTC_85238.dir/build]
   ignore line: [make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_7b9e1]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b9e1.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs -v CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj  -o cmTC_7b9e1 ]
+  ignore line: [Building C object CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/bin/arm-none-eabi-gcc    -o CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_85238]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85238.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs -v CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj  -o cmTC_85238 ]
   ignore line: [Using built-in specs.]
   ignore line: [Reading specs from /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/nosys.specs]
   ignore line: [rename spec link_gcc_c_sequence to nosys_link_gcc_c_sequence]
@@ -495,13 +495,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 6.3.1 20170620 (15:6.3.1+svn253039-1build1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/bin/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/arm-none-eabi/6.3.1/:/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_7b9e1']
-  link line: [ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cchRdr1Z.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_7b9e1 /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-specs=nosys.specs' '-v' '-o' 'cmTC_85238']
+  link line: [ /usr/lib/gcc/arm-none-eabi/6.3.1/collect2 -plugin /usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCi3h5d.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -X -o cmTC_85238 /usr/lib/gcc/arm-none-eabi/6.3.1/crti.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o /usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o -L/usr/lib/gcc/arm-none-eabi/6.3.1 -L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lc --end-group --start-group -lgcc -lc -lnosys --end-group /usr/lib/gcc/arm-none-eabi/6.3.1/crtend.o /usr/lib/gcc/arm-none-eabi/6.3.1/crtn.o]
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/arm-none-eabi/6.3.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cchRdr1Z.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccCi3h5d.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -509,13 +509,13 @@ Parsed C implicit link information from above output:
     arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
     arg [-X] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7b9e1] ==> ignore
+    arg [cmTC_85238] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/crti.o] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/crtbegin.o] ==> ignore
     arg [/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib/crt0.o] ==> ignore
     arg [-L/usr/lib/gcc/arm-none-eabi/6.3.1] ==> dir [/usr/lib/gcc/arm-none-eabi/6.3.1]
     arg [-L/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib] ==> dir [/usr/lib/gcc/arm-none-eabi/6.3.1/../../../arm-none-eabi/lib]
-    arg [CMakeFiles/cmTC_7b9e1.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [CMakeFiles/cmTC_85238.dir/CMakeCCompilerABI.c.obj] ==> ignore
     arg [--start-group] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-lc] ==> lib [c]
@@ -539,14 +539,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5dc80/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5dc80.dir/build.make CMakeFiles/cmTC_5dc80.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_f5b36/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f5b36.dir/build.make CMakeFiles/cmTC_f5b36.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5dc80.dir/feature_tests.c.obj
-/usr/bin/arm-none-eabi-gcc   -std=c11 -o CMakeFiles/cmTC_5dc80.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5dc80
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5dc80.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_5dc80.dir/feature_tests.c.obj  -o cmTC_5dc80 
+Building C object CMakeFiles/cmTC_f5b36.dir/feature_tests.c.obj
+/usr/bin/arm-none-eabi-gcc   -std=c11 -o CMakeFiles/cmTC_f5b36.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_f5b36
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5b36.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_f5b36.dir/feature_tests.c.obj  -o cmTC_f5b36 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -559,14 +559,14 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_057d8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_057d8.dir/build.make CMakeFiles/cmTC_057d8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_60534/fast"
+/usr/bin/make -f CMakeFiles/cmTC_60534.dir/build.make CMakeFiles/cmTC_60534.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_057d8.dir/feature_tests.c.obj
-/usr/bin/arm-none-eabi-gcc   -std=c99 -o CMakeFiles/cmTC_057d8.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_057d8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_057d8.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_057d8.dir/feature_tests.c.obj  -o cmTC_057d8 
+Building C object CMakeFiles/cmTC_60534.dir/feature_tests.c.obj
+/usr/bin/arm-none-eabi-gcc   -std=c99 -o CMakeFiles/cmTC_60534.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_60534
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60534.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_60534.dir/feature_tests.c.obj  -o cmTC_60534 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -579,14 +579,14 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d1c91/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d1c91.dir/build.make CMakeFiles/cmTC_d1c91.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0aa6a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0aa6a.dir/build.make CMakeFiles/cmTC_0aa6a.dir/build
 make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d1c91.dir/feature_tests.c.obj
-/usr/bin/arm-none-eabi-gcc   -std=c90 -o CMakeFiles/cmTC_d1c91.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_d1c91
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1c91.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_d1c91.dir/feature_tests.c.obj  -o cmTC_d1c91 
+Building C object CMakeFiles/cmTC_0aa6a.dir/feature_tests.c.obj
+/usr/bin/arm-none-eabi-gcc   -std=c90 -o CMakeFiles/cmTC_0aa6a.dir/feature_tests.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_0aa6a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0aa6a.dir/link.txt --verbose=1
+/usr/bin/arm-none-eabi-gcc    --specs=nosys.specs  CMakeFiles/cmTC_0aa6a.dir/feature_tests.c.obj  -o cmTC_0aa6a 
 make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
 
 
@@ -594,17 +594,3 @@ make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_temp
     Feature record: C_FEATURE:0c_restrict
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
-Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_3bc62/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3bc62.dir/build.make CMakeFiles/cmTC_3bc62.dir/build
-make[1]: se entra en el directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3bc62.dir/CheckIncludeFile.c.obj
-/usr/bin/arm-none-eabi-gcc   -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard    -o CMakeFiles/cmTC_3bc62.dir/CheckIncludeFile.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_3bc62
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3bc62.dir/link.txt --verbose=1
-/usr/bin/arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard   --specs=nosys.specs  CMakeFiles/cmTC_3bc62.dir/CheckIncludeFile.c.obj  -o cmTC_3bc62 
-make[1]: se sale del directorio '/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles/CMakeTmp'
-
-

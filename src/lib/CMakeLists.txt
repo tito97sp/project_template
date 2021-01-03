@@ -1,1 +1,2 @@
 add_subdirectory(do_nothing_example)
+add_subdirectory(version)

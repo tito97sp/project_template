@@ -14,6 +14,7 @@ add_dependencies(${project_name} git_nuttx nuttx_build)
 
 get_property(module_libraries GLOBAL PROPERTY MODULE_LIBRARIES)
 
+
 # build NuttX
 add_subdirectory(NuttX ${BINARY_DIR}/NuttX)
 
@@ -68,11 +69,11 @@ file(RELATIVE_PATH BINARY_DIR_REL ${CMAKE_CURRENT_BINARY_DIR} ${BINARY_DIR})
 # because even relative linker script paths are different for linux, mac and windows
 CYGPATH(BINARY_DIR BINARY_DIR_CYG)
 
-# target_link_libraries(nuttx_arch
-# 	INTERFACE
-# 		drivers_board
+target_link_libraries(nuttx_arch
+ 	INTERFACE
+ 		drivers_board
 # 		arch_hrt
-# )
+	)
 
 target_link_libraries(nuttx_c INTERFACE nuttx_drivers)
 target_link_libraries(nuttx_xx INTERFACE nuttx_c)
@@ -110,6 +111,8 @@ if (config_romfs_root)
 	add_subdirectory(${SOURCE_DIR}/ROMFS ${BINARY_DIR}/ROMFS)
 	target_link_libraries(${project_name} PRIVATE romfs)
 endif()
+
+message(STATUS "Binary_dir_rel ${BINARY_DIR_REL}")
 
 add_custom_command(OUTPUT ${BINARY_DIR_REL}/${BOARD}.bin
 	COMMAND ${CMAKE_OBJCOPY} -O binary ${BINARY_DIR_REL}/${FW_NAME} ${BINARY_DIR_REL}/${BOARD}.bin

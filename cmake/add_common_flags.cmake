@@ -63,7 +63,7 @@ function(add_common_flags)
 
 		# visibility
 		-fvisibility=hidden
-		#-include visibility.h
+		-include visibility.h
 
 		# Warnings
 		-Wall

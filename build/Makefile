@@ -56,30 +56,6 @@ CMAKE_BINARY_DIR = /home/andressanchez/Escritorio/GIT/project_template/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -91,18 +67,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -113,16 +77,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -220,6 +174,32 @@ do_nothing/fast:
 .PHONY : do_nothing/fast
 
 #=============================================================================
+# Target rules for targets named version
+
+# Build rule for target.
+version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 version
+.PHONY : version
+
+# fast build rule for target.
+version/fast:
+	$(MAKE) -f src/lib/version/CMakeFiles/version.dir/build.make src/lib/version/CMakeFiles/version.dir/build
+.PHONY : version/fast
+
+#=============================================================================
+# Target rules for targets named ver_gen
+
+# Build rule for target.
+ver_gen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ver_gen
+.PHONY : ver_gen
+
+# fast build rule for target.
+ver_gen/fast:
+	$(MAKE) -f src/lib/version/CMakeFiles/ver_gen.dir/build.make src/lib/version/CMakeFiles/ver_gen.dir/build
+.PHONY : ver_gen/fast
+
+#=============================================================================
 # Target rules for targets named hello
 
 # Build rule for target.
@@ -231,6 +211,19 @@ hello: cmake_check_build_system
 hello/fast:
 	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
+
+#=============================================================================
+# Target rules for targets named drivers_board
+
+# Build rule for target.
+drivers_board: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 drivers_board
+.PHONY : drivers_board
+
+# fast build rule for target.
+drivers_board/fast:
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build
+.PHONY : drivers_board/fast
 
 #=============================================================================
 # Target rules for targets named embedded_project_template
@@ -596,89 +589,23 @@ nuttx_binfmt_build/fast:
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/build
 .PHONY : nuttx_binfmt_build/fast
 
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named example
-
-# Build rule for target.
-example: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 example
-.PHONY : example
-
-# fast build rule for target.
-example/fast:
-	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/build
-.PHONY : example/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... install/local"
 	@echo "... git_nuttx"
 	@echo "... test"
-	@echo "... list_install_components"
 	@echo "... git_nuttx_apps"
 	@echo "... doxygen"
 	@echo "... edit_cache"
 	@echo "... do_nothing"
+	@echo "... version"
+	@echo "... ver_gen"
 	@echo "... hello"
+	@echo "... drivers_board"
 	@echo "... embedded_project_template"
 	@echo "... weak_symbols"
 	@echo "... menuconfig_nuttx"
@@ -707,11 +634,6 @@ help:
 	@echo "... nuttx_builtin_list_target"
 	@echo "... nuttx_arch_build"
 	@echo "... nuttx_binfmt_build"
-	@echo "... gmock_main"
-	@echo "... gmock"
-	@echo "... gtest_main"
-	@echo "... gtest"
-	@echo "... example"
 .PHONY : help
 
 

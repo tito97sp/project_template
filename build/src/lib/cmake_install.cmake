@@ -35,6 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example/cmake_install.cmake")
+  include("/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version/cmake_install.cmake")
 
 endif()
 

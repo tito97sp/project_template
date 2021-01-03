@@ -102,6 +102,29 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+#=============================================================================
+# find programs and packages
+#
+# Python
+# If using catkin, Python 2 is found since it points
+# to the Python libs installed with the ROS distro
+if (NOT CATKIN_DEVEL_PREFIX)
+	find_package(PythonInterp 3)
+	# We have a custom error message to tell users how to install python3.
+	if (NOT PYTHONINTERP_FOUND)
+		message(FATAL_ERROR "Python 3 not found. Please install Python 3:\n"
+			"    Ubuntu: sudo apt install python3 python3-dev python3-pip\n"
+			"    macOS: brew install python")
+	endif()
+else()
+	find_package(PythonInterp REQUIRED)
+endif()
+
+option(PYTHON_COVERAGE "Python code coverage" OFF)
+if(PYTHON_COVERAGE)
+	message(STATUS "python coverage enabled")
+	set(PYTHON_EXECUTABLE coverage run -p)
+endif()
 
 #=============================================================================
 # get chip and chip manufacturer
@@ -128,11 +151,9 @@ if(EXISTS ${BOARD_DIR}/cmake/init.cmake)
 	include(${BOARD_DIR}/cmake/init.cmake)
 endif()
 
-
 #=============================================================================
 # subdirectories
 #
-
 # add libraries 
 include(add_custom_library)
 add_subdirectory(src/lib EXCLUDE_FROM_ALL)
@@ -157,7 +178,6 @@ endforeach()
 add_subdirectory(platforms/${PLATFORM})
 
 
-
 #=============================================================================
 # doxygen
 #
@@ -167,5 +187,5 @@ include(doxygen/doxygen)
 # testing
 #
 enable_testing()
-include(gtest/gtest)
-add_subdirectory(test)
+#include(gtest/gtest)
+#add_subdirectory(test)

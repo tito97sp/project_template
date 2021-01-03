@@ -37,7 +37,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/cmake_install.cmake")
-  include("/home/andressanchez/Escritorio/GIT/project_template/build/test/cmake_install.cmake")
 
 endif()
 

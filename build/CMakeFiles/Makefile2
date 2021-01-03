@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/andressanchez/Escritorio/GIT/project_template/build
 CMakeFiles/git_nuttx.dir/all:
 	$(MAKE) -f CMakeFiles/git_nuttx.dir/build.make CMakeFiles/git_nuttx.dir/depend
 	$(MAKE) -f CMakeFiles/git_nuttx.dir/build.make CMakeFiles/git_nuttx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=9 "Built target git_nuttx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=15 "Built target git_nuttx"
 .PHONY : CMakeFiles/git_nuttx.dir/all
 
 # Build rule for subdir invocation for target.
@@ -98,12 +98,12 @@ clean: CMakeFiles/git_nuttx.dir/clean
 CMakeFiles/git_nuttx_apps.dir/all:
 	$(MAKE) -f CMakeFiles/git_nuttx_apps.dir/build.make CMakeFiles/git_nuttx_apps.dir/depend
 	$(MAKE) -f CMakeFiles/git_nuttx_apps.dir/build.make CMakeFiles/git_nuttx_apps.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=10 "Built target git_nuttx_apps"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num= "Built target git_nuttx_apps"
 .PHONY : CMakeFiles/git_nuttx_apps.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/git_nuttx_apps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/git_nuttx_apps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : CMakeFiles/git_nuttx_apps.dir/rule
@@ -165,16 +165,19 @@ clean: CMakeFiles/doxygen.dir/clean
 
 # Convenience name for "all" pass in the directory.
 src/lib/all: src/lib/do_nothing_example/all
+src/lib/all: src/lib/version/all
 
 .PHONY : src/lib/all
 
 # Convenience name for "clean" pass in the directory.
 src/lib/clean: src/lib/do_nothing_example/clean
+src/lib/clean: src/lib/version/clean
 
 .PHONY : src/lib/clean
 
 # Convenience name for "preinstall" pass in the directory.
 src/lib/preinstall: src/lib/do_nothing_example/preinstall
+src/lib/preinstall: src/lib/version/preinstall
 
 .PHONY : src/lib/preinstall
 
@@ -225,6 +228,101 @@ src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/clean:
 
 # clean rule for target.
 clean: src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory src/lib/version
+
+# Convenience name for "all" pass in the directory.
+src/lib/version/all: src/lib/version/CMakeFiles/version.dir/all
+src/lib/version/all: src/lib/version/CMakeFiles/ver_gen.dir/all
+
+.PHONY : src/lib/version/all
+
+# Convenience name for "clean" pass in the directory.
+src/lib/version/clean: src/lib/version/CMakeFiles/version.dir/clean
+src/lib/version/clean: src/lib/version/CMakeFiles/ver_gen.dir/clean
+
+.PHONY : src/lib/version/clean
+
+# Convenience name for "preinstall" pass in the directory.
+src/lib/version/preinstall:
+
+.PHONY : src/lib/version/preinstall
+
+#=============================================================================
+# Target rules for target src/lib/version/CMakeFiles/version.dir
+
+# All Build rule for target.
+src/lib/version/CMakeFiles/version.dir/all: src/lib/version/CMakeFiles/ver_gen.dir/all
+src/lib/version/CMakeFiles/version.dir/all: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_mm_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_c_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_fs_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_apps_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_boards_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_drivers_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_xx_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_sched_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_arch_build.dir/all
+src/lib/version/CMakeFiles/version.dir/all: NuttX/CMakeFiles/nuttx_binfmt_build.dir/all
+	$(MAKE) -f src/lib/version/CMakeFiles/version.dir/build.make src/lib/version/CMakeFiles/version.dir/depend
+	$(MAKE) -f src/lib/version/CMakeFiles/version.dir/build.make src/lib/version/CMakeFiles/version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=99,100 "Built target version"
+.PHONY : src/lib/version/CMakeFiles/version.dir/all
+
+# Build rule for subdir invocation for target.
+src/lib/version/CMakeFiles/version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 78
+	$(MAKE) -f CMakeFiles/Makefile2 src/lib/version/CMakeFiles/version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
+.PHONY : src/lib/version/CMakeFiles/version.dir/rule
+
+# Convenience name for target.
+version: src/lib/version/CMakeFiles/version.dir/rule
+
+.PHONY : version
+
+# clean rule for target.
+src/lib/version/CMakeFiles/version.dir/clean:
+	$(MAKE) -f src/lib/version/CMakeFiles/version.dir/build.make src/lib/version/CMakeFiles/version.dir/clean
+.PHONY : src/lib/version/CMakeFiles/version.dir/clean
+
+# clean rule for target.
+clean: src/lib/version/CMakeFiles/version.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/lib/version/CMakeFiles/ver_gen.dir
+
+# All Build rule for target.
+src/lib/version/CMakeFiles/ver_gen.dir/all:
+	$(MAKE) -f src/lib/version/CMakeFiles/ver_gen.dir/build.make src/lib/version/CMakeFiles/ver_gen.dir/depend
+	$(MAKE) -f src/lib/version/CMakeFiles/ver_gen.dir/build.make src/lib/version/CMakeFiles/ver_gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num= "Built target ver_gen"
+.PHONY : src/lib/version/CMakeFiles/ver_gen.dir/all
+
+# Build rule for subdir invocation for target.
+src/lib/version/CMakeFiles/ver_gen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 src/lib/version/CMakeFiles/ver_gen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
+.PHONY : src/lib/version/CMakeFiles/ver_gen.dir/rule
+
+# Convenience name for target.
+ver_gen: src/lib/version/CMakeFiles/ver_gen.dir/rule
+
+.PHONY : ver_gen
+
+# clean rule for target.
+src/lib/version/CMakeFiles/ver_gen.dir/clean:
+	$(MAKE) -f src/lib/version/CMakeFiles/ver_gen.dir/build.make src/lib/version/CMakeFiles/ver_gen.dir/clean
+.PHONY : src/lib/version/CMakeFiles/ver_gen.dir/clean
+
+# clean rule for target.
+clean: src/lib/version/CMakeFiles/ver_gen.dir/clean
 
 .PHONY : clean
 
@@ -287,7 +385,7 @@ boards/stm/nucleo_h743zi/src/all:
 .PHONY : boards/stm/nucleo_h743zi/src/all
 
 # Convenience name for "clean" pass in the directory.
-boards/stm/nucleo_h743zi/src/clean:
+boards/stm/nucleo_h743zi/src/clean: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/clean
 
 .PHONY : boards/stm/nucleo_h743zi/src/clean
 
@@ -295,6 +393,47 @@ boards/stm/nucleo_h743zi/src/clean:
 boards/stm/nucleo_h743zi/src/preinstall:
 
 .PHONY : boards/stm/nucleo_h743zi/src/preinstall
+
+#=============================================================================
+# Target rules for target boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir
+
+# All Build rule for target.
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_mm_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_c_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_fs_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_apps_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_boards_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_drivers_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_xx_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_sched_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_arch_build.dir/all
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all: NuttX/CMakeFiles/nuttx_binfmt_build.dir/all
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/depend
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=7,8,9,10,11,12,13 "Built target drivers_board"
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all
+
+# Build rule for subdir invocation for target.
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 76
+	$(MAKE) -f CMakeFiles/Makefile2 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule
+
+# Convenience name for target.
+drivers_board: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule
+
+.PHONY : drivers_board
+
+# clean rule for target.
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/clean:
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/clean
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/clean
+
+# clean rule for target.
+clean: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory platforms/nuttx
@@ -321,21 +460,22 @@ platforms/nuttx/preinstall: NuttX/preinstall
 # Target rules for target platforms/nuttx/CMakeFiles/embedded_project_template.dir
 
 # All Build rule for target.
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_fs_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: src/modules/hello/CMakeFiles/hello.dir/all
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: CMakeFiles/git_nuttx.dir/all
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/all
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_mm_build.dir/all
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_c_build.dir/all
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_fs_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_apps_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_boards_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_drivers_build.dir/all
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_mm_build.dir/all
-platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_c_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_xx_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_sched_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_arch_build.dir/all
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: NuttX/CMakeFiles/nuttx_binfmt_build.dir/all
+platforms/nuttx/CMakeFiles/embedded_project_template.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/depend
 	$(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=7 "Built target embedded_project_template"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=14 "Built target embedded_project_template"
 .PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/all
 
 # Include target in all.
@@ -345,7 +485,7 @@ all: platforms/nuttx/CMakeFiles/embedded_project_template.dir/all
 
 # Build rule for subdir invocation for target.
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/embedded_project_template.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/rule
@@ -377,7 +517,7 @@ platforms/nuttx/CMakeFiles/weak_symbols.dir/all: platforms/nuttx/CMakeFiles/embe
 
 # Build rule for subdir invocation for target.
 platforms/nuttx/CMakeFiles/weak_symbols.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 73
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 78
 	$(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/weak_symbols.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
@@ -444,12 +584,12 @@ NuttX/preinstall:
 # Target rules for target NuttX/CMakeFiles/menuconfig_nuttx.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/menuconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/menuconfig_nuttx.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/menuconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/menuconfig_nuttx.dir/build.make NuttX/CMakeFiles/menuconfig_nuttx.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/menuconfig_nuttx.dir/build.make NuttX/CMakeFiles/menuconfig_nuttx.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=18,19,20,21 "Built target menuconfig_nuttx"
@@ -457,7 +597,7 @@ NuttX/CMakeFiles/menuconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/menuconfig_nuttx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/menuconfig_nuttx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/menuconfig_nuttx.dir/rule
@@ -489,7 +629,7 @@ NuttX/CMakeFiles/menuconfig.dir/all: NuttX/CMakeFiles/menuconfig_nuttx.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/menuconfig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/menuconfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/menuconfig.dir/rule
@@ -513,20 +653,20 @@ clean: NuttX/CMakeFiles/menuconfig.dir/clean
 # Target rules for target NuttX/CMakeFiles/olddefconfig_nuttx.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/olddefconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/olddefconfig_nuttx.dir/build.make NuttX/CMakeFiles/olddefconfig_nuttx.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/olddefconfig_nuttx.dir/build.make NuttX/CMakeFiles/olddefconfig_nuttx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=92,93,94,95 "Built target olddefconfig_nuttx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=91,92,93 "Built target olddefconfig_nuttx"
 .PHONY : NuttX/CMakeFiles/olddefconfig_nuttx.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/olddefconfig_nuttx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/olddefconfig_nuttx.dir/rule
@@ -550,16 +690,16 @@ clean: NuttX/CMakeFiles/olddefconfig_nuttx.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_mm_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_mm_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_mm_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_mm_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_mm_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_mm_build.dir/build.make NuttX/CMakeFiles/nuttx_mm_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_mm_build.dir/build.make NuttX/CMakeFiles/nuttx_mm_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=74,75,76,77 "Built target nuttx_mm_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=72,73,74,75,76 "Built target nuttx_mm_build"
 .PHONY : NuttX/CMakeFiles/nuttx_mm_build.dir/all
 
 # Build rule for subdir invocation for target.
@@ -588,21 +728,21 @@ clean: NuttX/CMakeFiles/nuttx_mm_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_c_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_c_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_c_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_c_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_c_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_c_build.dir/build.make NuttX/CMakeFiles/nuttx_c_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_c_build.dir/build.make NuttX/CMakeFiles/nuttx_c_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=47,48,49,50,51 "Built target nuttx_c_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=47,48,49,50 "Built target nuttx_c_build"
 .PHONY : NuttX/CMakeFiles/nuttx_c_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_c_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_c_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_c_build.dir/rule
@@ -626,19 +766,19 @@ clean: NuttX/CMakeFiles/nuttx_c_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_config_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_config_target.dir/all: CMakeFiles/git_nuttx.dir/all
 NuttX/CMakeFiles/nuttx_config_target.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_config_target.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_config_target.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_config_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_config_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_target.dir/build.make NuttX/CMakeFiles/nuttx_config_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=54,55,56 "Built target nuttx_config_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=53,54,55 "Built target nuttx_config_target"
 .PHONY : NuttX/CMakeFiles/nuttx_config_target.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_config_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_config_target.dir/rule
@@ -665,12 +805,12 @@ clean: NuttX/CMakeFiles/nuttx_config_target.dir/clean
 NuttX/CMakeFiles/qconfig.dir/all: NuttX/CMakeFiles/qconfig_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/qconfig.dir/build.make NuttX/CMakeFiles/qconfig.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/qconfig.dir/build.make NuttX/CMakeFiles/qconfig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=96 "Built target qconfig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=94 "Built target qconfig"
 .PHONY : NuttX/CMakeFiles/qconfig.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/qconfig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/qconfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/qconfig.dir/rule
@@ -697,12 +837,12 @@ clean: NuttX/CMakeFiles/qconfig.dir/clean
 NuttX/CMakeFiles/oldconfig.dir/all: NuttX/CMakeFiles/oldconfig_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/oldconfig.dir/build.make NuttX/CMakeFiles/oldconfig.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/oldconfig.dir/build.make NuttX/CMakeFiles/oldconfig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=87 "Built target oldconfig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num= "Built target oldconfig"
 .PHONY : NuttX/CMakeFiles/oldconfig.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/oldconfig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/oldconfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/oldconfig.dir/rule
@@ -726,21 +866,21 @@ clean: NuttX/CMakeFiles/oldconfig.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_fs_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_fs_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_fs_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_fs_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_fs_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_fs_build.dir/build.make NuttX/CMakeFiles/nuttx_fs_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_fs_build.dir/build.make NuttX/CMakeFiles/nuttx_fs_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=69,70,71,72,73 "Built target nuttx_fs_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=68,69,70,71 "Built target nuttx_fs_build"
 .PHONY : NuttX/CMakeFiles/nuttx_fs_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_fs_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_fs_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_fs_build.dir/rule
@@ -764,20 +904,20 @@ clean: NuttX/CMakeFiles/nuttx_fs_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/oldconfig_nuttx.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/oldconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/oldconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/oldconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/oldconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/oldconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/oldconfig_nuttx.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/oldconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/oldconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/oldconfig_nuttx.dir/build.make NuttX/CMakeFiles/oldconfig_nuttx.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/oldconfig_nuttx.dir/build.make NuttX/CMakeFiles/oldconfig_nuttx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=88,89,90,91 "Built target oldconfig_nuttx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=86,87,88,89 "Built target oldconfig_nuttx"
 .PHONY : NuttX/CMakeFiles/oldconfig_nuttx.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/oldconfig_nuttx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/oldconfig_nuttx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/oldconfig_nuttx.dir/rule
@@ -801,16 +941,16 @@ clean: NuttX/CMakeFiles/oldconfig_nuttx.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_apps_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_apps_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
-NuttX/CMakeFiles/nuttx_apps_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/config_file_target.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/builtins_clean_target.dir/all
-NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_apps_build.dir/all: NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all
+NuttX/CMakeFiles/nuttx_apps_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_apps_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_apps_build.dir/build.make NuttX/CMakeFiles/nuttx_apps_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_apps_build.dir/build.make NuttX/CMakeFiles/nuttx_apps_build.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=22,23,24,25,26,27 "Built target nuttx_apps_build"
@@ -845,12 +985,12 @@ clean: NuttX/CMakeFiles/nuttx_apps_build.dir/clean
 NuttX/CMakeFiles/olddefconfig.dir/all: NuttX/CMakeFiles/olddefconfig_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/olddefconfig.dir/build.make NuttX/CMakeFiles/olddefconfig.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/olddefconfig.dir/build.make NuttX/CMakeFiles/olddefconfig.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num= "Built target olddefconfig"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=90 "Built target olddefconfig"
 .PHONY : NuttX/CMakeFiles/olddefconfig.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/olddefconfig.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/olddefconfig.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/olddefconfig.dir/rule
@@ -874,18 +1014,18 @@ clean: NuttX/CMakeFiles/olddefconfig.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all: CMakeFiles/git_nuttx.dir/all
 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=62,63,64 "Built target nuttx_copy_config_dir_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=61,62,63 "Built target nuttx_copy_config_dir_target"
 .PHONY : NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/rule
@@ -909,20 +1049,20 @@ clean: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_context.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_context.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_context.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_context.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_context.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_context.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_context.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_context.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_context.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_context.dir/build.make NuttX/CMakeFiles/nuttx_context.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=57,58,59,60 "Built target nuttx_context"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=56,57,58,59 "Built target nuttx_context"
 .PHONY : NuttX/CMakeFiles/nuttx_context.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_context.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_context.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_context.dir/rule
@@ -946,16 +1086,16 @@ clean: NuttX/CMakeFiles/nuttx_context.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all: CMakeFiles/git_nuttx.dir/all
 NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build.make NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=61 "Built target nuttx_copy_and_apps_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=60 "Built target nuttx_copy_and_apps_target"
 .PHONY : NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/rule
@@ -979,17 +1119,17 @@ clean: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_config_kconfig_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all: CMakeFiles/git_nuttx.dir/all
 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build.make NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=52,53 "Built target nuttx_config_kconfig_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=51,52 "Built target nuttx_config_kconfig_target"
 .PHONY : NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/rule
@@ -1013,21 +1153,21 @@ clean: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_boards_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_boards_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_boards_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_boards_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_boards_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_boards_build.dir/build.make NuttX/CMakeFiles/nuttx_boards_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_boards_build.dir/build.make NuttX/CMakeFiles/nuttx_boards_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=37,38,39,40,41 "Built target nuttx_boards_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=37,38,39,40 "Built target nuttx_boards_build"
 .PHONY : NuttX/CMakeFiles/nuttx_boards_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_boards_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_boards_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_boards_build.dir/rule
@@ -1051,20 +1191,20 @@ clean: NuttX/CMakeFiles/nuttx_boards_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/qconfig_nuttx.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/qconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/qconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/qconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/qconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/qconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/qconfig_nuttx.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/qconfig_nuttx.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/qconfig_nuttx.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/qconfig_nuttx.dir/build.make NuttX/CMakeFiles/qconfig_nuttx.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/qconfig_nuttx.dir/build.make NuttX/CMakeFiles/qconfig_nuttx.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=97,98,99,100 "Built target qconfig_nuttx"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=95,96,97,98 "Built target qconfig_nuttx"
 .PHONY : NuttX/CMakeFiles/qconfig_nuttx.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/qconfig_nuttx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/qconfig_nuttx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/qconfig_nuttx.dir/rule
@@ -1120,21 +1260,21 @@ clean: NuttX/CMakeFiles/config_file_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_drivers_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_drivers_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_drivers_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_drivers_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_drivers_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_drivers_build.dir/build.make NuttX/CMakeFiles/nuttx_drivers_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_drivers_build.dir/build.make NuttX/CMakeFiles/nuttx_drivers_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=65,66,67,68 "Built target nuttx_drivers_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=64,65,66,67 "Built target nuttx_drivers_build"
 .PHONY : NuttX/CMakeFiles/nuttx_drivers_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_drivers_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_drivers_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_drivers_build.dir/rule
@@ -1158,14 +1298,14 @@ clean: NuttX/CMakeFiles/nuttx_drivers_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/builtins_clean_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/builtins_clean_target.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
-NuttX/CMakeFiles/builtins_clean_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
 NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/config_file_target.dir/all
-NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/builtins_clean_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/builtins_clean_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/builtins_clean_target.dir/build.make NuttX/CMakeFiles/builtins_clean_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/builtins_clean_target.dir/build.make NuttX/CMakeFiles/builtins_clean_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=1,2,3,4 "Built target builtins_clean_target"
@@ -1173,7 +1313,7 @@ NuttX/CMakeFiles/builtins_clean_target.dir/all: NuttX/CMakeFiles/nuttx_config_ta
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/builtins_clean_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/builtins_clean_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/builtins_clean_target.dir/rule
@@ -1197,16 +1337,16 @@ clean: NuttX/CMakeFiles/builtins_clean_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_xx_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_xx_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_xx_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_xx_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_xx_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_xx_build.dir/build.make NuttX/CMakeFiles/nuttx_xx_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_xx_build.dir/build.make NuttX/CMakeFiles/nuttx_xx_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=83,84,85,86 "Built target nuttx_xx_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=81,82,83,84,85 "Built target nuttx_xx_build"
 .PHONY : NuttX/CMakeFiles/nuttx_xx_build.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1235,21 +1375,21 @@ clean: NuttX/CMakeFiles/nuttx_xx_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_sched_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_sched_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_sched_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_sched_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_sched_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_sched_build.dir/build.make NuttX/CMakeFiles/nuttx_sched_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_sched_build.dir/build.make NuttX/CMakeFiles/nuttx_sched_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=78,79,80,81,82 "Built target nuttx_sched_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=77,78,79,80 "Built target nuttx_sched_build"
 .PHONY : NuttX/CMakeFiles/nuttx_sched_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_sched_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_sched_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_sched_build.dir/rule
@@ -1273,18 +1413,18 @@ clean: NuttX/CMakeFiles/nuttx_sched_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_builtin_list_target.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
-NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/config_file_target.dir/all
 NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/builtins_clean_target.dir/all
-NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: CMakeFiles/git_nuttx_apps.dir/all
+NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build.make NuttX/CMakeFiles/nuttx_builtin_list_target.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build.make NuttX/CMakeFiles/nuttx_builtin_list_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=42,43,44,45,46 "Built target nuttx_builtin_list_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=41,42,43,44,45,46 "Built target nuttx_builtin_list_target"
 .PHONY : NuttX/CMakeFiles/nuttx_builtin_list_target.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1313,21 +1453,21 @@ clean: NuttX/CMakeFiles/nuttx_builtin_list_target.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_arch_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_arch_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_arch_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_arch_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_arch_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_arch_build.dir/build.make NuttX/CMakeFiles/nuttx_arch_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_arch_build.dir/build.make NuttX/CMakeFiles/nuttx_arch_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=28,29,30,31,32 "Built target nuttx_arch_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=28,29,30,31 "Built target nuttx_arch_build"
 .PHONY : NuttX/CMakeFiles/nuttx_arch_build.dir/all
 
 # Build rule for subdir invocation for target.
 NuttX/CMakeFiles/nuttx_arch_build.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 NuttX/CMakeFiles/nuttx_arch_build.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
 .PHONY : NuttX/CMakeFiles/nuttx_arch_build.dir/rule
@@ -1351,16 +1491,16 @@ clean: NuttX/CMakeFiles/nuttx_arch_build.dir/clean
 # Target rules for target NuttX/CMakeFiles/nuttx_binfmt_build.dir
 
 # All Build rule for target.
-NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: CMakeFiles/git_nuttx.dir/all
+NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
 NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_copy_config_dir_target.dir/all
 NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_context.dir/all
 NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_copy_and_apps_target.dir/all
 NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_config_kconfig_target.dir/all
 NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: CMakeFiles/git_nuttx_apps.dir/all
-NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: NuttX/CMakeFiles/nuttx_config_target.dir/all
+NuttX/CMakeFiles/nuttx_binfmt_build.dir/all: CMakeFiles/git_nuttx.dir/all
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/depend
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=33,34,35,36 "Built target nuttx_binfmt_build"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=32,33,34,35,36 "Built target nuttx_binfmt_build"
 .PHONY : NuttX/CMakeFiles/nuttx_binfmt_build.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1382,251 +1522,6 @@ NuttX/CMakeFiles/nuttx_binfmt_build.dir/clean:
 
 # clean rule for target.
 clean: NuttX/CMakeFiles/nuttx_binfmt_build.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory External/googletest/googletest-build
-
-# Convenience name for "all" pass in the directory.
-External/googletest/googletest-build/all: External/googletest/googletest-build/googlemock/all
-
-.PHONY : External/googletest/googletest-build/all
-
-# Convenience name for "clean" pass in the directory.
-External/googletest/googletest-build/clean: External/googletest/googletest-build/googlemock/clean
-
-.PHONY : External/googletest/googletest-build/clean
-
-# Convenience name for "preinstall" pass in the directory.
-External/googletest/googletest-build/preinstall: External/googletest/googletest-build/googlemock/preinstall
-
-.PHONY : External/googletest/googletest-build/preinstall
-
-#=============================================================================
-# Directory level rules for directory External/googletest/googletest-build/googlemock
-
-# Convenience name for "all" pass in the directory.
-External/googletest/googletest-build/googlemock/all: External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-External/googletest/googletest-build/googlemock/all: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-External/googletest/googletest-build/googlemock/all: External/googletest/googletest-build/googletest/all
-
-.PHONY : External/googletest/googletest-build/googlemock/all
-
-# Convenience name for "clean" pass in the directory.
-External/googletest/googletest-build/googlemock/clean: External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-External/googletest/googletest-build/googlemock/clean: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-External/googletest/googletest-build/googlemock/clean: External/googletest/googletest-build/googletest/clean
-
-.PHONY : External/googletest/googletest-build/googlemock/clean
-
-# Convenience name for "preinstall" pass in the directory.
-External/googletest/googletest-build/googlemock/preinstall: External/googletest/googletest-build/googletest/preinstall
-
-.PHONY : External/googletest/googletest-build/googlemock/preinstall
-
-#=============================================================================
-# Target rules for target External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir
-
-# All Build rule for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=12 "Built target gmock_main"
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-
-# Build rule for subdir invocation for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-
-# Convenience name for target.
-gmock_main: External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-
-.PHONY : gmock_main
-
-# clean rule for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-
-# clean rule for target.
-clean: External/googletest/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir
-
-# All Build rule for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=11 "Built target gmock"
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-
-# Build rule for subdir invocation for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
-
-# Convenience name for target.
-gmock: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
-
-.PHONY : gmock
-
-# clean rule for target.
-External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
-	$(MAKE) -f External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-.PHONY : External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-
-# clean rule for target.
-clean: External/googletest/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory External/googletest/googletest-build/googletest
-
-# Convenience name for "all" pass in the directory.
-External/googletest/googletest-build/googletest/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-External/googletest/googletest-build/googletest/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-
-.PHONY : External/googletest/googletest-build/googletest/all
-
-# Convenience name for "clean" pass in the directory.
-External/googletest/googletest-build/googletest/clean: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-External/googletest/googletest-build/googletest/clean: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-
-.PHONY : External/googletest/googletest-build/googletest/clean
-
-# Convenience name for "preinstall" pass in the directory.
-External/googletest/googletest-build/googletest/preinstall:
-
-.PHONY : External/googletest/googletest-build/googletest/preinstall
-
-#=============================================================================
-# Target rules for target External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=15 "Built target gtest_main"
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-
-# Build rule for subdir invocation for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-
-.PHONY : gtest_main
-
-# clean rule for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-
-# clean rule for target.
-clean: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all:
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/depend
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=13,14 "Built target gtest"
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-
-# Build rule for subdir invocation for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-
-.PHONY : gtest
-
-# clean rule for target.
-External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) -f External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/build.make External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-.PHONY : External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-
-# clean rule for target.
-clean: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory test
-
-# Convenience name for "all" pass in the directory.
-test/all: test/CMakeFiles/example.dir/all
-
-.PHONY : test/all
-
-# Convenience name for "clean" pass in the directory.
-test/clean: test/CMakeFiles/example.dir/clean
-
-.PHONY : test/clean
-
-# Convenience name for "preinstall" pass in the directory.
-test/preinstall:
-
-.PHONY : test/preinstall
-
-#=============================================================================
-# Target rules for target test/CMakeFiles/example.dir
-
-# All Build rule for target.
-test/CMakeFiles/example.dir/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-test/CMakeFiles/example.dir/all: External/googletest/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/depend
-	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=8 "Built target example"
-.PHONY : test/CMakeFiles/example.dir/all
-
-# Include target in all.
-all: test/CMakeFiles/example.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-test/CMakeFiles/example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/example.dir/rule
-
-# Convenience name for target.
-example: test/CMakeFiles/example.dir/rule
-
-.PHONY : example
-
-# clean rule for target.
-test/CMakeFiles/example.dir/clean:
-	$(MAKE) -f test/CMakeFiles/example.dir/build.make test/CMakeFiles/example.dir/clean
-.PHONY : test/CMakeFiles/example.dir/clean
-
-# clean rule for target.
-clean: test/CMakeFiles/example.dir/clean
 
 .PHONY : clean
 

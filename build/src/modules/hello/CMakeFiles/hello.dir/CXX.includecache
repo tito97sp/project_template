@@ -7,4 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.cpp
+hello.hpp
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.hpp
+
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/hello/hello.hpp
 

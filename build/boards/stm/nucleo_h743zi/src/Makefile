@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/andressanchez/Escritorio/GIT/project_template/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -78,39 +66,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -123,17 +78,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -167,19 +121,331 @@ depend:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule
+
+# Convenience name for target.
+drivers_board: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/rule
+
+.PHONY : drivers_board
+
+# fast build rule for target.
+drivers_board/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build
+.PHONY : drivers_board/fast
+
+stm32_appinitialize.obj: stm32_appinitialize.c.obj
+
+.PHONY : stm32_appinitialize.obj
+
+# target to build an object file
+stm32_appinitialize.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj
+.PHONY : stm32_appinitialize.c.obj
+
+stm32_appinitialize.i: stm32_appinitialize.c.i
+
+.PHONY : stm32_appinitialize.i
+
+# target to preprocess a source file
+stm32_appinitialize.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.i
+.PHONY : stm32_appinitialize.c.i
+
+stm32_appinitialize.s: stm32_appinitialize.c.s
+
+.PHONY : stm32_appinitialize.s
+
+# target to generate assembly for a file
+stm32_appinitialize.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.s
+.PHONY : stm32_appinitialize.c.s
+
+stm32_autoleds.obj: stm32_autoleds.c.obj
+
+.PHONY : stm32_autoleds.obj
+
+# target to build an object file
+stm32_autoleds.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
+.PHONY : stm32_autoleds.c.obj
+
+stm32_autoleds.i: stm32_autoleds.c.i
+
+.PHONY : stm32_autoleds.i
+
+# target to preprocess a source file
+stm32_autoleds.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.i
+.PHONY : stm32_autoleds.c.i
+
+stm32_autoleds.s: stm32_autoleds.c.s
+
+.PHONY : stm32_autoleds.s
+
+# target to generate assembly for a file
+stm32_autoleds.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.s
+.PHONY : stm32_autoleds.c.s
+
+stm32_boot.obj: stm32_boot.c.obj
+
+.PHONY : stm32_boot.obj
+
+# target to build an object file
+stm32_boot.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj
+.PHONY : stm32_boot.c.obj
+
+stm32_boot.i: stm32_boot.c.i
+
+.PHONY : stm32_boot.i
+
+# target to preprocess a source file
+stm32_boot.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.i
+.PHONY : stm32_boot.c.i
+
+stm32_boot.s: stm32_boot.c.s
+
+.PHONY : stm32_boot.s
+
+# target to generate assembly for a file
+stm32_boot.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.s
+.PHONY : stm32_boot.c.s
+
+stm32_bringup.obj: stm32_bringup.c.obj
+
+.PHONY : stm32_bringup.obj
+
+# target to build an object file
+stm32_bringup.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj
+.PHONY : stm32_bringup.c.obj
+
+stm32_bringup.i: stm32_bringup.c.i
+
+.PHONY : stm32_bringup.i
+
+# target to preprocess a source file
+stm32_bringup.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.i
+.PHONY : stm32_bringup.c.i
+
+stm32_bringup.s: stm32_bringup.c.s
+
+.PHONY : stm32_bringup.s
+
+# target to generate assembly for a file
+stm32_bringup.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.s
+.PHONY : stm32_bringup.c.s
+
+stm32_buttons.obj: stm32_buttons.c.obj
+
+.PHONY : stm32_buttons.obj
+
+# target to build an object file
+stm32_buttons.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj
+.PHONY : stm32_buttons.c.obj
+
+stm32_buttons.i: stm32_buttons.c.i
+
+.PHONY : stm32_buttons.i
+
+# target to preprocess a source file
+stm32_buttons.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.i
+.PHONY : stm32_buttons.c.i
+
+stm32_buttons.s: stm32_buttons.c.s
+
+.PHONY : stm32_buttons.s
+
+# target to generate assembly for a file
+stm32_buttons.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.s
+.PHONY : stm32_buttons.c.s
+
+stm32_gpio.obj: stm32_gpio.c.obj
+
+.PHONY : stm32_gpio.obj
+
+# target to build an object file
+stm32_gpio.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj
+.PHONY : stm32_gpio.c.obj
+
+stm32_gpio.i: stm32_gpio.c.i
+
+.PHONY : stm32_gpio.i
+
+# target to preprocess a source file
+stm32_gpio.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.i
+.PHONY : stm32_gpio.c.i
+
+stm32_gpio.s: stm32_gpio.c.s
+
+.PHONY : stm32_gpio.s
+
+# target to generate assembly for a file
+stm32_gpio.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.s
+.PHONY : stm32_gpio.c.s
+
+stm32_pwm.obj: stm32_pwm.c.obj
+
+.PHONY : stm32_pwm.obj
+
+# target to build an object file
+stm32_pwm.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj
+.PHONY : stm32_pwm.c.obj
+
+stm32_pwm.i: stm32_pwm.c.i
+
+.PHONY : stm32_pwm.i
+
+# target to preprocess a source file
+stm32_pwm.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.i
+.PHONY : stm32_pwm.c.i
+
+stm32_pwm.s: stm32_pwm.c.s
+
+.PHONY : stm32_pwm.s
+
+# target to generate assembly for a file
+stm32_pwm.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.s
+.PHONY : stm32_pwm.c.s
+
+stm32_spi.obj: stm32_spi.c.obj
+
+.PHONY : stm32_spi.obj
+
+# target to build an object file
+stm32_spi.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj
+.PHONY : stm32_spi.c.obj
+
+stm32_spi.i: stm32_spi.c.i
+
+.PHONY : stm32_spi.i
+
+# target to preprocess a source file
+stm32_spi.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.i
+.PHONY : stm32_spi.c.i
+
+stm32_spi.s: stm32_spi.c.s
+
+.PHONY : stm32_spi.s
+
+# target to generate assembly for a file
+stm32_spi.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.s
+.PHONY : stm32_spi.c.s
+
+stm32_uid.obj: stm32_uid.c.obj
+
+.PHONY : stm32_uid.obj
+
+# target to build an object file
+stm32_uid.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj
+.PHONY : stm32_uid.c.obj
+
+stm32_uid.i: stm32_uid.c.i
+
+.PHONY : stm32_uid.i
+
+# target to preprocess a source file
+stm32_uid.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.i
+.PHONY : stm32_uid.c.i
+
+stm32_uid.s: stm32_uid.c.s
+
+.PHONY : stm32_uid.s
+
+# target to generate assembly for a file
+stm32_uid.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.s
+.PHONY : stm32_uid.c.s
+
+stm32_usb.obj: stm32_usb.c.obj
+
+.PHONY : stm32_usb.obj
+
+# target to build an object file
+stm32_usb.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj
+.PHONY : stm32_usb.c.obj
+
+stm32_usb.i: stm32_usb.c.i
+
+.PHONY : stm32_usb.i
+
+# target to preprocess a source file
+stm32_usb.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.i
+.PHONY : stm32_usb.c.i
+
+stm32_usb.s: stm32_usb.c.s
+
+.PHONY : stm32_usb.s
+
+# target to generate assembly for a file
+stm32_usb.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.s
+.PHONY : stm32_usb.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... list_install_components"
-	@echo "... test"
-	@echo "... install/local"
 	@echo "... rebuild_cache"
-	@echo "... install"
+	@echo "... drivers_board"
+	@echo "... test"
+	@echo "... stm32_appinitialize.obj"
+	@echo "... stm32_appinitialize.i"
+	@echo "... stm32_appinitialize.s"
+	@echo "... stm32_autoleds.obj"
+	@echo "... stm32_autoleds.i"
+	@echo "... stm32_autoleds.s"
+	@echo "... stm32_boot.obj"
+	@echo "... stm32_boot.i"
+	@echo "... stm32_boot.s"
+	@echo "... stm32_bringup.obj"
+	@echo "... stm32_bringup.i"
+	@echo "... stm32_bringup.s"
+	@echo "... stm32_buttons.obj"
+	@echo "... stm32_buttons.i"
+	@echo "... stm32_buttons.s"
+	@echo "... stm32_gpio.obj"
+	@echo "... stm32_gpio.i"
+	@echo "... stm32_gpio.s"
+	@echo "... stm32_pwm.obj"
+	@echo "... stm32_pwm.i"
+	@echo "... stm32_pwm.s"
+	@echo "... stm32_spi.obj"
+	@echo "... stm32_spi.i"
+	@echo "... stm32_spi.s"
+	@echo "... stm32_uid.obj"
+	@echo "... stm32_uid.i"
+	@echo "... stm32_uid.s"
+	@echo "... stm32_usb.obj"
+	@echo "... stm32_usb.i"
+	@echo "... stm32_usb.s"
 .PHONY : help
 
 

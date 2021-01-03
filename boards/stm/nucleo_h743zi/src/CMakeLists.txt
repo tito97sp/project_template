@@ -30,50 +30,52 @@
 # # POSSIBILITY OF SUCH DAMAGE.
 # #
 # ############################################################################
-# if("${BOARD_LABEL}" STREQUAL  "bootloader")
-# 	add_library(drivers_board
-# 		bootloader_main.c
-# 		usb.c
-# 	)
-# 	target_link_libraries(drivers_board
-# 		PRIVATE
-# 			nuttx_arch # sdio
-# 			nuttx_drivers # sdio
-# 			bootloader
-# 	)
-# 	target_include_directories(drivers_board PRIVATE ${SOURCE_DIR}/platforms/nuttx/src/bootloader)
+if("${BOARD_LABEL}" STREQUAL  "bootloader")
+	add_library(drivers_board
+		bootloader_main.c
+		usb.c
+	)
+	target_link_libraries(drivers_board
+		PRIVATE
+			nuttx_arch # sdio
+			nuttx_drivers # sdio
+			bootloader
+	)
+	target_include_directories(drivers_board PRIVATE ${SOURCE_DIR}/platforms/nuttx/src/bootloader)
 
-# else()
-# 	add_library(drivers_board
-# 		stm32_adc.c
-# 		stm32_appinitialize.c
-# 		stm32_autoleds.c
-# 		stm32_boot.c
-# 		stm32_bringup.c
-# 		stm32_buttons.c
-# 		stm32_gpio.c
-# 		stm32_lsm6dsl.c
-# 		stm32_lsm9ds1.c
-# 		stm32_lsm303agr.c
-# 		stm32_nrf24l01.c
-# 		stm32_pca9635.c
-# 		stm32_pwm.c
-# 		stm32_romfs_initialize.c
-# 		stm32_spi.c
-# 		stm32_ssd1306.c
-# 		stm32_uid.c
-# 		stm32_usb.c
-# 		stm32_userleds.c
-# 		)
-# 	#add_dependencies(drivers_board arch_board_hw_info)
+else()
+	add_custom_library(drivers_board
+		#stm32_adc.c
+		stm32_appinitialize.c
+		stm32_autoleds.c
+		stm32_boot.c
+		stm32_buttons.c
+		stm32_gpio.c
+		#stm32_lsm6dsl.c
+		#stm32_lsm9ds1.c
+		#stm32_lsm303agr.c
+		#stm32_nrf24l01.c
+		#stm32_pca9635.c
+		stm32_pwm.c
+		#stm32_romfs_initialize.c
+		stm32_spi.c
+		#stm32_ssd1306.c
+		stm32_uid.c
+		stm32_usb.c
+		#stm32_userleds.c
+		stm32_bringup.c
+		)
+	
+	#add_dependencies(drivers_board arch_board_hw_info)
 
-# 	# target_link_libraries(drivers_board
-# 	# 	PRIVATE
-# 	# 		arch_spi
-# 	# 		arch_board_hw_info
-# 	# 		drivers__led # drv_led_start
-# 	# 		nuttx_arch # sdio
-# 	# 		nuttx_drivers # sdio
-# 	# 		px4_layer
-# 	# )
-# endif()
+	target_link_libraries(drivers_board
+	 	PRIVATE
+	# 		arch_spi
+	# 		arch_board_hw_info
+	# 		drivers__led # drv_led_start
+	 		nuttx_arch # sdio
+	 		nuttx_drivers # sdio
+	# 		px4_layer
+     )
+    
+endif()
