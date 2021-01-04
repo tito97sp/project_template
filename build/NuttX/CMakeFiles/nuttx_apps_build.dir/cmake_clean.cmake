@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "apps/libapps.a"
   "apps/builtin/registry/custom_hello_main.bdat"
   "apps/builtin/registry/custom_hello_main.pdat"
+  "apps/builtin/registry/custom_uorb_main.bdat"
+  "apps/builtin/registry/custom_uorb_main.pdat"
   "nuttx/include/nuttx/config.h"
   "nuttx/include/nuttx/version.h"
   "builtins_clean.stamp"

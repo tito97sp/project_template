@@ -8,12 +8,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj"
   "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_boot.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj"
   "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_bringup.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_buttons.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_gpio.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_pwm.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_spi.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_uid.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj"
-  "/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_usb.c" "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -41,6 +35,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/include"
   "../src/lib"
   "../src/modules"
+  "../boards/stm/nucleo_h743zi/include"
   "NuttX/nuttx/arch/arm/src/armv7-m"
   "NuttX/nuttx/arch/arm/src/chip"
   "NuttX/nuttx/arch/arm/src/common"

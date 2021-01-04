@@ -30,6 +30,8 @@ b36ee26821e1b777702057b7cf665490 NuttX/CMakeFiles/qconfig
 c2fc911cc5aa0e81b9c219dd1ca16bdf NuttX/CMakeFiles/qconfig_nuttx
 12cd1660482590f678f23e7a3129b030 NuttX/apps/builtin/registry/custom_hello_main.bdat
 a60aa314a6358b06b0afbf384697812a NuttX/apps/builtin/registry/custom_hello_main.pdat
+1f4e718713cc6d3f6e2deeccb9e43f96 NuttX/apps/builtin/registry/custom_uorb_main.bdat
+e7c00af32f397cdf992eb9a6d770597e NuttX/apps/builtin/registry/custom_uorb_main.pdat
 43d0137e9c5c98c5cad3a4db96b9d928 NuttX/apps/libapps.a
 19a636e952e72019181f4692df7f40a9 NuttX/apps_copy.stamp
 d66f70ccf2d35e7902930c5b8f49061f NuttX/builtins_clean.stamp

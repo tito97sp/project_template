@@ -127,7 +127,7 @@ function(add_common_flags)
 			-fno-strength-reduce
 
 			-Wformat=1
-			-Wunused-but-set-variable
+			-Wno-unused-but-set-variable
 
 			-Wno-format-truncation # TODO: fix
 		)

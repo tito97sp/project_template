@@ -1,16 +1,14 @@
 \hypertarget{version_8h}{}\section{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/lib/version/version.h File Reference}
 \label{version_8h}\index{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/lib/version/version.\+h@{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/lib/version/version.\+h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
-Include dependency graph for version.\+h\+:
-\nopagebreak
+Include dependency graph for version.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=203pt]{d8/d4a/version_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -75,17 +73,17 @@ Beat Küng \href{mailto:beat-kueng@gmx.net}{\tt beat-\/kueng@gmx.\+net}
 
 get the board version (last 8 bytes should be silicon ID, if any) 
 
-Definition at line 248 of file version.\+c.
+Definition at line 250 of file version.\+c.
 
 
 \begin{DoxyCode}
-249 \{
-250 \textcolor{preprocessor}{#if defined(\_\_NUTTX)}
-251     \textcolor{keywordflow}{return} CONFIG\_CDCACM\_PRODUCTID;
-252 \textcolor{preprocessor}{#else}
-253     \textcolor{keywordflow}{return} 1;
-254 \textcolor{preprocessor}{#endif}
-255 \}
+251 \{
+252 \textcolor{preprocessor}{#if defined(\_\_NUTTX)}
+253     \textcolor{keywordflow}{return} CONFIG\_CDCACM\_PRODUCTID;
+254 \textcolor{preprocessor}{#else}
+255     \textcolor{keywordflow}{return} 1;
+256 \textcolor{preprocessor}{#endif}
+257 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a20fc7c45a2af1951f1bda30a018034cf}\label{version_8h_a20fc7c45a2af1951f1bda30a018034cf}} 
 \index{version.\+h@{version.\+h}!build\+\_\+uri@{build\+\_\+uri}}
@@ -95,13 +93,13 @@ Definition at line 248 of file version.\+c.
 
 get the build U\+RI (used for crash logging) 
 
-Definition at line 59 of file version.\+c.
+Definition at line 61 of file version.\+c.
 
 
 \begin{DoxyCode}
-60 \{
-61     \textcolor{keywordflow}{return} STRINGIFY(BUILD\_URI);
-62 \}
+62 \{
+63     \textcolor{keywordflow}{return} STRINGIFY(BUILD\_URI);
+64 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a740c8b88768645ab5d0754210ebe678c}\label{version_8h_a740c8b88768645ab5d0754210ebe678c}} 
 \index{version.\+h@{version.\+h}!ecl\+\_\+lib\+\_\+version\+\_\+string@{ecl\+\_\+lib\+\_\+version\+\_\+string}}
@@ -111,17 +109,17 @@ Definition at line 59 of file version.\+c.
 
 E\+CL lib version as human readable string (git tag) 
 
-Definition at line 346 of file version.\+c.
+Definition at line 348 of file version.\+c.
 
 
 \begin{DoxyCode}
-347 \{
-348 \textcolor{preprocessor}{#ifdef ECL\_LIB\_GIT\_VERSION\_STRING}
-349     \textcolor{keywordflow}{return} ECL\_LIB\_GIT\_VERSION\_STRING;
-350 \textcolor{preprocessor}{#else}
-351     \textcolor{keywordflow}{return} NULL;
-352 \textcolor{preprocessor}{#endif}
-353 \}
+349 \{
+350 \textcolor{preprocessor}{#ifdef ECL\_LIB\_GIT\_VERSION\_STRING}
+351     \textcolor{keywordflow}{return} ECL\_LIB\_GIT\_VERSION\_STRING;
+352 \textcolor{preprocessor}{#else}
+353     \textcolor{keywordflow}{return} NULL;
+354 \textcolor{preprocessor}{#endif}
+355 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a2705ca759e88988458f05d7d77fc4d87}\label{version_8h_a2705ca759e88988458f05d7d77fc4d87}} 
 \index{version.\+h@{version.\+h}!firmware\+\_\+git\+\_\+branch@{firmware\+\_\+git\+\_\+branch}}
@@ -131,13 +129,13 @@ Definition at line 346 of file version.\+c.
 
 get the git branch name (can be empty, for example if H\+E\+AD points to a tag) 
 
-Definition at line 243 of file version.\+c.
+Definition at line 245 of file version.\+c.
 
 
 \begin{DoxyCode}
-244 \{
-245     \textcolor{keywordflow}{return} GIT\_BRANCH\_NAME;
-246 \}
+246 \{
+247     \textcolor{keywordflow}{return} GIT\_BRANCH\_NAME;
+248 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_ae9561a342bd30d0b8e1fdf4393c7e470}\label{version_8h_ae9561a342bd30d0b8e1fdf4393c7e470}} 
 \index{version.\+h@{version.\+h}!firmware\+\_\+vendor\+\_\+version@{firmware\+\_\+vendor\+\_\+version}}
@@ -153,13 +151,13 @@ F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+T\+Y\+PE)
 \end{DoxySeeAlso}
 
 
-Definition at line 238 of file version.\+c.
+Definition at line 240 of file version.\+c.
 
 
 \begin{DoxyCode}
-239 \{
-240     \textcolor{keywordflow}{return} \hyperlink{version_8h_ab74c0c1be88c621c4649792f2cae5343}{version\_tag\_to\_vendor\_version\_number}(GIT\_TAG\_STR);
-241 \}
+241 \{
+242     \textcolor{keywordflow}{return} \hyperlink{version_8h_ab74c0c1be88c621c4649792f2cae5343}{version\_tag\_to\_vendor\_version\_number}(GIT\_TAG\_STR);
+243 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_ade386147dba3b37795fc7f2ec688dd7e}\label{version_8h_ade386147dba3b37795fc7f2ec688dd7e}} 
 \index{version.\+h@{version.\+h}!firmware\+\_\+version@{firmware\+\_\+version}}
@@ -175,13 +173,13 @@ F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+T\+Y\+PE)
 \end{DoxySeeAlso}
 
 
-Definition at line 147 of file version.\+c.
+Definition at line 149 of file version.\+c.
 
 
 \begin{DoxyCode}
-148 \{
-149     \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(GIT\_TAG\_STR);
-150 \}
+150 \{
+151     \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(GIT\_TAG\_STR);
+152 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a1600fb2282c2940e2dffa65585589702}\label{version_8h_a1600fb2282c2940e2dffa65585589702}} 
 \index{version.\+h@{version.\+h}!firmware\+\_\+version\+\_\+binary@{firmware\+\_\+version\+\_\+binary}}
@@ -191,13 +189,13 @@ Definition at line 147 of file version.\+c.
 
 Firmware version in binary form (first part of the git tag) 
 
-Definition at line 341 of file version.\+c.
+Definition at line 343 of file version.\+c.
 
 
 \begin{DoxyCode}
-342 \{
-343     \textcolor{keywordflow}{return} GIT\_VERSION\_BINARY;
-344 \}
+344 \{
+345     \textcolor{keywordflow}{return} GIT\_VERSION\_BINARY;
+346 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_adb684265d41de587b8ce7eca29392be4}\label{version_8h_adb684265d41de587b8ce7eca29392be4}} 
 \index{version.\+h@{version.\+h}!firmware\+\_\+version\+\_\+string@{firmware\+\_\+version\+\_\+string}}
@@ -207,13 +205,13 @@ Definition at line 341 of file version.\+c.
 
 Firmware version as human readable string (git tag) 
 
-Definition at line 336 of file version.\+c.
+Definition at line 338 of file version.\+c.
 
 
 \begin{DoxyCode}
-337 \{
-338     \textcolor{keywordflow}{return} GIT\_VERSION\_STR;
-339 \}
+339 \{
+340     \textcolor{keywordflow}{return} GIT\_VERSION\_STR;
+341 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a56604d1940f59bed9a41ac57b8f92629}\label{version_8h_a56604d1940f59bed9a41ac57b8f92629}} 
 \index{version.\+h@{version.\+h}!mavlink\+\_\+lib\+\_\+version\+\_\+binary@{mavlink\+\_\+lib\+\_\+version\+\_\+binary}}
@@ -232,25 +230,25 @@ human readable string
 \end{DoxyReturn}
 
 
-Definition at line 295 of file version.\+c.
+Definition at line 297 of file version.\+c.
 
 
 \begin{DoxyCode}
-296 \{
-297 \textcolor{preprocessor}{#if defined(\_\_DARWIN)}
-298     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Darwin"};
-299 \textcolor{preprocessor}{#elif defined(\_\_LINUX)}
-300     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Linux"};
-301 \textcolor{preprocessor}{#elif defined(\_\_QURT)}
-302     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"QuRT"};
-303 \textcolor{preprocessor}{#elif defined(\_\_NUTTX)}
-304     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"NuttX"};
-305 \textcolor{preprocessor}{#elif defined(\_\_CYGWIN)}
-306     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Cygwin"};
-307 \textcolor{preprocessor}{#else}
-308 \textcolor{preprocessor}{# error "os\_name not implemented for current OS"}
-309 \textcolor{preprocessor}{#endif}
-310 \}
+298 \{
+299 \textcolor{preprocessor}{#if defined(\_\_DARWIN)}
+300     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Darwin"};
+301 \textcolor{preprocessor}{#elif defined(\_\_LINUX)}
+302     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Linux"};
+303 \textcolor{preprocessor}{#elif defined(\_\_QURT)}
+304     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"QuRT"};
+305 \textcolor{preprocessor}{#elif defined(\_\_NUTTX)}
+306     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"NuttX"};
+307 \textcolor{preprocessor}{#elif defined(\_\_CYGWIN)}
+308     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Cygwin"};
+309 \textcolor{preprocessor}{#else}
+310 \textcolor{preprocessor}{# error "os\_name not implemented for current OS"}
+311 \textcolor{preprocessor}{#endif}
+312 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a3602739b8e0d5879300a905785c8f371}\label{version_8h_a3602739b8e0d5879300a905785c8f371}} 
 \index{version.\+h@{version.\+h}!os\+\_\+version@{os\+\_\+version}}
@@ -266,37 +264,37 @@ F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+T\+Y\+PE)
 \end{DoxySeeAlso}
 
 
-Definition at line 257 of file version.\+c.
+Definition at line 259 of file version.\+c.
 
 
 \begin{DoxyCode}
-258 \{
-259 \textcolor{preprocessor}{#if defined(\_\_DARWIN) || defined(\_\_CYGWIN) || defined(\_\_QURT)}
-260     \textcolor{keywordflow}{return} 0; \textcolor{comment}{//TODO: implement version for Darwin, Cygwin, QuRT}
-261 \textcolor{preprocessor}{#elif defined(\_\_LINUX)}
-262     \textcolor{keyword}{struct }utsname name;
-263 
-264     \textcolor{keywordflow}{if} (uname(&name) == 0) \{
-265         \textcolor{keywordtype}{char} *c = name.release;
-266 
-267         \textcolor{comment}{// cut the part after the first '-'}
-268         \textcolor{keywordflow}{while} (*c && *c != \textcolor{charliteral}{'-'}) \{
-269             ++c;
-270         \}
-271 
-272         *c = 0;
-273         \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(name.release);
-274 
-275     \} \textcolor{keywordflow}{else} \{
-276         \textcolor{keywordflow}{return} 0;
-277     \}
-278 
-279 \textcolor{preprocessor}{#elif defined(\_\_NUTTX)}
-280     \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(NUTTX\_GIT\_TAG\_STR);
-281 \textcolor{preprocessor}{#else}
-282 \textcolor{preprocessor}{# error "os\_version not implemented for current OS"}
-283 \textcolor{preprocessor}{#endif}
-284 \}
+260 \{
+261 \textcolor{preprocessor}{#if defined(\_\_DARWIN) || defined(\_\_CYGWIN) || defined(\_\_QURT)}
+262     \textcolor{keywordflow}{return} 0; \textcolor{comment}{//TODO: implement version for Darwin, Cygwin, QuRT}
+263 \textcolor{preprocessor}{#elif defined(\_\_LINUX)}
+264     \textcolor{keyword}{struct }utsname name;
+265 
+266     \textcolor{keywordflow}{if} (uname(&name) == 0) \{
+267         \textcolor{keywordtype}{char} *c = name.release;
+268 
+269         \textcolor{comment}{// cut the part after the first '-'}
+270         \textcolor{keywordflow}{while} (*c && *c != \textcolor{charliteral}{'-'}) \{
+271             ++c;
+272         \}
+273 
+274         *c = 0;
+275         \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(name.release);
+276 
+277     \} \textcolor{keywordflow}{else} \{
+278         \textcolor{keywordflow}{return} 0;
+279     \}
+280 
+281 \textcolor{preprocessor}{#elif defined(\_\_NUTTX)}
+282     \textcolor{keywordflow}{return} \hyperlink{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}{version\_tag\_to\_number}(NUTTX\_GIT\_TAG\_STR);
+283 \textcolor{preprocessor}{#else}
+284 \textcolor{preprocessor}{# error "os\_version not implemented for current OS"}
+285 \textcolor{preprocessor}{#endif}
+286 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a8534281b0ffc293781e6cd4c04e30e82}\label{version_8h_a8534281b0ffc293781e6cd4c04e30e82}} 
 \index{version.\+h@{version.\+h}!os\+\_\+version\+\_\+binary@{os\+\_\+version\+\_\+binary}}
@@ -309,17 +307,17 @@ this is not available on all O\+Ses and can return 0
 \end{DoxyReturn}
 
 
-Definition at line 362 of file version.\+c.
+Definition at line 364 of file version.\+c.
 
 
 \begin{DoxyCode}
-363 \{
-364 \textcolor{preprocessor}{#ifdef NUTTX\_GIT\_VERSION\_BINARY}
-365     \textcolor{keywordflow}{return} NUTTX\_GIT\_VERSION\_BINARY;
-366 \textcolor{preprocessor}{#else}
-367     \textcolor{keywordflow}{return} 0;
-368 \textcolor{preprocessor}{#endif}
-369 \}
+365 \{
+366 \textcolor{preprocessor}{#ifdef NUTTX\_GIT\_VERSION\_BINARY}
+367     \textcolor{keywordflow}{return} NUTTX\_GIT\_VERSION\_BINARY;
+368 \textcolor{preprocessor}{#else}
+369     \textcolor{keywordflow}{return} 0;
+370 \textcolor{preprocessor}{#endif}
+371 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a5839c1b79b14c6d5c08b1ff84500a971}\label{version_8h_a5839c1b79b14c6d5c08b1ff84500a971}} 
 \index{version.\+h@{version.\+h}!os\+\_\+version\+\_\+string@{os\+\_\+version\+\_\+string}}
@@ -332,17 +330,17 @@ string or N\+U\+LL if not defined
 \end{DoxyReturn}
 
 
-Definition at line 286 of file version.\+c.
+Definition at line 288 of file version.\+c.
 
 
 \begin{DoxyCode}
-287 \{
-288 \textcolor{preprocessor}{#if defined(\_\_NUTTX)}
-289     \textcolor{keywordflow}{return} NUTTX\_GIT\_VERSION\_STR;
-290 \textcolor{preprocessor}{#else}
-291     \textcolor{keywordflow}{return} NULL;
-292 \textcolor{preprocessor}{#endif}
-293 \}
+289 \{
+290 \textcolor{preprocessor}{#if defined(\_\_NUTTX)}
+291     \textcolor{keywordflow}{return} NUTTX\_GIT\_VERSION\_STR;
+292 \textcolor{preprocessor}{#else}
+293     \textcolor{keywordflow}{return} NULL;
+294 \textcolor{preprocessor}{#endif}
+295 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a10feca2b0b3de1a3a697cc7bcb90321e}\label{version_8h_a10feca2b0b3de1a3a697cc7bcb90321e}} 
 \index{version.\+h@{version.\+h}!toolchain\+\_\+name@{toolchain\+\_\+name}}
@@ -352,23 +350,23 @@ Definition at line 286 of file version.\+c.
 
 Toolchain name used to compile P\+X4 
 
-Definition at line 312 of file version.\+c.
+Definition at line 314 of file version.\+c.
 
 
 \begin{DoxyCode}
-313 \{
-314 \textcolor{preprocessor}{#if defined(\_\_clang\_\_)}
-315     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Clang/LLVM"};
-316 \textcolor{preprocessor}{#elif defined(\_\_ICC) || defined(\_\_INTEL\_COMPILER)}
-317     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Intel ICC"};
-318 \textcolor{preprocessor}{#elif defined(\_\_GNUC\_\_) || defined(\_\_GNUG\_\_)}
-319     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"GNU GCC"};
-320 \textcolor{preprocessor}{#elif defined(\_MSC\_VER)}
-321     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"MS Visual Studio"};
-322 \textcolor{preprocessor}{#else}
-323     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Unknown"};
-324 \textcolor{preprocessor}{#endif}
-325 \}
+315 \{
+316 \textcolor{preprocessor}{#if defined(\_\_clang\_\_)}
+317     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Clang/LLVM"};
+318 \textcolor{preprocessor}{#elif defined(\_\_ICC) || defined(\_\_INTEL\_COMPILER)}
+319     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Intel ICC"};
+320 \textcolor{preprocessor}{#elif defined(\_\_GNUC\_\_) || defined(\_\_GNUG\_\_)}
+321     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"GNU GCC"};
+322 \textcolor{preprocessor}{#elif defined(\_MSC\_VER)}
+323     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"MS Visual Studio"};
+324 \textcolor{preprocessor}{#else}
+325     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"Unknown"};
+326 \textcolor{preprocessor}{#endif}
+327 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_a6df22ceb4e1510ada6b5d742d411b9f9}\label{version_8h_a6df22ceb4e1510ada6b5d742d411b9f9}} 
 \index{version.\+h@{version.\+h}!toolchain\+\_\+version@{toolchain\+\_\+version}}
@@ -378,17 +376,17 @@ Definition at line 312 of file version.\+c.
 
 Toolchain version used to compile P\+X4 (no particular format) 
 
-Definition at line 327 of file version.\+c.
+Definition at line 329 of file version.\+c.
 
 
 \begin{DoxyCode}
-328 \{
-329 \textcolor{preprocessor}{#ifdef \_\_VERSION\_\_}
-330     \textcolor{keywordflow}{return} \_\_VERSION\_\_;
-331 \textcolor{preprocessor}{#else}
-332     \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
-333 \textcolor{preprocessor}{#endif}
-334 \}
+330 \{
+331 \textcolor{preprocessor}{#ifdef \_\_VERSION\_\_}
+332     \textcolor{keywordflow}{return} \_\_VERSION\_\_;
+333 \textcolor{preprocessor}{#else}
+334     \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+335 \textcolor{preprocessor}{#endif}
+336 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}\label{version_8h_ae4d7c8bdf6528ebc410f1aced342f68b}} 
 \index{version.\+h@{version.\+h}!version\+\_\+tag\+\_\+to\+\_\+number@{version\+\_\+tag\+\_\+to\+\_\+number}}
@@ -417,91 +415,91 @@ F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+T\+Y\+PE)
 \end{DoxySeeAlso}
 
 
-Definition at line 64 of file version.\+c.
+Definition at line 66 of file version.\+c.
 
 
 \begin{DoxyCode}
-65 \{
-66     uint32\_t version\_number = 0;
-67 
-68     int16\_t buffer = -1;
-69     \textcolor{keywordtype}{size\_t} buffer\_counter = 0;
-70     \textcolor{keywordtype}{size\_t} dash\_count = 0;
-71     \textcolor{keywordtype}{size\_t} point\_count = 0;
-72     \textcolor{keywordtype}{char} version[3] = \{0, 0, 0\};
-73     \textcolor{keywordtype}{int} firmware\_type = FIRMWARE\_TYPE\_RELEASE;
-74 
-75     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
-76         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'-'}) \{
-77             dash\_count++;
-78 
-79         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'.'}) \{
-80             point\_count++;
-81         \}
-82 
-83         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'r'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'c'}) \{
-84             firmware\_type = FIRMWARE\_TYPE\_RC;
-85 
-86         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'p'}) \{
-87             firmware\_type = FIRMWARE\_TYPE\_ALPHA;
-88 
-89         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'y'}) \{
-90             firmware\_type = FIRMWARE\_TYPE\_DEV;
-91 
-92         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'}) \{
-93             firmware\_type = FIRMWARE\_TYPE\_BETA;
-94 
-95         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'v'} && i > 0) \{
-96             firmware\_type = FIRMWARE\_TYPE\_DEV;
-97         \}
-98     \}
-99 
-100     \textcolor{keywordflow}{if} ((dash\_count == 1 && point\_count == 2 && firmware\_type == FIRMWARE\_TYPE\_RELEASE) ||
-101         (dash\_count == 2 && point\_count == 2) ||
-102         (dash\_count == 3 && point\_count == 4) ||
-103         (dash\_count == 4 && point\_count == 4)) \{
-104         firmware\_type = FIRMWARE\_TYPE\_DEV;
-105     \}
-106 
-107     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
-108         \textcolor{keywordflow}{if} (buffer\_counter > 2) \{
-109             \textcolor{keywordflow}{continue};
-110         \}
-111 
-112         \textcolor{keywordflow}{if} (tag[i] >= \textcolor{charliteral}{'0'} && tag[i] <= \textcolor{charliteral}{'9'}) \{
-113             buffer = (buffer == -1) ? 0 : buffer;
-114             buffer = buffer * 10 + (tag[i] - \textcolor{charliteral}{'0'});
-115 
-116         \} \textcolor{keywordflow}{else} \{
-117             \textcolor{keywordflow}{if} (buffer >= 0) \{
-118                 version[buffer\_counter] = buffer;
-119                 buffer\_counter++;
-120             \}
-121 
-122             buffer = -1;
-123         \}
-124     \}
-125 
-126     \textcolor{keywordflow}{if} (buffer >= 0) \{
-127         version[buffer\_counter] = buffer;
-128         buffer\_counter++;
-129     \}
-130 
-131     \textcolor{keywordflow}{if} (buffer\_counter <= 0) \{
-132         firmware\_type = 0x00;
-133     \}
-134 
-135     \textcolor{keywordflow}{if} (buffer\_counter == 3 || buffer\_counter == 6) \{
-136         version\_number = ((uint8\_t)version[0] << 8 * 3) |
-137                  ((uint8\_t)version[1] << 8 * 2) |
-138                  ((uint8\_t)version[2] << 8 * 1) | firmware\_type;
-139 
-140     \} \textcolor{keywordflow}{else} \{
-141         version\_number = 0;
-142     \}
-143 
-144     \textcolor{keywordflow}{return} version\_number;
-145 \}
+67 \{
+68     uint32\_t version\_number = 0;
+69 
+70     int16\_t buffer = -1;
+71     \textcolor{keywordtype}{size\_t} buffer\_counter = 0;
+72     \textcolor{keywordtype}{size\_t} dash\_count = 0;
+73     \textcolor{keywordtype}{size\_t} point\_count = 0;
+74     \textcolor{keywordtype}{char} version[3] = \{0, 0, 0\};
+75     \textcolor{keywordtype}{int} firmware\_type = FIRMWARE\_TYPE\_RELEASE;
+76 
+77     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
+78         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'-'}) \{
+79             dash\_count++;
+80 
+81         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'.'}) \{
+82             point\_count++;
+83         \}
+84 
+85         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'r'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'c'}) \{
+86             firmware\_type = FIRMWARE\_TYPE\_RC;
+87 
+88         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'p'}) \{
+89             firmware\_type = FIRMWARE\_TYPE\_ALPHA;
+90 
+91         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'y'}) \{
+92             firmware\_type = FIRMWARE\_TYPE\_DEV;
+93 
+94         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'}) \{
+95             firmware\_type = FIRMWARE\_TYPE\_BETA;
+96 
+97         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'v'} && i > 0) \{
+98             firmware\_type = FIRMWARE\_TYPE\_DEV;
+99         \}
+100     \}
+101 
+102     \textcolor{keywordflow}{if} ((dash\_count == 1 && point\_count == 2 && firmware\_type == FIRMWARE\_TYPE\_RELEASE) ||
+103         (dash\_count == 2 && point\_count == 2) ||
+104         (dash\_count == 3 && point\_count == 4) ||
+105         (dash\_count == 4 && point\_count == 4)) \{
+106         firmware\_type = FIRMWARE\_TYPE\_DEV;
+107     \}
+108 
+109     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
+110         \textcolor{keywordflow}{if} (buffer\_counter > 2) \{
+111             \textcolor{keywordflow}{continue};
+112         \}
+113 
+114         \textcolor{keywordflow}{if} (tag[i] >= \textcolor{charliteral}{'0'} && tag[i] <= \textcolor{charliteral}{'9'}) \{
+115             buffer = (buffer == -1) ? 0 : buffer;
+116             buffer = buffer * 10 + (tag[i] - \textcolor{charliteral}{'0'});
+117 
+118         \} \textcolor{keywordflow}{else} \{
+119             \textcolor{keywordflow}{if} (buffer >= 0) \{
+120                 version[buffer\_counter] = buffer;
+121                 buffer\_counter++;
+122             \}
+123 
+124             buffer = -1;
+125         \}
+126     \}
+127 
+128     \textcolor{keywordflow}{if} (buffer >= 0) \{
+129         version[buffer\_counter] = buffer;
+130         buffer\_counter++;
+131     \}
+132 
+133     \textcolor{keywordflow}{if} (buffer\_counter <= 0) \{
+134         firmware\_type = 0x00;
+135     \}
+136 
+137     \textcolor{keywordflow}{if} (buffer\_counter == 3 || buffer\_counter == 6) \{
+138         version\_number = ((uint8\_t)version[0] << 8 * 3) |
+139                  ((uint8\_t)version[1] << 8 * 2) |
+140                  ((uint8\_t)version[2] << 8 * 1) | firmware\_type;
+141 
+142     \} \textcolor{keywordflow}{else} \{
+143         version\_number = 0;
+144     \}
+145 
+146     \textcolor{keywordflow}{return} version\_number;
+147 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{version_8h_ab74c0c1be88c621c4649792f2cae5343}\label{version_8h_ab74c0c1be88c621c4649792f2cae5343}} 
 \index{version.\+h@{version.\+h}!version\+\_\+tag\+\_\+to\+\_\+vendor\+\_\+version\+\_\+number@{version\+\_\+tag\+\_\+to\+\_\+vendor\+\_\+version\+\_\+number}}
@@ -530,92 +528,92 @@ F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+T\+Y\+PE)
 \end{DoxySeeAlso}
 
 
-Definition at line 152 of file version.\+c.
+Definition at line 154 of file version.\+c.
 
 
 \begin{DoxyCode}
-153 \{
-154     uint32\_t version\_number = 0;
-155 
-156     int16\_t buffer = -1;
-157     \textcolor{keywordtype}{size\_t} buffer\_counter = 0;
-158     \textcolor{keywordtype}{char} version[6] = \{0, 0, 0, 0, 0, 0\};
-159     \textcolor{keywordtype}{size\_t} dash\_count = 0;
-160     \textcolor{keywordtype}{size\_t} point\_count = 0;
-161     \textcolor{keywordtype}{int} firmware\_type = FIRMWARE\_TYPE\_RELEASE;
-162 
-163     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
-164         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'-'}) \{
-165             dash\_count++;
-166 
-167         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'.'}) \{
-168             point\_count++;
-169         \}
-170 
-171         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'r'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'c'}) \{
-172             firmware\_type = FIRMWARE\_TYPE\_RC;
-173 
-174         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'p'}) \{
-175             firmware\_type = FIRMWARE\_TYPE\_ALPHA;
-176 
-177         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'y'}) \{
-178             firmware\_type = FIRMWARE\_TYPE\_DEV;
-179 
-180         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'}) \{
-181             firmware\_type = FIRMWARE\_TYPE\_BETA;
-182 
-183         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'v'} && i > 0) \{
-184             firmware\_type = FIRMWARE\_TYPE\_DEV;
-185         \}
-186     \}
-187 
-188     \textcolor{keywordflow}{if} ((dash\_count == 1 && point\_count == 2 && firmware\_type == FIRMWARE\_TYPE\_RELEASE) ||
-189         (dash\_count == 2 && point\_count == 2) ||
-190         (dash\_count == 3 && point\_count == 4) ||
-191         (dash\_count == 4 && point\_count == 4)) \{
-192         firmware\_type = FIRMWARE\_TYPE\_DEV;
-193     \}
-194 
-195     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
-196         \textcolor{keywordflow}{if} (buffer\_counter > 5) \{
-197             \textcolor{keywordflow}{continue};
-198         \}
-199 
-200         \textcolor{keywordflow}{if} (tag[i] >= \textcolor{charliteral}{'0'} && tag[i] <= \textcolor{charliteral}{'9'}) \{
-201             buffer = (buffer == -1) ? 0 : buffer;
-202             buffer = buffer * 10 + (tag[i] - \textcolor{charliteral}{'0'});
-203 
-204         \} \textcolor{keywordflow}{else} \{
-205             \textcolor{keywordflow}{if} (buffer >= 0) \{
-206                 \textcolor{keywordflow}{if} (buffer\_counter + 1 == 4 && tag[i] == \textcolor{charliteral}{'-'}) \{
-207                     \textcolor{keywordflow}{break};
-208                 \}
-209 
-210                 version[buffer\_counter] = buffer;
-211                 buffer\_counter++;
-212             \}
-213 
-214             buffer = -1;
-215         \}
-216     \}
-217 
-218     \textcolor{keywordflow}{if} (buffer >= 0 && (buffer\_counter + 1 == 3 || buffer\_counter + 1 == 6)) \{
-219         version[buffer\_counter] = buffer;
-220         buffer\_counter++;
-221     \}
-222 
-223     \textcolor{keywordflow}{if} (buffer\_counter == 6) \{
-224         version\_number = ((uint8\_t)version[3] << 8 * 3) |
-225                  ((uint8\_t)version[4] << 8 * 2) |
-226                  ((uint8\_t)version[5] << 8 * 1) | firmware\_type;
-227 
-228     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (buffer\_counter == 3) \{
-229         version\_number = firmware\_type;
-230 
-231     \} \textcolor{keywordflow}{else} \{
-232         version\_number = 0;
-233     \}
-234 
-235     \textcolor{keywordflow}{return} version\_number;
-236 \}
+155 \{
+156     uint32\_t version\_number = 0;
+157 
+158     int16\_t buffer = -1;
+159     \textcolor{keywordtype}{size\_t} buffer\_counter = 0;
+160     \textcolor{keywordtype}{char} version[6] = \{0, 0, 0, 0, 0, 0\};
+161     \textcolor{keywordtype}{size\_t} dash\_count = 0;
+162     \textcolor{keywordtype}{size\_t} point\_count = 0;
+163     \textcolor{keywordtype}{int} firmware\_type = FIRMWARE\_TYPE\_RELEASE;
+164 
+165     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
+166         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'-'}) \{
+167             dash\_count++;
+168 
+169         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'.'}) \{
+170             point\_count++;
+171         \}
+172 
+173         \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'r'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'c'}) \{
+174             firmware\_type = FIRMWARE\_TYPE\_RC;
+175 
+176         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'p'}) \{
+177             firmware\_type = FIRMWARE\_TYPE\_ALPHA;
+178 
+179         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'} && i < strlen(tag) - 1 && tag[i + 1] == \textcolor{charliteral}{'y'}) \{
+180             firmware\_type = FIRMWARE\_TYPE\_DEV;
+181 
+182         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'t'}) \{
+183             firmware\_type = FIRMWARE\_TYPE\_BETA;
+184 
+185         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tag[i] == \textcolor{charliteral}{'v'} && i > 0) \{
+186             firmware\_type = FIRMWARE\_TYPE\_DEV;
+187         \}
+188     \}
+189 
+190     \textcolor{keywordflow}{if} ((dash\_count == 1 && point\_count == 2 && firmware\_type == FIRMWARE\_TYPE\_RELEASE) ||
+191         (dash\_count == 2 && point\_count == 2) ||
+192         (dash\_count == 3 && point\_count == 4) ||
+193         (dash\_count == 4 && point\_count == 4)) \{
+194         firmware\_type = FIRMWARE\_TYPE\_DEV;
+195     \}
+196 
+197     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < strlen(tag); i++) \{
+198         \textcolor{keywordflow}{if} (buffer\_counter > 5) \{
+199             \textcolor{keywordflow}{continue};
+200         \}
+201 
+202         \textcolor{keywordflow}{if} (tag[i] >= \textcolor{charliteral}{'0'} && tag[i] <= \textcolor{charliteral}{'9'}) \{
+203             buffer = (buffer == -1) ? 0 : buffer;
+204             buffer = buffer * 10 + (tag[i] - \textcolor{charliteral}{'0'});
+205 
+206         \} \textcolor{keywordflow}{else} \{
+207             \textcolor{keywordflow}{if} (buffer >= 0) \{
+208                 \textcolor{keywordflow}{if} (buffer\_counter + 1 == 4 && tag[i] == \textcolor{charliteral}{'-'}) \{
+209                     \textcolor{keywordflow}{break};
+210                 \}
+211 
+212                 version[buffer\_counter] = buffer;
+213                 buffer\_counter++;
+214             \}
+215 
+216             buffer = -1;
+217         \}
+218     \}
+219 
+220     \textcolor{keywordflow}{if} (buffer >= 0 && (buffer\_counter + 1 == 3 || buffer\_counter + 1 == 6)) \{
+221         version[buffer\_counter] = buffer;
+222         buffer\_counter++;
+223     \}
+224 
+225     \textcolor{keywordflow}{if} (buffer\_counter == 6) \{
+226         version\_number = ((uint8\_t)version[3] << 8 * 3) |
+227                  ((uint8\_t)version[4] << 8 * 2) |
+228                  ((uint8\_t)version[5] << 8 * 1) | firmware\_type;
+229 
+230     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (buffer\_counter == 3) \{
+231         version\_number = firmware\_type;
+232 
+233     \} \textcolor{keywordflow}{else} \{
+234         version\_number = 0;
+235     \}
+236 
+237     \textcolor{keywordflow}{return} version\_number;
+238 \}
 \end{DoxyCode}

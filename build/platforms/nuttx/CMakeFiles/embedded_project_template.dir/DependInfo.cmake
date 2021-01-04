@@ -31,6 +31,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/include"
   "../src/lib"
   "../src/modules"
+  "../boards/stm/nucleo_h743zi/include"
   "NuttX/nuttx/arch/arm/src/armv7-m"
   "NuttX/nuttx/arch/arm/src/chip"
   "NuttX/nuttx/arch/arm/src/common"
@@ -40,7 +41,9 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/CMakeFiles/hello.dir/DependInfo.cmake"
+  "/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/uORB.dir/DependInfo.cmake"
   "/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/DependInfo.cmake"
+  "/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/cdev.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,0 +1,363 @@
+\hypertarget{uORB_8cpp}{}\section{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+RB.cpp File Reference}
+\label{uORB_8cpp}\index{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B.\+cpp@{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B.\+cpp}}
+{\ttfamily \#include \char`\"{}u\+O\+R\+B.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}u\+O\+R\+B\+Manager.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}u\+O\+R\+B\+Common.\+hpp\char`\"{}}\newline
+Include dependency graph for u\+O\+R\+B.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dd5/uORB_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{uORB_8cpp_ac5ba0a0d1dc62f813314c0ff37a9a82a}{orb\+\_\+advertise} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data)
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{uORB_8cpp_a91df70141220b84c1c01619db0c3e105}{orb\+\_\+advertise\+\_\+queue} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data, unsigned int queue\+\_\+size)
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{uORB_8cpp_abe388f04be634866674331bb88664597}{orb\+\_\+advertise\+\_\+multi} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data, int $\ast$instance)
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{uORB_8cpp_a858116e979c705acb7c551a9649b0fec}{orb\+\_\+advertise\+\_\+multi\+\_\+queue} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data, int $\ast$instance, unsigned int queue\+\_\+size)
+\item 
+int \hyperlink{uORB_8cpp_a1c2ecd4919751835265681c212badaf4}{orb\+\_\+unadvertise} (\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} handle)
+\item 
+int \hyperlink{uORB_8cpp_af7a143a80b6b04689a3a4890ce8df4ae}{orb\+\_\+publish} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} handle, const void $\ast$data)
+\item 
+int \hyperlink{uORB_8cpp_a196a292b740589eff958aa42c4e96ef5}{orb\+\_\+subscribe} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta)
+\item 
+int \hyperlink{uORB_8cpp_a2c71c73d77220ff8faf2cb8eb7509e66}{orb\+\_\+subscribe\+\_\+multi} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, unsigned instance)
+\item 
+int \hyperlink{uORB_8cpp_a8adc3c48c1860deac8bd2a520e391837}{orb\+\_\+unsubscribe} (int handle)
+\item 
+int \hyperlink{uORB_8cpp_a2c09f842c44c64a06bcfe7a921f63cdf}{orb\+\_\+copy} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, int handle, void $\ast$buffer)
+\item 
+int \hyperlink{uORB_8cpp_a29b31278909062127ba89245a8182706}{orb\+\_\+check} (int handle, bool $\ast$updated)
+\item 
+int \hyperlink{uORB_8cpp_a840e123b2492357b5a302b7a867b8916}{orb\+\_\+exists} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, int instance)
+\item 
+int \hyperlink{uORB_8cpp_a10876a56e0054909b8e40fedd8baa624}{orb\+\_\+group\+\_\+count} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta)
+\item 
+int \hyperlink{uORB_8cpp_a5ddf366cd5c691af0d027c0bc0b173ba}{orb\+\_\+set\+\_\+interval} (int handle, unsigned interval)
+\item 
+int \hyperlink{uORB_8cpp_ae277b3d3a49ba3379134c4d49b43ab45}{orb\+\_\+get\+\_\+interval} (int handle, unsigned $\ast$interval)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A lightweight object broker. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uORB_8cpp_ac5ba0a0d1dc62f813314c0ff37a9a82a}\label{uORB_8cpp_ac5ba0a0d1dc62f813314c0ff37a9a82a}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+advertise@{orb\+\_\+advertise}}
+\index{orb\+\_\+advertise@{orb\+\_\+advertise}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise()}{orb\_advertise()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} orb\+\_\+advertise (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 43 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}{orb\_advertise}(meta, data);
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_abe388f04be634866674331bb88664597}\label{uORB_8cpp_abe388f04be634866674331bb88664597}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+advertise\+\_\+multi@{orb\+\_\+advertise\+\_\+multi}}
+\index{orb\+\_\+advertise\+\_\+multi@{orb\+\_\+advertise\+\_\+multi}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise\+\_\+multi()}{orb\_advertise\_multi()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} orb\+\_\+advertise\+\_\+multi (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data,  }\item[{int $\ast$}]{instance }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise\+\_\+multi()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 53 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\_advertise\_multi}(meta, data, instance);
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a858116e979c705acb7c551a9649b0fec}\label{uORB_8cpp_a858116e979c705acb7c551a9649b0fec}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+advertise\+\_\+multi\+\_\+queue@{orb\+\_\+advertise\+\_\+multi\+\_\+queue}}
+\index{orb\+\_\+advertise\+\_\+multi\+\_\+queue@{orb\+\_\+advertise\+\_\+multi\+\_\+queue}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise\+\_\+multi\+\_\+queue()}{orb\_advertise\_multi\_queue()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} orb\+\_\+advertise\+\_\+multi\+\_\+queue (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data,  }\item[{int $\ast$}]{instance,  }\item[{unsigned int}]{queue\+\_\+size }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise\+\_\+multi()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 58 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\_advertise\_multi}(meta, data, instance, queue\_size);
+62 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a91df70141220b84c1c01619db0c3e105}\label{uORB_8cpp_a91df70141220b84c1c01619db0c3e105}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+advertise\+\_\+queue@{orb\+\_\+advertise\+\_\+queue}}
+\index{orb\+\_\+advertise\+\_\+queue@{orb\+\_\+advertise\+\_\+queue}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise\+\_\+queue()}{orb\_advertise\_queue()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} orb\+\_\+advertise\+\_\+queue (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data,  }\item[{unsigned int}]{queue\+\_\+size }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 48 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}{orb\_advertise}(meta, data, queue\_size);
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a29b31278909062127ba89245a8182706}\label{uORB_8cpp_a29b31278909062127ba89245a8182706}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+check@{orb\+\_\+check}}
+\index{orb\+\_\+check@{orb\+\_\+check}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+check()}{orb\_check()}}
+{\footnotesize\ttfamily int orb\+\_\+check (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{bool $\ast$}]{updated }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a5503920d25d544ce3be1cf79cda869f7}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+check()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 94 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+95 \{
+96     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->\hyperlink{classuORB_1_1Manager_a5503920d25d544ce3be1cf79cda869f7}{orb\_check}(handle, updated);
+97 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a2c09f842c44c64a06bcfe7a921f63cdf}\label{uORB_8cpp_a2c09f842c44c64a06bcfe7a921f63cdf}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+copy@{orb\+\_\+copy}}
+\index{orb\+\_\+copy@{orb\+\_\+copy}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+copy()}{orb\_copy()}}
+{\footnotesize\ttfamily int orb\+\_\+copy (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{int}]{handle,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_af1048c82b439300c706fe0a083b61f90}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+copy()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 89 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+90 \{
+91     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->\hyperlink{classuORB_1_1Manager_af1048c82b439300c706fe0a083b61f90}{orb\_copy}(meta, handle, buffer)
+      ;
+92 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a840e123b2492357b5a302b7a867b8916}\label{uORB_8cpp_a840e123b2492357b5a302b7a867b8916}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+exists@{orb\+\_\+exists}}
+\index{orb\+\_\+exists@{orb\+\_\+exists}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+exists()}{orb\_exists()}}
+{\footnotesize\ttfamily int orb\+\_\+exists (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{int}]{instance }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a446823738a75847a6732008784445c9f}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+exists()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 99 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+100 \{
+101     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->\hyperlink{classuORB_1_1Manager_a446823738a75847a6732008784445c9f}{orb\_exists}(meta, instance);
+102 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_ae277b3d3a49ba3379134c4d49b43ab45}\label{uORB_8cpp_ae277b3d3a49ba3379134c4d49b43ab45}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+get\+\_\+interval@{orb\+\_\+get\+\_\+interval}}
+\index{orb\+\_\+get\+\_\+interval@{orb\+\_\+get\+\_\+interval}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+get\+\_\+interval()}{orb\_get\_interval()}}
+{\footnotesize\ttfamily int orb\+\_\+get\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{unsigned $\ast$}]{interval }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a627a7e6ef16970d2b6d8f02471795963}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+get\+\_\+interval()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 120 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+121 \{
+122     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a627a7e6ef16970d2b6d8f02471795963}{orb\_get\_interval}(handle, interval);
+123 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a10876a56e0054909b8e40fedd8baa624}\label{uORB_8cpp_a10876a56e0054909b8e40fedd8baa624}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+group\+\_\+count@{orb\+\_\+group\+\_\+count}}
+\index{orb\+\_\+group\+\_\+count@{orb\+\_\+group\+\_\+count}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+group\+\_\+count()}{orb\_group\_count()}}
+{\footnotesize\ttfamily int orb\+\_\+group\+\_\+count (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta }\end{DoxyParamCaption})}
+
+Get the number of published instances of a topic group
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & O\+RB topic metadata. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of published instances of this topic 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+105 \{
+106     \textcolor{keywordtype}{unsigned} instance = 0;
+107 
+108     \textcolor{keywordflow}{while} (\hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->\hyperlink{uORB_8cpp_a840e123b2492357b5a302b7a867b8916}{orb\_exists}(meta, instance) 
+      == 0) \{
+109         ++instance;
+110     \};
+111 
+112     \textcolor{keywordflow}{return} instance;
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_af7a143a80b6b04689a3a4890ce8df4ae}\label{uORB_8cpp_af7a143a80b6b04689a3a4890ce8df4ae}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+publish@{orb\+\_\+publish}}
+\index{orb\+\_\+publish@{orb\+\_\+publish}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+publish()}{orb\_publish()}}
+{\footnotesize\ttfamily int orb\+\_\+publish (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t}}]{handle,  }\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+publish()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 69 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{
+71     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->\hyperlink{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}{orb\_publish}(meta, handle, 
+      data);
+72 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a5ddf366cd5c691af0d027c0bc0b173ba}\label{uORB_8cpp_a5ddf366cd5c691af0d027c0bc0b173ba}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+set\+\_\+interval@{orb\+\_\+set\+\_\+interval}}
+\index{orb\+\_\+set\+\_\+interval@{orb\+\_\+set\+\_\+interval}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+set\+\_\+interval()}{orb\_set\_interval()}}
+{\footnotesize\ttfamily int orb\+\_\+set\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{unsigned}]{interval }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+set\+\_\+interval()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 115 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+116 \{
+117     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}{orb\_set\_interval}(handle, interval);
+118 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a196a292b740589eff958aa42c4e96ef5}\label{uORB_8cpp_a196a292b740589eff958aa42c4e96ef5}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+subscribe@{orb\+\_\+subscribe}}
+\index{orb\+\_\+subscribe@{orb\+\_\+subscribe}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+subscribe()}{orb\_subscribe()}}
+{\footnotesize\ttfamily int orb\+\_\+subscribe (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+subscribe()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 74 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{
+76     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}{orb\_subscribe}(meta);
+77 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a2c71c73d77220ff8faf2cb8eb7509e66}\label{uORB_8cpp_a2c71c73d77220ff8faf2cb8eb7509e66}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+subscribe\+\_\+multi@{orb\+\_\+subscribe\+\_\+multi}}
+\index{orb\+\_\+subscribe\+\_\+multi@{orb\+\_\+subscribe\+\_\+multi}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+subscribe\+\_\+multi()}{orb\_subscribe\_multi()}}
+{\footnotesize\ttfamily int orb\+\_\+subscribe\+\_\+multi (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{unsigned}]{instance }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a9a31fb71a0962db44450963559296cfe}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+subscribe\+\_\+multi()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 79 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a9a31fb71a0962db44450963559296cfe}{orb\_subscribe\_multi}(meta, instance);
+82 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a1c2ecd4919751835265681c212badaf4}\label{uORB_8cpp_a1c2ecd4919751835265681c212badaf4}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+unadvertise@{orb\+\_\+unadvertise}}
+\index{orb\+\_\+unadvertise@{orb\+\_\+unadvertise}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+unadvertise()}{orb\_unadvertise()}}
+{\footnotesize\ttfamily int orb\+\_\+unadvertise (\begin{DoxyParamCaption}\item[{\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t}}]{handle }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a45601ddc722320b9cd660d9548263824}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+unadvertise()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 64 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{
+66     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a45601ddc722320b9cd660d9548263824}{orb\_unadvertise}(handle);
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{uORB_8cpp_a8adc3c48c1860deac8bd2a520e391837}\label{uORB_8cpp_a8adc3c48c1860deac8bd2a520e391837}} 
+\index{u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}!orb\+\_\+unsubscribe@{orb\+\_\+unsubscribe}}
+\index{orb\+\_\+unsubscribe@{orb\+\_\+unsubscribe}!u\+O\+R\+B.\+cpp@{u\+O\+R\+B.\+cpp}}
+\subsubsection{\texorpdfstring{orb\+\_\+unsubscribe()}{orb\_unsubscribe()}}
+{\footnotesize\ttfamily int orb\+\_\+unsubscribe (\begin{DoxyParamCaption}\item[{int}]{handle }\end{DoxyParamCaption})}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a77539878280b749d79d2c16dc5628c81}{u\+O\+R\+B\+::\+Manager\+::orb\+\_\+unsubscribe()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 84 of file u\+O\+R\+B.\+cpp.
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{uORB::Manager::get\_instance}()->
+      \hyperlink{classuORB_1_1Manager_a77539878280b749d79d2c16dc5628c81}{orb\_unsubscribe}(handle);
+87 \}
+\end{DoxyCode}

@@ -33,6 +33,8 @@
 
 #include "version.h"
 
+#include "build_git_version.h"
+
 #include <string.h>
 
 #if !defined(CONFIG_CDCACM_PRODUCTID)

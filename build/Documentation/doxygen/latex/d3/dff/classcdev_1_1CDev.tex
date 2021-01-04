@@ -1,0 +1,879 @@
+\hypertarget{classcdev_1_1CDev}{}\section{cdev\+:\+:C\+Dev Class Reference}
+\label{classcdev_1_1CDev}\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+
+
+{\ttfamily \#include $<$C\+Dev.\+hpp$>$}
+
+
+
+Inheritance diagram for cdev\+:\+:C\+Dev\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{dc/d50/classcdev_1_1CDev__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcdev_1_1CDev_acd46bce7814f428044c0258f8d0518ab}{C\+Dev} (const char $\ast$devname)
+\item 
+\mbox{\Hypertarget{classcdev_1_1CDev_a23663da9547f16eaa68ee0adf568bd12}\label{classcdev_1_1CDev_a23663da9547f16eaa68ee0adf568bd12}} 
+{\bfseries C\+Dev} (const \hyperlink{classcdev_1_1CDev}{cdev\+::\+C\+Dev} \&)=delete
+\item 
+\mbox{\Hypertarget{classcdev_1_1CDev_acd0afe1a56175f89627126c57f382a20}\label{classcdev_1_1CDev_acd0afe1a56175f89627126c57f382a20}} 
+\hyperlink{classcdev_1_1CDev}{C\+Dev} \& {\bfseries operator=} (const \hyperlink{classcdev_1_1CDev}{C\+Dev} \&)=delete
+\item 
+\mbox{\Hypertarget{classcdev_1_1CDev_a37de4c22663367cb98ee75a66479c961}\label{classcdev_1_1CDev_a37de4c22663367cb98ee75a66479c961}} 
+{\bfseries C\+Dev} (\hyperlink{classcdev_1_1CDev}{C\+Dev} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classcdev_1_1CDev_aa59b53a58372869bbe2f163bef0d5b74}\label{classcdev_1_1CDev_aa59b53a58372869bbe2f163bef0d5b74}} 
+\hyperlink{classcdev_1_1CDev}{C\+Dev} \& {\bfseries operator=} (\hyperlink{classcdev_1_1CDev}{C\+Dev} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classcdev_1_1CDev_a09c11095ecdc3b1bfe7eb0e7d47ea954}\label{classcdev_1_1CDev_a09c11095ecdc3b1bfe7eb0e7d47ea954}} 
+virtual int {\bfseries init} ()
+\item 
+virtual int \hyperlink{classcdev_1_1CDev_ac04b7ee91373c86545107e3467ba54c1}{open} (file $\ast$filep)
+\item 
+virtual int \hyperlink{classcdev_1_1CDev_a9241755ab3abf102eea85dad1e3dc6c4}{close} (file $\ast$filep)
+\item 
+virtual ssize\+\_\+t \hyperlink{classcdev_1_1CDev_a1b0db49c478b621333aff6bb3321d057}{read} (file $\ast$filep, char $\ast$buffer, size\+\_\+t buflen)
+\item 
+virtual ssize\+\_\+t \hyperlink{classcdev_1_1CDev_a54aff43049b22cea19f8cc31cb2a0fd0}{write} (file $\ast$filep, const char $\ast$buffer, size\+\_\+t buflen)
+\item 
+virtual off\+\_\+t \hyperlink{classcdev_1_1CDev_a987dd32ef79c2bb4380fa021ce430de2}{seek} (file $\ast$filep, off\+\_\+t offset, int whence)
+\item 
+virtual int \hyperlink{classcdev_1_1CDev_a87eb4d4b92a501de458736e8d24eec40}{ioctl} (file $\ast$filep, int cmd, unsigned long arg)
+\item 
+int \hyperlink{classcdev_1_1CDev_a219a565bb1842c62e0f45a7eeaaec0d3}{poll} (file $\ast$filep, struct pollfd $\ast$fds, bool setup)
+\item 
+const char $\ast$ \hyperlink{classcdev_1_1CDev_a0bc1072e967a90dfac04a1227f200f6f}{get\+\_\+devname} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual pollevent\+\_\+t \hyperlink{classcdev_1_1CDev_abf40a822665b0889584268e8a4dfbef2}{poll\+\_\+state} (file $\ast$filep)
+\item 
+void \hyperlink{classcdev_1_1CDev_aa23e0fac4d51f7b14db7a7e7dfa0ac06}{poll\+\_\+notify} (pollevent\+\_\+t events)
+\item 
+virtual void \hyperlink{classcdev_1_1CDev_ada35d652d0f6d7257fffe4ead0fbb6dd}{poll\+\_\+notify\+\_\+one} (struct pollfd $\ast$fds, pollevent\+\_\+t events)
+\item 
+virtual int \hyperlink{classcdev_1_1CDev_a89860de90cb8850c1ac71ec59764cf46}{open\+\_\+first} (file $\ast$filep)
+\item 
+virtual int \hyperlink{classcdev_1_1CDev_ae2fb43c7b0884dcbc6fbf1aa90d50a38}{close\+\_\+last} (file $\ast$filep)
+\item 
+int \hyperlink{classcdev_1_1CDev_a8cdc695d86a00139e11b2d57974475b4}{register\+\_\+class\+\_\+devname} (const char $\ast$class\+\_\+devname)
+\item 
+int \hyperlink{classcdev_1_1CDev_a84f73216813a23f91cd9414262484f3f}{unregister\+\_\+class\+\_\+devname} (const char $\ast$class\+\_\+devname, unsigned class\+\_\+instance)
+\item 
+void \hyperlink{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}{lock} ()
+\item 
+void \hyperlink{classcdev_1_1CDev_af65273e0578b277deea057dc7d558e9d}{unlock} ()
+\item 
+int \hyperlink{classcdev_1_1CDev_a9fe9c784053bc2b7748db1ec405ae83f}{unregister\+\_\+driver\+\_\+and\+\_\+memory} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sem\+\_\+t \hyperlink{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}{\+\_\+lock}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const file\+\_\+operations \hyperlink{classcdev_1_1CDev_acb99fb0026b3466f200feef27046d612}{fops}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for any character device 
+
+Definition at line 77 of file C\+Dev.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcdev_1_1CDev_acd46bce7814f428044c0258f8d0518ab}\label{classcdev_1_1CDev_acd46bce7814f428044c0258f8d0518ab}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!C\+Dev@{C\+Dev}}
+\index{C\+Dev@{C\+Dev}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{C\+Dev()}{CDev()}}
+{\footnotesize\ttfamily cdev\+::\+C\+Dev\+::\+C\+Dev (\begin{DoxyParamCaption}\item[{const char $\ast$}]{devname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Driver name \\
+\hline
+{\em devname} & Device node name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+59                               :
+60     \_devname(devname)
+61 \{
+62     \textcolor{comment}{//PX4\_DEBUG("CDev::CDev");}
+63 
+64     \textcolor{keywordtype}{int} ret = sem\_init(&\hyperlink{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}{\_lock}, 0, 1);
+65 
+66     \textcolor{keywordflow}{if} (ret != 0) \{
+67         \textcolor{comment}{//PX4\_DEBUG("SEM INIT FAIL: ret %d", ret);}
+68     \}
+69 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcdev_1_1CDev_a9241755ab3abf102eea85dad1e3dc6c4}\label{classcdev_1_1CDev_a9241755ab3abf102eea85dad1e3dc6c4}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!close@{close}}
+\index{close@{close}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::close (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle a close of the device.
+
+This function is called for every close of the device. The default implementation maintains \+\_\+open\+\_\+count and returns OK as long as it is not zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the close was successful, -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_a80ebf695636c701d3378525b6d0e4148}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 175 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+176 \{
+177     \textcolor{comment}{//PX4\_DEBUG("CDev::close");}
+178     \textcolor{keywordtype}{int} ret = 0;
+179 
+180     \hyperlink{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}{lock}();
+181 
+182     \textcolor{keywordflow}{if} (\_open\_count > 0) \{
+183         \textcolor{comment}{/* decrement the open count */}
+184         \_open\_count--;
+185 
+186         \textcolor{comment}{/* callback cannot decline the close */}
+187         \textcolor{keywordflow}{if} (\_open\_count == 0) \{
+188             ret = \hyperlink{classcdev_1_1CDev_ae2fb43c7b0884dcbc6fbf1aa90d50a38}{close\_last}(filep);
+189         \}
+190 
+191     \} \textcolor{keywordflow}{else} \{
+192         ret = -EBADF;
+193     \}
+194 
+195     \hyperlink{classcdev_1_1CDev_af65273e0578b277deea057dc7d558e9d}{unlock}();
+196 
+197     \textcolor{keywordflow}{return} ret;
+198 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_ae2fb43c7b0884dcbc6fbf1aa90d50a38}\label{classcdev_1_1CDev_ae2fb43c7b0884dcbc6fbf1aa90d50a38}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!close\+\_\+last@{close\+\_\+last}}
+\index{close\+\_\+last@{close\+\_\+last}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{close\+\_\+last()}{close\_last()}}
+{\footnotesize\ttfamily virtual int cdev\+::\+C\+Dev\+::close\+\_\+last (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Notification of the last close.
+
+This function is called when the device open count transitions from one to zero. The driver lock is held for the duration of the call.
+
+The default implementation returns OK.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the open should return OK, -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+253 \{ \textcolor{keywordflow}{return} 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a0bc1072e967a90dfac04a1227f200f6f}\label{classcdev_1_1CDev_a0bc1072e967a90dfac04a1227f200f6f}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!get\+\_\+devname@{get\+\_\+devname}}
+\index{get\+\_\+devname@{get\+\_\+devname}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{get\+\_\+devname()}{get\_devname()}}
+{\footnotesize\ttfamily const char$\ast$ cdev\+::\+C\+Dev\+::get\+\_\+devname (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the device name.
+
+\begin{DoxyReturn}{Returns}
+the file system string of the device handle 
+\end{DoxyReturn}
+
+
+Definition at line 188 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+188 \{ \textcolor{keywordflow}{return} \_devname; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a87eb4d4b92a501de458736e8d24eec40}\label{classcdev_1_1CDev_a87eb4d4b92a501de458736e8d24eec40}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!ioctl@{ioctl}}
+\index{ioctl@{ioctl}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{ioctl()}{ioctl()}}
+{\footnotesize\ttfamily virtual int cdev\+::\+C\+Dev\+::ioctl (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep,  }\item[{int}]{cmd,  }\item[{unsigned long}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Perform an ioctl operation on the device.
+
+The default implementation returns -\/\+E\+N\+O\+T\+TY. Subclasses should call the default implementation for any command they do not handle themselves.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+{\em cmd} & The ioctl command value. \\
+\hline
+{\em arg} & The ioctl argument value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, or -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_acad1520dfb19e9449546dad7a4129c26}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 168 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+168 \{ \textcolor{keywordflow}{return} -ENOTTY; \};
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}\label{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!lock@{lock}}
+\index{lock@{lock}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily void cdev\+::\+C\+Dev\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Take the driver lock.
+
+Each driver instance has its own lock/semaphore.
+
+Note that we must loop as the wait may be interrupted by a signal.
+
+Careful\+: \hyperlink{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}{lock()} calls cannot be nested! 
+
+Definition at line 283 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+283 \{ \textcolor{keywordflow}{do} \{\} \textcolor{keywordflow}{while} (sem\_wait(&\hyperlink{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}{\_lock}) != 0); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_ac04b7ee91373c86545107e3467ba54c1}\label{classcdev_1_1CDev_ac04b7ee91373c86545107e3467ba54c1}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!open@{open}}
+\index{open@{open}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::open (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Handle an open of the device.
+
+This function is called for every open of the device. The default implementation maintains \+\_\+open\+\_\+count and always returns OK.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the open is allowed, -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_ae7f3782c9876a17b4aa6949440655f1f}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 150 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+151 \{
+152     \textcolor{comment}{//PX4\_DEBUG("CDev::open");}
+153     \textcolor{keywordtype}{int} ret = 0;
+154 
+155     \hyperlink{classcdev_1_1CDev_ae676cccee31dd393ab681414a146d868}{lock}();
+156     \textcolor{comment}{/* increment the open count */}
+157     \_open\_count++;
+158 
+159     \textcolor{keywordflow}{if} (\_open\_count == 1) \{
+160 
+161         \textcolor{comment}{/* first-open callback may decline the open */}
+162         ret = \hyperlink{classcdev_1_1CDev_a89860de90cb8850c1ac71ec59764cf46}{open\_first}(filep);
+163 
+164         \textcolor{keywordflow}{if} (ret != 0) \{
+165             \_open\_count--;
+166         \}
+167     \}
+168 
+169     \hyperlink{classcdev_1_1CDev_af65273e0578b277deea057dc7d558e9d}{unlock}();
+170 
+171     \textcolor{keywordflow}{return} ret;
+172 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a89860de90cb8850c1ac71ec59764cf46}\label{classcdev_1_1CDev_a89860de90cb8850c1ac71ec59764cf46}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!open\+\_\+first@{open\+\_\+first}}
+\index{open\+\_\+first@{open\+\_\+first}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{open\+\_\+first()}{open\_first()}}
+{\footnotesize\ttfamily virtual int cdev\+::\+C\+Dev\+::open\+\_\+first (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Notification of the first open.
+
+This function is called when the device open count transitions from zero to one. The driver lock is held for the duration of the call.
+
+The default implementation returns OK.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the open should proceed, -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+240 \{ \textcolor{keywordflow}{return} 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a219a565bb1842c62e0f45a7eeaaec0d3}\label{classcdev_1_1CDev_a219a565bb1842c62e0f45a7eeaaec0d3}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!poll@{poll}}
+\index{poll@{poll}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::poll (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep,  }\item[{struct pollfd $\ast$}]{fds,  }\item[{bool}]{setup }\end{DoxyParamCaption})}
+
+Perform a poll setup/teardown operation.
+
+This is handled internally and should not normally be overridden.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the internal file structure. \\
+\hline
+{\em fds} & Poll descriptor being waited on. \\
+\hline
+{\em setup} & True if this is establishing a request, false if it is being torn down. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, or -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+202 \{
+203     \textcolor{comment}{//PX4\_DEBUG("CDev::Poll %s", setup ? "setup" : "teardown");}
+204     \textcolor{keywordtype}{int} ret = 0;
+205 
+206     \textcolor{keywordflow}{if} (setup) \{
+207         \textcolor{comment}{/*}
+208 \textcolor{comment}{         * Save the file pointer in the pollfd for the subclass'}
+209 \textcolor{comment}{         * benefit.}
+210 \textcolor{comment}{         */}
+211         fds->priv = (\textcolor{keywordtype}{void} *)filep;
+212         \textcolor{comment}{//PX4\_DEBUG("CDev::poll: fds->priv = %p", filep);}
+213 
+214         \textcolor{comment}{/*}
+215 \textcolor{comment}{         * Lock against poll\_notify() and possibly other callers (protect \_pollset).}
+216 \textcolor{comment}{         */}
+217         
+218         ATOMIC\_ENTER;
+219 
+220         \textcolor{comment}{/*}
+221 \textcolor{comment}{         * Try to store the fds for later use and handle array resizing.}
+222 \textcolor{comment}{         */}
+223         \textcolor{keywordflow}{while} ((ret = store\_poll\_waiter(fds)) == -ENFILE) \{
+224 
+225             \textcolor{comment}{// No free slot found. Resize the pollset. This is expensive, but it's only needed initially.}
+226 
+227             \textcolor{keywordflow}{if} (\_max\_pollwaiters >= 256 / 2) \{ \textcolor{comment}{//\_max\_pollwaiters is uint8\_t}
+228                 ret = -ENOMEM;
+229                 \textcolor{keywordflow}{break};
+230             \}
+231 
+232             \textcolor{keyword}{const} uint8\_t new\_count = \_max\_pollwaiters > 0 ? \_max\_pollwaiters * 2 : 1;
+233             pollfd **prev\_pollset = \_pollset;
+234 
+235 
+236             \textcolor{comment}{// malloc uses a semaphore, we need to call it enabled IRQ's}
+237             leave\_critical\_section(flags);
+238 
+239             pollfd **new\_pollset = \textcolor{keyword}{new} pollfd *[new\_count];
+240 
+241 
+242             flags = enter\_critical\_section();
+243 
+244 
+245             \textcolor{keywordflow}{if} (prev\_pollset == \_pollset) \{
+246                 \textcolor{comment}{// no one else updated the \_pollset meanwhile, so we're good to go}
+247                 \textcolor{keywordflow}{if} (!new\_pollset) \{
+248                     ret = -ENOMEM;
+249                     \textcolor{keywordflow}{break};
+250                 \}
+251 
+252                 \textcolor{keywordflow}{if} (\_max\_pollwaiters > 0) \{
+253                     memset(new\_pollset + \_max\_pollwaiters, 0, \textcolor{keyword}{sizeof}(pollfd *) * (new\_count - 
+      \_max\_pollwaiters));
+254                     memcpy(new\_pollset, \_pollset, \textcolor{keyword}{sizeof}(pollfd *) * \_max\_pollwaiters);
+255                 \}
+256 
+257                 \_pollset = new\_pollset;
+258                 \_pollset[\_max\_pollwaiters] = fds;
+259                 \_max\_pollwaiters = new\_count;
+260 
+261                 \textcolor{comment}{// free the previous \_pollset (we need to unlock here which is fine because we don't access
+       \_pollset anymore)}
+262 
+263                 leave\_critical\_section(flags);
+264 
+265 
+266                 \textcolor{keywordflow}{if} (prev\_pollset) \{
+267                     \textcolor{keyword}{delete}[](prev\_pollset);
+268                 \}
+269 
+270 
+271                 flags = enter\_critical\_section();
+272 
+273 
+274                 \textcolor{comment}{// Success}
+275                 ret = 0;
+276                 \textcolor{keywordflow}{break};
+277             \}
+278 
+279 
+280             leave\_critical\_section(flags);
+281 
+282             \textcolor{comment}{// We have to retry}
+283             \textcolor{keyword}{delete}[] new\_pollset;
+284 
+285             flags = enter\_critical\_section();
+286 
+287         \}
+288 
+289         \textcolor{keywordflow}{if} (ret == 0) \{
+290 
+291             \textcolor{comment}{/*}
+292 \textcolor{comment}{             * Check to see whether we should send a poll notification}
+293 \textcolor{comment}{             * immediately.}
+294 \textcolor{comment}{             */}
+295             fds->revents |= fds->events & \hyperlink{classcdev_1_1CDev_abf40a822665b0889584268e8a4dfbef2}{poll\_state}(filep);
+296 
+297             \textcolor{comment}{/* yes? post the notification */}
+298             \textcolor{keywordflow}{if} (fds->revents != 0) \{
+299                 sem\_post(fds->sem);
+300             \}
+301 
+302         \}
+303 
+304         ATOMIC\_LEAVE;
+305 
+306     \} \textcolor{keywordflow}{else} \{
+307         ATOMIC\_ENTER;
+308         \textcolor{comment}{/*}
+309 \textcolor{comment}{         * Handle a teardown request.}
+310 \textcolor{comment}{         */}
+311         ret = remove\_poll\_waiter(fds);
+312         ATOMIC\_LEAVE;
+313     \}
+314 
+315     \textcolor{keywordflow}{return} ret;
+316 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_aa23e0fac4d51f7b14db7a7e7dfa0ac06}\label{classcdev_1_1CDev_aa23e0fac4d51f7b14db7a7e7dfa0ac06}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!poll\+\_\+notify@{poll\+\_\+notify}}
+\index{poll\+\_\+notify@{poll\+\_\+notify}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{poll\+\_\+notify()}{poll\_notify()}}
+{\footnotesize\ttfamily void cdev\+::\+C\+Dev\+::poll\+\_\+notify (\begin{DoxyParamCaption}\item[{pollevent\+\_\+t}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Report new poll events.
+
+This function should be called anytime the state of the device changes in a fashion that might be interesting to a poll waiter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em events} & The new event(s) being announced. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 319 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+320 \{
+321     \textcolor{comment}{//PX4\_DEBUG("CDev::poll\_notify events = %0x", events);}
+322 
+323     \textcolor{comment}{/* lock against poll() as well as other wakeups */}
+324     ATOMIC\_ENTER;
+325 
+326     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} i = 0; i < \_max\_pollwaiters; i++) \{
+327         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} != \_pollset[i]) \{
+328             \hyperlink{classcdev_1_1CDev_ada35d652d0f6d7257fffe4ead0fbb6dd}{poll\_notify\_one}(\_pollset[i], events);
+329         \}
+330     \}
+331 
+332     ATOMIC\_LEAVE;
+333 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_ada35d652d0f6d7257fffe4ead0fbb6dd}\label{classcdev_1_1CDev_ada35d652d0f6d7257fffe4ead0fbb6dd}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!poll\+\_\+notify\+\_\+one@{poll\+\_\+notify\+\_\+one}}
+\index{poll\+\_\+notify\+\_\+one@{poll\+\_\+notify\+\_\+one}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{poll\+\_\+notify\+\_\+one()}{poll\_notify\_one()}}
+{\footnotesize\ttfamily void cdev\+::\+C\+Dev\+::poll\+\_\+notify\+\_\+one (\begin{DoxyParamCaption}\item[{struct pollfd $\ast$}]{fds,  }\item[{pollevent\+\_\+t}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Internal implementation of poll\+\_\+notify.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fds} & A poll waiter to notify. \\
+\hline
+{\em events} & The event(s) to send to the waiter. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_a77061c03defdcb3eedfc9cdc8b38c003}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 336 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+337 \{
+338     \textcolor{comment}{//PX4\_DEBUG("CDev::poll\_notify\_one");}
+339 
+340     \textcolor{comment}{/* update the reported event set */}
+341     fds->revents |= fds->events & events;
+342 
+343     \textcolor{comment}{//PX4\_DEBUG(" Events fds=%p %0x %0x %0x", fds, fds->revents, fds->events, events);}
+344 
+345     \textcolor{keywordflow}{if} (fds->revents != 0) \{
+346         sem\_post(fds->sem);
+347     \}
+348 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_abf40a822665b0889584268e8a4dfbef2}\label{classcdev_1_1CDev_abf40a822665b0889584268e8a4dfbef2}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!poll\+\_\+state@{poll\+\_\+state}}
+\index{poll\+\_\+state@{poll\+\_\+state}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{poll\+\_\+state()}{poll\_state()}}
+{\footnotesize\ttfamily virtual pollevent\+\_\+t cdev\+::\+C\+Dev\+::poll\+\_\+state (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Check the current state of the device for poll events from the perspective of the file.
+
+This function is called by the default \hyperlink{classcdev_1_1CDev_a219a565bb1842c62e0f45a7eeaaec0d3}{poll()} implementation when a poll is set up to determine whether the poll should return immediately.
+
+The default implementation returns no events.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & The file that\textquotesingle{}s interested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current set of poll events. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_a3ac7d5c93e5fd480cd623fd421afa060}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 209 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+209 \{ \textcolor{keywordflow}{return} 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a1b0db49c478b621333aff6bb3321d057}\label{classcdev_1_1CDev_a1b0db49c478b621333aff6bb3321d057}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!read@{read}}
+\index{read@{read}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t cdev\+::\+C\+Dev\+::read (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep,  }\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buflen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Perform a read from the device.
+
+The default implementation returns -\/\+E\+N\+O\+S\+YS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+{\em buffer} & Pointer to the buffer into which data should be placed. \\
+\hline
+{\em buflen} & The number of bytes to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read or -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_ada5db18aae221ae76e023651cbf9461c}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 130 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+130 \{ \textcolor{keywordflow}{return} -ENOSYS; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a8cdc695d86a00139e11b2d57974475b4}\label{classcdev_1_1CDev_a8cdc695d86a00139e11b2d57974475b4}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!register\+\_\+class\+\_\+devname@{register\+\_\+class\+\_\+devname}}
+\index{register\+\_\+class\+\_\+devname@{register\+\_\+class\+\_\+devname}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{register\+\_\+class\+\_\+devname()}{register\_class\_devname()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::register\+\_\+class\+\_\+devname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{class\+\_\+devname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Register a class device name, automatically adding device class instance suffix if need be.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+\_\+devname} & Device class name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+class\+\_\+instamce Class instance created, or -\/errno on failure 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+88 \{
+89     \textcolor{comment}{//PX4\_DEBUG("CDev::register\_class\_devname %s", class\_devname);}
+90 
+91     \textcolor{keywordflow}{if} (class\_devname == \textcolor{keyword}{nullptr}) \{
+92         \textcolor{keywordflow}{return} -EINVAL;
+93     \}
+94 
+95     \textcolor{keywordtype}{int} class\_instance = 0;
+96     \textcolor{keywordtype}{int} ret = -ENOSPC;
+97 
+98     \textcolor{keywordflow}{while} (class\_instance < 4) \{
+99         \textcolor{keywordtype}{char} name[32];
+100         snprintf(name, \textcolor{keyword}{sizeof}(name), \textcolor{stringliteral}{"%s%d"}, class\_devname, class\_instance);
+101         ret = register\_driver(name, &\hyperlink{classcdev_1_1CDev_acb99fb0026b3466f200feef27046d612}{fops}, 0666, (\textcolor{keywordtype}{void} *)\textcolor{keyword}{this});
+102 
+103         \textcolor{keywordflow}{if} (ret == 0) \{
+104             \textcolor{keywordflow}{break};
+105         \}
+106 
+107         class\_instance++;
+108     \}
+109 
+110     \textcolor{keywordflow}{if} (class\_instance == 4) \{
+111         \textcolor{keywordflow}{return} ret;
+112     \}
+113 
+114     \textcolor{keywordflow}{return} class\_instance;
+115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a987dd32ef79c2bb4380fa021ce430de2}\label{classcdev_1_1CDev_a987dd32ef79c2bb4380fa021ce430de2}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!seek@{seek}}
+\index{seek@{seek}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{seek()}{seek()}}
+{\footnotesize\ttfamily virtual off\+\_\+t cdev\+::\+C\+Dev\+::seek (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep,  }\item[{off\+\_\+t}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Perform a logical seek operation on the device.
+
+The default implementation returns -\/\+E\+N\+O\+S\+YS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+{\em offset} & The new file position relative to whence. \\
+\hline
+{\em whence} & S\+E\+E\+K\+\_\+\+O\+FS, S\+E\+E\+K\+\_\+\+C\+UR or S\+E\+E\+K\+\_\+\+E\+ND. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The previous offset, or -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+154 \{ \textcolor{keywordflow}{return} -ENOSYS; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_af65273e0578b277deea057dc7d558e9d}\label{classcdev_1_1CDev_af65273e0578b277deea057dc7d558e9d}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!unlock@{unlock}}
+\index{unlock@{unlock}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily void cdev\+::\+C\+Dev\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Release the driver lock. 
+
+Definition at line 288 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+288 \{ sem\_post(&\hyperlink{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}{\_lock}); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a84f73216813a23f91cd9414262484f3f}\label{classcdev_1_1CDev_a84f73216813a23f91cd9414262484f3f}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!unregister\+\_\+class\+\_\+devname@{unregister\+\_\+class\+\_\+devname}}
+\index{unregister\+\_\+class\+\_\+devname@{unregister\+\_\+class\+\_\+devname}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{unregister\+\_\+class\+\_\+devname()}{unregister\_class\_devname()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::unregister\+\_\+class\+\_\+devname (\begin{DoxyParamCaption}\item[{const char $\ast$}]{class\+\_\+devname,  }\item[{unsigned}]{class\+\_\+instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Register a class device name, automatically adding device class instance suffix if need be.
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+\_\+devname} & Device class name \\
+\hline
+{\em class\+\_\+instance} & Device class instance from \hyperlink{classcdev_1_1CDev_a8cdc695d86a00139e11b2d57974475b4}{register\+\_\+class\+\_\+devname()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, -\/errno otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{comment}{//PX4\_DEBUG("CDev::unregister\_class\_devname");}
+121 
+122     \textcolor{keywordtype}{char} name[32];
+123     snprintf(name, \textcolor{keyword}{sizeof}(name), \textcolor{stringliteral}{"%s%u"}, class\_devname, class\_instance);
+124     \textcolor{keywordflow}{return} unregister\_driver(name);
+125 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a9fe9c784053bc2b7748db1ec405ae83f}\label{classcdev_1_1CDev_a9fe9c784053bc2b7748db1ec405ae83f}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!unregister\+\_\+driver\+\_\+and\+\_\+memory@{unregister\+\_\+driver\+\_\+and\+\_\+memory}}
+\index{unregister\+\_\+driver\+\_\+and\+\_\+memory@{unregister\+\_\+driver\+\_\+and\+\_\+memory}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{unregister\+\_\+driver\+\_\+and\+\_\+memory()}{unregister\_driver\_and\_memory()}}
+{\footnotesize\ttfamily int cdev\+::\+C\+Dev\+::unregister\+\_\+driver\+\_\+and\+\_\+memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+First, unregisters the driver. Next, free the memory for the devname, in case it was expected to have ownership. Sets devname to nullptr.
+
+This is only needed if the ownership of the devname was passed to the \hyperlink{classcdev_1_1CDev}{C\+Dev}, otherwise $\sim$\+C\+Dev handles it.
+
+\begin{DoxyReturn}{Returns}
+P\+X4\+\_\+\+OK on success, -\/\+E\+N\+O\+D\+EV if the devname is already nullptr 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file C\+Dev.\+cpp.
+
+
+\begin{DoxyCode}
+388 \{
+389     \textcolor{keywordtype}{int} retval = 0;
+390 
+391     \textcolor{keywordflow}{if} (\_registered) \{
+392         unregister\_driver(\_devname);
+393         \_registered = \textcolor{keyword}{false};
+394 
+395     \} \textcolor{keywordflow}{else} \{
+396         retval = -ENODEV;
+397     \}
+398 
+399     \textcolor{keywordflow}{if} (\_devname != \textcolor{keyword}{nullptr}) \{
+400         free((\textcolor{keywordtype}{void} *)\_devname);
+401         \_devname = \textcolor{keyword}{nullptr};
+402 
+403     \} \textcolor{keywordflow}{else} \{
+404         retval = -ENODEV;
+405     \}
+406 
+407     \textcolor{keywordflow}{return} retval;
+408 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcdev_1_1CDev_a54aff43049b22cea19f8cc31cb2a0fd0}\label{classcdev_1_1CDev_a54aff43049b22cea19f8cc31cb2a0fd0}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!write@{write}}
+\index{write@{write}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily virtual ssize\+\_\+t cdev\+::\+C\+Dev\+::write (\begin{DoxyParamCaption}\item[{file $\ast$}]{filep,  }\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buflen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Perform a write to the device.
+
+The default implementation returns -\/\+E\+N\+O\+S\+YS.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filep} & Pointer to the NuttX file structure. \\
+\hline
+{\em buffer} & Pointer to the buffer from which data should be read. \\
+\hline
+{\em buflen} & The number of bytes to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/errno otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classuORB_1_1DeviceNode_ab58b8b4b6cac9fd8aa4d90a85e044c78}{u\+O\+R\+B\+::\+Device\+Node}.
+
+
+
+Definition at line 142 of file C\+Dev.\+hpp.
+
+
+\begin{DoxyCode}
+142 \{ \textcolor{keywordflow}{return} -ENOSYS; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}\label{classcdev_1_1CDev_aa9b327dcb42b1160c01417ad64cd8e2b}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!\+\_\+lock@{\+\_\+lock}}
+\index{\+\_\+lock@{\+\_\+lock}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{\+\_\+lock}{\_lock}}
+{\footnotesize\ttfamily sem\+\_\+t cdev\+::\+C\+Dev\+::\+\_\+lock\hspace{0.3cm}{\ttfamily [protected]}}
+
+lock to protect access to all class members (also for derived classes) 
+
+Definition at line 290 of file C\+Dev.\+hpp.
+
+\mbox{\Hypertarget{classcdev_1_1CDev_acb99fb0026b3466f200feef27046d612}\label{classcdev_1_1CDev_acb99fb0026b3466f200feef27046d612}} 
+\index{cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}!fops@{fops}}
+\index{fops@{fops}!cdev\+::\+C\+Dev@{cdev\+::\+C\+Dev}}
+\subsubsection{\texorpdfstring{fops}{fops}}
+{\footnotesize\ttfamily const file\+\_\+operations cdev\+::\+C\+Dev\+::fops\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+Pointer to the default cdev file operations table; useful for registering clone devices etc. 
+
+Definition at line 195 of file C\+Dev.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/lib/cdev/\hyperlink{CDev_8hpp}{C\+Dev.\+hpp}\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/lib/cdev/\hyperlink{CDev_8cpp}{C\+Dev.\+cpp}\end{DoxyCompactItemize}

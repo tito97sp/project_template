@@ -88,7 +88,7 @@ static const uint32_t g_ledcfg[BOARD_NLEDS] =
 
 uint32_t board_userled_initialize(void)
 {
-  int i;
+  uint i;
 
   /* Configure LED1-3 GPIOs for output */
 
@@ -131,7 +131,7 @@ void board_userled(int led, bool ledon)
 
 void board_userled_all(uint32_t ledset)
 {
-  int i;
+  uint i;
 
   /* Configure LED1-3 GPIOs for output */
 

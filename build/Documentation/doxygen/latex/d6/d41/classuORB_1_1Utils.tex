@@ -1,0 +1,52 @@
+\hypertarget{classuORB_1_1Utils}{}\section{u\+O\+RB\+:\+:Utils Class Reference}
+\label{classuORB_1_1Utils}\index{u\+O\+R\+B\+::\+Utils@{u\+O\+R\+B\+::\+Utils}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classuORB_1_1Utils_a83fea5453fe535f1b39fd7b7a1c858aa}\label{classuORB_1_1Utils_a83fea5453fe535f1b39fd7b7a1c858aa}} 
+static int {\bfseries node\+\_\+mkpath} (char $\ast$buf, const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, int $\ast$instance=nullptr)
+\item 
+static int \hyperlink{classuORB_1_1Utils_ae4fd067a58c093bc4d0b461f89e9368c}{node\+\_\+mkpath} (char $\ast$buf, const char $\ast$orb\+Msg\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 43 of file u\+O\+R\+B\+Utils.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuORB_1_1Utils_ae4fd067a58c093bc4d0b461f89e9368c}\label{classuORB_1_1Utils_ae4fd067a58c093bc4d0b461f89e9368c}} 
+\index{u\+O\+R\+B\+::\+Utils@{u\+O\+R\+B\+::\+Utils}!node\+\_\+mkpath@{node\+\_\+mkpath}}
+\index{node\+\_\+mkpath@{node\+\_\+mkpath}!u\+O\+R\+B\+::\+Utils@{u\+O\+R\+B\+::\+Utils}}
+\subsubsection{\texorpdfstring{node\+\_\+mkpath()}{node\_mkpath()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Utils\+::node\+\_\+mkpath (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{const char $\ast$}]{orb\+Msg\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+same as above except this generators the path based on the string. 
+
+Definition at line 59 of file u\+O\+R\+B\+Utils.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{
+61     \textcolor{keywordtype}{unsigned} len;
+62 
+63     \textcolor{keywordtype}{unsigned} index = 0;
+64 
+65     len = snprintf(buf, orb\_maxpath, \textcolor{stringliteral}{"/%s/%s%d"}, \textcolor{stringliteral}{"obj"}, orbMsgName, index);
+66 
+67     \textcolor{keywordflow}{if} (len >= orb\_maxpath) \{
+68         \textcolor{keywordflow}{return} -ENAMETOOLONG;
+69     \}
+70 
+71     \textcolor{keywordflow}{return} 0;
+72 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Utils.\+hpp\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Utils.\+cpp\end{DoxyCompactItemize}

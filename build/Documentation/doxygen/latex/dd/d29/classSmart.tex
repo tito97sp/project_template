@@ -1,0 +1,14 @@
+\hypertarget{classSmart}{}\section{Smart Class Reference}
+\label{classSmart}\index{Smart@{Smart}}
+
+
+\subsection{Detailed Description}
+that uses a semaphore. It automatically takes the lock when created and releases the lock when the object goes out of scope. Use like this\+:
+
+px4\+\_\+sem\+\_\+t my\+\_\+lock; int ret = px4\+\_\+sem\+\_\+init(\&my\+\_\+lock, 0, 1); ...
+
+\{ \hyperlink{classSmartLock}{Smart\+Lock} smart\+\_\+lock(my\+\_\+lock); //critical section start ... //critical section end \} 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/include/\hyperlink{sem_8hpp}{sem.\+hpp}\end{DoxyCompactItemize}

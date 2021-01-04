@@ -45,25 +45,26 @@ if("${BOARD_LABEL}" STREQUAL  "bootloader")
 
 else()
 	add_custom_library(drivers_board
-		#stm32_adc.c
 		stm32_appinitialize.c
-		stm32_autoleds.c
 		stm32_boot.c
-		stm32_buttons.c
-		stm32_gpio.c
+		stm32_bringup.c
+
+		stm32_autoleds.c
+		#stm32_buttons.c
+		#stm32_gpio.c
+		#stm32_usb.c
+		#stm32_userleds.c
+		#stm32_adc.c
 		#stm32_lsm6dsl.c
 		#stm32_lsm9ds1.c
 		#stm32_lsm303agr.c
 		#stm32_nrf24l01.c
 		#stm32_pca9635.c
-		stm32_pwm.c
+		#stm32_pwm.c
 		#stm32_romfs_initialize.c
-		stm32_spi.c
+		#stm32_spi.c
 		#stm32_ssd1306.c
-		stm32_uid.c
-		stm32_usb.c
-		#stm32_userleds.c
-		stm32_bringup.c
+		#stm32_uid.c
 		)
 	
 	#add_dependencies(drivers_board arch_board_hw_info)

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['os_5fname',['os_name',['../df/dfc/version_8h.html#a575f337f7a850787f0271320d7859084',1,'version.c']]],
-  ['os_5fversion',['os_version',['../df/dfc/version_8h.html#a3602739b8e0d5879300a905785c8f371',1,'version.c']]],
-  ['os_5fversion_5fbinary',['os_version_binary',['../df/dfc/version_8h.html#a8534281b0ffc293781e6cd4c04e30e82',1,'version.c']]],
-  ['os_5fversion_5fstring',['os_version_string',['../df/dfc/version_8h.html#a5839c1b79b14c6d5c08b1ff84500a971',1,'version.c']]]
+  ['firmware_5fgit_5fbranch',['firmware_git_branch',['../df/dfc/version_8h.html#a2705ca759e88988458f05d7d77fc4d87',1,'version.c']]],
+  ['firmware_5fvendor_5fversion',['firmware_vendor_version',['../df/dfc/version_8h.html#ae9561a342bd30d0b8e1fdf4393c7e470',1,'version.c']]],
+  ['firmware_5fversion',['firmware_version',['../df/dfc/version_8h.html#ade386147dba3b37795fc7f2ec688dd7e',1,'version.c']]],
+  ['firmware_5fversion_5fbinary',['firmware_version_binary',['../df/dfc/version_8h.html#a1600fb2282c2940e2dffa65585589702',1,'version.c']]],
+  ['firmware_5fversion_5fstring',['firmware_version_string',['../df/dfc/version_8h.html#adb684265d41de587b8ce7eca29392be4',1,'version.c']]]
 ];

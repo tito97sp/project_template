@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/nuttx_builtin_list_target"
   "apps/builtin/registry/custom_hello_main.bdat"
   "apps/builtin/registry/custom_hello_main.pdat"
+  "apps/builtin/registry/custom_uorb_main.bdat"
+  "apps/builtin/registry/custom_uorb_main.pdat"
   "builtins_clean.stamp"
   "nuttx/include/nuttx/config.h"
   "nuttx/include/nuttx/version.h"

@@ -1,0 +1,131 @@
+\hypertarget{classuORB_1_1SubscriptionCallback}{}\section{u\+O\+RB\+:\+:Subscription\+Callback Class Reference}
+\label{classuORB_1_1SubscriptionCallback}\index{u\+O\+R\+B\+::\+Subscription\+Callback@{u\+O\+R\+B\+::\+Subscription\+Callback}}
+
+
+Inheritance diagram for u\+O\+RB\+:\+:Subscription\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d4a/classuORB_1_1SubscriptionCallback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for u\+O\+RB\+:\+:Subscription\+Callback\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dba/classuORB_1_1SubscriptionCallback__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuORB_1_1SubscriptionCallback_acc7373f302eb194d01734aedab1db772}{Subscription\+Callback} (const \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, uint32\+\_\+t interval\+\_\+us=0, uint8\+\_\+t instance=0)
+\item 
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_a1c8b2b68441e61d7c460efe94617b3c4}\label{classuORB_1_1SubscriptionCallback_a1c8b2b68441e61d7c460efe94617b3c4}} 
+bool {\bfseries register\+Callback} ()
+\item 
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_a42885c3adf9615ae6516728e295c589b}\label{classuORB_1_1SubscriptionCallback_a42885c3adf9615ae6516728e295c589b}} 
+void {\bfseries unregister\+Callback} ()
+\item 
+bool \hyperlink{classuORB_1_1SubscriptionCallback_a63a7297780d7d29b47c25117ec3d7532}{Change\+Instance} (uint8\+\_\+t instance)
+\item 
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_a66f5f5f9f7217f855f54fbcd48e69c52}\label{classuORB_1_1SubscriptionCallback_a66f5f5f9f7217f855f54fbcd48e69c52}} 
+virtual void {\bfseries call} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_ade1bb35d9dfe8bbcce3ff128f52dd964}\label{classuORB_1_1SubscriptionCallback_ade1bb35d9dfe8bbcce3ff128f52dd964}} 
+bool {\bfseries \+\_\+registered} \{false\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 50 of file Subscription\+Callback.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_acc7373f302eb194d01734aedab1db772}\label{classuORB_1_1SubscriptionCallback_acc7373f302eb194d01734aedab1db772}} 
+\index{u\+O\+R\+B\+::\+Subscription\+Callback@{u\+O\+R\+B\+::\+Subscription\+Callback}!Subscription\+Callback@{Subscription\+Callback}}
+\index{Subscription\+Callback@{Subscription\+Callback}!u\+O\+R\+B\+::\+Subscription\+Callback@{u\+O\+R\+B\+::\+Subscription\+Callback}}
+\subsubsection{\texorpdfstring{Subscription\+Callback()}{SubscriptionCallback()}}
+{\footnotesize\ttfamily u\+O\+R\+B\+::\+Subscription\+Callback\+::\+Subscription\+Callback (\begin{DoxyParamCaption}\item[{const \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{uint32\+\_\+t}]{interval\+\_\+us = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{instance = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em interval\+\_\+us} & The requested maximum update interval in microseconds. \\
+\hline
+{\em instance} & The instance for multi sub. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file Subscription\+Callback.\+hpp.
+
+
+\begin{DoxyCode}
+60                                                                                                    :
+61         \hyperlink{classuORB_1_1SubscriptionInterval_a7e51c851205bd12c2a973f1dbcaa91a5}{SubscriptionInterval}(meta, interval\_us, instance)
+62     \{
+63     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuORB_1_1SubscriptionCallback_a63a7297780d7d29b47c25117ec3d7532}\label{classuORB_1_1SubscriptionCallback_a63a7297780d7d29b47c25117ec3d7532}} 
+\index{u\+O\+R\+B\+::\+Subscription\+Callback@{u\+O\+R\+B\+::\+Subscription\+Callback}!Change\+Instance@{Change\+Instance}}
+\index{Change\+Instance@{Change\+Instance}!u\+O\+R\+B\+::\+Subscription\+Callback@{u\+O\+R\+B\+::\+Subscription\+Callback}}
+\subsubsection{\texorpdfstring{Change\+Instance()}{ChangeInstance()}}
+{\footnotesize\ttfamily bool u\+O\+R\+B\+::\+Subscription\+Callback\+::\+Change\+Instance (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{instance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Change subscription instance 
+\begin{DoxyParams}{Parameters}
+{\em instance} & The new multi-\/\+Subscription instance \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file Subscription\+Callback.\+hpp.
+
+
+\begin{DoxyCode}
+107     \{
+108         \textcolor{keywordtype}{bool} ret = \textcolor{keyword}{false};
+109 
+110         \textcolor{keywordflow}{if} (instance != get\_instance()) \{
+111             \textcolor{keyword}{const} \textcolor{keywordtype}{bool} registered = \_registered;
+112 
+113             \textcolor{keywordflow}{if} (registered) \{
+114                 unregisterCallback();
+115             \}
+116 
+117             \textcolor{keywordflow}{if} (\_subscription.\hyperlink{classuORB_1_1Subscription_a47a32a02ea909df267542d4b4ef99115}{ChangeInstance}(instance)) \{
+118                 ret = \textcolor{keyword}{true};
+119             \}
+120 
+121             \textcolor{keywordflow}{if} (registered) \{
+122                 registerCallback();
+123             \}
+124 
+125         \} \textcolor{keywordflow}{else} \{
+126             \textcolor{comment}{// already on desired index}
+127             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+128         \}
+129 
+130         \textcolor{keywordflow}{return} ret;
+131     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/\hyperlink{SubscriptionCallback_8hpp}{Subscription\+Callback.\+hpp}\end{DoxyCompactItemize}

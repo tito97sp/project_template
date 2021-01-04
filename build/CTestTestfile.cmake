@@ -6,5 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("src/lib")
 subdirs("src/modules/hello")
+subdirs("src/modules/uORB")
 subdirs("boards/stm/nucleo_h743zi/src")
 subdirs("platforms/nuttx")

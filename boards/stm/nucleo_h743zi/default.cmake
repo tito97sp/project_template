@@ -8,4 +8,5 @@ add_board(
 	ARCHITECTURE cortex-m7
 	MODULES
 		hello
+		uORB
 	)

@@ -7,10 +7,10 @@
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/CMakeFiles/rebuild_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/CMakeFiles/test.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/CMakeFiles/edit_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example/CMakeFiles/rebuild_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example/CMakeFiles/edit_cache.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example/CMakeFiles/do_nothing.dir
-/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/do_nothing_example/CMakeFiles/test.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/rebuild_cache.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/edit_cache.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/cdev.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/test.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version/CMakeFiles/rebuild_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version/CMakeFiles/edit_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version/CMakeFiles/test.dir
@@ -20,6 +20,10 @@
 /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/CMakeFiles/edit_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/CMakeFiles/hello.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/CMakeFiles/test.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/rebuild_cache.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/edit_cache.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/uORB.dir
+/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/test.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/edit_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/rebuild_cache.dir
 /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir

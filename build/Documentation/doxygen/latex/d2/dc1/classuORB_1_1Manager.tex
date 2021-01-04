@@ -1,0 +1,704 @@
+\hypertarget{classuORB_1_1Manager}{}\section{u\+O\+RB\+:\+:Manager Class Reference}
+\label{classuORB_1_1Manager}\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+
+
+{\ttfamily \#include $<$u\+O\+R\+B\+Manager.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuORB_1_1DeviceMaster}{u\+O\+R\+B\+::\+Device\+Master} $\ast$ \hyperlink{classuORB_1_1Manager_a083331e24ac4f99ac11a0aab1b1681b4}{get\+\_\+device\+\_\+master} ()
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}{orb\+\_\+advertise} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data, unsigned int queue\+\_\+size=1)
+\item 
+\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} \hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\+\_\+advertise\+\_\+multi} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const void $\ast$data, int $\ast$instance, unsigned int queue\+\_\+size=1)
+\item 
+int \hyperlink{classuORB_1_1Manager_a45601ddc722320b9cd660d9548263824}{orb\+\_\+unadvertise} (\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} handle)
+\item 
+int \hyperlink{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}{orb\+\_\+publish} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} handle, const void $\ast$data)
+\item 
+int \hyperlink{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}{orb\+\_\+subscribe} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta)
+\item 
+int \hyperlink{classuORB_1_1Manager_a9a31fb71a0962db44450963559296cfe}{orb\+\_\+subscribe\+\_\+multi} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, unsigned instance)
+\item 
+int \hyperlink{classuORB_1_1Manager_a77539878280b749d79d2c16dc5628c81}{orb\+\_\+unsubscribe} (int handle)
+\item 
+int \hyperlink{classuORB_1_1Manager_af1048c82b439300c706fe0a083b61f90}{orb\+\_\+copy} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, int handle, void $\ast$buffer)
+\item 
+int \hyperlink{classuORB_1_1Manager_a5503920d25d544ce3be1cf79cda869f7}{orb\+\_\+check} (int handle, bool $\ast$updated)
+\item 
+int \hyperlink{classuORB_1_1Manager_a446823738a75847a6732008784445c9f}{orb\+\_\+exists} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, int instance)
+\item 
+int \hyperlink{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}{orb\+\_\+set\+\_\+interval} (int handle, unsigned interval)
+\item 
+int \hyperlink{classuORB_1_1Manager_a627a7e6ef16970d2b6d8f02471795963}{orb\+\_\+get\+\_\+interval} (int handle, unsigned $\ast$interval)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classuORB_1_1Manager_abb160fdd7ba0fe448ffa7f654a796267}{initialize} ()
+\item 
+static bool \hyperlink{classuORB_1_1Manager_a306a9970d2f7cf304fba4a918e238558}{terminate} ()
+\item 
+static \hyperlink{classuORB_1_1Manager}{u\+O\+R\+B\+::\+Manager} $\ast$ \hyperlink{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}{get\+\_\+instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is implemented as a singleton. This class manages creating the u\+O\+RB nodes for each u\+O\+RB topics and also implements the behavor of the u\+O\+RB Api\textquotesingle{}s. 
+
+Definition at line 63 of file u\+O\+R\+B\+Manager.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuORB_1_1Manager_a083331e24ac4f99ac11a0aab1b1681b4}\label{classuORB_1_1Manager_a083331e24ac4f99ac11a0aab1b1681b4}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!get\+\_\+device\+\_\+master@{get\+\_\+device\+\_\+master}}
+\index{get\+\_\+device\+\_\+master@{get\+\_\+device\+\_\+master}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+device\+\_\+master()}{get\_device\_master()}}
+{\footnotesize\ttfamily \hyperlink{classuORB_1_1DeviceMaster}{u\+O\+R\+B\+::\+Device\+Master} $\ast$ u\+O\+R\+B\+::\+Manager\+::get\+\_\+device\+\_\+master (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the \hyperlink{classuORB_1_1DeviceMaster}{Device\+Master}. If it does not exist, it will be created and initialized. Note\+: the first call to this is not thread-\/safe. \begin{DoxyReturn}{Returns}
+nullptr if initialization failed (and errno will be set) 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+91 \{
+92     \textcolor{keywordflow}{if} (!\_device\_master) \{
+93         \_device\_master = \textcolor{keyword}{new} DeviceMaster();
+94 
+95         \textcolor{keywordflow}{if} (\_device\_master == \textcolor{keyword}{nullptr}) \{
+96             printf(\textcolor{stringliteral}{"Failed to allocate DeviceMaster"});
+97             errno = ENOMEM;
+98         \}
+99     \}
+100 
+101     \textcolor{keywordflow}{return} \_device\_master;
+102 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}\label{classuORB_1_1Manager_a9d829b3ea49d16d03c2fa37ef2bb24a5}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!get\+\_\+instance@{get\+\_\+instance}}
+\index{get\+\_\+instance@{get\+\_\+instance}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{get\+\_\+instance()}{get\_instance()}}
+{\footnotesize\ttfamily static \hyperlink{classuORB_1_1Manager}{u\+O\+R\+B\+::\+Manager}$\ast$ u\+O\+R\+B\+::\+Manager\+::get\+\_\+instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Method to get the singleton instance for the \hyperlink{classuORB_1_1Manager}{u\+O\+R\+B\+::\+Manager}. Make sure \hyperlink{classuORB_1_1Manager_abb160fdd7ba0fe448ffa7f654a796267}{initialize()} is called first. \begin{DoxyReturn}{Returns}
+\hyperlink{classuORB_1_1Manager}{u\+O\+R\+B\+::\+Manager}$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file u\+O\+R\+B\+Manager.\+hpp.
+
+
+\begin{DoxyCode}
+88 \{ \textcolor{keywordflow}{return} \_Instance; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_abb160fdd7ba0fe448ffa7f654a796267}\label{classuORB_1_1Manager_abb160fdd7ba0fe448ffa7f654a796267}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!initialize@{initialize}}
+\index{initialize@{initialize}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool u\+O\+R\+B\+::\+Manager\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Initialize the singleton. Call this before everything else. \begin{DoxyReturn}{Returns}
+true on success 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{if} (\_Instance == \textcolor{keyword}{nullptr}) \{
+50         \_Instance = \textcolor{keyword}{new} \hyperlink{classuORB_1_1Manager}{uORB::Manager}();
+51     \}
+52 
+53     \textcolor{keywordflow}{return} \_Instance != \textcolor{keyword}{nullptr};
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}\label{classuORB_1_1Manager_a42e075fba5970aa0730faab182e2083f}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+advertise@{orb\+\_\+advertise}}
+\index{orb\+\_\+advertise@{orb\+\_\+advertise}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise()}{orb\_advertise()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data,  }\item[{unsigned int}]{queue\+\_\+size = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Advertise as the publisher of a topic.
+
+This performs the initial advertisement of a topic; it creates the topic node in /obj if required and publishes the initial data.
+
+Any number of advertisers may publish to a topic; publications are atomic but co-\/ordination between publishers is not provided by the O\+RB.
+
+Internally this will call orb\+\_\+advertise\+\_\+multi with an instance of 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em data} & A pointer to the initial data to be published. For topics updated by interrupt handlers, the advertisement must be performed from non-\/interrupt context. \\
+\hline
+{\em queue\+\_\+size} & Maximum number of buffered elements. If this is 1, no queuing is used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr on error, otherwise returns an object pointer that can be used to publish to the topic. If the topic in question is not known (due to an O\+R\+B\+\_\+\+D\+E\+F\+I\+NE with no corresponding O\+R\+B\+\_\+\+D\+E\+C\+L\+A\+RE) this function will return nullptr and set errno to E\+N\+O\+E\+NT. 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file u\+O\+R\+B\+Manager.\+hpp.
+
+
+\begin{DoxyCode}
+124     \{
+125         \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\_advertise\_multi}(meta, data, \textcolor{keyword}{nullptr}, queue\_size);
+126     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}\label{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+advertise\+\_\+multi@{orb\+\_\+advertise\+\_\+multi}}
+\index{orb\+\_\+advertise\+\_\+multi@{orb\+\_\+advertise\+\_\+multi}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+advertise\+\_\+multi()}{orb\_advertise\_multi()}}
+{\footnotesize\ttfamily \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t} u\+O\+R\+B\+::\+Manager\+::orb\+\_\+advertise\+\_\+multi (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{const void $\ast$}]{data,  }\item[{int $\ast$}]{instance,  }\item[{unsigned int}]{queue\+\_\+size = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Advertise as the publisher of a topic.
+
+This performs the initial advertisement of a topic; it creates the topic node in /obj if required and publishes the initial data.
+
+Any number of advertisers may publish to a topic; publications are atomic but co-\/ordination between publishers is not provided by the O\+RB.
+
+The multi can be used to create multiple independent instances of the same topic (each instance has its own buffer). This is useful for multiple publishers who publish the same topic. The subscriber then subscribes to all instances and chooses which source he wants to use.
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em data} & A pointer to the initial data to be published. For topics updated by interrupt handlers, the advertisement must be performed from non-\/interrupt context. \\
+\hline
+{\em instance} & Pointer to an integer which will yield the instance ID (0-\/based) of the publication. This is an output parameter and will be set to the newly created instance, ie. 0 for the first advertiser, 1 for the next and so on. \\
+\hline
+{\em queue\+\_\+size} & Maximum number of buffered elements. If this is 1, no queuing is used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+X4\+\_\+\+E\+R\+R\+OR on error, otherwise returns a handle that can be used to publish to the topic. If the topic in question is not known (due to an O\+R\+B\+\_\+\+D\+E\+F\+I\+NE with no corresponding O\+R\+B\+\_\+\+D\+E\+C\+L\+A\+RE) this function will return -\/1 and set errno to E\+N\+O\+E\+NT. 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+170 \{
+171 \textcolor{preprocessor}{#ifdef ORB\_USE\_PUBLISHER\_RULES}
+172 
+173     \textcolor{comment}{// check publisher rule}
+174     \textcolor{keywordflow}{if} (\_has\_publisher\_rules) \{
+175         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *prog\_name = px4\_get\_taskname();
+176 
+177         \textcolor{keywordflow}{if} (strcmp(\_publisher\_rule.module\_name, prog\_name) == 0) \{
+178             \textcolor{keywordflow}{if} (\_publisher\_rule.ignore\_other\_topics) \{
+179                 \textcolor{keywordflow}{if} (!findTopic(\_publisher\_rule, meta->\hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name})) \{
+180                     PX4\_DEBUG(\textcolor{stringliteral}{"not allowing %s to publish topic %s"}, prog\_name, meta->
+      \hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name});
+181                     \textcolor{keywordflow}{return} (\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\_advert\_t})\_Instance;
+182                 \}
+183             \}
+184 
+185         \} \textcolor{keywordflow}{else} \{
+186             \textcolor{keywordflow}{if} (findTopic(\_publisher\_rule, meta->\hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name})) \{
+187                 PX4\_DEBUG(\textcolor{stringliteral}{"not allowing %s to publish topic %s"}, prog\_name, meta->
+      \hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name});
+188                 \textcolor{keywordflow}{return} (\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\_advert\_t})\_Instance;
+189             \}
+190         \}
+191     \}
+192 
+193 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ORB\_USE\_PUBLISHER\_RULES */}\textcolor{preprocessor}{}
+194 
+195     \textcolor{comment}{/* open the node as an advertiser */}
+196     \textcolor{keywordtype}{int} fd = node\_open(meta, \textcolor{keyword}{true}, instance);
+197 
+198     \textcolor{keywordflow}{if} (fd == -1) \{
+199         printf(\textcolor{stringliteral}{"%s advertise failed (%i)"}, meta->\hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name}, errno);
+200         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};
+201     \}
+202 
+203     \textcolor{comment}{/* Set the queue size. This must be done before the first publication; thus it fails if}
+204 \textcolor{comment}{     * this is not the first advertiser.}
+205 \textcolor{comment}{     */}
+206     \textcolor{keywordtype}{int} result = ioctl(fd, \hyperlink{drv__orb__dev_8h_a4835f9286d5aac7a6b5e0a01661cbee7}{ORBIOCSETQUEUESIZE}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})queue\_size);
+207 
+208     \textcolor{keywordflow}{if} (result < 0 && queue\_size > 1) \{
+209         printf(\textcolor{stringliteral}{"orb\_advertise\_multi: failed to set queue size"});
+210     \}
+211 
+212     \textcolor{comment}{/* get the advertiser handle and close the node */}
+213     \hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\_advert\_t} advertiser;
+214 
+215     result = ioctl(fd, \hyperlink{drv__orb__dev_8h_a0ba7c1d8b06e6930ed9589dbebbc775a}{ORBIOCGADVERTISER}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})&advertiser);
+216     close(fd);
+217 
+218     \textcolor{keywordflow}{if} (result == -1) \{
+219         printf(\textcolor{stringliteral}{"px4\_ioctl ORBIOCGADVERTISER failed. fd = %d"}, fd);
+220         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};
+221     \}
+222 
+223 \textcolor{preprocessor}{#ifdef ORB\_COMMUNICATOR}
+224     \textcolor{comment}{// For remote systems call over and inform them}
+225     uORB::DeviceNode::topic\_advertised(meta);
+226 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ORB\_COMMUNICATOR */}\textcolor{preprocessor}{}
+227 
+228     \textcolor{comment}{/* the advertiser may perform an initial publish to initialise the object */}
+229     \textcolor{keywordflow}{if} (data != \textcolor{keyword}{nullptr}) \{
+230         result = \hyperlink{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}{orb\_publish}(meta, advertiser, data);
+231 
+232         \textcolor{keywordflow}{if} (result == -1) \{
+233             printf(\textcolor{stringliteral}{"orb\_publish failed %s"}, meta->\hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name});
+234             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};
+235         \}
+236     \}
+237 
+238     \textcolor{keywordflow}{return} advertiser;
+239 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a5503920d25d544ce3be1cf79cda869f7}\label{classuORB_1_1Manager_a5503920d25d544ce3be1cf79cda869f7}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+check@{orb\+\_\+check}}
+\index{orb\+\_\+check@{orb\+\_\+check}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+check()}{orb\_check()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+check (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{bool $\ast$}]{updated }\end{DoxyParamCaption})}
+
+Check whether a topic has been published to since the last orb\+\_\+copy.
+
+This check can be used to determine whether to copy the topic when not using poll(), or to avoid the overhead of calling poll() when the topic is likely to have updated.
+
+Updates are tracked on a per-\/handle basis; this call will continue to return true until orb\+\_\+copy is called using the same handle.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A handle returned from orb\+\_\+subscribe. \\
+\hline
+{\em updated} & Set to true if the topic has been updated since the last time it was copied using this handle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the check was successful, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with errno set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+302 \{
+303     \textcolor{comment}{/* Set to false here so that if `px4\_ioctl` fails to false. */}
+304     *updated = \textcolor{keyword}{false};
+305     \textcolor{keywordflow}{return} ioctl(handle, \hyperlink{drv__orb__dev_8h_a60e19540d21f9a44e9157804121957f8}{ORBIOCUPDATED}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})(uintptr\_t)updated);
+306 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_af1048c82b439300c706fe0a083b61f90}\label{classuORB_1_1Manager_af1048c82b439300c706fe0a083b61f90}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+copy@{orb\+\_\+copy}}
+\index{orb\+\_\+copy@{orb\+\_\+copy}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+copy()}{orb\_copy()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+copy (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{int}]{handle,  }\item[{void $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Fetch data from a topic.
+
+This is the only operation that will reset the internal marker that indicates that a topic has been updated for a subscriber. Once poll or check return indicating that an updaet is available, this call must be used to update the subscription.
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em handle} & A handle returned from orb\+\_\+subscribe. \\
+\hline
+{\em buffer} & Pointer to the buffer receiving the data, or N\+U\+LL if the caller wants to clear the updated flag without using the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with errno set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 283 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+284 \{
+285     \textcolor{keywordtype}{int} ret;
+286 
+287     ret = read(handle, buffer, meta->\hyperlink{structorb__metadata_a400a86fe707613e881b620cde7888b74}{o\_size});
+288 
+289     \textcolor{keywordflow}{if} (ret < 0) \{
+290         \textcolor{keywordflow}{return} -1;
+291     \}
+292 
+293     \textcolor{keywordflow}{if} (ret != (\textcolor{keywordtype}{int})meta->\hyperlink{structorb__metadata_a400a86fe707613e881b620cde7888b74}{o\_size}) \{
+294         errno = EIO;
+295         \textcolor{keywordflow}{return} -1;
+296     \}
+297 
+298     \textcolor{keywordflow}{return} 0;
+299 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a446823738a75847a6732008784445c9f}\label{classuORB_1_1Manager_a446823738a75847a6732008784445c9f}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+exists@{orb\+\_\+exists}}
+\index{orb\+\_\+exists@{orb\+\_\+exists}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+exists()}{orb\_exists()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+exists (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{int}]{instance }\end{DoxyParamCaption})}
+
+Check if a topic has already been created and published (advertised)
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & O\+RB topic metadata. \\
+\hline
+{\em instance} & O\+RB instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK if the topic exists, P\+X4\+\_\+\+E\+R\+R\+OR otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+105 \{
+106     \textcolor{keywordtype}{int} ret = -1;
+107 
+108     \textcolor{comment}{// instance valid range: [0, ORB\_MULTI\_MAX\_INSTANCES)}
+109     \textcolor{keywordflow}{if} ((instance < 0) || (instance > (\hyperlink{uORB_8h_a8c09e8f28a090e8cae61e10d627f102a}{ORB\_MULTI\_MAX\_INSTANCES} - 1))) \{
+110         \textcolor{keywordflow}{return} ret;
+111     \}
+112 
+113     \textcolor{keywordflow}{if} (\hyperlink{classuORB_1_1Manager_a083331e24ac4f99ac11a0aab1b1681b4}{get\_device\_master}()) \{
+114         \hyperlink{classuORB_1_1DeviceNode}{uORB::DeviceNode} *node = \_device\_master->\hyperlink{classuORB_1_1DeviceMaster_a793df66a48dcabdd0f5bd8c85beee13c}{getDeviceNode}(meta, instance)
+      ;
+115 
+116         \textcolor{keywordflow}{if} (node != \textcolor{keyword}{nullptr}) \{
+117             \textcolor{keywordflow}{if} (node->\hyperlink{classuORB_1_1DeviceNode_a16d1880bc99853428a8d8a240f24857b}{is\_advertised}()) \{
+118                 \textcolor{keywordflow}{return} 0;
+119             \}
+120         \}
+121     \}
+122 
+123 \textcolor{preprocessor}{#ifdef ORB\_COMMUNICATOR}
+124 
+125     \textcolor{comment}{/*}
+126 \textcolor{comment}{     * Generate the path to the node and try to open it.}
+127 \textcolor{comment}{     */}
+128     \textcolor{keywordtype}{char} path[orb\_maxpath];
+129     \textcolor{keywordtype}{int} inst = instance;
+130 
+131     ret = uORB::Utils::node\_mkpath(path, meta, &inst);
+132 
+133     \textcolor{keywordflow}{if} (ret != OK) \{
+134         errno = -ret;
+135         \textcolor{keywordflow}{return} PX4\_ERROR;
+136     \}
+137 
+138     ret = px4\_access(path, F\_OK);
+139 
+140     \textcolor{keywordflow}{if} (ret == -1 && meta != \textcolor{keyword}{nullptr} && !\_remote\_topics.empty()) \{
+141         ret = (\_remote\_topics.find(meta->\hyperlink{structorb__metadata_a54d1751f24aa0c1f24934c6712811e58}{o\_name}) != \_remote\_topics.end()) ? OK : PX4\_ERROR;
+142     \}
+143 
+144     \textcolor{keywordflow}{if} (ret == 0) \{
+145         \textcolor{comment}{// we know the topic exists, but it's not necessarily advertised/published yet (for example}
+146         \textcolor{comment}{// if there is only a subscriber)}
+147         \textcolor{comment}{// The open() will not lead to memory allocations.}
+148         \textcolor{keywordtype}{int} fd = px4\_open(path, 0);
+149 
+150         \textcolor{keywordflow}{if} (fd >= 0) \{
+151             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} is\_advertised;
+152 
+153             \textcolor{keywordflow}{if} (px4\_ioctl(fd, \hyperlink{drv__orb__dev_8h_a00f4a4fca062412c74b581a041c43c7a}{ORBIOCISADVERTISED}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})&is\_advertised) == 0) \{
+154                 \textcolor{keywordflow}{if} (!is\_advertised) \{
+155                     ret = PX4\_ERROR;
+156                 \}
+157             \}
+158 
+159             px4\_close(fd);
+160         \}
+161     \}
+162 
+163 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ORB\_COMMUNICATOR */}\textcolor{preprocessor}{}
+164 
+165     \textcolor{keywordflow}{return} ret;
+166 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a627a7e6ef16970d2b6d8f02471795963}\label{classuORB_1_1Manager_a627a7e6ef16970d2b6d8f02471795963}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+get\+\_\+interval@{orb\+\_\+get\+\_\+interval}}
+\index{orb\+\_\+get\+\_\+interval@{orb\+\_\+get\+\_\+interval}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+get\+\_\+interval()}{orb\_get\_interval()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+get\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{unsigned $\ast$}]{interval }\end{DoxyParamCaption})}
+
+Get the minimum interval between which updates are seen for a subscription.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}{orb\+\_\+set\+\_\+interval()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A handle returned from orb\+\_\+subscribe. \\
+\hline
+{\em interval} & The returned interval period in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with E\+R\+R\+NO set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 313 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordtype}{int} ret = ioctl(handle, \hyperlink{drv__orb__dev_8h_acdbdb0d6f9b8600498ffa2599dca742d}{ORBIOCGETINTERVAL}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})interval);
+316     *interval /= 1000;
+317     \textcolor{keywordflow}{return} ret;
+318 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}\label{classuORB_1_1Manager_abbe6966f841886ce3003ebc6d2198447}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+publish@{orb\+\_\+publish}}
+\index{orb\+\_\+publish@{orb\+\_\+publish}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+publish()}{orb\_publish()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+publish (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t}}]{handle,  }\item[{const void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Publish new data to a topic.
+
+The data is atomically published to the topic and any waiting subscribers will be notified. Subscribers that are not waiting can check the topic for updates using orb\+\_\+check.
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic.  The handle returned from orb\+\_\+advertise. \\
+\hline
+{\em data} & A pointer to the data to be published. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with errno set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 270 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+271 \{
+272 \textcolor{preprocessor}{#ifdef ORB\_USE\_PUBLISHER\_RULES}
+273 
+274     \textcolor{keywordflow}{if} (handle == \_Instance) \{
+275         \textcolor{keywordflow}{return} PX4\_OK; \textcolor{comment}{//pretend success}
+276     \}
+277 
+278 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ORB\_USE\_PUBLISHER\_RULES */}\textcolor{preprocessor}{}
+279 
+280     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1DeviceNode_ae715517a1f3a2f361e37d061b59a4560}{uORB::DeviceNode::publish}(meta, handle, data);
+281 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}\label{classuORB_1_1Manager_aade04ff2a8a3aaf275b39fc32934fc56}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+set\+\_\+interval@{orb\+\_\+set\+\_\+interval}}
+\index{orb\+\_\+set\+\_\+interval@{orb\+\_\+set\+\_\+interval}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+set\+\_\+interval()}{orb\_set\_interval()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+set\+\_\+interval (\begin{DoxyParamCaption}\item[{int}]{handle,  }\item[{unsigned}]{interval }\end{DoxyParamCaption})}
+
+Set the minimum interval between which updates are seen for a subscription.
+
+If this interval is set, the subscriber will not see more than one update within the period.
+
+Specifically, the first time an update is reported to the subscriber a timer is started. The update will continue to be reported via poll and orb\+\_\+check, but once fetched via orb\+\_\+copy another update will not be reported until the timer expires.
+
+This feature can be used to pace a subscriber that is watching a topic that would otherwise update too quickly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A handle returned from orb\+\_\+subscribe. \\
+\hline
+{\em interval} & An interval period in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with E\+R\+R\+NO set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 308 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+309 \{
+310     \textcolor{keywordflow}{return} ioctl(handle, \hyperlink{drv__orb__dev_8h_a815da46533c3937c84c1496218659d0b}{ORBIOCSETINTERVAL}, interval * 1000);
+311 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}\label{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+subscribe@{orb\+\_\+subscribe}}
+\index{orb\+\_\+subscribe@{orb\+\_\+subscribe}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+subscribe()}{orb\_subscribe()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+subscribe (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta }\end{DoxyParamCaption})}
+
+Subscribe to a topic.
+
+The returned value is a file descriptor that can be passed to poll() in order to wait for updates to a topic, as well as topic\+\_\+read, orb\+\_\+check.
+
+If there were any publications of the topic prior to the subscription, an orb\+\_\+check right after orb\+\_\+subscribe will return true.
+
+\hyperlink{classuORB_1_1Subscription}{Subscription} will succeed even if the topic has not been advertised; in this case the topic will have a timestamp of zero, it will never signal a poll() event, checking will always return false and it cannot be copied. When the topic is subsequently advertised, poll, check, stat and copy calls will react to the initial publication that is performed as part of the advertisement.
+
+\hyperlink{classuORB_1_1Subscription}{Subscription} will fail if the topic is not known to the system, i.\+e. there is nothing in the system that has declared the topic and thus it can never be published.
+
+Internally this will call orb\+\_\+subscribe\+\_\+multi with instance 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+X4\+\_\+\+E\+R\+R\+OR on error, otherwise returns a handle that can be used to read and update the topic. 
+\end{DoxyReturn}
+
+
+Definition at line 254 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+255 \{
+256     \textcolor{keywordflow}{return} node\_open(meta, \textcolor{keyword}{false});
+257 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a9a31fb71a0962db44450963559296cfe}\label{classuORB_1_1Manager_a9a31fb71a0962db44450963559296cfe}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+subscribe\+\_\+multi@{orb\+\_\+subscribe\+\_\+multi}}
+\index{orb\+\_\+subscribe\+\_\+multi@{orb\+\_\+subscribe\+\_\+multi}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+subscribe\+\_\+multi()}{orb\_subscribe\_multi()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+subscribe\+\_\+multi (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{unsigned}]{instance }\end{DoxyParamCaption})}
+
+Subscribe to a multi-\/instance of a topic.
+
+The returned value is a file descriptor that can be passed to poll() in order to wait for updates to a topic, as well as topic\+\_\+read, orb\+\_\+check.
+
+If there were any publications of the topic prior to the subscription, an orb\+\_\+check right after orb\+\_\+subscribe\+\_\+multi will return true.
+
+\hyperlink{classuORB_1_1Subscription}{Subscription} will succeed even if the topic has not been advertised; in this case the topic will have a timestamp of zero, it will never signal a poll() event, checking will always return false and it cannot be copied. When the topic is subsequently advertised, poll, check, stat and copy calls will react to the initial publication that is performed as part of the advertisement.
+
+\hyperlink{classuORB_1_1Subscription}{Subscription} will fail if the topic is not known to the system, i.\+e. there is nothing in the system that has declared the topic and thus it can never be published.
+
+If a publisher publishes multiple instances the subscriber should subscribe to each instance with orb\+\_\+subscribe\+\_\+multi (\begin{DoxySeeAlso}{See also}
+\hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\+\_\+advertise\+\_\+multi()}).
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em instance} & The instance of the topic. Instance 0 matches the topic of the \hyperlink{classuORB_1_1Manager_ae54072a80ad4de6d127e2dad8182b8fb}{orb\+\_\+subscribe()} call, higher indices are for topics created with \hyperlink{classuORB_1_1Manager_a808104f7ebeab8f0d548dd9127344b24}{orb\+\_\+advertise\+\_\+multi()}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+X4\+\_\+\+E\+R\+R\+OR on error, otherwise returns a handle that can be used to read and update the topic. If the topic in question is not known (due to an O\+R\+B\+\_\+\+D\+E\+F\+I\+N\+E\+\_\+\+O\+P\+T\+I\+O\+N\+AL with no corresponding O\+R\+B\+\_\+\+D\+E\+C\+L\+A\+RE) this function will return -\/1 and set errno to E\+N\+O\+E\+NT. 
+\end{DoxyReturn}
+
+
+Definition at line 259 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+260 \{
+261     \textcolor{keywordtype}{int} inst = instance;
+262     \textcolor{keywordflow}{return} node\_open(meta, \textcolor{keyword}{false}, &inst);
+263 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a45601ddc722320b9cd660d9548263824}\label{classuORB_1_1Manager_a45601ddc722320b9cd660d9548263824}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+unadvertise@{orb\+\_\+unadvertise}}
+\index{orb\+\_\+unadvertise@{orb\+\_\+unadvertise}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+unadvertise()}{orb\_unadvertise()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+unadvertise (\begin{DoxyParamCaption}\item[{\hyperlink{uORB_8h_a8d0cfa5f9ea6427a37057d6cea6dd990}{orb\+\_\+advert\+\_\+t}}]{handle }\end{DoxyParamCaption})}
+
+Unadvertise a topic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & handle returned by orb\+\_\+advertise or orb\+\_\+advertise\+\_\+multi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+242 \{
+243 \textcolor{preprocessor}{#ifdef ORB\_USE\_PUBLISHER\_RULES}
+244 
+245     \textcolor{keywordflow}{if} (handle == \_Instance) \{
+246         \textcolor{keywordflow}{return} PX4\_OK; \textcolor{comment}{//pretend success}
+247     \}
+248 
+249 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ORB\_USE\_PUBLISHER\_RULES */}\textcolor{preprocessor}{}
+250 
+251     \textcolor{keywordflow}{return} uORB::DeviceNode::unadvertise(handle);
+252 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a77539878280b749d79d2c16dc5628c81}\label{classuORB_1_1Manager_a77539878280b749d79d2c16dc5628c81}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!orb\+\_\+unsubscribe@{orb\+\_\+unsubscribe}}
+\index{orb\+\_\+unsubscribe@{orb\+\_\+unsubscribe}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{orb\+\_\+unsubscribe()}{orb\_unsubscribe()}}
+{\footnotesize\ttfamily int u\+O\+R\+B\+::\+Manager\+::orb\+\_\+unsubscribe (\begin{DoxyParamCaption}\item[{int}]{handle }\end{DoxyParamCaption})}
+
+Unsubscribe from a topic.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & A handle returned from orb\+\_\+subscribe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+OK on success, P\+X4\+\_\+\+E\+R\+R\+OR otherwise with errno set accordingly. 
+\end{DoxyReturn}
+
+
+Definition at line 265 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+266 \{
+267     \textcolor{keywordflow}{return} close(fd);
+268 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1Manager_a306a9970d2f7cf304fba4a918e238558}\label{classuORB_1_1Manager_a306a9970d2f7cf304fba4a918e238558}} 
+\index{u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}!terminate@{terminate}}
+\index{terminate@{terminate}!u\+O\+R\+B\+::\+Manager@{u\+O\+R\+B\+::\+Manager}}
+\subsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily bool u\+O\+R\+B\+::\+Manager\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Terminate the singleton. Call this after everything else. \begin{DoxyReturn}{Returns}
+true on success 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file u\+O\+R\+B\+Manager.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{if} (\_Instance != \textcolor{keyword}{nullptr}) \{
+59         \textcolor{keyword}{delete} \_Instance;
+60         \_Instance = \textcolor{keyword}{nullptr};
+61         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+62     \}
+63 
+64     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+65 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Manager.\+hpp\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Manager.\+cpp\end{DoxyCompactItemize}

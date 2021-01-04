@@ -101,9 +101,11 @@ platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/fs/libfs.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/mm/libmm.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/sched/libsched.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: src/modules/hello/libhello.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: src/modules/uORB/libuORB.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: boards/stm/nucleo_h743zi/src/libdrivers_board.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/arch/arm/src/libarch.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: boards/stm/nucleo_h743zi/src/libdrivers_board.a
+platforms/nuttx/stm_nucleo-h743zi_default.elf: src/lib/cdev/libcdev.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/libs/libxx/libxx.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/libs/libc/libc.a
 platforms/nuttx/stm_nucleo-h743zi_default.elf: NuttX/nuttx/drivers/libdrivers.a

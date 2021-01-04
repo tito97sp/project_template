@@ -1,0 +1,202 @@
+\hypertarget{classuORB_1_1SubscriptionBlocking}{}\section{u\+O\+RB\+:\+:Subscription\+Blocking$<$ T $>$ Class Template Reference}
+\label{classuORB_1_1SubscriptionBlocking}\index{u\+O\+R\+B\+::\+Subscription\+Blocking$<$ T $>$@{u\+O\+R\+B\+::\+Subscription\+Blocking$<$ T $>$}}
+
+
+Inheritance diagram for u\+O\+RB\+:\+:Subscription\+Blocking$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d8b/classuORB_1_1SubscriptionBlocking__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for u\+O\+RB\+:\+:Subscription\+Blocking$<$ T $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d7d/classuORB_1_1SubscriptionBlocking__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuORB_1_1SubscriptionBlocking_a112e322e269b8d7c577f1dde3b5e8393}{Subscription\+Blocking} (const \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, uint32\+\_\+t interval\+\_\+us=0, uint8\+\_\+t instance=0)
+\item 
+\mbox{\Hypertarget{classuORB_1_1SubscriptionBlocking_ab151303fb1a35645cc86570031991a58}\label{classuORB_1_1SubscriptionBlocking_ab151303fb1a35645cc86570031991a58}} 
+void {\bfseries call} () override
+\item 
+bool \hyperlink{classuORB_1_1SubscriptionBlocking_af6a2f560b911949ed11eabc0cfad7874}{updated\+Blocking} (uint32\+\_\+t timeout\+\_\+us=0)
+\item 
+bool \hyperlink{classuORB_1_1SubscriptionBlocking_ab1e6e657ca5ebbaf53fde6204109350d}{update\+Blocking} (T \&data, uint32\+\_\+t timeout\+\_\+us=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class u\+O\+R\+B\+::\+Subscription\+Blocking$<$ T $>$}
+
+
+
+Definition at line 47 of file Subscription\+Blocking.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classuORB_1_1SubscriptionBlocking_a112e322e269b8d7c577f1dde3b5e8393}\label{classuORB_1_1SubscriptionBlocking_a112e322e269b8d7c577f1dde3b5e8393}} 
+\index{u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}!Subscription\+Blocking@{Subscription\+Blocking}}
+\index{Subscription\+Blocking@{Subscription\+Blocking}!u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}}
+\subsubsection{\texorpdfstring{Subscription\+Blocking()}{SubscriptionBlocking()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classuORB_1_1SubscriptionBlocking}{u\+O\+R\+B\+::\+Subscription\+Blocking}$<$ T $>$\+::\hyperlink{classuORB_1_1SubscriptionBlocking}{Subscription\+Blocking} (\begin{DoxyParamCaption}\item[{const \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$}]{meta,  }\item[{uint32\+\_\+t}]{interval\+\_\+us = {\ttfamily 0},  }\item[{uint8\+\_\+t}]{instance = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & The u\+O\+RB metadata (usually from the \hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+I\+D()} macro) for the topic. \\
+\hline
+{\em interval\+\_\+us} & The requested maximum update interval in microseconds. \\
+\hline
+{\em instance} & The instance for multi sub. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Subscription\+Blocking.\+hpp.
+
+
+\begin{DoxyCode}
+57                                                                                                    :
+58         \hyperlink{classuORB_1_1SubscriptionCallback_acc7373f302eb194d01734aedab1db772}{SubscriptionCallback}(meta, interval\_us, instance)
+59     \{
+60         \textcolor{comment}{// pthread\_mutexattr\_init}
+61         pthread\_mutexattr\_t attr;
+62         \textcolor{keywordtype}{int} ret\_attr\_init = pthread\_mutexattr\_init(&attr);
+63 
+64         \textcolor{keywordflow}{if} (ret\_attr\_init != 0) \{
+65             \textcolor{comment}{//PX4\_ERR("pthread\_mutexattr\_init failed, status=%d", ret\_attr\_init);}
+66         \}
+67 
+68 \textcolor{preprocessor}{#if defined(PTHREAD\_PRIO\_NONE)}
+69         \textcolor{comment}{// pthread\_mutexattr\_settype}
+70         \textcolor{comment}{//  PTHREAD\_PRIO\_NONE not available on cygwin}
+71         \textcolor{keywordtype}{int} ret\_mutexattr\_settype = pthread\_mutexattr\_settype(&attr, PTHREAD\_PRIO\_NONE);
+72 
+73         \textcolor{keywordflow}{if} (ret\_mutexattr\_settype != 0) \{
+74             \textcolor{comment}{//PX4\_ERR("pthread\_mutexattr\_settype failed, status=%d", ret\_mutexattr\_settype);}
+75         \}
+76 
+77 \textcolor{preprocessor}{#endif // PTHREAD\_PRIO\_NONE}
+78 
+79         \textcolor{comment}{// pthread\_mutex\_init}
+80         \textcolor{keywordtype}{int} ret\_mutex\_init = pthread\_mutex\_init(&\_mutex, &attr);
+81 
+82         \textcolor{keywordflow}{if} (ret\_mutex\_init != 0) \{
+83             \textcolor{comment}{//PX4\_ERR("pthread\_mutex\_init failed, status=%d", ret\_mutex\_init);}
+84         \}
+85     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuORB_1_1SubscriptionBlocking_ab1e6e657ca5ebbaf53fde6204109350d}\label{classuORB_1_1SubscriptionBlocking_ab1e6e657ca5ebbaf53fde6204109350d}} 
+\index{u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}!update\+Blocking@{update\+Blocking}}
+\index{update\+Blocking@{update\+Blocking}!u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}}
+\subsubsection{\texorpdfstring{update\+Blocking()}{updateBlocking()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classuORB_1_1SubscriptionBlocking}{u\+O\+R\+B\+::\+Subscription\+Blocking}$<$ T $>$\+::update\+Blocking (\begin{DoxyParamCaption}\item[{T \&}]{data,  }\item[{uint32\+\_\+t}]{timeout\+\_\+us = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Copy the struct if updated. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data reference where the struct will be copied. \\
+\hline
+{\em timeout\+\_\+us} & The requested timeout in microseconds, or 0 to wait indefinitely.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if topic was updated and copied successfully. 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Subscription\+Blocking.\+hpp.
+
+
+\begin{DoxyCode}
+158     \{
+159         \textcolor{keywordflow}{if} (\hyperlink{classuORB_1_1SubscriptionBlocking_af6a2f560b911949ed11eabc0cfad7874}{updatedBlocking}(timeout\_us)) \{
+160             \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1SubscriptionInterval_a25125ed09772665d3b4b4e6978fb3e1c}{copy}(&data);
+161         \}
+162 
+163         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+164     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1SubscriptionBlocking_af6a2f560b911949ed11eabc0cfad7874}\label{classuORB_1_1SubscriptionBlocking_af6a2f560b911949ed11eabc0cfad7874}} 
+\index{u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}!updated\+Blocking@{updated\+Blocking}}
+\index{updated\+Blocking@{updated\+Blocking}!u\+O\+R\+B\+::\+Subscription\+Blocking@{u\+O\+R\+B\+::\+Subscription\+Blocking}}
+\subsubsection{\texorpdfstring{updated\+Blocking()}{updatedBlocking()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classuORB_1_1SubscriptionBlocking}{u\+O\+R\+B\+::\+Subscription\+Blocking}$<$ T $>$\+::updated\+Blocking (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout\+\_\+us = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Block until updated. 
+\begin{DoxyParams}{Parameters}
+{\em timeout\+\_\+us} & The requested timeout in microseconds, or 0 to wait indefinitely.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true only if topic was updated 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Subscription\+Blocking.\+hpp.
+
+
+\begin{DoxyCode}
+108     \{
+109         \textcolor{keywordflow}{if} (!\_registered) \{
+110             registerCallback();
+111         \}
+112 
+113         \textcolor{keywordflow}{if} (\hyperlink{classuORB_1_1SubscriptionInterval_aa1c12b83d65604e306b919a2c224e32e}{updated}()) \{
+114             \textcolor{comment}{// return immediately if updated}
+115             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+116 
+117         \} \textcolor{keywordflow}{else} \{
+118             \textcolor{comment}{// otherwise wait}
+119 
+120             \hyperlink{classLockGuard}{LockGuard} lg\{\_mutex\};
+121 
+122             \textcolor{keywordflow}{if} (timeout\_us == 0) \{
+123                 \textcolor{comment}{// wait with no timeout}
+124                 \textcolor{keywordflow}{if} (pthread\_cond\_wait(&\_cv, &\_mutex) == 0) \{
+125                     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1SubscriptionInterval_aa1c12b83d65604e306b919a2c224e32e}{updated}();
+126                 \}
+127 
+128             \} \textcolor{keywordflow}{else} \{
+129                 \textcolor{comment}{// otherwise wait with timeout based on interval}
+130 
+131                 \textcolor{comment}{// Calculate an absolute time in the future}
+132                 \textcolor{keyword}{struct }timespec ts;
+133                 
+134                 clock\_gettime(CLOCK\_REALTIME, &ts);
+135                 uint64\_t nsecs = ts.tv\_nsec + (timeout\_us * 1000);
+136                 \textcolor{keyword}{static} constexpr \textcolor{keywordtype}{unsigned} billion = (1000 * 1000 * 1000);
+137                 ts.tv\_sec += nsecs / billion;
+138                 nsecs -= (nsecs / billion) * billion;
+139                 ts.tv\_nsec = nsecs;
+140 
+141                 \textcolor{keywordflow}{if} (pthread\_cond\_timedwait(&\_cv, &\_mutex, &ts) == 0) \{
+142                     \textcolor{keywordflow}{return} \hyperlink{classuORB_1_1SubscriptionInterval_aa1c12b83d65604e306b919a2c224e32e}{updated}();
+143                 \}
+144             \}
+145         \}
+146 
+147         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+148     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/Subscription\+Blocking.\+hpp\end{DoxyCompactItemize}

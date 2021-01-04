@@ -3,9 +3,14 @@ from __future__ import print_function
 
 import argparse
 import os
+import pwd
+import platform
 import sys
 import subprocess
 import re
+from datetime import date
+
+
 
 parser = argparse.ArgumentParser(description="""Extract version info from git and
 generate a version header file. The working directory is expected to be
@@ -53,7 +58,7 @@ if validate:
         # format matches, check the major and minor numbers
         major = int(m.group(1))
         minor = int(m.group(2))
-        if major < 1 or (major == 1 and minor < 1):
+        if major < 1 or (major == 1 and minor < 0):
             print("")
             print("Error: 'project' version too low, expected at least v1.9.0")
             print("Check the git tag (current tag: '{:}')".format(git_tag_test))
@@ -85,10 +90,10 @@ except:
 git_version_short = git_version[0:16]
 
 header += """
-#define $PROJECT_GIT_VERSION_STR  "{git_version}"
-#define $PROJECT_GIT_VERSION_BINARY 0x{git_version_short}
-#define $PROJECT_GIT_TAG_STR  "{git_tag}"
-#define $PROJECT_GIT_BRANCH_NAME  "{git_branch_name}"
+#define PROJECT_GIT_VERSION_STR  "{git_version}"
+#define PROJECT_GIT_VERSION_BINARY 0x{git_version_short}
+#define PROJECT_GIT_TAG_STR  "{git_tag}"
+#define PROJECT_GIT_BRANCH_NAME  "{git_branch_name}"
 """.format(git_tag=git_tag,
            git_version=git_version,
            git_version_short=git_version_short,
@@ -141,6 +146,28 @@ if (os.path.exists('platforms/nuttx/NuttX/nuttx/.git')):
            nuttx_git_version_short=nuttx_git_version_short,
            nuttx_git_tag=nuttx_git_tag)
 
+
+if old_header != header:
+    if verbose:
+        print('Updating header {}'.format(filename))
+    fp_header = open(filename, 'w')
+    fp_header.write(header)
+
+
+#Build register
+
+build_platform = platform.platform()
+today = date.today()
+build_date = today.strftime("%d/%m/%Y")
+build_user = pwd.getpwuid( os.getuid() )[ 0 ]
+
+header += """
+#define BUILD_HOST "{build_platform}"
+#define BUILD_DATE "{build_date}"
+#define BUILD_USER "{build_user}"
+""".format(build_platform=build_platform,
+           build_date=build_date,
+           build_user=build_user)
 
 if old_header != header:
     if verbose:

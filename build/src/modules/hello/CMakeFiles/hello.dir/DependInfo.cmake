@@ -33,6 +33,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/include"
   "../src/lib"
   "../src/modules"
+  "../boards/stm/nucleo_h743zi/include"
   "NuttX/nuttx/arch/arm/src/armv7-m"
   "NuttX/nuttx/arch/arm/src/chip"
   "NuttX/nuttx/arch/arm/src/common"

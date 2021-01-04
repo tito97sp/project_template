@@ -1,0 +1,277 @@
+\hypertarget{classuORB_1_1DeviceMaster}{}\section{u\+O\+RB\+:\+:Device\+Master Class Reference}
+\label{classuORB_1_1DeviceMaster}\index{u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}}
+
+
+{\ttfamily \#include $<$u\+O\+R\+B\+Device\+Master.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_a772af4822d194e3ff6cff97da4635aa1}\label{classuORB_1_1DeviceMaster_a772af4822d194e3ff6cff97da4635aa1}} 
+int {\bfseries advertise} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, bool is\+\_\+advertiser, int $\ast$instance)
+\item 
+\hyperlink{classuORB_1_1DeviceNode}{u\+O\+R\+B\+::\+Device\+Node} $\ast$ \hyperlink{classuORB_1_1DeviceMaster_a793df66a48dcabdd0f5bd8c85beee13c}{get\+Device\+Node} (const char $\ast$node\+\_\+name)
+\item 
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_a2ed78f9b1cded34f77423a014cbe7d8c}\label{classuORB_1_1DeviceMaster_a2ed78f9b1cded34f77423a014cbe7d8c}} 
+\hyperlink{classuORB_1_1DeviceNode}{u\+O\+R\+B\+::\+Device\+Node} $\ast$ {\bfseries get\+Device\+Node} (const struct \hyperlink{structorb__metadata}{orb\+\_\+metadata} $\ast$meta, const uint8\+\_\+t instance)
+\item 
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_a6589533893a7c6095e69a27a25ff48ad}\label{classuORB_1_1DeviceMaster_a6589533893a7c6095e69a27a25ff48ad}} 
+bool {\bfseries device\+Node\+Exists} (\hyperlink{uORB_8h_a96af5434ec1acdf24287bd7851b0413f}{O\+R\+B\+\_\+\+ID} id, const uint8\+\_\+t instance)
+\item 
+void \hyperlink{classuORB_1_1DeviceMaster_a0a8af69f5ba05738eb173a116acd8daf}{print\+Statistics} ()
+\item 
+void \hyperlink{classuORB_1_1DeviceMaster_af9f100ed05355fdd8860e27dd8876611}{show\+Top} (char $\ast$$\ast$topic\+\_\+filter, int num\+\_\+filters)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_ac7c1906a5bb7b0e69f9dcffc0c178300}\label{classuORB_1_1DeviceMaster_ac7c1906a5bb7b0e69f9dcffc0c178300}} 
+class {\bfseries u\+O\+R\+B\+::\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master control device for Obj\+Dev.
+
+Used primarily to create new objects via the O\+R\+B\+I\+O\+C\+C\+R\+E\+A\+TE ioctl. 
+
+Definition at line 65 of file u\+O\+R\+B\+Device\+Master.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_a793df66a48dcabdd0f5bd8c85beee13c}\label{classuORB_1_1DeviceMaster_a793df66a48dcabdd0f5bd8c85beee13c}} 
+\index{u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}!get\+Device\+Node@{get\+Device\+Node}}
+\index{get\+Device\+Node@{get\+Device\+Node}!u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}}
+\subsubsection{\texorpdfstring{get\+Device\+Node()}{getDeviceNode()}}
+{\footnotesize\ttfamily \hyperlink{classuORB_1_1DeviceNode}{u\+O\+R\+B\+::\+Device\+Node} $\ast$ u\+O\+R\+B\+::\+Device\+Master\+::get\+Device\+Node (\begin{DoxyParamCaption}\item[{const char $\ast$}]{node\+\_\+name }\end{DoxyParamCaption})}
+
+Public interface for get\+Device\+Node\+Locked(). Takes care of synchronization. \begin{DoxyReturn}{Returns}
+node if exists, nullptr otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 417 of file u\+O\+R\+B\+Device\+Master.\+cpp.
+
+
+\begin{DoxyCode}
+418 \{
+419     lock();
+420 
+421     \textcolor{keywordflow}{for} (\hyperlink{classuORB_1_1DeviceNode}{uORB::DeviceNode} *node : \_node\_list) \{
+422         \textcolor{keywordflow}{if} (strcmp(node->get\_devname(), nodepath) == 0) \{
+423             unlock();
+424             \textcolor{keywordflow}{return} node;
+425         \}
+426     \}
+427 
+428     unlock();
+429 
+430     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};
+431 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_a0a8af69f5ba05738eb173a116acd8daf}\label{classuORB_1_1DeviceMaster_a0a8af69f5ba05738eb173a116acd8daf}} 
+\index{u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}!print\+Statistics@{print\+Statistics}}
+\index{print\+Statistics@{print\+Statistics}!u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}}
+\subsubsection{\texorpdfstring{print\+Statistics()}{printStatistics()}}
+{\footnotesize\ttfamily void u\+O\+R\+B\+::\+Device\+Master\+::print\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Print statistics for each existing topic. 
+
+Definition at line 179 of file u\+O\+R\+B\+Device\+Master.\+cpp.
+
+
+\begin{DoxyCode}
+180 \{
+181     \textcolor{comment}{/* Add all nodes to a list while locked, and then print them in unlocked state, to avoid potential}
+182 \textcolor{comment}{     * dead-locks (where printing blocks) */}
+183     lock();
+184     DeviceNodeStatisticsData *first\_node = \textcolor{keyword}{nullptr};
+185     DeviceNodeStatisticsData *cur\_node = \textcolor{keyword}{nullptr};
+186     \textcolor{keywordtype}{size\_t} max\_topic\_name\_length = 0;
+187     \textcolor{keywordtype}{int} num\_topics = 0;
+188     \textcolor{keywordtype}{int} ret = addNewDeviceNodes(&first\_node, num\_topics, max\_topic\_name\_length, \textcolor{keyword}{nullptr}, 0);
+189     unlock();
+190 
+191     \textcolor{keywordflow}{if} (ret != 0) \{
+192         printf(\textcolor{stringliteral}{"addNewDeviceNodes failed (%i)"}, ret);
+193         \textcolor{keywordflow}{return};
+194     \}
+195 
+196     printf(\textcolor{stringliteral}{"%-*s INST #SUB #Q SIZE PATH\(\backslash\)n"}, (\textcolor{keywordtype}{int})max\_topic\_name\_length - 2, \textcolor{stringliteral}{"TOPIC NAME"});
+197 
+198     cur\_node = first\_node;
+199 
+200     \textcolor{keywordflow}{while} (cur\_node) \{
+201         cur\_node->node->print\_statistics(max\_topic\_name\_length);
+202 
+203         DeviceNodeStatisticsData *prev = cur\_node;
+204         cur\_node = cur\_node->next;
+205         \textcolor{keyword}{delete} prev;
+206     \}
+207 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classuORB_1_1DeviceMaster_af9f100ed05355fdd8860e27dd8876611}\label{classuORB_1_1DeviceMaster_af9f100ed05355fdd8860e27dd8876611}} 
+\index{u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}!show\+Top@{show\+Top}}
+\index{show\+Top@{show\+Top}!u\+O\+R\+B\+::\+Device\+Master@{u\+O\+R\+B\+::\+Device\+Master}}
+\subsubsection{\texorpdfstring{show\+Top()}{showTop()}}
+{\footnotesize\ttfamily void u\+O\+R\+B\+::\+Device\+Master\+::show\+Top (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{topic\+\_\+filter,  }\item[{int}]{num\+\_\+filters }\end{DoxyParamCaption})}
+
+Continuously print statistics, like the unix top command for processes. Exited when the user presses the enter key. 
+\begin{DoxyParams}{Parameters}
+{\em topic\+\_\+filter} & list of topic filters\+: if set, each string can be a substring for topics to match. Or it can be \textquotesingle{}-\/a\textquotesingle{}, which means to print all topics instead of only ones currently publishing with subscribers. \\
+\hline
+{\em num\+\_\+filters} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 279 of file u\+O\+R\+B\+Device\+Master.\+cpp.
+
+
+\begin{DoxyCode}
+280 \{
+281     \textcolor{keywordtype}{bool} print\_active\_only = \textcolor{keyword}{true};
+282     \textcolor{keywordtype}{bool} only\_once = \textcolor{keyword}{false}; \textcolor{comment}{// if true, run only once, then exit}
+283 
+284     \textcolor{keywordflow}{if} (topic\_filter && num\_filters > 0) \{
+285         \textcolor{keywordtype}{bool} show\_all = \textcolor{keyword}{false};
+286 
+287         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < num\_filters; ++i) \{
+288             \textcolor{keywordflow}{if} (!strcmp(\textcolor{stringliteral}{"-a"}, topic\_filter[i])) \{
+289                 show\_all = \textcolor{keyword}{true};
+290 
+291             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!strcmp(\textcolor{stringliteral}{"-1"}, topic\_filter[i])) \{
+292                 only\_once = \textcolor{keyword}{true};
+293             \}
+294         \}
+295 
+296         print\_active\_only = only\_once ? (num\_filters == 1) : \textcolor{keyword}{false}; \textcolor{comment}{// print non-active if -a or some
+       filter given}
+297 
+298         \textcolor{keywordflow}{if} (show\_all || print\_active\_only) \{
+299             num\_filters = 0;
+300         \}
+301     \}
+302 
+303     printf(\textcolor{stringliteral}{"\(\backslash\)033[2J\(\backslash\)n"}); \textcolor{comment}{//clear screen}
+304 
+305     lock();
+306 
+307     \textcolor{keywordflow}{if} (\_node\_list.empty()) \{
+308         unlock();
+309         printf(\textcolor{stringliteral}{"no active topics"});
+310         \textcolor{keywordflow}{return};
+311     \}
+312 
+313     DeviceNodeStatisticsData *first\_node = \textcolor{keyword}{nullptr};
+314     DeviceNodeStatisticsData *cur\_node = \textcolor{keyword}{nullptr};
+315     \textcolor{keywordtype}{size\_t} max\_topic\_name\_length = 0;
+316     \textcolor{keywordtype}{int} num\_topics = 0;
+317     \textcolor{keywordtype}{int} ret = addNewDeviceNodes(&first\_node, num\_topics, max\_topic\_name\_length, topic\_filter, num\_filters);
+318 
+319     \textcolor{comment}{/* a DeviceNode is never deleted, so it's save to unlock here and still access the DeviceNodes */}
+320     unlock();
+321 
+322     \textcolor{keywordflow}{if} (ret != 0) \{
+323         printf(\textcolor{stringliteral}{"addNewDeviceNodes failed (%i)"}, ret);
+324     \}
+325 
+326 \textcolor{preprocessor}{#ifdef \_\_PX4\_QURT // QuRT has no poll()}
+327     only\_once = \textcolor{keyword}{true};
+328 \textcolor{preprocessor}{#else}
+329     \textcolor{keyword}{const} \textcolor{keywordtype}{int} stdin\_fileno = 0;
+330 
+331     \textcolor{keyword}{struct }pollfd fds;
+332     fds.fd = stdin\_fileno;
+333     fds.events = POLLIN;
+334 \textcolor{preprocessor}{#endif}
+335     \textcolor{keywordtype}{bool} quit = \textcolor{keyword}{false};
+336 
+337     \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\_abstime} start\_time = \hyperlink{drv__hrt_8h_a91f4291796ed7fbe544dc22ee5288367}{hrt\_absolute\_time}();
+338 
+339     \textcolor{comment}{//struct timespec *start\_time;}
+340     \textcolor{comment}{//clock\_gettime(CLOCK\_MONOTONIC, start\_time);}
+341 
+342     \textcolor{keywordflow}{while} (!quit) \{
+343 
+344         \textcolor{keywordflow}{if} (!quit) \{
+345 
+346             \textcolor{comment}{//update the stats}
+347             \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\_abstime} current\_time = \hyperlink{drv__hrt_8h_a91f4291796ed7fbe544dc22ee5288367}{hrt\_absolute\_time}();
+348             \textcolor{keywordtype}{float} dt = (current\_time - start\_time) / 1.e6f;
+349 
+350             \textcolor{comment}{//struct timespec *current\_time;}
+351             \textcolor{comment}{//clock\_gettime(CLOCK\_MONOTONIC, current\_time);}
+352             \textcolor{comment}{//float dt = (ts\_to\_abstime(current\_time) - ts\_to\_abstime(start\_time)) / 1.e6f;}
+353             
+354             cur\_node = first\_node;
+355 
+356             \textcolor{keywordflow}{while} (cur\_node) \{
+357                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} num\_msgs = cur\_node->node->published\_message\_count();
+358                 cur\_node->pub\_msg\_delta = roundf((num\_msgs - cur\_node->last\_pub\_msg\_count) / dt);
+359                 cur\_node->last\_pub\_msg\_count = num\_msgs;
+360                 cur\_node = cur\_node->next;
+361             \}
+362 
+363             start\_time = current\_time;
+364 
+365 
+366             \textcolor{keywordflow}{if} (!only\_once) \{
+367                 printf(\textcolor{stringliteral}{"\(\backslash\)033[H"}); \textcolor{comment}{// move cursor to top left corner}
+368             \}
+369 
+370             printf(CLEAR\_LINE \textcolor{stringliteral}{"update: 1s, num topics: %i\(\backslash\)n"}, num\_topics);
+371             printf(CLEAR\_LINE \textcolor{stringliteral}{"%-*s INST #SUB RATE #Q SIZE\(\backslash\)n"}, (\textcolor{keywordtype}{int})max\_topic\_name\_length - 2, \textcolor{stringliteral}{"TOPIC NAME"}
+      );
+372             cur\_node = first\_node;
+373 
+374             \textcolor{keywordflow}{while} (cur\_node) \{
+375 
+376                 \textcolor{keywordflow}{if} (!print\_active\_only || (cur\_node->pub\_msg\_delta > 0 && cur\_node->node->subscriber\_count(
+      ) > 0)) \{
+377                     printf(CLEAR\_LINE \textcolor{stringliteral}{"%-*s %2i %4i %4i %2i %4i \(\backslash\)n"}, (\textcolor{keywordtype}{int})max\_topic\_name\_length,
+378                              cur\_node->node->get\_meta()->o\_name, (int)cur\_node->node->get\_instance(),
+379                              (int)cur\_node->node->subscriber\_count(), cur\_node->pub\_msg\_delta,
+380                              cur\_node->node->get\_queue\_size(), cur\_node->node->get\_meta()->o\_size);
+381                 \}
+382 
+383                 cur\_node = cur\_node->next;
+384             \}
+385 
+386             \textcolor{keywordflow}{if} (!only\_once) \{
+387                 printf(\textcolor{stringliteral}{"\(\backslash\)033[0J"}); \textcolor{comment}{// clear the rest of the screen}
+388             \}
+389 
+390             lock();
+391             ret = addNewDeviceNodes(&first\_node, num\_topics, max\_topic\_name\_length, topic\_filter, 
+      num\_filters);
+392             unlock();
+393 
+394             \textcolor{keywordflow}{if} (ret != 0) \{
+395                 printf(\textcolor{stringliteral}{"addNewDeviceNodes failed (%i)"}, ret);
+396             \}
+397 
+398         \}
+399 
+400         \textcolor{keywordflow}{if} (only\_once) \{
+401             quit = \textcolor{keyword}{true};
+402         \}
+403     \}
+404 
+405     \textcolor{comment}{//cleanup}
+406     cur\_node = first\_node;
+407 
+408     \textcolor{keywordflow}{while} (cur\_node) \{
+409         DeviceNodeStatisticsData *next\_node = cur\_node->next;
+410         \textcolor{keyword}{delete} cur\_node;
+411         cur\_node = next\_node;
+412     \}
+413 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Device\+Master.\+hpp\item 
+/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/modules/u\+O\+R\+B/u\+O\+R\+B\+Device\+Master.\+cpp\end{DoxyCompactItemize}

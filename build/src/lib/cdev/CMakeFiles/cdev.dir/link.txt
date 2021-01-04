@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-gcc-ar qc libcdev.a  CMakeFiles/cdev.dir/CDev.cpp.obj CMakeFiles/cdev.dir/nuttx/cdev_platform.cpp.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libcdev.a

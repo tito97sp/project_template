@@ -92,7 +92,7 @@ static void phy_set_led(int led, bool state)
 
 void board_autoled_initialize(void)
 {
-  int i;
+  uint i;
 
   /* Configure the LD1 GPIO for output. Initial state is OFF */
 

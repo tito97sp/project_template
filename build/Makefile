@@ -161,17 +161,17 @@ doxygen/fast:
 .PHONY : doxygen/fast
 
 #=============================================================================
-# Target rules for targets named do_nothing
+# Target rules for targets named cdev
 
 # Build rule for target.
-do_nothing: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 do_nothing
-.PHONY : do_nothing
+cdev: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cdev
+.PHONY : cdev
 
 # fast build rule for target.
-do_nothing/fast:
-	$(MAKE) -f src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build.make src/lib/do_nothing_example/CMakeFiles/do_nothing.dir/build
-.PHONY : do_nothing/fast
+cdev/fast:
+	$(MAKE) -f src/lib/cdev/CMakeFiles/cdev.dir/build.make src/lib/cdev/CMakeFiles/cdev.dir/build
+.PHONY : cdev/fast
 
 #=============================================================================
 # Target rules for targets named version
@@ -211,6 +211,19 @@ hello: cmake_check_build_system
 hello/fast:
 	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
+
+#=============================================================================
+# Target rules for targets named uORB
+
+# Build rule for target.
+uORB: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uORB
+.PHONY : uORB
+
+# fast build rule for target.
+uORB/fast:
+	$(MAKE) -f src/modules/uORB/CMakeFiles/uORB.dir/build.make src/modules/uORB/CMakeFiles/uORB.dir/build
+.PHONY : uORB/fast
 
 #=============================================================================
 # Target rules for targets named drivers_board
@@ -601,10 +614,11 @@ help:
 	@echo "... git_nuttx_apps"
 	@echo "... doxygen"
 	@echo "... edit_cache"
-	@echo "... do_nothing"
+	@echo "... cdev"
 	@echo "... version"
 	@echo "... ver_gen"
 	@echo "... hello"
+	@echo "... uORB"
 	@echo "... drivers_board"
 	@echo "... embedded_project_template"
 	@echo "... weak_symbols"

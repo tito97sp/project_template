@@ -1,0 +1,48 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/andressanchez/Escritorio/GIT/project_template/src/lib/cdev/CDev.cpp" "/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/cdev.dir/CDev.cpp.obj"
+  "/home/andressanchez/Escritorio/GIT/project_template/src/lib/cdev/nuttx/cdev_platform.cpp" "/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/cdev.dir/nuttx/cdev_platform.cpp.obj"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "CONFIG_ARCH_BOARD_STM_NUCLEO_H743ZI"
+  "MODULE_NAME=\"cdev\""
+  "_SYS_CDEFS_H_"
+  "_SYS_REENT_H_"
+  "__CUSTOM_FILE_IO__"
+  "__PROJ_NUTTX"
+  "__STDC_FORMAT_MACROS"
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../platforms/nuttx/NuttX/include/cxx"
+  "NuttX/nuttx/include/cxx"
+  "NuttX/nuttx/include"
+  "../boards/stm/nucleo_h743zi/src"
+  "../platforms/nuttx/src/px4/common/include"
+  "."
+  "src/lib"
+  "../src"
+  "../src/include"
+  "../src/lib"
+  "../src/modules"
+  "../boards/stm/nucleo_h743zi/include"
+  "NuttX/nuttx/arch/arm/src/armv7-m"
+  "NuttX/nuttx/arch/arm/src/chip"
+  "NuttX/nuttx/arch/arm/src/common"
+  "NuttX/apps/include"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

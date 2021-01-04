@@ -1,0 +1,234 @@
+\hypertarget{drv__hrt_8h}{}\section{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/drivers/drv\+\_\+hrt.h File Reference}
+\label{drv__hrt_8h}\index{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/drivers/drv\+\_\+hrt.\+h@{/home/andressanchez/\+Escritorio/\+G\+I\+T/project\+\_\+template/src/drivers/drv\+\_\+hrt.\+h}}
+{\ttfamily \#include $<$sys/config.\+h$>$}\newline
+{\ttfamily \#include $<$sys/cdefs.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$queue.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+Include dependency graph for drv\+\_\+hrt.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d2a/drv__hrt_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d15/drv__hrt_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhrt__call}{hrt\+\_\+call}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_ae5a15cd41d77deeacec97b9d80730ff1}\label{drv__hrt_8h_ae5a15cd41d77deeacec97b9d80730ff1}} 
+\#define {\bfseries L\+A\+T\+E\+N\+C\+Y\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+C\+O\+U\+NT}~8
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout}) (void $\ast$arg)
+\item 
+typedef struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$ \hyperlink{drv__hrt_8h_af2ddabce5b3a99b99716c0fb99fafaf5}{hrt\+\_\+call\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_a50cc6ecc5e8e0d6bfba0c3968d981284}{abstime\+\_\+to\+\_\+ts} (struct timespec $\ast$ts, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} abstime)
+\item 
+\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} \hyperlink{drv__hrt_8h_a583009876e7b978d4ce681a0fe4c9aaf}{ts\+\_\+to\+\_\+abstime} (const struct timespec $\ast$ts)
+\item 
+\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} \hyperlink{drv__hrt_8h_a91f4291796ed7fbe544dc22ee5288367}{hrt\+\_\+absolute\+\_\+time} (void)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} \hyperlink{drv__hrt_8h_a721dee0a94d421de75e4836aed05c0b8}{hrt\+\_\+elapsed\+\_\+time\+\_\+atomic} (const volatile \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} $\ast$then)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_a1a3d27d3fcc825c7dc7624a533c1a0c4}{hrt\+\_\+store\+\_\+absolute\+\_\+time} (volatile \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} $\ast$time)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_a185fdd7c4d51c3f7ef22133ef56f9a55}{hrt\+\_\+call\+\_\+after} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} delay, \hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout} callout, void $\ast$arg)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_a7d49af6c126c7e49c903e2e47e70d716}{hrt\+\_\+call\+\_\+at} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} calltime, \hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout} callout, void $\ast$arg)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_afef961eed389b142649f3d904df16cd2}{hrt\+\_\+call\+\_\+every} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} delay, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} interval, \hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout} callout, void $\ast$arg)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT bool \hyperlink{drv__hrt_8h_a384e9e9c38310512247c86560adb0b6d}{hrt\+\_\+called} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_aa4f22acddbadeed844ef6329629d2837}{hrt\+\_\+cancel} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry)
+\item 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void \hyperlink{drv__hrt_8h_a0d90b23c796be1ed96cc58db0a38046d}{hrt\+\_\+call\+\_\+init} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry)
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_a2c90bdef11ab9384cde0fa4c080ec697}\label{drv__hrt_8h_a2c90bdef11ab9384cde0fa4c080ec697}} 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void {\bfseries hrt\+\_\+call\+\_\+delay} (struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$entry, \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} delay)
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_a4d623c5e3d99e6855ac85e606bd87e1c}\label{drv__hrt_8h_a4d623c5e3d99e6855ac85e606bd87e1c}} 
+\+\_\+\+\_\+\+E\+X\+P\+O\+RT void {\bfseries hrt\+\_\+init} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+B\+E\+G\+I\+N\+\_\+\+D\+E\+C\+LS typedef uint64\+\_\+t \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_ae151daeebc72434d6551f9fe31f3327e}\label{drv__hrt_8h_ae151daeebc72434d6551f9fe31f3327e}} 
+const uint16\+\_\+t {\bfseries latency\+\_\+bucket\+\_\+count}
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_abde1b873868499addf6db659de1f79f1}\label{drv__hrt_8h_abde1b873868499addf6db659de1f79f1}} 
+const uint16\+\_\+t {\bfseries latency\+\_\+buckets} \mbox{[}L\+A\+T\+E\+N\+C\+Y\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+C\+O\+U\+NT\mbox{]}
+\item 
+\mbox{\Hypertarget{drv__hrt_8h_a026b1f9068d4be899ed439a5f66bcb6d}\label{drv__hrt_8h_a026b1f9068d4be899ed439a5f66bcb6d}} 
+uint32\+\_\+t {\bfseries latency\+\_\+counters} \mbox{[}L\+A\+T\+E\+N\+C\+Y\+\_\+\+B\+U\+C\+K\+E\+T\+\_\+\+C\+O\+U\+NT+1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High-\/resolution timer with callouts and timekeeping. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{drv__hrt_8h_af2ddabce5b3a99b99716c0fb99fafaf5}\label{drv__hrt_8h_af2ddabce5b3a99b99716c0fb99fafaf5}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+call\+\_\+t@{hrt\+\_\+call\+\_\+t}}
+\index{hrt\+\_\+call\+\_\+t@{hrt\+\_\+call\+\_\+t}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+call\+\_\+t}{hrt\_call\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$ \hyperlink{drv__hrt_8h_af2ddabce5b3a99b99716c0fb99fafaf5}{hrt\+\_\+call\+\_\+t}}
+
+Callout record. \mbox{\Hypertarget{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}\label{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+callout@{hrt\+\_\+callout}}
+\index{hrt\+\_\+callout@{hrt\+\_\+callout}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+callout}{hrt\_callout}}
+{\footnotesize\ttfamily typedef void($\ast$  hrt\+\_\+callout) (void $\ast$arg)}
+
+Callout function type.
+
+Note that callouts run in the timer interrupt context, so they are serialised with respect to each other, and must not block. 
+
+Definition at line 75 of file drv\+\_\+hrt.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{drv__hrt_8h_a50cc6ecc5e8e0d6bfba0c3968d981284}\label{drv__hrt_8h_a50cc6ecc5e8e0d6bfba0c3968d981284}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!abstime\+\_\+to\+\_\+ts@{abstime\+\_\+to\+\_\+ts}}
+\index{abstime\+\_\+to\+\_\+ts@{abstime\+\_\+to\+\_\+ts}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{abstime\+\_\+to\+\_\+ts()}{abstime\_to\_ts()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void abstime\+\_\+to\+\_\+ts (\begin{DoxyParamCaption}\item[{struct timespec $\ast$}]{ts,  }\item[{\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}}]{abstime }\end{DoxyParamCaption})}
+
+Convert absolute time to a timespec. \mbox{\Hypertarget{drv__hrt_8h_a91f4291796ed7fbe544dc22ee5288367}\label{drv__hrt_8h_a91f4291796ed7fbe544dc22ee5288367}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+absolute\+\_\+time@{hrt\+\_\+absolute\+\_\+time}}
+\index{hrt\+\_\+absolute\+\_\+time@{hrt\+\_\+absolute\+\_\+time}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+absolute\+\_\+time()}{hrt\_absolute\_time()}}
+{\footnotesize\ttfamily \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} hrt\+\_\+absolute\+\_\+time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get absolute time in \mbox{[}us\mbox{]} (does not wrap). 
+
+Definition at line 118 of file drv\+\_\+hrt.\+h.
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keyword}{struct }timespec time;
+121     clock\_gettime(CLOCK\_MONOTONIC, &time);
+122     \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\_abstime} now = \hyperlink{drv__hrt_8h_a583009876e7b978d4ce681a0fe4c9aaf}{ts\_to\_abstime}(&time);
+123     \textcolor{keywordflow}{return} now;
+124 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{drv__hrt_8h_a185fdd7c4d51c3f7ef22133ef56f9a55}\label{drv__hrt_8h_a185fdd7c4d51c3f7ef22133ef56f9a55}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+call\+\_\+after@{hrt\+\_\+call\+\_\+after}}
+\index{hrt\+\_\+call\+\_\+after@{hrt\+\_\+call\+\_\+after}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+call\+\_\+after()}{hrt\_call\_after()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+call\+\_\+after (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry,  }\item[{\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}}]{delay,  }\item[{\hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout}}]{callout,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Call callout(arg) after delay has elapsed.
+
+If callout is N\+U\+LL, this can be used to implement a timeout by testing the call with \hyperlink{drv__hrt_8h_a384e9e9c38310512247c86560adb0b6d}{hrt\+\_\+called()}. \mbox{\Hypertarget{drv__hrt_8h_a7d49af6c126c7e49c903e2e47e70d716}\label{drv__hrt_8h_a7d49af6c126c7e49c903e2e47e70d716}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+call\+\_\+at@{hrt\+\_\+call\+\_\+at}}
+\index{hrt\+\_\+call\+\_\+at@{hrt\+\_\+call\+\_\+at}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+call\+\_\+at()}{hrt\_call\_at()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+call\+\_\+at (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry,  }\item[{\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}}]{calltime,  }\item[{\hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout}}]{callout,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Call callout(arg) at absolute time calltime. \mbox{\Hypertarget{drv__hrt_8h_afef961eed389b142649f3d904df16cd2}\label{drv__hrt_8h_afef961eed389b142649f3d904df16cd2}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+call\+\_\+every@{hrt\+\_\+call\+\_\+every}}
+\index{hrt\+\_\+call\+\_\+every@{hrt\+\_\+call\+\_\+every}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+call\+\_\+every()}{hrt\_call\_every()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+call\+\_\+every (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry,  }\item[{\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}}]{delay,  }\item[{\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime}}]{interval,  }\item[{\hyperlink{drv__hrt_8h_ac8f5a61245c186b72dbbd2466dcceea5}{hrt\+\_\+callout}}]{callout,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+Call callout(arg) after delay, and then after every interval.
+
+Note thet the interval is timed between scheduled, not actual, call times, so the call rate may jitter but should not drift. \mbox{\Hypertarget{drv__hrt_8h_a0d90b23c796be1ed96cc58db0a38046d}\label{drv__hrt_8h_a0d90b23c796be1ed96cc58db0a38046d}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+call\+\_\+init@{hrt\+\_\+call\+\_\+init}}
+\index{hrt\+\_\+call\+\_\+init@{hrt\+\_\+call\+\_\+init}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+call\+\_\+init()}{hrt\_call\_init()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+call\+\_\+init (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry }\end{DoxyParamCaption})}
+
+Initialise a \hyperlink{structhrt__call}{hrt\+\_\+call} structure \mbox{\Hypertarget{drv__hrt_8h_a384e9e9c38310512247c86560adb0b6d}\label{drv__hrt_8h_a384e9e9c38310512247c86560adb0b6d}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+called@{hrt\+\_\+called}}
+\index{hrt\+\_\+called@{hrt\+\_\+called}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+called()}{hrt\_called()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT bool hrt\+\_\+called (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry }\end{DoxyParamCaption})}
+
+If this returns true, the entry has been invoked and removed from the callout list, or it has never been entered.
+
+Always returns false for repeating callouts. \mbox{\Hypertarget{drv__hrt_8h_aa4f22acddbadeed844ef6329629d2837}\label{drv__hrt_8h_aa4f22acddbadeed844ef6329629d2837}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+cancel@{hrt\+\_\+cancel}}
+\index{hrt\+\_\+cancel@{hrt\+\_\+cancel}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+cancel()}{hrt\_cancel()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+cancel (\begin{DoxyParamCaption}\item[{struct \hyperlink{structhrt__call}{hrt\+\_\+call} $\ast$}]{entry }\end{DoxyParamCaption})}
+
+Remove the entry from the callout list. \mbox{\Hypertarget{drv__hrt_8h_a721dee0a94d421de75e4836aed05c0b8}\label{drv__hrt_8h_a721dee0a94d421de75e4836aed05c0b8}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+elapsed\+\_\+time\+\_\+atomic@{hrt\+\_\+elapsed\+\_\+time\+\_\+atomic}}
+\index{hrt\+\_\+elapsed\+\_\+time\+\_\+atomic@{hrt\+\_\+elapsed\+\_\+time\+\_\+atomic}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+elapsed\+\_\+time\+\_\+atomic()}{hrt\_elapsed\_time\_atomic()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} hrt\+\_\+elapsed\+\_\+time\+\_\+atomic (\begin{DoxyParamCaption}\item[{const volatile \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} $\ast$}]{then }\end{DoxyParamCaption})}
+
+Compute the delta between a timestamp taken in the past and now.
+
+This function is safe to use even if the timestamp is updated by an interrupt during execution. \mbox{\Hypertarget{drv__hrt_8h_a1a3d27d3fcc825c7dc7624a533c1a0c4}\label{drv__hrt_8h_a1a3d27d3fcc825c7dc7624a533c1a0c4}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+store\+\_\+absolute\+\_\+time@{hrt\+\_\+store\+\_\+absolute\+\_\+time}}
+\index{hrt\+\_\+store\+\_\+absolute\+\_\+time@{hrt\+\_\+store\+\_\+absolute\+\_\+time}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+store\+\_\+absolute\+\_\+time()}{hrt\_store\_absolute\_time()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+E\+X\+P\+O\+RT void hrt\+\_\+store\+\_\+absolute\+\_\+time (\begin{DoxyParamCaption}\item[{volatile \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} $\ast$}]{time }\end{DoxyParamCaption})}
+
+Store the absolute time in an interrupt-\/safe fashion.
+
+This function ensures that the timestamp cannot be seen half-\/written by an interrupt handler. \mbox{\Hypertarget{drv__hrt_8h_a583009876e7b978d4ce681a0fe4c9aaf}\label{drv__hrt_8h_a583009876e7b978d4ce681a0fe4c9aaf}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!ts\+\_\+to\+\_\+abstime@{ts\+\_\+to\+\_\+abstime}}
+\index{ts\+\_\+to\+\_\+abstime@{ts\+\_\+to\+\_\+abstime}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{ts\+\_\+to\+\_\+abstime()}{ts\_to\_abstime()}}
+{\footnotesize\ttfamily \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\+\_\+abstime} ts\+\_\+to\+\_\+abstime (\begin{DoxyParamCaption}\item[{const struct timespec $\ast$}]{ts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Convert absolute time to a timespec. 
+
+Definition at line 105 of file drv\+\_\+hrt.\+h.
+
+
+\begin{DoxyCode}
+106 \{
+107     \hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\_abstime}  result;
+108 
+109     result = (\hyperlink{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}{hrt\_abstime})(ts->tv\_sec) * 1000000;
+110     result += ts->tv\_nsec / 1000;
+111 
+112     \textcolor{keywordflow}{return} result;
+113 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}\label{drv__hrt_8h_a9f8bbf0e883115e04a457a268533a87c}} 
+\index{drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}!hrt\+\_\+abstime@{hrt\+\_\+abstime}}
+\index{hrt\+\_\+abstime@{hrt\+\_\+abstime}!drv\+\_\+hrt.\+h@{drv\+\_\+hrt.\+h}}
+\subsubsection{\texorpdfstring{hrt\+\_\+abstime}{hrt\_abstime}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+B\+E\+G\+I\+N\+\_\+\+D\+E\+C\+LS typedef uint64\+\_\+t hrt\+\_\+abstime}
+
+Absolute time, in microsecond units.
+
+Absolute time is measured from some arbitrary epoch shortly after system startup. It should never wrap or go backwards. 
+
+Definition at line 66 of file drv\+\_\+hrt.\+h.
+

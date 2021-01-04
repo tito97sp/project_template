@@ -81,33 +81,9 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj
 
 
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_autoleds.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_autoleds.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c > CMakeFiles/drivers_board.dir/stm32_autoleds.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_autoleds.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c -o CMakeFiles/drivers_board.dir/stm32_autoleds.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
-
-
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_boot.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_boot.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_boot.c
 
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.i: cmake_force
@@ -129,153 +105,9 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj.provi
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj
 
 
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_buttons.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_buttons.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_buttons.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_buttons.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_buttons.c > CMakeFiles/drivers_board.dir/stm32_buttons.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_buttons.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_buttons.c -o CMakeFiles/drivers_board.dir/stm32_buttons.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj
-
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_gpio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_gpio.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_gpio.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_gpio.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_gpio.c > CMakeFiles/drivers_board.dir/stm32_gpio.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_gpio.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_gpio.c -o CMakeFiles/drivers_board.dir/stm32_gpio.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj
-
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_pwm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_pwm.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_pwm.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_pwm.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_pwm.c > CMakeFiles/drivers_board.dir/stm32_pwm.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_pwm.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_pwm.c -o CMakeFiles/drivers_board.dir/stm32_pwm.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj
-
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_spi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_spi.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_spi.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_spi.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_spi.c > CMakeFiles/drivers_board.dir/stm32_spi.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_spi.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_spi.c -o CMakeFiles/drivers_board.dir/stm32_spi.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj
-
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_uid.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_uid.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_uid.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_uid.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_uid.c > CMakeFiles/drivers_board.dir/stm32_uid.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_uid.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_uid.c -o CMakeFiles/drivers_board.dir/stm32_uid.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj
-
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_usb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_usb.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_usb.c
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_usb.c.i"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_usb.c > CMakeFiles/drivers_board.dir/stm32_usb.c.i
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_usb.c.s"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_usb.c -o CMakeFiles/drivers_board.dir/stm32_usb.c.s
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.requires:
-
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.requires
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.requires
-	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.provides.build
-.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.provides
-
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj
-
-
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_bringup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_bringup.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_bringup.c
 
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.i: cmake_force
@@ -297,35 +129,47 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj.pr
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj
 
 
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_autoleds.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_autoleds.c.i"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c > CMakeFiles/drivers_board.dir/stm32_autoleds.c.i
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_autoleds.c.s"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_autoleds.c -o CMakeFiles/drivers_board.dir/stm32_autoleds.c.s
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires:
+
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides.build
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
+
+
 # Object files for target drivers_board
 drivers_board_OBJECTS = \
 "CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj" \
 "CMakeFiles/drivers_board.dir/stm32_boot.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_buttons.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_gpio.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_pwm.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_spi.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_uid.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_usb.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_bringup.c.obj"
+"CMakeFiles/drivers_board.dir/stm32_bringup.c.obj" \
+"CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj"
 
 # External object files for target drivers_board
 drivers_board_EXTERNAL_OBJECTS =
 
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj
-boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj
+boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C static library libdrivers_board.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libdrivers_board.a"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && $(CMAKE_COMMAND) -P CMakeFiles/drivers_board.dir/cmake_clean_target.cmake
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drivers_board.dir/link.txt --verbose=$(VERBOSE)
 
@@ -335,15 +179,9 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build: boards/stm/nucl
 .PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build
 
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_buttons.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_gpio.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_pwm.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_spi.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_uid.c.obj.requires
-boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_usb.c.obj.requires
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj.requires
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
 
 .PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires
 
