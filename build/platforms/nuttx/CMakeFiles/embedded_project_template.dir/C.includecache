@@ -6,5 +6,5 @@
 
 #IncludeRegexTransform: 
 
-/home/andressanchez/Escritorio/GIT/project_template/platforms/common/empty.c
+/home/andressanchez/Escritorio/GIT/project_template/platforms/common/src/platform_common/empty.c
 

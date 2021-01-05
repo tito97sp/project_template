@@ -57,6 +57,8 @@ NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_h
 NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_hello_main.pdat
 NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_uorb_main.bdat
 NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_uorb_main.pdat
+NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_template_module_main.bdat
+NuttX/CMakeFiles/nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_template_module_main.pdat
 
 
 NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/builtins_clean.stamp
@@ -87,10 +89,24 @@ NuttX/apps/builtin/registry/custom_uorb_main.pdat: NuttX/nuttx/include/nuttx/ver
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "int uorb_main(int argc, char *argv[]);" > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_uorb_main.pdat
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
 
+NuttX/apps/builtin/registry/custom_template_module_main.bdat: NuttX/builtins_clean.stamp
+NuttX/apps/builtin/registry/custom_template_module_main.bdat: NuttX/nuttx/include/nuttx/config.h
+NuttX/apps/builtin/registry/custom_template_module_main.bdat: NuttX/nuttx/include/nuttx/version.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating apps/builtin/registry/custom_template_module_main.bdat"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "{ \"template_module\", SCHED_PRIORITY_DEFAULT, 2048, template_module_main }," > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_template_module_main.bdat
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
+
+NuttX/apps/builtin/registry/custom_template_module_main.pdat: NuttX/builtins_clean.stamp
+NuttX/apps/builtin/registry/custom_template_module_main.pdat: NuttX/nuttx/include/nuttx/config.h
+NuttX/apps/builtin/registry/custom_template_module_main.pdat: NuttX/nuttx/include/nuttx/version.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating apps/builtin/registry/custom_template_module_main.pdat"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "int template_module_main(int argc, char *argv[]);" > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_template_module_main.pdat
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
+
 NuttX/builtins_clean.stamp: NuttX/nuttx/include/nuttx/config.h
 NuttX/builtins_clean.stamp: NuttX/nuttx/include/nuttx/version.h
 NuttX/builtins_clean.stamp: ../boards/stm/nucleo_h743zi/default.cmake
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating builtins_clean.stamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating builtins_clean.stamp"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && find /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry -name custom_*.bdat -delete
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && find /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry -name custom_*.pdat -delete
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && rm -f /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/builtin_list.h
@@ -99,7 +115,7 @@ NuttX/builtins_clean.stamp: ../boards/stm/nucleo_h743zi/default.cmake
 NuttX/nuttx/include/nuttx/config.h: NuttX/nuttx/Make.defs
 NuttX/nuttx/include/nuttx/config.h: NuttX/nuttx/.config
 NuttX/nuttx/include/nuttx/config.h: NuttX/nuttx_olddefconfig.stamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating nuttx/include/nuttx/config.h, nuttx/include/nuttx/version.h"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating nuttx/include/nuttx/config.h, nuttx/include/nuttx/version.h"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && make --quiet --no-print-directory CONFIG_ARCH_BOARD_CUSTOM=y pass1dep > nuttx_context.log
 
 NuttX/nuttx/include/nuttx/version.h: NuttX/nuttx/include/nuttx/config.h
@@ -109,7 +125,7 @@ NuttX/nuttx/.config: NuttX/nuttx/Make.defs
 NuttX/nuttx/.config: ../boards/stm/nucleo_h743zi/nuttx-config/nsh/defconfig
 NuttX/nuttx/.config: NuttX/nuttx_copy_config_dir.stamp
 NuttX/nuttx/.config: ../platforms/nuttx/NuttX/tools/px4_nuttx_make_olddefconfig.sh
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Copying NuttX compressed config nsh and inflating (make olddefconfig)"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Copying NuttX compressed config nsh and inflating (make olddefconfig)"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E copy_if_different /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/nuttx-config/nsh/defconfig /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/.config
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /home/andressanchez/Escritorio/GIT/project_template/platforms/nuttx/NuttX/tools/px4_nuttx_make_olddefconfig.sh > nuttx_olddefconfig.log
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx_olddefconfig.stamp
@@ -121,7 +137,7 @@ NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/incl
 NuttX/nuttx_copy_config_dir.stamp: ../boards/stm/nucleo_h743zi/nuttx-config/scripts/script.ld
 NuttX/nuttx_copy_config_dir.stamp: ../platforms/nuttx/NuttX/nsh_romfsimg.h
 NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Copying NuttX config nsh"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Copying NuttX config nsh"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && cp -aRfl ../../../boards/stm/nucleo_h743zi/nuttx-config ../
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E make_directory /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx-config/drivers/Kconfig
@@ -131,7 +147,7 @@ NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
 
 NuttX/nuttx_config_kconfig.stamp: NuttX/nuttx_copy.stamp
 NuttX/nuttx_config_kconfig.stamp: NuttX/apps_copy.stamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating nuttx_config_kconfig.stamp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating nuttx_config_kconfig.stamp"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/boards/dummy/Kconfig
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx_config_kconfig.stamp
 
@@ -13816,7 +13832,7 @@ NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/wireless/pktradio/Kconfig
 NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/wireless/pktradio/Make.defs
 NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/wireless/pktradio/pktradio_loopback.c
 NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/wireless/pktradio/pktradio_metadata.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Copying NuttX/nuttx to build/NuttX"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Copying NuttX/nuttx to build/NuttX"
 	cd /home/andressanchez/Escritorio/GIT/project_template && cp -aRfl platforms/nuttx/NuttX/nuttx build/NuttX
 	cd /home/andressanchez/Escritorio/GIT/project_template && /usr/bin/cmake -E remove -f /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/.git
 	cd /home/andressanchez/Escritorio/GIT/project_template && echo gitdir:\ /home/andressanchez/Escritorio/GIT/project_template/.git/modules/platforms/nuttx/NuttX/nuttx > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/.git
@@ -16477,7 +16493,7 @@ NuttX/apps_copy.stamp: ../platforms/nuttx/NuttX/apps/wireless/wapi/src/util.c
 NuttX/apps_copy.stamp: ../platforms/nuttx/NuttX/apps/wireless/wapi/src/util.h
 NuttX/apps_copy.stamp: ../platforms/nuttx/NuttX/apps/wireless/wapi/src/wapi.c
 NuttX/apps_copy.stamp: ../platforms/nuttx/NuttX/apps/wireless/wapi/src/wireless.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Copying NuttX/apps to ../../../../../NuttX"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Copying NuttX/apps to ../../../../../NuttX"
 	cd /home/andressanchez/Escritorio/GIT/project_template && cp -aRfl platforms/nuttx/NuttX/apps ../../../../../NuttX
 	cd /home/andressanchez/Escritorio/GIT/project_template && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps_copy.stamp
 
@@ -16486,6 +16502,8 @@ nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_hello_main.bdat
 nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_hello_main.pdat
 nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_uorb_main.bdat
 nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_uorb_main.pdat
+nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_template_module_main.bdat
+nuttx_builtin_list_target: NuttX/apps/builtin/registry/custom_template_module_main.pdat
 nuttx_builtin_list_target: NuttX/builtins_clean.stamp
 nuttx_builtin_list_target: NuttX/nuttx/include/nuttx/config.h
 nuttx_builtin_list_target: NuttX/nuttx/include/nuttx/version.h

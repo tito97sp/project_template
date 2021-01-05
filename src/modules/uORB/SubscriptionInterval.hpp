@@ -46,7 +46,7 @@
 
 #include "Subscription.hpp"
 
-#include "include/Limits.hpp"
+#include <platform_common/Limits.hpp>
 
 namespace uORB
 {

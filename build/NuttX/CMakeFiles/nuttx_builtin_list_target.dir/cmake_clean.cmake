@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "apps/builtin/registry/custom_hello_main.pdat"
   "apps/builtin/registry/custom_uorb_main.bdat"
   "apps/builtin/registry/custom_uorb_main.pdat"
+  "apps/builtin/registry/custom_template_module_main.bdat"
+  "apps/builtin/registry/custom_template_module_main.pdat"
   "builtins_clean.stamp"
   "nuttx/include/nuttx/config.h"
   "nuttx/include/nuttx/version.h"

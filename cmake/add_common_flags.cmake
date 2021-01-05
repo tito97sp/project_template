@@ -180,7 +180,7 @@ function(add_common_flags)
 
 		# ${SOURCE_DIR}/platforms/${PLATFORM}/src/px4/${PX4_CHIP_MANUFACTURER}/${PX4_CHIP}/include
 		# ${SOURCE_DIR}/platforms/${PLATFORM}/src/px4/common/include
-		# ${SOURCE_DIR}/platforms/common/include
+		${SOURCE_DIR}/platforms/common/include
 		${SOURCE_DIR}/src
 		${SOURCE_DIR}/src/include
 		${SOURCE_DIR}/src/lib

@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-gcc-ar qc libplatform_common.a  CMakeFiles/platform_common.dir/module.cpp.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libplatform_common.a

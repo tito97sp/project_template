@@ -1,13 +1,10 @@
 var searchData=
 [
   ['seek',['seek',['../d3/dff/classcdev_1_1CDev.html#a987dd32ef79c2bb4380fa021ce430de2',1,'cdev::CDev']]],
-  ['sem_2ehpp',['sem.hpp',['../d3/def/sem_8hpp.html',1,'']]],
   ['send_5fmessage',['send_message',['../d6/da6/classuORBCommunicator_1_1IChannel.html#a3f4690d7b897f5f568cfed2c31d7b734',1,'uORBCommunicator::IChannel']]],
   ['set_5finterval_5fms',['set_interval_ms',['../d1/d96/classuORB_1_1SubscriptionInterval.html#a12e68cbb4d69d82ec586aa2bbc8e9672',1,'uORB::SubscriptionInterval']]],
   ['set_5finterval_5fus',['set_interval_us',['../d1/d96/classuORB_1_1SubscriptionInterval.html#a53018b44bb431a80d47ac95327990b2a',1,'uORB::SubscriptionInterval']]],
   ['showtop',['showTop',['../d3/dbc/classuORB_1_1DeviceMaster.html#af9f100ed05355fdd8860e27dd8876611',1,'uORB::DeviceMaster']]],
-  ['smart',['Smart',['../dd/d29/classSmart.html',1,'']]],
-  ['smartlock',['SmartLock',['../de/df7/classSmartLock.html',1,'']]],
   ['subscribe',['subscribe',['../da/d57/classuORB_1_1Subscription.html#acb0fbd4b56d5e3c8edca15206e110223',1,'uORB::Subscription']]],
   ['subscription',['Subscription',['../da/d57/classuORB_1_1Subscription.html',1,'uORB::Subscription'],['../da/d57/classuORB_1_1Subscription.html#a6afd37f8aa13bc3ffeafd29b7a3d434f',1,'uORB::Subscription::Subscription(ORB_ID id, uint8_t instance=0)'],['../da/d57/classuORB_1_1Subscription.html#a8851d25ec7fc746ed71214cb65500006',1,'uORB::Subscription::Subscription(const orb_metadata *meta, uint8_t instance=0)']]],
   ['subscription_2ecpp',['Subscription.cpp',['../dd/d53/Subscription_8cpp.html',1,'']]],

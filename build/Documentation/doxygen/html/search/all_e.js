@@ -5,6 +5,8 @@ var searchData=
   ['poll_5fnotify_5fone',['poll_notify_one',['../d3/dff/classcdev_1_1CDev.html#ada35d652d0f6d7257fffe4ead0fbb6dd',1,'cdev::CDev::poll_notify_one()'],['../de/da0/classuORB_1_1DeviceNode.html#a77061c03defdcb3eedfc9cdc8b38c003',1,'uORB::DeviceNode::poll_notify_one()']]],
   ['poll_5fstate',['poll_state',['../d3/dff/classcdev_1_1CDev.html#abf40a822665b0889584268e8a4dfbef2',1,'cdev::CDev::poll_state()'],['../de/da0/classuORB_1_1DeviceNode.html#a3ac7d5c93e5fd480cd623fd421afa060',1,'uORB::DeviceNode::poll_state()']]],
   ['print_5fstatistics',['print_statistics',['../de/da0/classuORB_1_1DeviceNode.html#ad37197e0ca241eff70bd5aeeb4a811a2',1,'uORB::DeviceNode']]],
+  ['print_5fstatus',['print_status',['../dc/d68/classTemplateModule.html#a0a5e50f74b8a4bc4d3102eb1487efc88',1,'TemplateModule']]],
+  ['print_5fusage',['print_usage',['../dc/d68/classTemplateModule.html#a5ce5da37ebb624d8fbf301343d0ed341',1,'TemplateModule']]],
   ['printstatistics',['printStatistics',['../d3/dbc/classuORB_1_1DeviceMaster.html#a0a8af69f5ba05738eb173a116acd8daf',1,'uORB::DeviceMaster']]],
   ['process_5fadd_5fsubscription',['process_add_subscription',['../d1/d14/classuORBCommunicator_1_1IChannelRxHandler.html#a5d851e90495d4c68b56bb5e299a17533',1,'uORBCommunicator::IChannelRxHandler']]],
   ['process_5freceived_5fmessage',['process_received_message',['../d1/d14/classuORBCommunicator_1_1IChannelRxHandler.html#a9fbd88a46229eaf6acb13d3724a2c6f7',1,'uORBCommunicator::IChannelRxHandler']]],

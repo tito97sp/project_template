@@ -39,10 +39,10 @@
 
 #include <lib/cdev/CDev.hpp>
 
-#include "include/containers/IntrusiveSortedList.hpp"
-#include "include/containers/List.hpp"
+#include "containers/IntrusiveSortedList.hpp"
+#include "containers/List.hpp"
 
-#include "include/atomic.h"
+#include <platform_common/atomic.h>
 
 namespace uORB
 {
@@ -230,7 +230,7 @@ private:
 	const orb_metadata *_meta; /**< object metadata information */
 
 	uint8_t     *_data{nullptr};   /**< allocated object buffer */
-	std::atomic<unsigned>  _generation{0};  /**< object generation count */
+	osal::atomic<unsigned>  _generation{0};  /**< object generation count */
 	List<uORB::SubscriptionCallback *>	_callbacks;
 
 	const uint8_t _instance; /**< orb multi instance identifier */

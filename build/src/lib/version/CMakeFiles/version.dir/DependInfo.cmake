@@ -16,7 +16,7 @@ set(CMAKE_TARGET_DEFINITIONS_C
   "_SYS_CDEFS_H_"
   "_SYS_REENT_H_"
   "__CUSTOM_FILE_IO__"
-  "__PROJ_NUTTX"
+  "__NUTTX"
   "__STDC_FORMAT_MACROS"
   )
 
@@ -29,6 +29,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../platforms/nuttx/src/px4/common/include"
   "."
   "src/lib"
+  "../platforms/common/include"
   "../src"
   "../src/include"
   "../src/lib"

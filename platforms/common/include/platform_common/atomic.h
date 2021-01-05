@@ -63,7 +63,7 @@
 extern "C++" {
 #endif
 
-namespace std
+namespace osal
 {
 
 template <typename T>

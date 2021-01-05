@@ -1,0 +1,1 @@
+add_subdirectory(src/platform_common)

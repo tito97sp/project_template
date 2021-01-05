@@ -9,4 +9,5 @@ add_board(
 	MODULES
 		hello
 		uORB
+		template_module
 	)

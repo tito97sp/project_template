@@ -1,6 +1,7 @@
 /****************************************************************************
  *
- *   Copyright (c) 2020 PX4 Development Team. All rights reserved.
+ *   Copyright (C) 2012 Development Team. All rights reserved.
+ *   Author: @author Lorenz Meier <lm@inf.ethz.ch>
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -31,72 +32,67 @@
  *
  ****************************************************************************/
 
-#pragma once
+/**
+ * @file os_tasks.cpp
+ * Implementation of existing task API for NuttX
+ */
 
-#include <stddef.h>
-#include "atomic.h"
+//#include <px4_platform_common/px4_config.h>
+//#include <px4_platform_common/log.h>
+#include <os_layer/os_tasks.h>
 
-#ifdef __cplusplus
-extern "C++" {
+#include <nuttx/board.h>
+
+#include <sys/wait.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include <string.h>
+#include <sched.h>
+#include <errno.h>
+#include <stdbool.h>
+
+int os_task_spawn_cmd(const char *name, int scheduler, int priority, int stack_size, main_t entry, char *const argv[])
+{
+	sched_lock();
+
+#if !defined(CONFIG_DISABLE_ENVIRON)
+	/* None of the modules access the environment variables (via getenv() for instance), so delete them
+	 * all. They are only used within the startup script, and NuttX automatically exports them to the children
+	 * tasks.
+	 * This frees up a considerable amount of RAM.
+	 */
+	clearenv();
 #endif
 
-namespace px4
-{
+	/* create the task */
+	int pid = task_create(name, priority, stack_size, entry, argv);
 
-template <size_t N>
-class AtomicBitset
-{
-public:
-	AtomicBitset() = default;
-
-	size_t count() const
-	{
-		size_t total = 0;
-
-		for (const auto &x : _data) {
-			uint32_t y = x.load();
-
-			while (y) {
-				total += y & 1;
-				y >>= 1;
-			}
-		}
-
-		return total;
+	if (pid > 0) {
+		/* configure the scheduler */
+		struct sched_param param = { .sched_priority = priority };
+		sched_setscheduler(pid, scheduler, &param);
 	}
 
-	size_t size() const { return N; }
+	sched_unlock();
 
-	bool operator[](size_t position) const
-	{
-		return _data[array_index(position)].load() & element_mask(position);
-	}
-
-	void set(size_t pos, bool val = true)
-	{
-		const uint32_t bitmask = element_mask(pos);
-
-		if (val) {
-			_data[array_index(pos)].fetch_or(bitmask);
-
-		} else {
-			_data[array_index(pos)].fetch_and(~bitmask);
-		}
-	}
-
-private:
-	static constexpr uint8_t BITS_PER_ELEMENT = 32;
-	static constexpr size_t ARRAY_SIZE = ((N % BITS_PER_ELEMENT) == 0) ? (N / BITS_PER_ELEMENT) :
-					     (N / BITS_PER_ELEMENT + 1);
-	static constexpr size_t ALLOCATED_BITS = ARRAY_SIZE * BITS_PER_ELEMENT;
-
-	size_t array_index(size_t position) const { return position / BITS_PER_ELEMENT; }
-	uint32_t element_mask(size_t position) const { return (1 << (position % BITS_PER_ELEMENT)); }
-
-	std::atomic<uint32_t> _data[ARRAY_SIZE];
-};
+	return pid;
 }
 
-#ifdef __cplusplus
-}  // end extern "C"
+int os_task_delete(int pid)
+{
+	return task_delete(pid);
+}
+
+const char *os_get_taskname(void)
+{
+#if CONFIG_TASK_NAME_SIZE > 0
+	FAR struct tcb_s	*thisproc = nxsched_self();
+
+	return thisproc->name;
+#else
+	return "app";
 #endif
+}

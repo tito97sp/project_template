@@ -1,0 +1,35 @@
+@startuml
+participant main
+participant start_command_base
+participant stop_command_base
+participant status_command_base
+participant custom_command_base
+participant run_trampoline
+
+participant task_spawn #99FF99
+participant instantiate  #99FF99
+participant run #99FF99
+participant custom_func_impl #99FF99
+participant print_status #99FF99
+participant print_usage #99FF99
+
+main -> start_command_base: Start
+start_command_base -> task_spawn
+task_spawn -> run_trampoline
+run_trampoline -> instantiate
+run_trampoline -> run
+
+main -> stop_command_base: Stop
+
+
+
+main -> status_command_base: Status
+status_command_base -> print_status
+
+main -> custom_command_base: Custom
+custom_command_base -> custom_command
+custom_command -> custom_func_impl
+
+main -> usage_command : Usage
+usage_command -> print_usage
+@enduml

@@ -158,8 +158,8 @@ endif()
 include(add_custom_library)
 add_subdirectory(src/lib EXCLUDE_FROM_ALL)
 
-#add_subdirectory(platforms/${PLATFORM}/src/px4)
-#add_subdirectory(platforms EXCLUDE_FROM_ALL)
+add_subdirectory(platforms/${PLATFORM}/src/os)
+add_subdirectory(platforms EXCLUDE_FROM_ALL)
 #add_subdirectory(src/modules/uORB EXCLUDE_FROM_ALL) # TODO: platform layer
 
 if(EXISTS "${BOARD_DIR}/CMakeLists.txt")

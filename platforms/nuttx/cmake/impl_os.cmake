@@ -36,7 +36,7 @@ function(os_add_flags)
 	add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-fno-sized-deallocation>)
 
 	add_definitions(
-		-D__PROJ_NUTTX
+		-D__NUTTX
 
 		-D_SYS_CDEFS_H_ # skip toolchain's <sys/cdefs.h>
 		-D_SYS_REENT_H_	# skip toolchain's <sys/reent.h>
@@ -117,7 +117,7 @@ endfunction()
 #		OUT	: the target list
 #
 #	Example:
-#		px4_os_prebuild_targets(OUT target_list BOARD px4_fmu-v2)
+#		os_prebuild_targets(OUT target_list BOARD px4_fmu-v2)
 #
 function(os_prebuild_targets)
 	parse_function_args(

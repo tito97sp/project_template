@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+../platforms/common/include/platform_common/Limits.hpp
+float.h
+-
+math.h
+-
+stdint.h
+-
+
+../platforms/common/include/platform_common/atomic.h
+stdbool.h
+-
+stdint.h
+-
+
+../platforms/common/include/platform_common/atomic_bitset.h
+stddef.h
+-
+atomic.h
+../platforms/common/include/platform_common/atomic.h
+
 ../src/drivers/drv_hrt.h
 sys/config.h
 -
@@ -30,6 +50,14 @@ sys/types.h
 sys/ioctl.h
 -
 stdint.h
+-
+
+../src/include/containers/IntrusiveSortedList.hpp
+stdlib.h
+-
+
+../src/include/containers/List.hpp
+stdlib.h
 -
 
 ../src/lib/cdev/CDev.hpp
@@ -105,8 +133,8 @@ uORBUtils.hpp
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/SubscriptionCallback.hpp
 SubscriptionInterval.hpp
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/SubscriptionInterval.hpp
-include/containers/List.hpp
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/List.hpp
+containers/List.hpp
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/containers/List.hpp
 
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/SubscriptionInterval.hpp
 uORB.h
@@ -119,35 +147,7 @@ uORBUtils.hpp
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/uORBUtils.hpp
 Subscription.hpp
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/Subscription.hpp
-include/Limits.hpp
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/Limits.hpp
-
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/Limits.hpp
-float.h
--
-math.h
--
-stdint.h
--
-
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/atomic.h
-stdbool.h
--
-stdint.h
--
-
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/atomic_bitset.h
-stddef.h
--
-atomic.h
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/atomic.h
-
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/IntrusiveSortedList.hpp
-stdlib.h
--
-
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/List.hpp
-stdlib.h
+platform_common/Limits.hpp
 -
 
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/topics/uORBTopics.hpp
@@ -225,10 +225,10 @@ stdlib.h
 -
 nuttx/semaphore.h
 -
-include/containers/IntrusiveSortedList.hpp
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/IntrusiveSortedList.hpp
-include/atomic_bitset.h
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/atomic_bitset.h
+containers/IntrusiveSortedList.hpp
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/containers/IntrusiveSortedList.hpp
+platform_common/atomic_bitset.h
+-
 
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/uORBDeviceNode.cpp
 sys/types.h
@@ -277,12 +277,12 @@ topics/uORBTopics.hpp
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/topics/uORBTopics.hpp
 lib/cdev/CDev.hpp
 -
-include/containers/IntrusiveSortedList.hpp
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/IntrusiveSortedList.hpp
-include/containers/List.hpp
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/containers/List.hpp
-include/atomic.h
-/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/include/atomic.h
+containers/IntrusiveSortedList.hpp
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/containers/IntrusiveSortedList.hpp
+containers/List.hpp
+/home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/containers/List.hpp
+platform_common/atomic.h
+-
 
 /home/andressanchez/Escritorio/GIT/project_template/src/modules/uORB/uORBMain.cpp
 nuttx/config.h

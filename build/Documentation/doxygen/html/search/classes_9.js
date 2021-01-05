@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['publication',['Publication',['../d1/d05/classuORB_1_1Publication.html',1,'uORB']]],
-  ['publication_3c_20t_20_3e',['Publication&lt; T &gt;',['../d1/d05/classuORB_1_1Publication.html',1,'uORB']]],
-  ['publicationbase',['PublicationBase',['../de/db7/classuORB_1_1PublicationBase.html',1,'uORB']]],
-  ['publicationdata',['PublicationData',['../dc/da0/classuORB_1_1PublicationData.html',1,'uORB']]],
-  ['publicationmulti',['PublicationMulti',['../d4/d0d/classuORB_1_1PublicationMulti.html',1,'uORB']]],
-  ['publicationmulti_3c_20t_20_3e',['PublicationMulti&lt; T &gt;',['../d4/d0d/classuORB_1_1PublicationMulti.html',1,'uORB']]],
-  ['publicationmultidata',['PublicationMultiData',['../dc/d83/classuORB_1_1PublicationMultiData.html',1,'uORB']]]
+  ['subscription',['Subscription',['../da/d57/classuORB_1_1Subscription.html',1,'uORB']]],
+  ['subscriptionblocking',['SubscriptionBlocking',['../d5/d27/classuORB_1_1SubscriptionBlocking.html',1,'uORB']]],
+  ['subscriptioncallback',['SubscriptionCallback',['../db/dde/classuORB_1_1SubscriptionCallback.html',1,'uORB']]],
+  ['subscriptiondata',['SubscriptionData',['../da/da3/classuORB_1_1SubscriptionData.html',1,'uORB']]],
+  ['subscriptioninterval',['SubscriptionInterval',['../d1/d96/classuORB_1_1SubscriptionInterval.html',1,'uORB']]],
+  ['subscriptionmultiarray',['SubscriptionMultiArray',['../dd/d43/classuORB_1_1SubscriptionMultiArray.html',1,'uORB']]]
 ];

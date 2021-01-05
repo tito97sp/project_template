@@ -200,6 +200,32 @@ ver_gen/fast:
 .PHONY : ver_gen/fast
 
 #=============================================================================
+# Target rules for targets named os_layer
+
+# Build rule for target.
+os_layer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 os_layer
+.PHONY : os_layer
+
+# fast build rule for target.
+os_layer/fast:
+	$(MAKE) -f platforms/nuttx/src/os/CMakeFiles/os_layer.dir/build.make platforms/nuttx/src/os/CMakeFiles/os_layer.dir/build
+.PHONY : os_layer/fast
+
+#=============================================================================
+# Target rules for targets named platform_common
+
+# Build rule for target.
+platform_common: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 platform_common
+.PHONY : platform_common
+
+# fast build rule for target.
+platform_common/fast:
+	$(MAKE) -f platforms/common/src/platform_common/CMakeFiles/platform_common.dir/build.make platforms/common/src/platform_common/CMakeFiles/platform_common.dir/build
+.PHONY : platform_common/fast
+
+#=============================================================================
 # Target rules for targets named hello
 
 # Build rule for target.
@@ -224,6 +250,19 @@ uORB: cmake_check_build_system
 uORB/fast:
 	$(MAKE) -f src/modules/uORB/CMakeFiles/uORB.dir/build.make src/modules/uORB/CMakeFiles/uORB.dir/build
 .PHONY : uORB/fast
+
+#=============================================================================
+# Target rules for targets named template_module
+
+# Build rule for target.
+template_module: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 template_module
+.PHONY : template_module
+
+# fast build rule for target.
+template_module/fast:
+	$(MAKE) -f src/modules/template_module/CMakeFiles/template_module.dir/build.make src/modules/template_module/CMakeFiles/template_module.dir/build
+.PHONY : template_module/fast
 
 #=============================================================================
 # Target rules for targets named drivers_board
@@ -617,8 +656,11 @@ help:
 	@echo "... cdev"
 	@echo "... version"
 	@echo "... ver_gen"
+	@echo "... os_layer"
+	@echo "... platform_common"
 	@echo "... hello"
 	@echo "... uORB"
+	@echo "... template_module"
 	@echo "... drivers_board"
 	@echo "... embedded_project_template"
 	@echo "... weak_symbols"

@@ -34,8 +34,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/src/os/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/hello/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/cmake_install.cmake")
+  include("/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/template_module/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src/cmake_install.cmake")
   include("/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/cmake_install.cmake")
 

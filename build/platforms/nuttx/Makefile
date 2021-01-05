@@ -151,32 +151,32 @@ weak_symbols/fast:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
 .PHONY : weak_symbols/fast
 
-__/common/empty.obj: __/common/empty.c.obj
+__/common/src/platform_common/empty.obj: __/common/src/platform_common/empty.c.obj
 
-.PHONY : __/common/empty.obj
+.PHONY : __/common/src/platform_common/empty.obj
 
 # target to build an object file
-__/common/empty.c.obj:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.obj
-.PHONY : __/common/empty.c.obj
+__/common/src/platform_common/empty.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/src/platform_common/empty.c.obj
+.PHONY : __/common/src/platform_common/empty.c.obj
 
-__/common/empty.i: __/common/empty.c.i
+__/common/src/platform_common/empty.i: __/common/src/platform_common/empty.c.i
 
-.PHONY : __/common/empty.i
+.PHONY : __/common/src/platform_common/empty.i
 
 # target to preprocess a source file
-__/common/empty.c.i:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.i
-.PHONY : __/common/empty.c.i
+__/common/src/platform_common/empty.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/src/platform_common/empty.c.i
+.PHONY : __/common/src/platform_common/empty.c.i
 
-__/common/empty.s: __/common/empty.c.s
+__/common/src/platform_common/empty.s: __/common/src/platform_common/empty.c.s
 
-.PHONY : __/common/empty.s
+.PHONY : __/common/src/platform_common/empty.s
 
 # target to generate assembly for a file
-__/common/empty.c.s:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/empty.c.s
-.PHONY : __/common/empty.c.s
+__/common/src/platform_common/empty.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/embedded_project_template.dir/build.make platforms/nuttx/CMakeFiles/embedded_project_template.dir/__/common/src/platform_common/empty.c.s
+.PHONY : __/common/src/platform_common/empty.c.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... test"
 	@echo "... embedded_project_template"
 	@echo "... weak_symbols"
-	@echo "... __/common/empty.obj"
-	@echo "... __/common/empty.i"
-	@echo "... __/common/empty.s"
+	@echo "... __/common/src/platform_common/empty.obj"
+	@echo "... __/common/src/platform_common/empty.i"
+	@echo "... __/common/src/platform_common/empty.s"
 .PHONY : help
 
 

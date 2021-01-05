@@ -53,8 +53,8 @@ class Manager;
 #include <stdlib.h>
 #include <nuttx/semaphore.h>
 
-#include "include/containers/IntrusiveSortedList.hpp"
-#include "include/atomic_bitset.h"
+#include "containers/IntrusiveSortedList.hpp"
+#include <platform_common/atomic_bitset.h>
 
 /**
  * Master control device for ObjDev.
@@ -117,7 +117,7 @@ private:
 
 	IntrusiveSortedList<uORB::DeviceNode *> _node_list;
 	
-	px4::AtomicBitset<ORB_TOPICS_COUNT> _node_exists[ORB_MULTI_MAX_INSTANCES];
+	osal::AtomicBitset<ORB_TOPICS_COUNT> _node_exists[ORB_MULTI_MAX_INSTANCES];
 
 	sem_t	_lock; /**< lock to protect access to all class members (also for derived classes) */
 

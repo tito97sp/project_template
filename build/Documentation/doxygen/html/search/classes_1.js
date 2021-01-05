@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cdev',['CDev',['../d3/dff/classcdev_1_1CDev.html',1,'cdev::CDev'],['../d6/dd9/structcdev_1_1cdev.html',1,'cdev::cdev']]]
+  ['devicemaster',['DeviceMaster',['../d3/dbc/classuORB_1_1DeviceMaster.html',1,'uORB']]],
+  ['devicenode',['DeviceNode',['../de/da0/classuORB_1_1DeviceNode.html',1,'uORB']]]
 ];

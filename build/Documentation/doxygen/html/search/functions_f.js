@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['task_5fspawn',['task_spawn',['../dc/d68/classTemplateModule.html#a442b58c36fd9a84d34c6c2ca5da30500',1,'TemplateModule']]],
   ['terminate',['terminate',['../d2/dc1/classuORB_1_1Manager.html#a306a9970d2f7cf304fba4a918e238558',1,'uORB::Manager']]],
   ['toolchain_5fname',['toolchain_name',['../df/dfc/version_8h.html#a10feca2b0b3de1a3a697cc7bcb90321e',1,'version.c']]],
   ['toolchain_5fversion',['toolchain_version',['../df/dfc/version_8h.html#a6df22ceb4e1510ada6b5d742d411b9f9',1,'version.c']]],

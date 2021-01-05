@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-gcc-ar qc libtemplates__template_module.a  CMakeFiles/templates__template_module.dir/template_module.cpp.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libtemplates__template_module.a

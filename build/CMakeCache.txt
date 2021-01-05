@@ -230,9 +230,6 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/usr/bin/arm-none-eabi-strip
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/andressanchez/Escritorio/GIT/project_template/platforms/nuttx/cmake/Toolchain-arm-none-eabi.cmake
-
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
@@ -299,11 +296,20 @@ embedded_project_template_BINARY_DIR:STATIC=/home/andressanchez/Escritorio/GIT/p
 //Value Computed by CMake
 embedded_project_template_SOURCE_DIR:STATIC=/home/andressanchez/Escritorio/GIT/project_template
 
-//Dependencies for target
-hello_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+hello_LIB_DEPENDS:STATIC=general;os_layer;general;platform_common;
 
 //Dependencies for the target
-uORB_LIB_DEPENDS:STATIC=general;cdev;
+os_layer_LIB_DEPENDS:STATIC=general;nuttx_apps;general;nuttx_sched;
+
+//Dependencies for the target
+platform_common_LIB_DEPENDS:STATIC=general;uORB;
+
+//Dependencies for the target
+template_module_LIB_DEPENDS:STATIC=general;os_layer;general;platform_common;general;uORB;
+
+//Dependencies for the target
+uORB_LIB_DEPENDS:STATIC=general;os_layer;general;platform_common;general;cdev;
 
 //Dependencies for the target
 version_LIB_DEPENDS:STATIC=general;drivers_board;
@@ -424,7 +430,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -463,6 +469,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //system processor
 CMAKE_SYSTEM_PROCESSOR:INTERNAL=cortex-m7
+//toolchain file
+CMAKE_TOOLCHAIN_FILE:INTERNAL=Toolchain-arm-none-eabi
 //uname command
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
