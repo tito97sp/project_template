@@ -271,3 +271,21 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj
  NuttX/nuttx/include/syslog.h
  NuttX/nuttx/include/time.h
  NuttX/nuttx/include/unistd.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj
+ /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs.h
+ /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c
+ NuttX/nuttx/include/arch/inttypes.h
+ NuttX/nuttx/include/arch/limits.h
+ NuttX/nuttx/include/arch/types.h
+ NuttX/nuttx/include/debug.h
+ NuttX/nuttx/include/errno.h
+ NuttX/nuttx/include/limits.h
+ NuttX/nuttx/include/nuttx/compiler.h
+ NuttX/nuttx/include/nuttx/config.h
+ NuttX/nuttx/include/nuttx/drivers/ramdisk.h
+ NuttX/nuttx/include/stdbool.h
+ NuttX/nuttx/include/stdint.h
+ NuttX/nuttx/include/sys/mount.h
+ NuttX/nuttx/include/sys/types.h
+ NuttX/nuttx/include/sys/uio.h
+ NuttX/nuttx/include/syslog.h

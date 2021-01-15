@@ -153,12 +153,37 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.p
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
 
 
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/flags.make
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj   -c /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.i"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c > CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.i
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.s"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && /usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c -o CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.s
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.requires:
+
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.requires
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.provides: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.requires
+	$(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.provides.build
+.PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.provides
+
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.provides.build: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj
+
+
 # Object files for target drivers_board
 drivers_board_OBJECTS = \
 "CMakeFiles/drivers_board.dir/stm32_appinitialize.c.obj" \
 "CMakeFiles/drivers_board.dir/stm32_boot.c.obj" \
 "CMakeFiles/drivers_board.dir/stm32_bringup.c.obj" \
-"CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj"
+"CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj" \
+"CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj"
 
 # External object files for target drivers_board
 drivers_board_EXTERNAL_OBJECTS =
@@ -167,9 +192,10 @@ boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CM
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj
+boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make
 boards/stm/nucleo_h743zi/src/libdrivers_board.a: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libdrivers_board.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libdrivers_board.a"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && $(CMAKE_COMMAND) -P CMakeFiles/drivers_board.dir/cmake_clean_target.cmake
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/boards/stm/nucleo_h743zi/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/drivers_board.dir/link.txt --verbose=$(VERBOSE)
 
@@ -182,6 +208,7 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/n
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_boot.c.obj.requires
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj.requires
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_autoleds.c.obj.requires
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires: boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj.requires
 
 .PHONY : boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/requires
 

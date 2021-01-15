@@ -271,3 +271,21 @@ boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj: N
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj: NuttX/nuttx/include/time.h
 boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.obj: NuttX/nuttx/include/unistd.h
 
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_romfs.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: ../boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/arch/inttypes.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/arch/limits.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/arch/types.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/debug.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/errno.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/limits.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/nuttx/compiler.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/nuttx/config.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/nuttx/drivers/ramdisk.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/stdbool.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/stdint.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/sys/mount.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/sys/types.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/sys/uio.h
+boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj: NuttX/nuttx/include/syslog.h
+

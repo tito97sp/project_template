@@ -145,6 +145,12 @@ add_common_flags()
 os_add_flags()
 
 #=============================================================================
+# message, and airframe generation
+#
+add_subdirectory(msg EXCLUDE_FROM_ALL)
+
+
+#=============================================================================
 # board cmake init (optional)
 #
 if(EXISTS ${BOARD_DIR}/cmake/init.cmake)
@@ -176,6 +182,29 @@ endforeach()
 
 # firmware added last to generate the builtin for included modules
 add_subdirectory(platforms/${PLATFORM})
+
+# =============================================================================
+# uORB graph generation: add a custom target 'uorb_graph'
+#
+set(uorb_graph_config ${BOARD})
+
+set(graph_module_list "")
+
+foreach(module ${config_module_list})
+	set(graph_module_list "${graph_module_list}" "--src-path" "src/${module}")
+endforeach()
+
+add_custom_command(OUTPUT ${uorb_graph_config}
+	COMMAND ${PYTHON_EXECUTABLE} ${SOURCE_DIR}/Tools/uorb_graph/create.py
+		--src-path src
+		-m hello
+		--use-topic-union
+		--exclude-path src/examples
+		--file ${SOURCE_DIR}/Tools/uorb_graph/graph_${uorb_graph_config}
+	WORKING_DIRECTORY ${SOURCE_DIR}
+	COMMENT "Generating uORB graph"
+)
+add_custom_target(uorb_graph DEPENDS ${uorb_graph_config})
 
 
 #=============================================================================

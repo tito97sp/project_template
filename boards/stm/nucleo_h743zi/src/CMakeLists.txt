@@ -61,7 +61,7 @@ else()
 		#stm32_nrf24l01.c
 		#stm32_pca9635.c
 		#stm32_pwm.c
-		#stm32_romfs_initialize.c
+		stm32_romfs_initialize.c
 		#stm32_spi.c
 		#stm32_ssd1306.c
 		#stm32_uid.c

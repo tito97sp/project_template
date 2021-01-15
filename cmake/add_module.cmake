@@ -152,7 +152,7 @@ function(add_module)
 	endif()
 
 	# all modules can potentially use parameters and uORB
-	#add_dependencies(${MODULE} uorb_headers)
+	add_dependencies(${MODULE} uorb_headers)
 
 	if(NOT DYNAMIC)
 		#target_link_libraries(${MODULE} PRIVATE prebuild_targets parameters_interface px4_layer px4_platform systemlib)

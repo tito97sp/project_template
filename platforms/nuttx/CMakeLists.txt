@@ -114,10 +114,17 @@ endif()
 
 message(STATUS "Binary_dir_rel ${BINARY_DIR_REL}")
 
-add_custom_command(OUTPUT ${BINARY_DIR_REL}/${BOARD}.bin
-	COMMAND ${CMAKE_OBJCOPY} -O binary ${BINARY_DIR_REL}/${FW_NAME} ${BINARY_DIR_REL}/${BOARD}.bin
+add_custom_command(
+	OUTPUT ${BINARY_DIR}/${BOARD}.bin
+	COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_CURRENT_BINARY_DIR}/${FW_NAME} ${BINARY_DIR_REL}/${BOARD}.bin
 	DEPENDS ${project_name}
 	)
+
+add_custom_target(make_bin
+	DEPENDS ${BINARY_DIR}/${BOARD}.bin
+	)	
+
+
 
 
 # print weak symbols

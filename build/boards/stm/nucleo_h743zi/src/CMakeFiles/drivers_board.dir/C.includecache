@@ -86,6 +86,24 @@ stm32_gpio.h
 nuttx/config.h
 -
 
+/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs_initialize.c
+nuttx/config.h
+-
+sys/mount.h
+-
+sys/types.h
+-
+stdint.h
+-
+debug.h
+-
+errno.h
+-
+nuttx/drivers/ramdisk.h
+-
+stm32_romfs.h
+/home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/src/stm32_romfs.h
+
 NuttX/nuttx/arch/arm/src/chip/chip.h
 nuttx/config.h
 -
@@ -471,6 +489,14 @@ nuttx/config.h
 -
 
 NuttX/nuttx/include/nuttx/config.h
+
+NuttX/nuttx/include/nuttx/drivers/ramdisk.h
+nuttx/config.h
+-
+stdint.h
+-
+stdbool.h
+-
 
 NuttX/nuttx/include/nuttx/fs/ioctl.h
 nuttx/config.h

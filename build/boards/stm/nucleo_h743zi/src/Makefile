@@ -244,6 +244,33 @@ stm32_bringup.c.s:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_bringup.c.s
 .PHONY : stm32_bringup.c.s
 
+stm32_romfs_initialize.obj: stm32_romfs_initialize.c.obj
+
+.PHONY : stm32_romfs_initialize.obj
+
+# target to build an object file
+stm32_romfs_initialize.c.obj:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.obj
+.PHONY : stm32_romfs_initialize.c.obj
+
+stm32_romfs_initialize.i: stm32_romfs_initialize.c.i
+
+.PHONY : stm32_romfs_initialize.i
+
+# target to preprocess a source file
+stm32_romfs_initialize.c.i:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.i
+.PHONY : stm32_romfs_initialize.c.i
+
+stm32_romfs_initialize.s: stm32_romfs_initialize.c.s
+
+.PHONY : stm32_romfs_initialize.s
+
+# target to generate assembly for a file
+stm32_romfs_initialize.c.s:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/build.make boards/stm/nucleo_h743zi/src/CMakeFiles/drivers_board.dir/stm32_romfs_initialize.c.s
+.PHONY : stm32_romfs_initialize.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -266,6 +293,9 @@ help:
 	@echo "... stm32_bringup.obj"
 	@echo "... stm32_bringup.i"
 	@echo "... stm32_bringup.s"
+	@echo "... stm32_romfs_initialize.obj"
+	@echo "... stm32_romfs_initialize.i"
+	@echo "... stm32_romfs_initialize.s"
 .PHONY : help
 
 

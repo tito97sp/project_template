@@ -44,6 +44,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/andressanchez/Escritorio/GIT/project_template/build/src/modules/uORB/CMakeFiles/uORB.dir/DependInfo.cmake"
   "/home/andressanchez/Escritorio/GIT/project_template/build/platforms/nuttx/src/os/CMakeFiles/os_layer.dir/DependInfo.cmake"
   "/home/andressanchez/Escritorio/GIT/project_template/build/src/lib/cdev/CMakeFiles/cdev.dir/DependInfo.cmake"
+  "/home/andressanchez/Escritorio/GIT/project_template/build/msg/CMakeFiles/uorb_msgs.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

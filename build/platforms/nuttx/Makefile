@@ -122,6 +122,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+platforms/nuttx/CMakeFiles/weak_symbols.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+.PHONY : platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+
+# Convenience name for target.
+weak_symbols: platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+
+.PHONY : weak_symbols
+
+# fast build rule for target.
+weak_symbols/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
+.PHONY : weak_symbols/fast
+
+# Convenience name for target.
 platforms/nuttx/CMakeFiles/embedded_project_template.dir/rule:
 	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/embedded_project_template.dir/rule
 .PHONY : platforms/nuttx/CMakeFiles/embedded_project_template.dir/rule
@@ -137,19 +152,19 @@ embedded_project_template/fast:
 .PHONY : embedded_project_template/fast
 
 # Convenience name for target.
-platforms/nuttx/CMakeFiles/weak_symbols.dir/rule:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
-.PHONY : platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+platforms/nuttx/CMakeFiles/make_bin.dir/rule:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f CMakeFiles/Makefile2 platforms/nuttx/CMakeFiles/make_bin.dir/rule
+.PHONY : platforms/nuttx/CMakeFiles/make_bin.dir/rule
 
 # Convenience name for target.
-weak_symbols: platforms/nuttx/CMakeFiles/weak_symbols.dir/rule
+make_bin: platforms/nuttx/CMakeFiles/make_bin.dir/rule
 
-.PHONY : weak_symbols
+.PHONY : make_bin
 
 # fast build rule for target.
-weak_symbols/fast:
-	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
-.PHONY : weak_symbols/fast
+make_bin/fast:
+	cd /home/andressanchez/Escritorio/GIT/project_template/build && $(MAKE) -f platforms/nuttx/CMakeFiles/make_bin.dir/build.make platforms/nuttx/CMakeFiles/make_bin.dir/build
+.PHONY : make_bin/fast
 
 __/common/src/platform_common/empty.obj: __/common/src/platform_common/empty.c.obj
 
@@ -187,8 +202,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... embedded_project_template"
 	@echo "... weak_symbols"
+	@echo "... embedded_project_template"
+	@echo "... make_bin"
 	@echo "... __/common/src/platform_common/empty.obj"
 	@echo "... __/common/src/platform_common/empty.i"
 	@echo "... __/common/src/platform_common/empty.s"

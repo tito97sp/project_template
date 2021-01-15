@@ -91,7 +91,7 @@ version_EXTERNAL_OBJECTS =
 src/lib/version/libversion.a: src/lib/version/CMakeFiles/version.dir/version.c.obj
 src/lib/version/libversion.a: src/lib/version/CMakeFiles/version.dir/build.make
 src/lib/version/libversion.a: src/lib/version/CMakeFiles/version.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libversion.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libversion.a"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version && $(CMAKE_COMMAND) -P CMakeFiles/version.dir/cmake_clean_target.cmake
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/src/lib/version && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/version.dir/link.txt --verbose=$(VERBOSE)
 

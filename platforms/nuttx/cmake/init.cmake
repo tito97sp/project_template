@@ -114,6 +114,7 @@ endif()
 # # If the board provides a Kconfig Use it or create an empty one
 if((NOT EXISTS ${BINARY_DIR}/NuttX/nuttx_config_kconfig.stamp) OR (NOT EXISTS ${NUTTX_DIR}/boards/dummy/Kconfig))
 	if(EXISTS ${NUTTX_CONFIG_DIR}/Kconfig)
+		message(STATUS "EXISTS ${NUTTX_CONFIG_DIR}/Kconfig")
 		execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different ${NUTTX_CONFIG_DIR}/Kconfig ${NUTTX_DIR}/boards/dummy/Kconfig)
 	else()
 		execute_process(COMMAND ${CMAKE_COMMAND} -E touch ${NUTTX_DIR}/boards/dummy/Kconfig)

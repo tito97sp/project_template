@@ -67,17 +67,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -88,6 +77,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -148,6 +148,19 @@ git_nuttx_apps/fast:
 .PHONY : git_nuttx_apps/fast
 
 #=============================================================================
+# Target rules for targets named uorb_graph
+
+# Build rule for target.
+uorb_graph: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uorb_graph
+.PHONY : uorb_graph
+
+# fast build rule for target.
+uorb_graph/fast:
+	$(MAKE) -f CMakeFiles/uorb_graph.dir/build.make CMakeFiles/uorb_graph.dir/build
+.PHONY : uorb_graph/fast
+
+#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -159,6 +172,32 @@ doxygen: cmake_check_build_system
 doxygen/fast:
 	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
 .PHONY : doxygen/fast
+
+#=============================================================================
+# Target rules for targets named uorb_headers
+
+# Build rule for target.
+uorb_headers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uorb_headers
+.PHONY : uorb_headers
+
+# fast build rule for target.
+uorb_headers/fast:
+	$(MAKE) -f msg/CMakeFiles/uorb_headers.dir/build.make msg/CMakeFiles/uorb_headers.dir/build
+.PHONY : uorb_headers/fast
+
+#=============================================================================
+# Target rules for targets named uorb_msgs
+
+# Build rule for target.
+uorb_msgs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uorb_msgs
+.PHONY : uorb_msgs
+
+# fast build rule for target.
+uorb_msgs/fast:
+	$(MAKE) -f msg/CMakeFiles/uorb_msgs.dir/build.make msg/CMakeFiles/uorb_msgs.dir/build
+.PHONY : uorb_msgs/fast
 
 #=============================================================================
 # Target rules for targets named cdev
@@ -226,19 +265,6 @@ platform_common/fast:
 .PHONY : platform_common/fast
 
 #=============================================================================
-# Target rules for targets named hello
-
-# Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
-
-# fast build rule for target.
-hello/fast:
-	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
-.PHONY : hello/fast
-
-#=============================================================================
 # Target rules for targets named uORB
 
 # Build rule for target.
@@ -250,6 +276,19 @@ uORB: cmake_check_build_system
 uORB/fast:
 	$(MAKE) -f src/modules/uORB/CMakeFiles/uORB.dir/build.make src/modules/uORB/CMakeFiles/uORB.dir/build
 .PHONY : uORB/fast
+
+#=============================================================================
+# Target rules for targets named hello
+
+# Build rule for target.
+hello: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
+
+# fast build rule for target.
+hello/fast:
+	$(MAKE) -f src/modules/hello/CMakeFiles/hello.dir/build.make src/modules/hello/CMakeFiles/hello.dir/build
+.PHONY : hello/fast
 
 #=============================================================================
 # Target rules for targets named template_module
@@ -278,6 +317,19 @@ drivers_board/fast:
 .PHONY : drivers_board/fast
 
 #=============================================================================
+# Target rules for targets named weak_symbols
+
+# Build rule for target.
+weak_symbols: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 weak_symbols
+.PHONY : weak_symbols
+
+# fast build rule for target.
+weak_symbols/fast:
+	$(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
+.PHONY : weak_symbols/fast
+
+#=============================================================================
 # Target rules for targets named embedded_project_template
 
 # Build rule for target.
@@ -291,17 +343,17 @@ embedded_project_template/fast:
 .PHONY : embedded_project_template/fast
 
 #=============================================================================
-# Target rules for targets named weak_symbols
+# Target rules for targets named make_bin
 
 # Build rule for target.
-weak_symbols: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 weak_symbols
-.PHONY : weak_symbols
+make_bin: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 make_bin
+.PHONY : make_bin
 
 # fast build rule for target.
-weak_symbols/fast:
-	$(MAKE) -f platforms/nuttx/CMakeFiles/weak_symbols.dir/build.make platforms/nuttx/CMakeFiles/weak_symbols.dir/build
-.PHONY : weak_symbols/fast
+make_bin/fast:
+	$(MAKE) -f platforms/nuttx/CMakeFiles/make_bin.dir/build.make platforms/nuttx/CMakeFiles/make_bin.dir/build
+.PHONY : make_bin/fast
 
 #=============================================================================
 # Target rules for targets named menuconfig_nuttx
@@ -641,6 +693,32 @@ nuttx_binfmt_build/fast:
 	$(MAKE) -f NuttX/CMakeFiles/nuttx_binfmt_build.dir/build.make NuttX/CMakeFiles/nuttx_binfmt_build.dir/build
 .PHONY : nuttx_binfmt_build/fast
 
+#=============================================================================
+# Target rules for targets named romfs_gen_files_target
+
+# Build rule for target.
+romfs_gen_files_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 romfs_gen_files_target
+.PHONY : romfs_gen_files_target
+
+# fast build rule for target.
+romfs_gen_files_target/fast:
+	$(MAKE) -f ROMFS/CMakeFiles/romfs_gen_files_target.dir/build.make ROMFS/CMakeFiles/romfs_gen_files_target.dir/build
+.PHONY : romfs_gen_files_target/fast
+
+#=============================================================================
+# Target rules for targets named romfs
+
+# Build rule for target.
+romfs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 romfs
+.PHONY : romfs
+
+# fast build rule for target.
+romfs/fast:
+	$(MAKE) -f ROMFS/CMakeFiles/romfs.dir/build.make ROMFS/CMakeFiles/romfs.dir/build
+.PHONY : romfs/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -648,22 +726,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... git_nuttx"
 	@echo "... test"
 	@echo "... git_nuttx_apps"
+	@echo "... uorb_graph"
 	@echo "... doxygen"
-	@echo "... edit_cache"
+	@echo "... uorb_headers"
+	@echo "... uorb_msgs"
 	@echo "... cdev"
 	@echo "... version"
 	@echo "... ver_gen"
 	@echo "... os_layer"
 	@echo "... platform_common"
-	@echo "... hello"
 	@echo "... uORB"
+	@echo "... hello"
 	@echo "... template_module"
 	@echo "... drivers_board"
-	@echo "... embedded_project_template"
 	@echo "... weak_symbols"
+	@echo "... embedded_project_template"
+	@echo "... make_bin"
 	@echo "... menuconfig_nuttx"
 	@echo "... menuconfig"
 	@echo "... olddefconfig_nuttx"
@@ -690,6 +772,8 @@ help:
 	@echo "... nuttx_builtin_list_target"
 	@echo "... nuttx_arch_build"
 	@echo "... nuttx_binfmt_build"
+	@echo "... romfs_gen_files_target"
+	@echo "... romfs"
 .PHONY : help
 
 

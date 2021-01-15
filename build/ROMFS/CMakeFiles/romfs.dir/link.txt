@@ -1,0 +1,2 @@
+/usr/bin/arm-none-eabi-gcc-ar qc libromfs.a  CMakeFiles/romfs.dir/nsh_romfsimg.c.obj
+/usr/bin/arm-none-eabi-gcc-ranlib libromfs.a

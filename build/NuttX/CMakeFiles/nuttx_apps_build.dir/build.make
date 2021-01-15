@@ -56,10 +56,10 @@ include NuttX/CMakeFiles/nuttx_apps_build.dir/progress.make
 NuttX/CMakeFiles/nuttx_apps_build: NuttX/apps/libapps.a
 
 
-NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_hello_main.bdat
-NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_hello_main.pdat
 NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_uorb_main.bdat
 NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_uorb_main.pdat
+NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_hello_main.bdat
+NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_hello_main.pdat
 NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_template_module_main.bdat
 NuttX/apps/libapps.a: NuttX/apps/builtin/registry/custom_template_module_main.pdat
 NuttX/apps/libapps.a: NuttX/nuttx/include/nuttx/config.h
@@ -68,32 +68,32 @@ NuttX/apps/libapps.a: NuttX/nuttx/include/nuttx/version.h
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps && find /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps -name *.o -delete
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps && make --quiet --no-print-directory TOPDIR="/home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx" > nuttx_apps.log
 
-NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/builtins_clean.stamp
-NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/nuttx/include/nuttx/config.h
-NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/nuttx/include/nuttx/version.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating apps/builtin/registry/custom_hello_main.bdat"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "{ \"hello\", SCHED_PRIORITY_DEFAULT, 1024, hello_main }," > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_hello_main.bdat
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
-
-NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/builtins_clean.stamp
-NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/nuttx/include/nuttx/config.h
-NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/nuttx/include/nuttx/version.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating apps/builtin/registry/custom_hello_main.pdat"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "int hello_main(int argc, char *argv[]);" > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_hello_main.pdat
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
-
 NuttX/apps/builtin/registry/custom_uorb_main.bdat: NuttX/builtins_clean.stamp
 NuttX/apps/builtin/registry/custom_uorb_main.bdat: NuttX/nuttx/include/nuttx/config.h
 NuttX/apps/builtin/registry/custom_uorb_main.bdat: NuttX/nuttx/include/nuttx/version.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating apps/builtin/registry/custom_uorb_main.bdat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating apps/builtin/registry/custom_uorb_main.bdat"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "{ \"uorb\", SCHED_PRIORITY_DEFAULT, 2048, uorb_main }," > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_uorb_main.bdat
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
 
 NuttX/apps/builtin/registry/custom_uorb_main.pdat: NuttX/builtins_clean.stamp
 NuttX/apps/builtin/registry/custom_uorb_main.pdat: NuttX/nuttx/include/nuttx/config.h
 NuttX/apps/builtin/registry/custom_uorb_main.pdat: NuttX/nuttx/include/nuttx/version.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating apps/builtin/registry/custom_uorb_main.pdat"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating apps/builtin/registry/custom_uorb_main.pdat"
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "int uorb_main(int argc, char *argv[]);" > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_uorb_main.pdat
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
+
+NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/builtins_clean.stamp
+NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/nuttx/include/nuttx/config.h
+NuttX/apps/builtin/registry/custom_hello_main.bdat: NuttX/nuttx/include/nuttx/version.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating apps/builtin/registry/custom_hello_main.bdat"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "{ \"hello\", SCHED_PRIORITY_DEFAULT, 1024, hello_main }," > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_hello_main.bdat
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
+
+NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/builtins_clean.stamp
+NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/nuttx/include/nuttx/config.h
+NuttX/apps/builtin/registry/custom_hello_main.pdat: NuttX/nuttx/include/nuttx/version.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating apps/builtin/registry/custom_hello_main.pdat"
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && echo "int hello_main(int argc, char *argv[]);" > /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/custom_hello_main.pdat
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/apps/builtin/registry/.updated
 
 NuttX/apps/builtin/registry/custom_template_module_main.bdat: NuttX/builtins_clean.stamp
@@ -155,7 +155,7 @@ NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
 NuttX/nuttx_config_kconfig.stamp: NuttX/nuttx_copy.stamp
 NuttX/nuttx_config_kconfig.stamp: NuttX/apps_copy.stamp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating nuttx_config_kconfig.stamp"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/boards/dummy/Kconfig
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E copy_if_different /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/nuttx-config/Kconfig /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/boards/dummy/Kconfig
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx_config_kconfig.stamp
 
 NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/.asf.yaml
@@ -16506,10 +16506,10 @@ NuttX/apps_copy.stamp: ../platforms/nuttx/NuttX/apps/wireless/wapi/src/wireless.
 
 nuttx_apps_build: NuttX/CMakeFiles/nuttx_apps_build
 nuttx_apps_build: NuttX/apps/libapps.a
-nuttx_apps_build: NuttX/apps/builtin/registry/custom_hello_main.bdat
-nuttx_apps_build: NuttX/apps/builtin/registry/custom_hello_main.pdat
 nuttx_apps_build: NuttX/apps/builtin/registry/custom_uorb_main.bdat
 nuttx_apps_build: NuttX/apps/builtin/registry/custom_uorb_main.pdat
+nuttx_apps_build: NuttX/apps/builtin/registry/custom_hello_main.bdat
+nuttx_apps_build: NuttX/apps/builtin/registry/custom_hello_main.pdat
 nuttx_apps_build: NuttX/apps/builtin/registry/custom_template_module_main.bdat
 nuttx_apps_build: NuttX/apps/builtin/registry/custom_template_module_main.pdat
 nuttx_apps_build: NuttX/nuttx/include/nuttx/config.h

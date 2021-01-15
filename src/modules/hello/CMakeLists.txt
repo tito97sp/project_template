@@ -5,3 +5,4 @@ add_module(
 		hello.cpp
 	STACK_MAIN 1024
 	)
+	

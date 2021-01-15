@@ -101,7 +101,7 @@ NuttX/nuttx_copy_config_dir.stamp: NuttX/nuttx_config_kconfig.stamp
 NuttX/nuttx_config_kconfig.stamp: NuttX/nuttx_copy.stamp
 NuttX/nuttx_config_kconfig.stamp: NuttX/apps_copy.stamp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/andressanchez/Escritorio/GIT/project_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating nuttx_config_kconfig.stamp"
-	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/boards/dummy/Kconfig
+	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E copy_if_different /home/andressanchez/Escritorio/GIT/project_template/boards/stm/nucleo_h743zi/nuttx-config/Kconfig /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx/boards/dummy/Kconfig
 	cd /home/andressanchez/Escritorio/GIT/project_template/build/NuttX && /usr/bin/cmake -E touch /home/andressanchez/Escritorio/GIT/project_template/build/NuttX/nuttx_config_kconfig.stamp
 
 NuttX/nuttx_copy.stamp: ../platforms/nuttx/NuttX/nuttx/.asf.yaml
