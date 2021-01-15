@@ -1,8 +1,0 @@
-<map id="uORB::SubscriptionCallback" name="uORB::SubscriptionCallback">
-<area shape="rect" id="node7" href="$dc/d85/classListNode.html" title="ListNode\&lt; SubscriptionCallback *\&gt;" alt="" coords="5,440,232,467"/>
-<area shape="rect" id="node2" href="$d1/d96/classuORB_1_1SubscriptionInterval.html" title="uORB::SubscriptionInterval" alt="" coords="28,275,209,301"/>
-<area shape="rect" id="node3" href="$da/d57/classuORB_1_1Subscription.html" title="uORB::Subscription" alt="" coords="49,178,188,205"/>
-<area shape="rect" id="node4" href="$de/da0/classuORB_1_1DeviceNode.html" title="uORB::DeviceNode" alt="" coords="120,81,259,108"/>
-<area shape="rect" id="node6" href="$d9/d16/classIntrusiveSortedListNode.html" title="IntrusiveSortedListNode\l\&lt; uORB::DeviceNode *\&gt;" alt="" coords="245,171,411,212"/>
-<area shape="rect" id="node5" href="$d3/dff/classcdev_1_1CDev.html" title="cdev::CDev" alt="" coords="143,5,235,32"/>
-</map>

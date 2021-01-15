@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-gcc-ar qc libuORB.a  CMakeFiles/uORB.dir/Subscription.cpp.obj CMakeFiles/uORB.dir/uORB.cpp.obj CMakeFiles/uORB.dir/uORBDeviceMaster.cpp.obj CMakeFiles/uORB.dir/uORBDeviceNode.cpp.obj CMakeFiles/uORB.dir/uORBMain.cpp.obj CMakeFiles/uORB.dir/uORBManager.cpp.obj CMakeFiles/uORB.dir/uORBUtils.cpp.obj
-/usr/bin/arm-none-eabi-gcc-ranlib libuORB.a

@@ -1,2 +1,0 @@
-/usr/bin/arm-none-eabi-gcc-ar qc libos_layer.a  CMakeFiles/os_layer.dir/os_tasks.cpp.obj
-/usr/bin/arm-none-eabi-gcc-ranlib libos_layer.a
