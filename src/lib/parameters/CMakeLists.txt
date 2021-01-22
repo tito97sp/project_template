@@ -41,6 +41,8 @@ endif()
 get_property(module_list GLOBAL PROPERTY MODULE_PATHS)
 get_property(module_config_files GLOBAL PROPERTY MODULE_CONFIG_FILES)
 
+set(DISABLE_PARAMS_MODULE_SCOPING true)
+
 if(DISABLE_PARAMS_MODULE_SCOPING)
 	# search all directories with .c files (potentially containing parameters)
 	file(GLOB_RECURSE c_files
@@ -60,7 +62,10 @@ if(DISABLE_PARAMS_MODULE_SCOPING)
 		list(APPEND module_config_files "${file_path}")
 	endforeach()
 
-	list(REMOVE_DUPLICATES module_config_files)
+	#check not empty file
+	if(module_config_files)
+		list(REMOVE_DUPLICATES module_config_files)
+	endif()
 else()
 	list(APPEND module_list ${external_module_paths})
 endif()
@@ -99,7 +104,7 @@ add_custom_command(OUTPUT ${parameters_xml} ${parameters_json} ${parameters_json
 		--inject-xml ${CMAKE_CURRENT_SOURCE_DIR}/parameters_injected.xml
 		--overrides ${PARAM_DEFAULT_OVERRIDES}
 		--board ${BOARD}
-		#--verbose
+		--verbose
 	DEPENDS
 		${param_src_files}
 		${generated_serial_params_file}
@@ -109,7 +114,6 @@ add_custom_command(OUTPUT ${parameters_xml} ${parameters_json} ${parameters_json
 		px4params/jsonout.py
 		px4params/xmlout.py
 		px_process_params.py
-		parameters_injected.xml
 	COMMENT "Generating parameters.xml"
 )
 add_custom_target(parameters_xml DEPENDS ${parameters_xml})
@@ -121,48 +125,50 @@ add_custom_command(OUTPUT parameters.c parameters.h parameters_public.h
 	DEPENDS
 		${BINARY_DIR}/parameters.xml
 		px_generate_params.py
-		templates/parameters.c.jinja
-		templates/parameters.h.jinja
-		templates/parameters_public.h.jinja
+		templates/px4_parameters.c.jinja
+		templates/px4_parameters.h.jinja
+		templates/px4_parameters_public.h.jinja
+	WORKING_DIRECTORY 
+		${CMAKE_CURRENT_SOURCE_DIR}
 	)
 
 set(SRCS)
 if ("${CONFIG_SHMEM}" STREQUAL "1")
-	message(STATUS "parameters shared memory enabled")
-	add_definitions(-DCONFIG_SHMEM=1)
-	list(APPEND SRCS parameters_shmem.cpp)
+ 	message(STATUS "parameters shared memory enabled")
+ 	add_definitions(-DCONFIG_SHMEM=1)
+ 	list(APPEND SRCS parameters_shmem.cpp)
 else()
-	list(APPEND SRCS parameters.cpp)
-	if(BUILD_TESTING)
-		list(APPEND SRCS param_translation_unit_tests.cpp)
-	else()
-		list(APPEND SRCS param_translation.cpp)
-	endif()
+ 	list(APPEND SRCS parameters.cpp)
+ 	if(BUILD_TESTING)
+ 		list(APPEND SRCS param_translation_unit_tests.cpp)
+ 	else()
+ 		list(APPEND SRCS param_translation.cpp)
+ 	endif()
 endif()
 
-if(${PLATFORM} STREQUAL "nuttx")
-	add_subdirectory(flashparams)
-endif()
+# if(${PLATFORM} STREQUAL "nuttx")
+# 	#add_subdirectory(flashparams)
+# endif()
 
-# TODO: find a better way to do this
+# # TODO: find a better way to do this
 if (NOT "${BOARD}" MATCHES "px4_io")
-	add_library(parameters
-		${SRCS}
-		parameters.c
-		parameters.h
-		parameters_public.h
-		)
+ 	add_library(parameters
+ 		${SRCS}
+ 		parameters.c
+ 		parameters.h
+ 		parameters_public.h
+ 		)
 
-	if ("${CONFIG_SHMEM}" STREQUAL "1")
-		target_link_libraries(parameters PRIVATE os_layer)
-	endif()
+ 	if ("${CONFIG_SHMEM}" STREQUAL "1")
+ 		target_link_libraries(parameters PRIVATE os_layer)
+ 	endif()
 
-	target_link_libraries(parameters PRIVATE perf tinybson)
-	target_compile_definitions(parameters PRIVATE -DMODULE_NAME="parameters")
-	target_compile_options(parameters
-		PRIVATE
-			-Wno-cast-align		# TODO: fix and enable
-			-Wno-sign-compare	# TODO: fix and enable
+ 	target_link_libraries(parameters PRIVATE perf tinybson)
+ 	target_compile_definitions(parameters PRIVATE -DMODULE_NAME="parameters")
+ 	target_compile_options(parameters
+ 		PRIVATE
+ 			-Wno-cast-align		# TODO: fix and enable
+ 			-Wno-sign-compare	# TODO: fix and enable
 	)
 else()
 	add_library(parameters ${SOURCE_DIR}/platforms/common/src/platform_common/empty.c)
@@ -170,7 +176,8 @@ endif()
 add_dependencies(parameters prebuild_targets)
 
 if(${PLATFORM} STREQUAL "nuttx")
-	target_link_libraries(parameters PRIVATE flashparams tinybson)
+# 	#target_link_libraries(parameters PRIVATE flashparams tinybson)
+ 	target_link_libraries(parameters PRIVATE tinybson)
 endif()
 
 #add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)

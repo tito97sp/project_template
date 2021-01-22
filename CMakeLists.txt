@@ -160,13 +160,14 @@ endif()
 #=============================================================================
 # subdirectories
 #
-# add libraries 
+add_library(parameters_interface INTERFACE)
+
 include(add_custom_library)
 add_subdirectory(src/lib EXCLUDE_FROM_ALL)
 
 add_subdirectory(platforms/${PLATFORM}/src/os)
 add_subdirectory(platforms EXCLUDE_FROM_ALL)
-#add_subdirectory(src/modules/uORB EXCLUDE_FROM_ALL) # TODO: platform layer
+add_subdirectory(src/modules/uORB EXCLUDE_FROM_ALL) # TODO: platform layer
 
 if(EXISTS "${BOARD_DIR}/CMakeLists.txt")
 	add_subdirectory(${BOARD_DIR})
@@ -177,8 +178,8 @@ foreach(module ${config_module_list})
 endforeach()
 
 # must be the last module before firmware
-#add_subdirectory(src/lib/parameters EXCLUDE_FROM_ALL)
-#target_link_libraries(parameters_interface INTERFACE parameters)
+add_subdirectory(src/lib/parameters EXCLUDE_FROM_ALL)
+target_link_libraries(parameters_interface INTERFACE parameters)
 
 # firmware added last to generate the builtin for included modules
 add_subdirectory(platforms/${PLATFORM})

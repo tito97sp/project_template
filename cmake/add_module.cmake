@@ -156,7 +156,7 @@ function(add_module)
 
 	if(NOT DYNAMIC)
 		#target_link_libraries(${MODULE} PRIVATE prebuild_targets parameters_interface px4_layer px4_platform systemlib)
-		target_link_libraries(${MODULE} PRIVATE prebuild_targets os_layer platform_common)
+		target_link_libraries(${MODULE} PRIVATE prebuild_targets parameters_interface os_layer platform_common)
 		set_property(GLOBAL APPEND PROPERTY MODULE_LIBRARIES ${MODULE})
 		set_property(GLOBAL APPEND PROPERTY MODULE_PATHS ${CMAKE_CURRENT_SOURCE_DIR})
 	endif()

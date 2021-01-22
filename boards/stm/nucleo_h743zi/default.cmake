@@ -8,7 +8,6 @@ add_board(
 	ARCHITECTURE cortex-m7
 	ROMFSROOT fmu_common
 	MODULES
-		uORB
 		hello_sub
 		hello_pub
 		#template_module

@@ -125,7 +125,37 @@ add_custom_target(make_bin
 	)	
 
 
+# create .px4 with parameter and airframe metadata
+if (TARGET parameters_xml)
 
+	string(REPLACE ".elf" ".package" fw_package ${PX4_BINARY_DIR}/${FW_NAME})
+
+	add_custom_command(
+		OUTPUT ${fw_package}
+		#COMMAND
+		#	${PYTHON_EXECUTABLE} ${SOURCE_DIR}/Tools/px_mkfw.py
+		#		--prototype ${SOURCE_DIR}/boards/${BOARD_VENDOR}/${BOARD_MODEL}/firmware.prototype
+		#		--git_identity ${SOURCE_DIR}
+		#		--parameter_xml ${BINARY_DIR}/parameters.xml
+		#		--airframe_xml ${BINARY_DIR}/airframes.xml
+		#		--image ${BINARY_DIR}/${BOARD}.bin > ${fw_package}
+		DEPENDS
+			${BINARY_DIR}/${BOARD}.bin
+			#airframes_xml
+			parameters_xml
+		COMMENT "Creating ${fw_package}"
+		WORKING_DIRECTORY ${BINARY_DIR}
+		)
+
+	add_custom_target(gen_package ALL DEPENDS ${fw_package})
+
+	# upload helper
+	# create upload target helper if NuttX USB CDCACM is present
+	if (CONFIG_CDCACM)
+		include(upload)
+	endif()
+
+endif()
 
 # print weak symbols
 add_custom_target(weak_symbols

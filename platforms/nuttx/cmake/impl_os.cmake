@@ -134,7 +134,6 @@ function(os_prebuild_targets)
 
 	add_library(prebuild_targets INTERFACE)
 	target_link_libraries(prebuild_targets INTERFACE nuttx_xx nuttx_c nuttx_fs nuttx_mm nuttx_sched m gcc)
-	#add_dependencies(prebuild_targets DEPENDS nuttx_build uorb_headers)
-	add_dependencies(prebuild_targets DEPENDS nuttx_build)
+	add_dependencies(prebuild_targets DEPENDS nuttx_build uorb_headers)
 
 endfunction()
