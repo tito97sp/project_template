@@ -38,13 +38,13 @@ if (NOT PARAM_DEFAULT_OVERRIDES)
 endif()
 
 # get full path for each module
-get_property(module_list GLOBAL PROPERTY PX4_MODULE_PATHS)
-get_property(module_config_files GLOBAL PROPERTY PX4_MODULE_CONFIG_FILES)
+get_property(module_list GLOBAL PROPERTY MODULE_PATHS)
+get_property(module_config_files GLOBAL PROPERTY MODULE_CONFIG_FILES)
 
 if(DISABLE_PARAMS_MODULE_SCOPING)
 	# search all directories with .c files (potentially containing parameters)
 	file(GLOB_RECURSE c_files
-		${PX4_SOURCE_DIR}/src/*.c
+		${SOURCE_DIR}/src/*.c
 		${external_module_paths}
 		)
 	foreach(file_path ${c_files})
@@ -54,7 +54,7 @@ if(DISABLE_PARAMS_MODULE_SCOPING)
 
 	# search for all module configs as well
 	file(GLOB_RECURSE yaml_files
-		${PX4_SOURCE_DIR}/src/*.yaml
+		${SOURCE_DIR}/src/*.yaml
 		)
 	foreach(file_path ${yaml_files})
 		list(APPEND module_config_files "${file_path}")
@@ -67,28 +67,28 @@ endif()
 
 list(REMOVE_DUPLICATES module_list)
 
-set(generated_params_dir ${PX4_BINARY_DIR}/generated_params)
+set(generated_params_dir ${BINARY_DIR}/generated_params)
 set(generated_serial_params_file ${generated_params_dir}/serial_params.c)
-file(GLOB jinja_templates ${PX4_SOURCE_DIR}/Tools/serial/*.jinja)
-if (px4_constrained_flash_build)
+file(GLOB jinja_templates ${SOURCE_DIR}/Tools/serial/*.jinja)
+if (constrained_flash_build)
 	set(added_arguments --constrained-flash)
 endif()
 add_custom_command(OUTPUT ${generated_serial_params_file}
 	COMMAND ${CMAKE_COMMAND} -E make_directory ${generated_params_dir}
-	COMMAND ${PYTHON_EXECUTABLE} ${PX4_SOURCE_DIR}/Tools/serial/generate_config.py
+	COMMAND ${PYTHON_EXECUTABLE} ${SOURCE_DIR}/Tools/serial/generate_config.py
 		--params-file ${generated_serial_params_file}
 		--serial-ports ${board_serial_ports} ${added_arguments}
 		--config-files ${module_config_files} #--verbose
 	DEPENDS
 		${module_config_files}
 		${jinja_templates}
-		${PX4_SOURCE_DIR}/Tools/serial/generate_config.py
+		${SOURCE_DIR}/Tools/serial/generate_config.py
 	COMMENT "Generating serial_params.c"
 )
 
-set(parameters_xml ${PX4_BINARY_DIR}/parameters.xml)
-set(parameters_json ${PX4_BINARY_DIR}/parameters.json)
-file(GLOB_RECURSE param_src_files ${PX4_SOURCE_DIR}/src/*params.c)
+set(parameters_xml ${BINARY_DIR}/parameters.xml)
+set(parameters_json ${BINARY_DIR}/parameters.json)
+file(GLOB_RECURSE param_src_files ${SOURCE_DIR}/src/*params.c)
 add_custom_command(OUTPUT ${parameters_xml} ${parameters_json} ${parameters_json}.gz
 	COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/px_process_params.py
 		--src-path ${module_list} ${generated_params_dir}
@@ -97,7 +97,7 @@ add_custom_command(OUTPUT ${parameters_xml} ${parameters_json} ${parameters_json
 		--compress
 		--inject-xml ${CMAKE_CURRENT_SOURCE_DIR}/parameters_injected.xml
 		--overrides ${PARAM_DEFAULT_OVERRIDES}
-		--board ${PX4_BOARD}
+		--board ${BOARD}
 		#--verbose
 	DEPENDS
 		${param_src_files}
@@ -113,16 +113,16 @@ add_custom_command(OUTPUT ${parameters_xml} ${parameters_json} ${parameters_json
 )
 add_custom_target(parameters_xml DEPENDS ${parameters_xml})
 
-# generate px4_parameters.c and px4_parameters{,_public}.h
-add_custom_command(OUTPUT px4_parameters.c px4_parameters.h px4_parameters_public.h
+# generate parameters.c and parameters{,_public}.h
+add_custom_command(OUTPUT parameters.c parameters.h parameters_public.h
 	COMMAND ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/px_generate_params.py
 		--xml ${parameters_xml} --dest ${CMAKE_CURRENT_BINARY_DIR}
 	DEPENDS
-		${PX4_BINARY_DIR}/parameters.xml
+		${BINARY_DIR}/parameters.xml
 		px_generate_params.py
-		templates/px4_parameters.c.jinja
-		templates/px4_parameters.h.jinja
-		templates/px4_parameters_public.h.jinja
+		templates/parameters.c.jinja
+		templates/parameters.h.jinja
+		templates/parameters_public.h.jinja
 	)
 
 set(SRCS)
@@ -139,21 +139,21 @@ else()
 	endif()
 endif()
 
-if(${PX4_PLATFORM} STREQUAL "nuttx")
+if(${PLATFORM} STREQUAL "nuttx")
 	add_subdirectory(flashparams)
 endif()
 
 # TODO: find a better way to do this
-if (NOT "${PX4_BOARD}" MATCHES "px4_io")
+if (NOT "${BOARD}" MATCHES "px4_io")
 	add_library(parameters
 		${SRCS}
-		px4_parameters.c
-		px4_parameters.h
-		px4_parameters_public.h
+		parameters.c
+		parameters.h
+		parameters_public.h
 		)
 
 	if ("${CONFIG_SHMEM}" STREQUAL "1")
-		target_link_libraries(parameters PRIVATE px4_layer)
+		target_link_libraries(parameters PRIVATE os_layer)
 	endif()
 
 	target_link_libraries(parameters PRIVATE perf tinybson)
@@ -164,12 +164,12 @@ if (NOT "${PX4_BOARD}" MATCHES "px4_io")
 			-Wno-sign-compare	# TODO: fix and enable
 	)
 else()
-	add_library(parameters ${PX4_SOURCE_DIR}/platforms/common/empty.c)
+	add_library(parameters ${SOURCE_DIR}/platforms/common/src/platform_common/empty.c)
 endif()
 add_dependencies(parameters prebuild_targets)
 
-if(${PX4_PLATFORM} STREQUAL "nuttx")
+if(${PLATFORM} STREQUAL "nuttx")
 	target_link_libraries(parameters PRIVATE flashparams tinybson)
 endif()
 
-px4_add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
+add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
