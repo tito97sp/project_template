@@ -8,7 +8,6 @@
 
 #ifdef	__cplusplus
 
-namespace px4 { {# wrap the enum in a namespace, otherwise we get shadowing errors for MAV_TYPE #}
 
 /// Enum with all parameters
 enum class params {
@@ -22,7 +21,7 @@ enum class params {
 };
 
 // All parameter types
-{# (px4_parameters is marked as extern, so we cannot use it as constexpr) #}
+{# (parameters is marked as extern, so we cannot use it as constexpr) #}
 static const constexpr int param_types_array[] =  {
 {%- for param in params %}
 	PARAM_TYPE_{{ param.attrib["type"] }}, // {{ param.attrib["name"] }}
@@ -30,7 +29,6 @@ static const constexpr int param_types_array[] =  {
 };
 
 
-} // namespace px4
 
 
 #endif /* __cplusplus */

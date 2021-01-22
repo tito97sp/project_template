@@ -128,8 +128,6 @@ add_custom_command(OUTPUT parameters.c parameters.h parameters_public.h
 		templates/px4_parameters.c.jinja
 		templates/px4_parameters.h.jinja
 		templates/px4_parameters_public.h.jinja
-	WORKING_DIRECTORY 
-		${CMAKE_CURRENT_SOURCE_DIR}
 	)
 
 set(SRCS)

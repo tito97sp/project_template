@@ -7,14 +7,14 @@
 
 __BEGIN_DECLS
 
-struct px4_parameters_t {
+struct parameters_t {
 {%- for param in params %}
 	const struct param_info_s __param__{{ param.attrib["name"] }};
 {%- endfor %}
 	const unsigned int param_count;
 };
 
-extern const struct px4_parameters_t px4_parameters;
+extern const struct parameters_t parameters;
 
 __END_DECLS
 
