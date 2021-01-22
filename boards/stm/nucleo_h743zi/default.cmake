@@ -9,6 +9,7 @@ add_board(
 	ROMFSROOT fmu_common
 	MODULES
 		uORB
-		hello
-		template_module
+		hello_sub
+		hello_pub
+		#template_module
 	)

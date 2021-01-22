@@ -35,6 +35,7 @@
 cmake_policy(SET CMP0057 NEW)
 
 set(msg_files
+	hello.msg
 	# actuator_armed.msg
 	# actuator_controls.msg
 	# actuator_outputs.msg
@@ -90,7 +91,7 @@ set(msg_files
 	# optical_flow.msg
 	# orbit_status.msg
 	# parameter_update.msg
-	ping.msg
+	# ping.msg
 	# position_controller_landing_status.msg
 	# position_controller_status.msg
 	# position_setpoint.msg

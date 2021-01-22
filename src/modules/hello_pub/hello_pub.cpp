@@ -31,8 +31,7 @@
  *
  ****************************************************************************/
 
-#include "template_module.h"
-
+#include "hello_pub.h"
 
 //#include <px4_platform_common/getopt.h>
 //#include <px4_platform_common/log.h>
@@ -42,13 +41,14 @@
 #include <uORB/topics/hello.h>
 
 
-int TemplateModule::print_status()
+
+int HelloPub::print_status()
 {
-	printf("Running");
+	printf("Running\n");
 	return 0;
 }
 
-int TemplateModule::custom_command(int argc, char *argv[])
+int HelloPub::custom_command(int argc, char *argv[])
 {
 	/*
 	if (!is_running()) {
@@ -63,13 +63,13 @@ int TemplateModule::custom_command(int argc, char *argv[])
 	}
 	 */
 
-	return print_usage("unknown command");
+	return print_usage("unknown command\n");
 }
 
 
-int TemplateModule::task_spawn(int argc, char *argv[])
+int HelloPub::task_spawn(int argc, char *argv[])
 {
-	_task_id = os_task_spawn_cmd("module",
+	_task_id = os_task_spawn_cmd("hellopub",
 				      SCHED_DEFAULT,
 				      SCHED_PRIORITY_DEFAULT,
 				      1024,
@@ -85,110 +85,41 @@ int TemplateModule::task_spawn(int argc, char *argv[])
 	return 0;
 }
 
-TemplateModule *TemplateModule::instantiate(int argc, char *argv[])
+HelloPub *HelloPub::instantiate(int argc, char *argv[])
 {
-	int example_param = 0;
-	bool example_flag = false;
-	bool error_flag = false;
-
-	int option_index = 1;
-	int ch;
-
-	static struct option long_options[] = {
-		{"example_arg_1",  required_argument, 0,  0 },
-        {"example_arg_2",  no_argument,       0,  0 },
-        {"example_arg_3",  required_argument, 0,  0 },
-        {0,         0,                 		  0,  0 }
-	};
-
-	// parse CLI arguments
-	while ((ch = getopt_long(argc, argv, "p:f", long_options, &option_index)) != EOF) {
-		switch (ch) {
-		case 'p':
-			example_param = 10;
-			break;
-
-		case 'f':
-			example_flag = true;
-			break;
-
-		case '?':
-			error_flag = true;
-			break;
-
-		default:
-			printf("WARN: unrecognized flag");
-			error_flag = true;
-			break;
-		}
-	}
-
-	if (error_flag) {
-		return nullptr;
-	}
-
-	TemplateModule *instance = new TemplateModule(example_param, example_flag);
+	HelloPub *instance = new HelloPub();
 
 	if (instance == nullptr) {
-		printf("ERROR: alloc failed");
+		printf("ERROR: alloc failed\n");
 	}
 
 	return instance;
 }
 
-TemplateModule::TemplateModule(int example_param, bool example_flag)
+HelloPub::HelloPub()
 {
 }
 
-void TemplateModule::run()
+void HelloPub::run()
 {
-
-	static int exec_number = 0;
-	exec_number++;
-
+	printf("hello_pub module started\n");
 	uORB::Publication<hello_s> hello_pub{ORB_ID(hello)};
-
 	struct hello_s hello{};
-	hello.hello_number = exec_number;
-	
-	hello_pub.publish(hello);
 
-	// px4_pollfd_struct_t fds[1];
-	// fds[0].fd = sensor_combined_sub;
-	// fds[0].events = POLLIN;
+	uint32_t iter = 0;
 
-	// // initialize parameters
-	// parameters_update(true);
+	for(;;){
+		hello.hello_number = iter;
+		hello_pub.publish(hello);
 
-	// while (!should_exit()) {
+		iter++;
 
-	// 	// wait for up to 1000ms for data
-	// 	int pret = px4_poll(fds, (sizeof(fds) / sizeof(fds[0])), 1000);
-
-	// 	if (pret == 0) {
-	// 		// Timeout: let the loop run anyway, don't do `continue` here
-
-	// 	} else if (pret < 0) {
-	// 		// this is undesirable but not much we can do
-	// 		PX4_ERR("poll error %d, %d", pret, errno);
-	// 		px4_usleep(50000);
-	// 		continue;
-
-	// 	} else if (fds[0].revents & POLLIN) {
-
-	// 		struct sensor_combined_s sensor_combined;
-	// 		orb_copy(ORB_ID(sensor_combined), sensor_combined_sub, &sensor_combined);
-	// 		// TODO: do something with the data...
-
-	// 	}
-
-	// 	parameters_update();
-	// }
-
-	// orb_unsubscribe(sensor_combined_sub);
+		printf("PUB: iter = %lu\n", iter);
+		sleep(1);
+	}
 }
 
-int TemplateModule::print_usage(const char *reason)
+int HelloPub::print_usage(const char *reason)
 {
 // 	if (reason) {
 // 		PX4_WARN("%s\n", reason);
@@ -219,7 +150,7 @@ int TemplateModule::print_usage(const char *reason)
  	return 0;
 }
 
-int template_module_main(int argc, char *argv[])
+int hello_pub_main(int argc, char *argv[])
 {
-	return TemplateModule::main(argc, argv);
+	return HelloPub::main(argc, argv);
 }

@@ -30,7 +30,7 @@ add_module(
 		uORBUtils.hpp
 	DEPENDS
 		cdev
-		#uorb_msgs
+		uorb_msgs
 	)
 
 # if(PX4_TESTING)

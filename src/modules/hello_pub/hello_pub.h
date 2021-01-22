@@ -42,21 +42,21 @@
       
 //#include <px4_platform_common/module_params.h>
 
-extern "C" __EXPORT int template_module_main(int argc, char *argv[]);
 
+extern "C" { __EXPORT int hello_pub_main(int argc, char *argv[]); }
 
-class TemplateModule : public ModuleBase<TemplateModule>
+class HelloPub : public ModuleBase<HelloPub>
 {
 public:
-	TemplateModule(int example_param, bool example_flag);
+	HelloPub();
 
-	virtual ~TemplateModule() = default;
+	virtual ~HelloPub() = default;
 
 	/** @see ModuleBase */
 	static int task_spawn(int argc, char *argv[]);
 
 	/** @see ModuleBase */
-	static TemplateModule *instantiate(int argc, char *argv[]);
+	static HelloPub *instantiate(int argc, char *argv[]);
 
 	/** @see ModuleBase */
 	static int custom_command(int argc, char *argv[]);
@@ -69,8 +69,6 @@ public:
 
 	/** @see ModuleBase::print_status() */
 	int print_status() override;
-
-private:
 
 };
 
