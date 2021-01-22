@@ -37,11 +37,11 @@
  * A simple subset SAX-style BSON parser and generator.
  */
 
-#include <px4_platform_common/posix.h>
+//#include <px4_platform_common/posix.h>
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
-#include <systemlib/err.h>
+//#include <systemlib/err.h>
 
 #include "tinybson.h"
 

@@ -73,17 +73,18 @@ file(GLOB jinja_templates ${SOURCE_DIR}/Tools/serial/*.jinja)
 if (constrained_flash_build)
 	set(added_arguments --constrained-flash)
 endif()
+
 add_custom_command(OUTPUT ${generated_serial_params_file}
-	COMMAND ${CMAKE_COMMAND} -E make_directory ${generated_params_dir}
-	COMMAND ${PYTHON_EXECUTABLE} ${SOURCE_DIR}/Tools/serial/generate_config.py
-		--params-file ${generated_serial_params_file}
-		--serial-ports ${board_serial_ports} ${added_arguments}
-		--config-files ${module_config_files} #--verbose
-	DEPENDS
-		${module_config_files}
-		${jinja_templates}
-		${SOURCE_DIR}/Tools/serial/generate_config.py
-	COMMENT "Generating serial_params.c"
+ 	COMMAND ${CMAKE_COMMAND} -E make_directory ${generated_params_dir}
+# 	COMMAND ${PYTHON_EXECUTABLE} ${SOURCE_DIR}/Tools/serial/generate_config.py
+# 		--params-file ${generated_serial_params_file}
+# 		--serial-ports ${board_serial_ports} ${added_arguments}
+# 		--config-files ${module_config_files} #--verbose
+ 	DEPENDS
+ 		${module_config_files}
+ 		${jinja_templates}
+# 		${SOURCE_DIR}/Tools/serial/generate_config.py
+ 	COMMENT "Generating serial_params.c"
 )
 
 set(parameters_xml ${BINARY_DIR}/parameters.xml)
@@ -172,4 +173,4 @@ if(${PLATFORM} STREQUAL "nuttx")
 	target_link_libraries(parameters PRIVATE flashparams tinybson)
 endif()
 
-add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
+#add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
