@@ -183,7 +183,7 @@ public:
 			object->run();
 
 		} else {
-			printf("ERROR: failed to instantiate object");
+			printf("ERROR: failed to instantiate object\n");
 			ret = -1;
 		}
 
@@ -206,13 +206,13 @@ public:
 
 		if (is_running()) {
 			ret = -1;
-			printf("ERROR: Task already running");
+			printf("ERROR: Task already running\n");
 
 		} else {
 			ret = T::task_spawn(argc, argv);
 
 			if (ret < 0) {
-				printf("ERROR: Task start failed (%i)", ret);
+				printf("ERROR: Task start failed (%i)\n", ret);
 			}
 		}
 
@@ -244,7 +244,7 @@ public:
 					lock_module();
 
 					if (++i > 500 && _task_id != -1) { // wait at most 5 sec
-						printf("ERROR: timeout, forcing stop");
+						printf("ERROR: timeout, forcing stop\n");
 
 						if (_task_id != task_id_is_work_queue) {
 							task_delete(_task_id);
@@ -287,7 +287,7 @@ public:
 			ret = object->print_status();
 
 		} else {
-			printf("INFO: not running");
+			printf("INFO: not running\n");
 		}
 
 		unlock_module();
@@ -301,7 +301,7 @@ public:
 	 */
 	virtual int print_status()
 	{
-		printf("INFO: running");
+		printf("INFO: running\n");
 		return 0;
 	}
 
@@ -376,7 +376,7 @@ protected:
 		} while (!_object.load() && ++i < 400);
 
 		if (i == 400) {
-			printf("ERROR: Timed out while waiting for thread to start");
+			printf("ERROR: Timed out while waiting for thread to start\n");
 			return -1;
 		}
 
