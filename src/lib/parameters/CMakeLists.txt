@@ -125,9 +125,9 @@ add_custom_command(OUTPUT parameters.c parameters.h parameters_public.h
 	DEPENDS
 		${BINARY_DIR}/parameters.xml
 		px_generate_params.py
-		templates/px4_parameters.c.jinja
-		templates/px4_parameters.h.jinja
-		templates/px4_parameters_public.h.jinja
+		templates/parameters.c.jinja
+		templates/parameters.h.jinja
+		templates/parameters_public.h.jinja
 	)
 
 set(SRCS)

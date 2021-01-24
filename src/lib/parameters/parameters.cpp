@@ -44,7 +44,7 @@
 #define PARAM_IMPLEMENTATION
 #include "param.h"
 #include "param_translation.h"
-#include <parameters/px4_parameters.h>
+#include <parameters/parameters.h>
 #include "tinybson/tinybson.h"
 
 #include <crc32.h>
@@ -53,10 +53,10 @@
 
 #include <drivers/drv_hrt.h>
 #include <lib/perf/perf_counter.h>
-#include <px4_platform_common/px4_config.h>
-#include <px4_platform_common/defines.h>
-#include <px4_platform_common/posix.h>
-#include <px4_platform_common/sem.h>
+//#include <px4_platform_common/px4_config.h>
+//#include <px4_platform_common/defines.h>
+//#include <px4_platform_common/posix.h>
+//#include <px4_platform_common/sem.h>
 #include <px4_platform_common/shutdown.h>
 #include <systemlib/uthash/utarray.h>
 
@@ -64,7 +64,7 @@ using namespace time_literals;
 
 #include "uORB/uORB.h"
 #include "uORB/topics/parameter_update.h"
-#include <uORB/topics/actuator_armed.h>
+//#include <uORB/topics/actuator_armed.h>
 #include <uORB/Subscription.hpp>
 
 #if defined(FLASH_BASED_PARAMS)
@@ -74,14 +74,15 @@ static const char *param_default_file = nullptr; // nullptr means to store to FL
 inline static int flash_param_save(bool only_unsaved, param_filter_func filter) { return -1; }
 inline static int flash_param_load() { return -1; }
 inline static int flash_param_import() { return -1; }
-static const char *param_default_file = PX4_ROOTFSDIR"/eeprom/parameters";
+#define ROOTFSDIR ""
+static const char *param_default_file = ROOTFSDIR"/eeprom/parameters";
 #endif
 
 static char *param_user_file = nullptr;
 
-#ifdef __PX4_QURT
-#define PARAM_OPEN	px4_open
-#define PARAM_CLOSE	px4_close
+#ifdef __QURT
+#define PARAM_OPEN	open
+#define PARAM_CLOSE	close
 #else
 #define PARAM_OPEN	open
 #define PARAM_CLOSE	close
@@ -97,8 +98,8 @@ static bool autosave_disabled = false;
 /**
  * Array of static parameter info.
  */
-static const param_info_s *param_info_base = (const param_info_s *) &px4_parameters;
-#define	param_info_count px4_parameters.param_count
+static const param_info_s *param_info_base = (const param_info_s *) &parameters;
+#define	param_info_count parameters.param_count
 
 /**
  * Storage for modified parameters.
@@ -152,16 +153,16 @@ static param_t param_find_internal(const char *name, bool notification);
 // the following implements an RW-lock using 2 semaphores (used as mutexes). It gives
 // priority to readers, meaning a writer could suffer from starvation, but in our use-case
 // we only have short periods of reads and writes are rare.
-static px4_sem_t param_sem; ///< this protects against concurrent access to param_values
+static sem_t param_sem; ///< this protects against concurrent access to param_values
 static int reader_lock_holders = 0;
-static px4_sem_t reader_lock_holders_lock; ///< this protects against concurrent access to reader_lock_holders
+static sem_t reader_lock_holders_lock; ///< this protects against concurrent access to reader_lock_holders
 
 static perf_counter_t param_export_perf;
 static perf_counter_t param_find_perf;
 static perf_counter_t param_get_perf;
 static perf_counter_t param_set_perf;
 
-static px4_sem_t param_sem_save; ///< this protects against concurrent param saves (file or flash access).
+static sem_t param_sem_save; ///< this protects against concurrent param saves (file or flash access).
 ///< we use a separate lock to allow concurrent param reads and saves.
 ///< a param_set could still be blocked by a param save, because it
 ///< needs to take the reader lock
@@ -170,46 +171,46 @@ static px4_sem_t param_sem_save; ///< this protects against concurrent param sav
 static void
 param_lock_reader()
 {
-	do {} while (px4_sem_wait(&reader_lock_holders_lock) != 0);
+	do {} while (sem_wait(&reader_lock_holders_lock) != 0);
 
 	++reader_lock_holders;
 
 	if (reader_lock_holders == 1) {
 		// the first reader takes the lock, the next ones are allowed to just continue
-		do {} while (px4_sem_wait(&param_sem) != 0);
+		do {} while (sem_wait(&param_sem) != 0);
 	}
 
-	px4_sem_post(&reader_lock_holders_lock);
+	sem_post(&reader_lock_holders_lock);
 }
 
 /** lock the parameter store for write access */
 static void
 param_lock_writer()
 {
-	do {} while (px4_sem_wait(&param_sem) != 0);
+	do {} while (sem_wait(&param_sem) != 0);
 }
 
 /** unlock the parameter store */
 static void
 param_unlock_reader()
 {
-	do {} while (px4_sem_wait(&reader_lock_holders_lock) != 0);
+	do {} while (sem_wait(&reader_lock_holders_lock) != 0);
 
 	--reader_lock_holders;
 
 	if (reader_lock_holders == 0) {
 		// the last reader releases the lock
-		px4_sem_post(&param_sem);
+		sem_post(&param_sem);
 	}
 
-	px4_sem_post(&reader_lock_holders_lock);
+	sem_post(&reader_lock_holders_lock);
 }
 
 /** unlock the parameter store */
 static void
 param_unlock_writer()
 {
-	px4_sem_post(&param_sem);
+	sem_post(&param_sem);
 }
 
 /** assert that the parameter store is locked */
@@ -222,9 +223,9 @@ param_assert_locked()
 void
 param_init()
 {
-	px4_sem_init(&param_sem, 0, 1);
-	px4_sem_init(&param_sem_save, 0, 1);
-	px4_sem_init(&reader_lock_holders_lock, 0, 1);
+	sem_init(&param_sem, 0, 1);
+	sem_init(&param_sem_save, 0, 1);
+	sem_init(&reader_lock_holders_lock, 0, 1);
 
 	param_export_perf = perf_alloc(PC_ELAPSED, "param_export");
 	param_find_perf = perf_alloc(PC_ELAPSED, "param_find");
@@ -613,11 +614,11 @@ autosave_worker(void *arg)
 		return;
 	}
 
-	PX4_DEBUG("Autosaving params");
+	//PX4_DEBUG("Autosaving params");
 	int ret = param_save_default();
 
 	if (ret != 0) {
-		PX4_ERR("param auto save failed (%i)", ret);
+		//PX4_ERR("param auto save failed (%i)", ret);
 	}
 }
 
@@ -679,7 +680,7 @@ param_set_internal(param_t param, const void *val, bool mark_saved, bool notify_
 	}
 
 	if (param_values == nullptr) {
-		PX4_ERR("failed to allocate modified values array");
+		//PX4_ERR("failed to allocate modified values array");
 		goto out;
 	}
 
@@ -811,6 +812,7 @@ static int param_reset_internal(param_t param, bool notify = true)
 
 		/* if we found one, erase it */
 		if (s != nullptr) {
+			TODO: Solve 
 			int pos = utarray_eltidx(param_values, s);
 			utarray_erase(param_values, pos, 1);
 		}
@@ -960,16 +962,17 @@ int param_save_default()
 	int shutdown_lock_ret = px4_shutdown_lock();
 
 	if (shutdown_lock_ret) {
-		PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
+		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
 	}
 
 	/* write parameters to temp file */
 	int fd = PARAM_OPEN(filename, O_WRONLY | O_CREAT, PX4_O_MODE_666);
 
 	if (fd < 0) {
-		PX4_ERR("failed to open param file: %s", filename);
+		//PX4_ERR("failed to open param file: %s", filename);
 
 		if (shutdown_lock_ret == 0) {
+			TODO: Solve
 			px4_shutdown_unlock();
 		}
 
@@ -983,18 +986,19 @@ int param_save_default()
 		attempts--;
 
 		if (res != PX4_OK) {
-			PX4_ERR("param_export failed, retrying %d", attempts);
+			//PX4_ERR("param_export failed, retrying %d", attempts);
 			lseek(fd, 0, SEEK_SET); // jump back to the beginning of the file
 		}
 	}
 
 	if (res != OK) {
-		PX4_ERR("failed to write parameters to file: %s", filename);
+		//PX4_ERR("failed to write parameters to file: %s", filename);
 	}
 
 	PARAM_CLOSE(fd);
 
 	if (shutdown_lock_ret == 0) {
+		TODO: Solve
 		px4_shutdown_unlock();
 	}
 
@@ -1019,7 +1023,7 @@ param_load_default()
 	if (fd_load < 0) {
 		/* no parameter file is OK, otherwise this is an error */
 		if (errno != ENOENT) {
-			PX4_ERR("open '%s' for reading failed", filename);
+			//PX4_ERR("open '%s' for reading failed", filename);
 			return -1;
 		}
 
@@ -1030,7 +1034,7 @@ param_load_default()
 	PARAM_CLOSE(fd_load);
 
 	if (result != 0) {
-		PX4_ERR("error reading parameters from '%s'", filename);
+		//PX4_ERR("error reading parameters from '%s'", filename);
 		return -2;
 	}
 
@@ -1058,7 +1062,7 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 	int shutdown_lock_ret = px4_shutdown_lock();
 
 	if (shutdown_lock_ret) {
-		PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
+		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
 	}
 
 	// take the file lock
@@ -1098,10 +1102,10 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 
 		case PARAM_TYPE_INT32: {
 				const int32_t i = s->val.i;
-				PX4_DEBUG("exporting: %s (%d) size: %lu val: %d", name, s->param, (long unsigned int)size, i);
+				//PX4_DEBUG("exporting: %s (%d) size: %lu val: %d", name, s->param, (long unsigned int)size, i);
 
 				if (bson_encoder_append_int(&encoder, name, i)) {
-					PX4_ERR("BSON append failed for '%s'", name);
+					//PX4_ERR("BSON append failed for '%s'", name);
 					goto out;
 				}
 			}
@@ -1109,17 +1113,17 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 
 		case PARAM_TYPE_FLOAT: {
 				const double f = (double)s->val.f;
-				PX4_DEBUG("exporting: %s (%d) size: %lu val: %.3f", name, s->param, (long unsigned int)size, (double)f);
+				//PX4_DEBUG("exporting: %s (%d) size: %lu val: %.3f", name, s->param, (long unsigned int)size, (double)f);
 
 				if (bson_encoder_append_double(&encoder, name, f)) {
-					PX4_ERR("BSON append failed for '%s'", name);
+					//PX4_ERR("BSON append failed for '%s'", name);
 					goto out;
 				}
 			}
 			break;
 
 		default:
-			PX4_ERR("unrecognized parameter type");
+			//PX4_ERR("unrecognized parameter type");
 			goto out;
 		}
 	}
@@ -1130,15 +1134,16 @@ out:
 
 	if (result == 0) {
 		if (bson_encoder_fini(&encoder) != PX4_OK) {
-			PX4_ERR("bson encoder finish failed");
+			//PX4_ERR("bson encoder finish failed");
 		}
 	}
 
 	param_unlock_reader();
 
-	px4_sem_post(&param_sem_save);
+	sem_post(&param_sem_save);
 
 	if (shutdown_lock_ret == 0) {
+		TODO: Solve
 		px4_shutdown_unlock();
 	}
 
@@ -1166,7 +1171,7 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 	 * nested BSON objects).
 	 */
 	if (node->type == BSON_EOO) {
-		PX4_DEBUG("end of parameters");
+		//PX4_DEBUG("end of parameters");
 		return 0;
 	}
 
@@ -1179,7 +1184,7 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 	param_t param = param_find_no_notification(node->name);
 
 	if (param == PARAM_INVALID) {
-		PX4_ERR("ignoring unrecognised parameter '%s'", node->name);
+		//PX4_ERR("ignoring unrecognised parameter '%s'", node->name);
 		return 1;
 	}
 
@@ -1190,7 +1195,7 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 	switch (node->type) {
 	case BSON_INT32: {
 			if (param_type(param) != PARAM_TYPE_INT32) {
-				PX4_WARN("unexpected type for %s", node->name);
+				//PX4_WARN("unexpected type for %s", node->name);
 				result = 1; // just skip this entry
 				goto out;
 			}
@@ -1198,13 +1203,13 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 			i = node->i;
 			v = &i;
 
-			PX4_DEBUG("Imported %s with value %d", param_name(param), i);
+			//PX4_DEBUG("Imported %s with value %d", param_name(param), i);
 		}
 		break;
 
 	case BSON_DOUBLE: {
 			if (param_type(param) != PARAM_TYPE_FLOAT) {
-				PX4_WARN("unexpected type for %s", node->name);
+				//PX4_WARN("unexpected type for %s", node->name);
 				result = 1; // just skip this entry
 				goto out;
 			}
@@ -1212,19 +1217,19 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 			f = node->d;
 			v = &f;
 
-			PX4_DEBUG("Imported %s with value %f", param_name(param), (double)f);
+			//PX4_DEBUG("Imported %s with value %f", param_name(param), (double)f);
 		}
 		break;
 
 	case BSON_BINDATA: {
 			if (node->subtype != BSON_BIN_BINARY) {
-				PX4_WARN("unexpected subtype for %s", node->name);
+				//PX4_WARN("unexpected subtype for %s", node->name);
 				result = 1; // just skip this entry
 				goto out;
 			}
 
 			if (bson_decoder_data_pending(decoder) != param_size(param)) {
-				PX4_WARN("bad size for '%s'", node->name);
+				//PX4_WARN("bad size for '%s'", node->name);
 				result = 1; // just skip this entry
 				goto out;
 			}
@@ -1240,12 +1245,12 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 			}
 
 			if (tmp == nullptr) {
-				PX4_ERR("failed allocating for '%s'", node->name);
+				//PX4_ERR("failed allocating for '%s'", node->name);
 				goto out;
 			}
 
 			if (bson_decoder_copy_data(decoder, tmp)) {
-				PX4_ERR("failed copying data for '%s'", node->name);
+				//PX4_ERR("failed copying data for '%s'", node->name);
 				goto out;
 			}
 
@@ -1254,12 +1259,12 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 		break;
 
 	default:
-		PX4_DEBUG("unrecognised node type");
+		//PX4_DEBUG("unrecognised node type");
 		goto out;
 	}
 
 	if (param_set_internal(param, v, state->mark_saved, true)) {
-		PX4_DEBUG("error setting value for '%s'", node->name);
+		//PX4_DEBUG("error setting value for '%s'", node->name);
 		goto out;
 	}
 
@@ -1288,7 +1293,7 @@ param_import_internal(int fd, bool mark_saved)
 	int result = -1;
 
 	if (bson_decoder_init_file(&decoder, fd, param_import_callback, &state)) {
-		PX4_ERR("decoder init failed");
+		//PX4_ERR("decoder init failed");
 		return PX4_ERROR;
 	}
 
@@ -1368,26 +1373,26 @@ uint32_t param_hash_check()
 
 void param_print_status()
 {
-	PX4_INFO("summary: %d/%d (used/total)", param_count_used(), param_count());
+	//PX4_INFO("summary: %d/%d (used/total)", param_count_used(), param_count());
 
 #ifndef FLASH_BASED_PARAMS
 	const char *filename = param_get_default_file();
 
 	if (filename != nullptr) {
-		PX4_INFO("file: %s", param_get_default_file());
+		//PX4_INFO("file: %s", param_get_default_file());
 	}
 
 #endif /* FLASH_BASED_PARAMS */
 
 	if (param_values != nullptr) {
-		PX4_INFO("storage array: %d/%d elements (%zu bytes total)",
+		//PX4_INFO("storage array: %d/%d elements (%zu bytes total)",
 			 utarray_len(param_values), param_values->n, param_values->n * sizeof(UT_icd));
 	}
 
-	PX4_INFO("auto save: %s", autosave_disabled ? "off" : "on");
+	//PX4_INFO("auto save: %s", autosave_disabled ? "off" : "on");
 
 	if (!autosave_disabled && (last_autosave_timestamp > 0)) {
-		PX4_INFO("last auto save: %.3f seconds ago", hrt_elapsed_time(&last_autosave_timestamp) * 1e-6);
+		//PX4_INFO("last auto save: %.3f seconds ago", hrt_elapsed_time(&last_autosave_timestamp) * 1e-6);
 	}
 
 	perf_print_counter(param_export_perf);
