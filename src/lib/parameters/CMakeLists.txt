@@ -178,4 +178,5 @@ if(${PLATFORM} STREQUAL "nuttx")
  	target_link_libraries(parameters PRIVATE tinybson)
 endif()
 
-#add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
+add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
+

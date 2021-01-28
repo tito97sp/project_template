@@ -62,6 +62,7 @@ if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/cmake/init.cmake")
 	include(init)
 endif()
 
+
 # CMake build type (Debug Release RelWithDebInfo MinSizeRel Coverage)
 if(NOT CMAKE_BUILD_TYPE)
 	if(${PLATFORM} STREQUAL "nuttx")
@@ -157,6 +158,43 @@ if(EXISTS ${BOARD_DIR}/cmake/init.cmake)
 	include(${BOARD_DIR}/cmake/init.cmake)
 endif()
 
+
+#=============================================================================
+# Testing - Automatic unit and integration testing with CTest
+#
+
+# optionally enable cmake testing (supported only on posix)
+option(CMAKE_TESTING "Configure test targets" OFF)
+if(${CONFIG} STREQUAL "px4_sitl_test")
+	set(CMAKE_TESTING ON)
+endif()
+if(CMAKE_TESTING)
+	include(CTest) # sets BUILD_TESTING variable
+endif()
+
+# enable test filtering to run only specific tests with the ctest -R regex functionality
+set(TESTFILTER "" CACHE STRING "Filter string for ctest to selectively only run specific tests (ctest -R)")
+
+# if testing is enabled download and configure gtest
+list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/cmake/gtest/)
+include(add_gtest)
+if(BUILD_TESTING)
+	include(gtest)
+
+	add_custom_target(test_results
+			COMMAND GTEST_COLOR=1 ${CMAKE_CTEST_COMMAND} --output-on-failure -T Test -R ${TESTFILTER} USES_TERMINAL
+			DEPENDS
+				#px4
+				#examples__dyn_hello
+				#test_mixer_multirotor
+			USES_TERMINAL
+			COMMENT "Running tests"
+			WORKING_DIRECTORY ${BINARY_DIR})
+	set_target_properties(test_results PROPERTIES EXCLUDE_FROM_ALL TRUE)
+endif()
+
+
+
 #=============================================================================
 # subdirectories
 #
@@ -213,9 +251,4 @@ add_custom_target(uorb_graph DEPENDS ${uorb_graph_config})
 #
 include(doxygen/doxygen)
 
-#=============================================================================
-# testing
-#
-enable_testing()
-#include(gtest/gtest)
-#add_subdirectory(test)
+

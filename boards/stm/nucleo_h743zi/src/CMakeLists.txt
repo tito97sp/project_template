@@ -51,7 +51,7 @@ else()
 
 		stm32_autoleds.c
 		#stm32_buttons.c
-		#stm32_gpio.c
+		stm32_gpio.c
 		#stm32_usb.c
 		#stm32_userleds.c
 		#stm32_adc.c
@@ -61,8 +61,9 @@ else()
 		#stm32_nrf24l01.c
 		#stm32_pca9635.c
 		#stm32_pwm.c
+		stm32_mmcsd.c
 		stm32_romfs_initialize.c
-		#stm32_spi.c
+		stm32_spi.c
 		#stm32_ssd1306.c
 		#stm32_uid.c
 		)
@@ -76,7 +77,7 @@ else()
 	# 		drivers__led # drv_led_start
 	 		nuttx_arch # sdio
 	 		nuttx_drivers # sdio
-	# 		px4_layer
+	 		os_layer
      )
     
 endif()

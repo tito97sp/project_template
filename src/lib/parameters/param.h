@@ -400,14 +400,14 @@ __EXPORT uint32_t	param_hash_check(void);
  * Print the status of the param system
  *
  */
-__EXPORT void	param_print_status(void);
+__EXPORT void		param_print_status(void);
 
 /**
  * Enable/disable the param autosaving.
  * Re-enabling with changed params will not cause an autosave.
  * @param enable true: enable autosaving, false: disable autosaving
  */
-__EXPORT void	param_control_autosave(bool enable);
+__EXPORT void		param_control_autosave(bool enable);
 
 /**
  * Parameter value union.

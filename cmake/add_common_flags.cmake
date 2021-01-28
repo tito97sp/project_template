@@ -70,6 +70,7 @@ function(add_common_flags)
 		-Wextra
 		-Werror
 
+
 		-Warray-bounds
 		-Wcast-align
 		-Wdisabled-optimization
@@ -89,7 +90,6 @@ function(add_common_flags)
 		-Wno-missing-field-initializers
 		-Wno-missing-include-dirs # TODO: fix and enable
 		-Wno-unused-parameter
-
 		)
 
 	# compiler specific flags

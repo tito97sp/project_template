@@ -90,7 +90,7 @@ set(msg_files
 	# onboard_computer_status.msg
 	# optical_flow.msg
 	# orbit_status.msg
-	# parameter_update.msg
+	parameter_update.msg
 	# ping.msg
 	# position_controller_landing_status.msg
 	# position_controller_status.msg

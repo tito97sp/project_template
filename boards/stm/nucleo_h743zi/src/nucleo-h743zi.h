@@ -134,6 +134,12 @@
 
 #define GPIO_BTN_USER  (GPIO_INPUT | GPIO_FLOAT | GPIO_EXTI | GPIO_PORTC | GPIO_PIN13)
 
+
+/* SPI chip selects */
+#define GPIO_SDCARD_CS   (GPIO_OUTPUT|GPIO_PULLUP|GPIO_OUTPUT_SET|GPIO_SPEED_50MHz|GPIO_PORTD|GPIO_PIN14)
+
+
+
 /* USB OTG FS
  *
  * PA9  OTG_FS_VBUS VBUS sensing (also connected to the green LED)
@@ -192,6 +198,9 @@
                             GPIO_OUTPUT_CLEAR | GPIO_PORTF | GPIO_PIN12)
 #define GPIO_NRF24L01_IRQ  (GPIO_INPUT | GPIO_FLOAT | GPIO_PORTD | GPIO_PIN15)
 
+
+
+
 /* LMS9DS1 configuration */
 
 #define LMS9DS1_I2CBUS 1
@@ -241,6 +250,21 @@ int stm32_bringup(void);
 #ifdef CONFIG_STM32H7_SPI
 void stm32_spidev_initialize(void);
 #endif
+
+
+
+/****************************************************************************
+ * Name: stm32_mmcsd_initialize
+ *
+ * Description:
+ *   Initializes SPI-based SD card
+ *
+ ****************************************************************************/
+
+#ifdef CONFIG_MMCSD
+int stm32_mmcsd_initialize(int minor);
+#endif
+
 
 /****************************************************************************
  * Name: stm32_adc_setup
@@ -361,5 +385,7 @@ int stm32_pca9635_initialize(void);
 #ifdef CONFIG_PWM
 int stm32_pwm_setup(void);
 #endif
+
+
 
 #endif /* __BOARDS_ARM_STM32H7_NUCLEO_H743ZI_SRC_NUCLEO_H743ZI_H */

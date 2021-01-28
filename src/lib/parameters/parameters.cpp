@@ -56,8 +56,8 @@
 //#include <px4_platform_common/px4_config.h>
 //#include <px4_platform_common/defines.h>
 //#include <px4_platform_common/posix.h>
-//#include <px4_platform_common/sem.h>
-#include <px4_platform_common/shutdown.h>
+#include <semaphore.h>
+#include <platform_common/shutdown.h>
 #include <systemlib/uthash/utarray.h>
 
 using namespace time_literals;
@@ -88,7 +88,7 @@ static char *param_user_file = nullptr;
 #define PARAM_CLOSE	close
 #endif
 
-#include <px4_platform_common/workqueue.h>
+#include <nuttx/wqueue.h>
 /* autosaving variables */
 static hrt_abstime last_autosave_timestamp = 0;
 static struct work_s autosave_work {};
@@ -596,12 +596,12 @@ autosave_worker(void *arg)
 	if (!param_get_default_file()) {
 		// In case we save to FLASH, defer param writes until disarmed,
 		// as writing to FLASH can stall the entire CPU (in rare cases around 300ms on STM32F7)
-		uORB::SubscriptionData<actuator_armed_s> armed_sub{ORB_ID(actuator_armed)};
+		//uORB::SubscriptionData<actuator_armed_s> armed_sub{ORB_ID(actuator_armed)};
 
-		if (armed_sub.get().armed) {
-			work_queue(LPWORK, &autosave_work, (worker_t)&autosave_worker, nullptr, USEC2TICK(1_s));
-			return;
-		}
+		// if (armed_sub.get().armed) {
+		// 	work_queue(LPWORK, &autosave_work, (worker_t)&autosave_worker, nullptr, USEC2TICK(1_s));
+		// 	return;
+		// }
 	}
 
 	param_lock_writer();
@@ -812,7 +812,7 @@ static int param_reset_internal(param_t param, bool notify = true)
 
 		/* if we found one, erase it */
 		if (s != nullptr) {
-			TODO: Solve 
+			//TODO: Solve 
 			int pos = utarray_eltidx(param_values, s);
 			utarray_erase(param_values, pos, 1);
 		}
@@ -946,7 +946,7 @@ param_get_default_file()
 
 int param_save_default()
 {
-	int res = PX4_ERROR;
+	int res = -1;
 
 	const char *filename = param_get_default_file();
 
@@ -959,47 +959,47 @@ int param_save_default()
 		return res;
 	}
 
-	int shutdown_lock_ret = px4_shutdown_lock();
+	int shutdown_lock_ret = shutdown_lock();
 
 	if (shutdown_lock_ret) {
 		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
 	}
 
 	/* write parameters to temp file */
-	int fd = PARAM_OPEN(filename, O_WRONLY | O_CREAT, PX4_O_MODE_666);
+	int fd = PARAM_OPEN(filename, O_WRONLY | O_CREAT, 0666);
 
 	if (fd < 0) {
 		//PX4_ERR("failed to open param file: %s", filename);
 
 		if (shutdown_lock_ret == 0) {
-			TODO: Solve
-			px4_shutdown_unlock();
+			//TODO: Solve
+			shutdown_unlock();
 		}
 
-		return PX4_ERROR;
+		return 0;
 	}
 
 	int attempts = 5;
 
-	while (res != OK && attempts > 0) {
+	while (res != 0 && attempts > 0) {
 		res = param_export(fd, false, nullptr);
 		attempts--;
 
-		if (res != PX4_OK) {
+		if (res != 0) {
 			//PX4_ERR("param_export failed, retrying %d", attempts);
 			lseek(fd, 0, SEEK_SET); // jump back to the beginning of the file
 		}
 	}
 
-	if (res != OK) {
+	if (res != 0) {
 		//PX4_ERR("failed to write parameters to file: %s", filename);
 	}
 
 	PARAM_CLOSE(fd);
 
 	if (shutdown_lock_ret == 0) {
-		TODO: Solve
-		px4_shutdown_unlock();
+		//TODO: Solve
+		shutdown_unlock();
 	}
 
 	return res;
@@ -1059,14 +1059,14 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 	param_wbuf_s *s = nullptr;
 	struct bson_encoder_s encoder;
 
-	int shutdown_lock_ret = px4_shutdown_lock();
+	int shutdown_lock_ret = shutdown_lock();
 
 	if (shutdown_lock_ret) {
 		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
 	}
 
 	// take the file lock
-	do {} while (px4_sem_wait(&param_sem_save) != 0);
+	do {} while (sem_wait(&param_sem_save) != 0);
 
 	param_lock_reader();
 
@@ -1095,7 +1095,7 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 		s->unsaved = false;
 
 		const char *name = param_name(s->param);
-		const size_t size = param_size(s->param);
+		//const size_t size = param_size(s->param);
 
 		/* append the appropriate BSON type object */
 		switch (param_type(s->param)) {
@@ -1133,7 +1133,7 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 out:
 
 	if (result == 0) {
-		if (bson_encoder_fini(&encoder) != PX4_OK) {
+		if (bson_encoder_fini(&encoder) != 0) {
 			//PX4_ERR("bson encoder finish failed");
 		}
 	}
@@ -1143,8 +1143,8 @@ out:
 	sem_post(&param_sem_save);
 
 	if (shutdown_lock_ret == 0) {
-		TODO: Solve
-		px4_shutdown_unlock();
+		//TODO: Solve
+		shutdown_unlock();
 	}
 
 	perf_end(param_export_perf);
@@ -1294,7 +1294,7 @@ param_import_internal(int fd, bool mark_saved)
 
 	if (bson_decoder_init_file(&decoder, fd, param_import_callback, &state)) {
 		//PX4_ERR("decoder init failed");
-		return PX4_ERROR;
+		return -1;
 	}
 
 	state.mark_saved = mark_saved;
@@ -1386,7 +1386,7 @@ void param_print_status()
 
 	if (param_values != nullptr) {
 		//PX4_INFO("storage array: %d/%d elements (%zu bytes total)",
-			 utarray_len(param_values), param_values->n, param_values->n * sizeof(UT_icd));
+			 //utarray_len(param_values), param_values->n, param_values->n * sizeof(UT_icd));
 	}
 
 	//PX4_INFO("auto save: %s", autosave_disabled ? "off" : "on");

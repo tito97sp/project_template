@@ -132,6 +132,22 @@ static void stm32_i2ctool(void)
 #endif
 
 /****************************************************************************
+ * Name: stm32_mmcsd
+ *
+ * Description:
+ *   Config mmc/sd card
+ *
+ ****************************************************************************/
+
+#ifdef CONFIG_NSH_MMCSDMINOR
+#  define MMCSD_MINOR CONFIG_NSH_MMCSDMINOR
+#else
+#  define MMCSD_MINOR 0
+#endif
+
+
+
+/****************************************************************************
  * Public Functions
  ****************************************************************************/
 
@@ -149,6 +165,9 @@ static void stm32_i2ctool(void)
  *     Called from the NSH library
  *
  ****************************************************************************/
+
+
+
 
 int stm32_bringup(void)
 {
@@ -217,6 +236,15 @@ int stm32_bringup(void)
                  "ERROR: Failed to bind/register the RTC driver: %d\n", ret);
           return ret;
         }
+    }
+#endif
+
+#ifdef CONFIG_MMCSD
+  ret = stm32_mmcsd_initialize(MMCSD_MINOR);
+  if (ret < 0)
+    {
+      syslog(LOG_ERR, "Failed to initialize SD slot: %d\n", ret);
+      return ret;
     }
 #endif
 
