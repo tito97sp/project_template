@@ -959,11 +959,11 @@ int param_save_default()
 		return res;
 	}
 
-	int shutdown_lock_ret = shutdown_lock();
+	//int shutdown_lock_ret = shutdown_lock();
 
-	if (shutdown_lock_ret) {
+	//if (shutdown_lock_ret) {
 		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
-	}
+	//}
 
 	/* write parameters to temp file */
 	int fd = PARAM_OPEN(filename, O_WRONLY | O_CREAT, 0666);
@@ -971,10 +971,10 @@ int param_save_default()
 	if (fd < 0) {
 		//PX4_ERR("failed to open param file: %s", filename);
 
-		if (shutdown_lock_ret == 0) {
+		//if (shutdown_lock_ret == 0) {
 			//TODO: Solve
-			shutdown_unlock();
-		}
+			//shutdown_unlock();
+		//}
 
 		return 0;
 	}
@@ -997,10 +997,10 @@ int param_save_default()
 
 	PARAM_CLOSE(fd);
 
-	if (shutdown_lock_ret == 0) {
+	//if (shutdown_lock_ret == 0) {
 		//TODO: Solve
-		shutdown_unlock();
-	}
+		//shutdown_unlock();
+	//}
 
 	return res;
 }
@@ -1059,11 +1059,11 @@ param_export(int fd, bool only_unsaved, param_filter_func filter)
 	param_wbuf_s *s = nullptr;
 	struct bson_encoder_s encoder;
 
-	int shutdown_lock_ret = shutdown_lock();
+	//int shutdown_lock_ret = shutdown_lock();
 
-	if (shutdown_lock_ret) {
+	//if (shutdown_lock_ret) {
 		//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
-	}
+	//}
 
 	// take the file lock
 	do {} while (sem_wait(&param_sem_save) != 0);
@@ -1142,10 +1142,10 @@ out:
 
 	sem_post(&param_sem_save);
 
-	if (shutdown_lock_ret == 0) {
+	//if (shutdown_lock_ret == 0) {
 		//TODO: Solve
-		shutdown_unlock();
-	}
+	//	shutdown_unlock();
+	//}
 
 	perf_end(param_export_perf);
 

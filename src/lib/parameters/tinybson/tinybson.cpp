@@ -41,12 +41,14 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+
+
 //#include <systemlib/err.h>
 
 #include "tinybson.h"
 
 #if 0
-# define debug(fmt, args...)		do { PX4_INFO("BSON: " fmt, ##args); } while(0)
+//# define debug(fmt, args...)		do { PX4_INFO("BSON: " fmt, ##args); } while(0)
 #else
 # define debug(fmt, args...)		do { } while(0)
 #endif
@@ -505,7 +507,7 @@ bson_encoder_fini(bson_encoder_t encoder)
 
 	/* sync file */
 	if (encoder->fd > -1) {
-		BSON_FSYNC(encoder->fd);
+		//BSON_FSYNC(encoder->fd);
 	}
 
 	return 0;

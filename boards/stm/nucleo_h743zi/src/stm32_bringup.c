@@ -239,15 +239,6 @@ int stm32_bringup(void)
     }
 #endif
 
-#ifdef CONFIG_MMCSD
-  ret = stm32_mmcsd_initialize(MMCSD_MINOR);
-  if (ret < 0)
-    {
-      syslog(LOG_ERR, "Failed to initialize SD slot: %d\n", ret);
-      return ret;
-    }
-#endif
-
 #ifdef CONFIG_BUTTONS
   /* Register the BUTTON driver */
 
@@ -302,6 +293,15 @@ int stm32_bringup(void)
   if (ret < 0)
     {
       syslog(LOG_ERR, "Failed to initialize GPIO Driver: %d\n", ret);
+      return ret;
+    }
+#endif
+
+#ifdef CONFIG_MMCSD
+  ret = stm32_mmcsd_initialize(MMCSD_MINOR);
+  if (ret < 0)
+    {
+      syslog(LOG_ERR, "Failed to initialize SD slot: %d\n", ret);
       return ret;
     }
 #endif

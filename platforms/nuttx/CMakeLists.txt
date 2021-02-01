@@ -112,11 +112,11 @@ if (config_romfs_root)
 	target_link_libraries(${project_name} PRIVATE romfs)
 endif()
 
-message(STATUS "Binary_dir_rel ${BINARY_DIR_REL}")
-
 add_custom_command(
 	OUTPUT ${BINARY_DIR}/${BOARD}.bin
+	COMMAND ${CMAKE_COMMAND} -E make_directory ${BINARY_DIR_REL}/debug
 	COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_CURRENT_BINARY_DIR}/${FW_NAME} ${BINARY_DIR_REL}/${BOARD}.bin
+	COMMAND ${CMAKE_OBJCOPY} ${CMAKE_CURRENT_BINARY_DIR}/${FW_NAME} ${BINARY_DIR_REL}/${BOARD}_deb
 	DEPENDS ${project_name}
 	)
 

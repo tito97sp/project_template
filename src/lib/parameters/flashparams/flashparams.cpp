@@ -42,9 +42,9 @@
  * foot print device.
  */
 
-#include <px4_platform_common/defines.h>
-#include <px4_platform_common/posix.h>
-#include <px4_platform_common/shutdown.h>
+//#include <px4_platform_common/defines.h>
+//#include <px4_platform_common/posix.h>
+//#include <px4_platform_common/shutdown.h>
 
 #include <string.h>
 #include <stdbool.h>
@@ -154,11 +154,12 @@ out:
 
 		size_t buf_size = bson_encoder_buf_size(&encoder);
 
-		int shutdown_lock_ret = px4_shutdown_lock();
+		//TODO: Implement shutdown functionality.
+		//int shutdown_lock_ret = shutdown_lock();
 
-		if (shutdown_lock_ret) {
-			PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
-		}
+		//if (shutdown_lock_ret) {
+			//PX4_ERR("px4_shutdown_lock() failed (%i)", shutdown_lock_ret);
+		//}
 
 		/* Get a buffer from the flash driver with enough space */
 
@@ -189,9 +190,10 @@ out:
 			parameter_flashfs_free();
 		}
 
-		if (shutdown_lock_ret == 0) {
-			px4_shutdown_unlock();
-		}
+		//TODO: Implement shutdown functionality
+		//if (shutdown_lock_ret == 0) {
+		//	shutdown_unlock();
+		//}
 
 	}
 
@@ -240,7 +242,7 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 	switch (node->type) {
 	case BSON_INT32:
 		if (param_type(param) != PARAM_TYPE_INT32) {
-			PX4_WARN("unexpected type for %s", node->name);
+			//PX4_WARN("unexpected type for %s", node->name);
 			result = 1; // just skip this entry
 			goto out;
 		}
@@ -251,7 +253,7 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 
 	case BSON_DOUBLE:
 		if (param_type(param) != PARAM_TYPE_FLOAT) {
-			PX4_WARN("unexpected type for %s", node->name);
+			//PX4_WARN("unexpected type for %s", node->name);
 			result = 1; // just skip this entry
 			goto out;
 		}
@@ -262,13 +264,13 @@ param_import_callback(bson_decoder_t decoder, void *priv, bson_node_t node)
 
 	case BSON_BINDATA:
 		if (node->subtype != BSON_BIN_BINARY) {
-			PX4_WARN("unexpected type for %s", node->name);
+			//PX4_WARN("unexpected type for %s", node->name);
 			result = 1; // just skip this entry
 			goto out;
 		}
 
 		if (bson_decoder_data_pending(decoder) != param_size(param)) {
-			PX4_WARN("bad size for '%s'", node->name);
+			//PX4_WARN("bad size for '%s'", node->name);
 			result = 1; // just skip this entry
 			goto out;
 		}

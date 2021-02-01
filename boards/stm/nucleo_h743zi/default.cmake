@@ -10,5 +10,6 @@ add_board(
 	MODULES
 		hello_sub
 		hello_pub
-		#template_module
+	SYSTEMCMDS
+	#	param
 	)

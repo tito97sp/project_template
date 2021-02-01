@@ -42,8 +42,8 @@
  * foot print device.
  */
 
-#include <px4_platform_common/defines.h>
-#include <px4_platform_common/posix.h>
+//#include <px4_platform_common/defines.h>
+//#include <px4_platform_common/posix.h>
 #include <crc32.h>
 #include <stddef.h>
 #include <string.h>
@@ -54,7 +54,7 @@
 #include "flashfs.h"
 #include <nuttx/compiler.h>
 #include <nuttx/progmem.h>
-#include <board_config.h>
+//#include <board_config.h>
 
 #if defined(CONFIG_ARCH_HAVE_PROGMEM) || defined(BOARD_USE_EXTERNAL_FLASH)
 

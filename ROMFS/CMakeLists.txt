@@ -229,8 +229,6 @@ add_custom_command(
 	COMMENT "ROMFS: pruning"
 	)
 
-
-
 # Create ROM file sistem image
 if("${CONFIG_FS_CROMFS}" STREQUAL "y")
 	add_custom_command(
@@ -296,6 +294,7 @@ elseif("${CONFIG_FS_ROMFS}" STREQUAL "y")
 	set_target_properties(romfs PROPERTIES LINKER_LANGUAGE C)
 endif()
 
+add_custom_target(create_romfs DEPENDS romfs)
 
 
 # shellcheck

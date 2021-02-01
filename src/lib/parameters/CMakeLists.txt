@@ -144,9 +144,9 @@ else()
  	endif()
 endif()
 
-# if(${PLATFORM} STREQUAL "nuttx")
-# 	#add_subdirectory(flashparams)
-# endif()
+if(${PLATFORM} STREQUAL "nuttx")
+	add_subdirectory(flashparams)
+endif()
 
 # # TODO: find a better way to do this
 if (NOT "${BOARD}" MATCHES "px4_io")
@@ -174,8 +174,7 @@ endif()
 add_dependencies(parameters prebuild_targets)
 
 if(${PLATFORM} STREQUAL "nuttx")
-# 	#target_link_libraries(parameters PRIVATE flashparams tinybson)
- 	target_link_libraries(parameters PRIVATE tinybson)
+	target_link_libraries(parameters PRIVATE flashparams tinybson)
 endif()
 
 add_functional_gtest(SRC ParameterTest.cpp LINKLIBS parameters)
