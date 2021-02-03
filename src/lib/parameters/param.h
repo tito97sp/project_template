@@ -46,11 +46,14 @@
 #define _SYSTEMLIB_PARAM_PARAM_H
 
 #include <stdint.h>
+#include <fcntl.h>
 #include <stdbool.h>
+#include <sys/stat.h>
 #include <sys/types.h>
 
 /** Maximum size of the parameter backing file */
 #define PARAM_FILE_MAXSIZE		4096
+
 
 __BEGIN_DECLS
 
@@ -451,35 +454,39 @@ __END_DECLS
 
 
 
-#if defined(__cplusplus) && !defined(PARAM_IMPLEMENTATION)
-#if 0 // set to 1 to debug param type mismatches
-#include <cstdio>
-#define CHECK_PARAM_TYPE(param, type) \
-	if (param_type(param) != type) { \
-		/* use printf() to avoid having to use more includes */ \
-		printf("wrong type passed to param_get() for param %s\n", param_name(param)); \
-	}
-#else
-#define CHECK_PARAM_TYPE(param, type)
-#endif
+// #if defined(__cplusplus) && !defined(PARAM_IMPLEMENTATION)
+// #if 0 // set to 1 to debug param type mismatches
+// #include <cstdio>
+// #define CHECK_PARAM_TYPE(param, type) 
+// 	if (param_type(param) != type) { 
+// 		/* use printf() to avoid having to use more includes */ 
+// 		printf("wrong type passed to param_get() for param %s\n", param_name(param)); 
+// 	}
+// #else
+// #define CHECK_PARAM_TYPE(param, type)
+// #endif
 
-// param is a C-interface. This means there is no overloading, and thus no type-safety for param_get().
-// So for C++ code we redefine param_get() to inlined overloaded versions, which gives us type-safety
-// w/o having to use a different interface
-static inline int param_get_cplusplus(param_t param, float *val)
-{
-	CHECK_PARAM_TYPE(param, PARAM_TYPE_FLOAT);
-	return param_get(param, (void *)val);
-}
-static inline int param_get_cplusplus(param_t param, int32_t *val)
-{
-	CHECK_PARAM_TYPE(param, PARAM_TYPE_INT32);
-	return param_get(param, (void *)val);
-}
-#undef CHECK_PARAM_TYPE
+// // param is a C-interface. This means there is no overloading, and thus no type-safety for param_get().
+// // So for C++ code we redefine param_get() to inlined overloaded versions, which gives us type-safety
+// // w/o having to use a different interface
+// static inline int param_get_cplusplus(param_t param, float *val)
+// {
+// 	CHECK_PARAM_TYPE(param, PARAM_TYPE_FLOAT);
+// 	return param_get(param, (void *)val);
+// }
+// static inline int param_get_cplusplus(param_t param, int32_t *val)
+// {
+// 	CHECK_PARAM_TYPE(param, PARAM_TYPE_INT32);
+// 	return param_get(param, (void *)val);
+// }
+// #undef CHECK_PARAM_TYPE
 
-#define param_get(param, val) param_get_cplusplus(param, val)
+// #define param_get(param, val) param_get_cplusplus(param, val)
 
-#endif /* __cplusplus */
+// #endif /* __cplusplus */
+
+
+
+
 
 #endif

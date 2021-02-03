@@ -4,7 +4,7 @@
            {
             "name": "Debug (OpenOCD/Nuttx)",
             "cwd": "${workspaceRoot}",
-            "executable": "build/stm_nucleo-h743zi_deb",
+            "executable": "build/stm_nucleo-h743zi",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",

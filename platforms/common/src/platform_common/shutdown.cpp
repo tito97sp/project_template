@@ -52,11 +52,11 @@
 #include <stdint.h>
 #include <errno.h>
 #include <pthread.h>
-#include <workqueue.h>
 
-#ifdef __NUTTX
+//#ifdef __NUTTX
 #include <nuttx/board.h>
-#endif
+#include <nuttx/wqueue.h>
+//#endif
 
 using namespace time_literals;
 

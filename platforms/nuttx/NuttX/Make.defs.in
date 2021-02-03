@@ -125,6 +125,8 @@ CFLAGS = $(ARCHINCLUDES) \
 	-std=gnu11 \
 	${CMAKE_C_FLAGS} \
 	$(FLAGS) \
+	-Wno-format-extra-args \
+	-Wno-format \
 	-Wno-bad-function-cast \
 	-Wno-float-equal \
 	-Wno-implicit-fallthrough \

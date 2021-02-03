@@ -75,7 +75,7 @@ enum class COMPARE_ERROR_LEVEL {
 
 
 #ifdef __QURT
-#define PARAM_PRINT _INFO
+#define PARAM_PRINT PX4_INFO
 #else
 #define PARAM_PRINT printf
 #endif
@@ -181,24 +181,25 @@ static void print_usage()
 int
 param_main(int argc, char *argv[])
 {
-	// if (argc >= 2) {
+	if (argc >= 2) {
 	// 	if (!strcmp(argv[1], "save")) {
 	// 		if (argc >= 3) {
 	// 			return do_save(argv[2]);
+	// 			//return 0;
 
 	// 		} else {
 	// 			int ret = do_save_default();
 
-	// 			if (ret) {
+	// 			//if (ret) {
 	// 				//PX4_ERR("Param save failed (%i)", ret);
-	// 				return 1;
+	// 			//	return 1;
 
-	// 			} else {
+	// 			//} else {
 	// 				return 0;
-	// 			}
+	// 			//}
 	// 		}
 	// 	}
-
+	
 	// 	if (!strcmp(argv[1], "load")) {
 	// 		if (argc >= 3) {
 	// 			return do_load(argv[2]);
@@ -227,37 +228,37 @@ param_main(int argc, char *argv[])
 
 	// 		const char *default_file = param_get_default_file();
 	// 		if (default_file) {
-	// 			//PX4_INFO("selected parameter default file %s", default_file);
+	// 			PX4_INFO("selected parameter default file %s", default_file);
 	// 		}
 	// 		return 0;
 	// 	}
 
-	// 	if (!strcmp(argv[1], "show")) {
-	// 		if (argc >= 3) {
-	// 			// optional argument -c to show only non-default params
-	// 			if (!strcmp(argv[2], "-c")) {
-	// 				if (argc >= 4) {
-	// 					return do_show(argv[3], true);
+	if (!strcmp(argv[1], "show")) {
+			if (argc >= 3) {
+				// optional argument -c to show only non-default params
+				if (!strcmp(argv[2], "-c")) {
+					if (argc >= 4) {
+						//return do_show(argv[3], true);
 
-	// 				} else {
-	// 					return do_show(nullptr, true);
-	// 				}
+					} else {
+						//return do_show(nullptr, true);
+					}
 
-	// 			} else if (!strcmp(argv[2], "-a")) {
-	// 				return do_show_all();
+				} else if (!strcmp(argv[2], "-a")) {
+					return do_show_all();
 
-	// 			} else if (!strcmp(argv[2], "-q")) {
-	// 				if (argc >= 4) {
-	// 					return do_show_quiet(argv[3]);
-	// 				}
-	// 			} else {
-	// 				return do_show(argv[2], false);
-	// 			}
+				} else if (!strcmp(argv[2], "-q")) {
+					//if (argc >= 4) {
+						//return do_show_quiet(argv[3]);
+					//}
+				} else {
+					//return do_show(argv[2], false);
+				}
 
-	// 		} else {
-	// 			return do_show(nullptr, false);
-	// 		}
-	// 	}
+			} else {
+				//return do_show(nullptr, false);
+			}
+		}
 
 	// 	if (!strcmp(argv[1], "show-for-airframe")) {
 	// 		return do_show_for_airframe();
@@ -364,33 +365,34 @@ param_main(int argc, char *argv[])
 	// 			return 1;
 	// 		}
 	// 	}
-	// }
+	}
 
 	// print_usage();
-	return 1;
+	//return 1;
+	return 0;
 }
 
 static int
 do_save(const char *param_file_name)
 {
-// 	/* create the file */
-// 	int fd = open(param_file_name, O_WRONLY | O_CREAT, 0666);
+	/* create the file */
+	int fd = open(param_file_name, O_WRONLY | O_CREAT, 0666);
 
-// 	if (fd < 0) {
-// 		//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
-// 		return 1;
-// 	}
+	if (fd < 0) {
+		//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+		return 1;
+	}
 
-// 	int result = param_export(fd, false, nullptr);
-// 	close(fd);
+	int result = param_export(fd, false, nullptr);
+	close(fd);
 
-// 	if (result < 0) {
-// #ifndef __QURT
-// 		(void)unlink(param_file_name);
-// #endif
-// 		//PX4_ERR("exporting to '%s' failed (%i)", param_file_name, result);
-// 		return 1;
-// 	}
+	if (result < 0) {
+#ifndef __QURT
+		(void)unlink(param_file_name);
+#endif
+		//PX4_ERR("exporting to '%s' failed (%i)", param_file_name, result);
+		return 1;
+	}
 
 	return 0;
 }
@@ -398,29 +400,29 @@ do_save(const char *param_file_name)
 static int
 do_load(const char *param_file_name)
 {
-	// int fd = -1;
-	// if (param_file_name) { // passing NULL means to select the flash storage
-	// 	fd = open(param_file_name, O_RDONLY);
+	int fd = -1;
+	if (param_file_name) { // passing NULL means to select the flash storage
+		fd = open(param_file_name, O_RDONLY);
 
-	// 	if (fd < 0) {
-	// 		//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
-	// 		return 1;
-	// 	}
-	// }
+		if (fd < 0) {
+			//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+			return 1;
+		}
+	}
 
-	// int result = param_load(fd);
-	// if (fd >= 0) {
-	// 	close(fd);
-	// }
+	int result = param_load(fd);
+	if (fd >= 0) {
+		close(fd);
+	}
 
-	// if (result < 0) {
-	// 	if (param_file_name) {
-	// 		//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
-	// 	} else {
-	// 		//PX4_ERR("importing failed (%i)", result);
-	// 	}
-	// 	return 1;
-	// }
+	if (result < 0) {
+		if (param_file_name) {
+			//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
+		} else {
+			//PX4_ERR("importing failed (%i)", result);
+		}
+		return 1;
+	}
 
 	return 0;
 }
@@ -428,35 +430,35 @@ do_load(const char *param_file_name)
 static int
 do_import(const char *param_file_name)
 {
-	// bool mark_saved = false;
-	// if (param_file_name == nullptr) {
-	// 	param_file_name = param_get_default_file();
-	// 	mark_saved = true; // if imported from default storage, mark as saved
-	// }
+	bool mark_saved = false;
+	if (param_file_name == nullptr) {
+		param_file_name = param_get_default_file();
+		mark_saved = true; // if imported from default storage, mark as saved
+	}
 
-	// int fd = -1;
-	// if (param_file_name) { // passing NULL means to select the flash storage
-	// 	fd = open(param_file_name, O_RDONLY);
+	int fd = -1;
+	if (param_file_name) { // passing NULL means to select the flash storage
+		fd = open(param_file_name, O_RDONLY);
 
-	// 	if (fd < 0) {
-	// 		//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
-	// 		return 1;
-	// 	}
-	// }
+		if (fd < 0) {
+			//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+			return 1;
+		}
+	}
 
-	// int result = param_import(fd, mark_saved);
-	// if (fd >= 0) {
-	// 	close(fd);
-	// }
+	int result = param_import(fd, mark_saved);
+	if (fd >= 0) {
+		close(fd);
+	}
 
-	// if (result < 0) {
-	// 	if (param_file_name) {
-	// 		//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
-	// 	} else {
-	// 		//PX4_ERR("importing failed (%i)", result);
-	// 	}
-	// 	return 1;
-	// }
+	if (result < 0) {
+		if (param_file_name) {
+			//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
+		} else {
+			//PX4_ERR("importing failed (%i)", result);
+		}
+		return 1;
+	}
 
 	return 0;
 }
@@ -464,17 +466,16 @@ do_import(const char *param_file_name)
 static int
 do_save_default()
 {
-	//return param_save_default();
-	return 0;
+	return param_save_default();
 }
 
 static int
 do_show(const char *search_string, bool only_changed)
 {
-	// PARAM_PRINT("Symbols: x = used, + = saved, * = unsaved\n");
-	// // also show unused params if we show non-default values only
-	// param_foreach(do_show_print, (char *)search_string, only_changed, !only_changed);
-	// PARAM_PRINT("\n %u/%u parameters used.\n", param_count_used(), param_count());
+	PARAM_PRINT("Symbols: x = used, + = saved, * = unsaved\n");
+	// also show unused params if we show non-default values only
+	param_foreach(do_show_print, (char *)search_string, only_changed, !only_changed);
+	PARAM_PRINT("\n %u/%u parameters used.\n", param_count_used(), param_count());
 
 	return 0;
 }
@@ -482,19 +483,19 @@ do_show(const char *search_string, bool only_changed)
 static int
 do_show_for_airframe()
 {
-	// PARAM_PRINT("if [ $AUTOCNF = yes ]\n");
-	// PARAM_PRINT("then\n");
-	// param_foreach(do_show_print_for_airframe, nullptr, true, true);
-	// PARAM_PRINT("fi\n");
+	PARAM_PRINT("if [ $AUTOCNF = yes ]\n");
+	PARAM_PRINT("then\n");
+	param_foreach(do_show_print_for_airframe, nullptr, true, true);
+	PARAM_PRINT("fi\n");
 	return 0;
 }
 
 static int
 do_show_all()
 {
-	// PARAM_PRINT("Symbols: x = used, + = saved, * = unsaved\n");
-	// param_foreach(do_show_print, nullptr, false, false);
-	// PARAM_PRINT("\n %u parameters total, %u used.\n", param_count(), param_count_used());
+	PARAM_PRINT("Symbols: x = used, + = saved, * = unsaved\n");
+	param_foreach(do_show_print, nullptr, false, false);
+	//PARAM_PRINT("\n %u parameters total, %u used.\n", param_count(), param_count_used());
 
 	return 0;
 }
@@ -502,33 +503,33 @@ do_show_all()
 static int
 do_show_quiet(const char *param_name)
 {
-	// param_t param = param_find_no_notification(param_name);
-	// int32_t ii;
-	// float ff;
-	// // Print only the param value (can be used in scripts)
+	param_t param = param_find_no_notification(param_name);
+	int32_t ii;
+	float ff;
+	// Print only the param value (can be used in scripts)
 
-	// if (param == PARAM_INVALID) {
-	// 	return 1;
-	// }
+	if (param == PARAM_INVALID) {
+		return 1;
+	}
 
-	// switch (param_type(param)) {
-	// case PARAM_TYPE_INT32:
-	// 	if (!param_get(param, &ii)) {
-	// 		PARAM_PRINT("%ld", (long)ii);
-	// 	}
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &ii)) {
+			PARAM_PRINT("%ld", (long)ii);
+		}
 
-	// 	break;
+		break;
 
-	// case PARAM_TYPE_FLOAT:
-	// 	if (!param_get(param, &ff)) {
-	// 		PARAM_PRINT("%4.4f", (double)ff);
-	// 	}
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &ff)) {
+			PARAM_PRINT("%4.4f", (double)ff);
+		}
 
-	// 	break;
+		break;
 
-	// default:
-	// 	return 1;
-	// }
+	default:
+		return 1;
+	}
 
 	return 0;
 }
@@ -536,60 +537,60 @@ do_show_quiet(const char *param_name)
 static int
 do_find(const char *name)
 {
-	// param_t ret = param_find_no_notification(name);
+	param_t ret = param_find_no_notification(name);
 
-	// if (ret == PARAM_INVALID) {
-	// 	//PX4_ERR("Parameter %s not found", name);
-	// 	return 1;
-	// }
+	if (ret == PARAM_INVALID) {
+		//PX4_ERR("Parameter %s not found", name);
+		return 1;
+	}
 
-	// PARAM_PRINT("Found param %s at index %i\n", name, (int)ret);
+	PARAM_PRINT("Found param %s at index %i\n", name, (int)ret);
 	return 0;
 }
 
 static int
 do_show_index(const char *index, bool used_index)
 {
-	// char *end;
-	// int i = strtol(index, &end, 10);
-	// param_t param;
-	// int32_t ii;
-	// float ff;
+	char *end;
+	int i = strtol(index, &end, 10);
+	param_t param;
+	int32_t ii;
+	float ff;
 
-	// if (used_index) {
-	// 	param = param_for_used_index(i);
+	if (used_index) {
+		param = param_for_used_index(i);
 
-	// } else {
-	// 	param = param_for_index(i);
-	// }
+	} else {
+		param = param_for_index(i);
+	}
 
-	// if (param == PARAM_INVALID) {
-	// 	//PX4_ERR("param not found for index %u", i);
-	// 	return 1;
-	// }
+	if (param == PARAM_INVALID) {
+		//PX4_ERR("param not found for index %u", i);
+		return 1;
+	}
 
-	// PARAM_PRINT("index %d: %c %c %s [%d,%d] : ", i, (param_used(param) ? 'x' : ' '),
-	// 	    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-	// 	    param_name(param), param_get_used_index(param), param_get_index(param));
+	PARAM_PRINT("index %d: %c %c %s [%d,%d] : ", i, (param_used(param) ? 'x' : ' '),
+		    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+		    param_name(param), param_get_used_index(param), param_get_index(param));
 
-	// switch (param_type(param)) {
-	// case PARAM_TYPE_INT32:
-	// 	if (!param_get(param, &ii)) {
-	// 		PARAM_PRINT("%ld\n", (long)ii);
-	// 	}
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &ii)) {
+			PARAM_PRINT("%ld\n", (long)ii);
+		}
 
-	// 	break;
+		break;
 
-	// case PARAM_TYPE_FLOAT:
-	// 	if (!param_get(param, &ff)) {
-	// 		PARAM_PRINT("%4.4f\n", (double)ff);
-	// 	}
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &ff)) {
+			PARAM_PRINT("%4.4f\n", (double)ff);
+		}
 
-	// 	break;
+		break;
 
-	// default:
-	// 	PARAM_PRINT("<unknown type %d>\n", 0 + param_type(param));
-	// }
+	default:
+		PARAM_PRINT("<unknown type %d>\n", 0 + param_type(param));
+	}
 
 	return 0;
 }
@@ -597,188 +598,188 @@ do_show_index(const char *index, bool used_index)
 static void
 do_show_print(void *arg, param_t param)
 {
-	// int32_t i;
-	// float f;
-	// const char *search_string = (const char *)arg;
-	// const char *p_name = (const char *)param_name(param);
+	int32_t i;
+	float f;
+	const char *search_string = (const char *)arg;
+	const char *p_name = (const char *)param_name(param);
 
-	// /* print nothing if search string is invalid and not matching */
-	// if (arg != nullptr) {
+	/* print nothing if search string is invalid and not matching */
+	if (arg != nullptr) {
 
-	// 	/* start search */
-	// 	const char *ss = search_string;
-	// 	const char *pp = p_name;
+		/* start search */
+		const char *ss = search_string;
+		const char *pp = p_name;
 
-	// 	/* XXX this comparison is only ok for trailing wildcards */
-	// 	while (*ss != '\0' && *pp != '\0') {
+		/* XXX this comparison is only ok for trailing wildcards */
+		while (*ss != '\0' && *pp != '\0') {
 
-	// 		// case insensitive comparison (param_name is always upper case)
-	// 		if (toupper(*ss) == *pp) {
-	// 			ss++;
-	// 			pp++;
+			// case insensitive comparison (param_name is always upper case)
+			if (toupper(*ss) == *pp) {
+				ss++;
+				pp++;
 
-	// 		} else if (*ss == '*') {
-	// 			if (*(ss + 1) != '\0') {
-	// 				//PX4_WARN("* symbol only allowed at end of search string");
-	// 				// FIXME - should exit
-	// 				return;
-	// 			}
+			} else if (*ss == '*') {
+				if (*(ss + 1) != '\0') {
+					//PX4_WARN("* symbol only allowed at end of search string");
+					// FIXME - should exit
+					return;
+				}
 
-	// 			pp++;
+				pp++;
 
-	// 		} else {
-	// 			/* param not found */
-	// 			return;
-	// 		}
-	// 	}
+			} else {
+				/* param not found */
+				return;
+			}
+		}
 
-	// 	/* the search string must have been consumed */
-	// 	if (!(*ss == '\0' || *ss == '*') || *pp != '\0') {
-	// 		return;
-	// 	}
-	// }
+		/* the search string must have been consumed */
+		if (!(*ss == '\0' || *ss == '*') || *pp != '\0') {
+			return;
+		}
+	}
 
-	// PARAM_PRINT("%c %c %s [%d,%d] : ", (param_used(param) ? 'x' : ' '),
-	// 	    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-	// 	    param_name(param), param_get_used_index(param), param_get_index(param));
+	PARAM_PRINT("%c %c %s [%d,%d] : ", (param_used(param) ? 'x' : ' '),
+		    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+		    param_name(param), param_get_used_index(param), param_get_index(param));
 
-	// /*
-	//  * This case can be expanded to handle printing common structure types.
-	//  */
+	/*
+	 * This case can be expanded to handle printing common structure types.
+	 */
 
-	// switch (param_type(param)) {
-	// case PARAM_TYPE_INT32:
-	// 	if (!param_get(param, &i)) {
-	// 		PARAM_PRINT("%ld\n", (long)i);
-	// 		return;
-	// 	}
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &i)) {
+			PARAM_PRINT("%ld\n", (long)i);
+			return;
+		}
 
-	// 	break;
+		break;
 
-	// case PARAM_TYPE_FLOAT:
-	// 	if (!param_get(param, &f)) {
-	// 		PARAM_PRINT("%4.4f\n", (double)f);
-	// 		return;
-	// 	}
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &f)) {
+			PARAM_PRINT("%4.4f\n", (double)f);
+			return;
+		}
 
-	// 	break;
+		break;
 
-	// default:
-	// 	PARAM_PRINT("<unknown type %d>\n", 0 + param_type(param));
-	// 	return;
-	// }
+	default:
+		PARAM_PRINT("<unknown type %d>\n", 0 + param_type(param));
+		return;
+	}
 
-	// PARAM_PRINT("<error fetching parameter %lu>\n", (unsigned long)param);
+	PARAM_PRINT("<error fetching parameter %lu>\n", (unsigned long)param);
 }
 
 static void
 do_show_print_for_airframe(void *arg, param_t param)
 {
 	// exceptions
-	// const char* p_name = param_name(param);
-	// if (!p_name || param_is_volatile(param)) {
-	// 	return;
-	// }
-	// if (!strcmp(p_name, "SYS_AUTOSTART") || !strcmp(p_name, "SYS_AUTOCONFIG")) {
-	// 	return;
-	// }
-	// if (!strncmp(p_name, "RC", 2) || !strncmp(p_name, "TC_", 3) || !strncmp(p_name, "CAL_", 4) ||
-	// 		!strncmp(p_name, "SENS_BOARD_", 11) || !strcmp(p_name, "SENS_DPRES_OFF") ||
-	// 		 !strcmp(p_name, "MAV_TYPE")) {
-	// 	return;
-	// }
+	const char* p_name = param_name(param);
+	if (!p_name || param_is_volatile(param)) {
+		return;
+	}
+	if (!strcmp(p_name, "SYS_AUTOSTART") || !strcmp(p_name, "SYS_AUTOCONFIG")) {
+		return;
+	}
+	if (!strncmp(p_name, "RC", 2) || !strncmp(p_name, "TC_", 3) || !strncmp(p_name, "CAL_", 4) ||
+			!strncmp(p_name, "SENS_BOARD_", 11) || !strcmp(p_name, "SENS_DPRES_OFF") ||
+			 !strcmp(p_name, "MAV_TYPE")) {
+		return;
+	}
 
-	// int32_t i;
-	// float f;
-	// PARAM_PRINT("\tparam set %s ", p_name);
+	int32_t i;
+	float f;
+	PARAM_PRINT("\tparam set %s ", p_name);
 
-	// switch (param_type(param)) {
-	// case PARAM_TYPE_INT32:
-	// 	if (!param_get(param, &i)) {
-	// 		PARAM_PRINT("%ld\n", (long)i);
-	// 		return;
-	// 	}
-	// 	break;
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &i)) {
+			PARAM_PRINT("%ld\n", (long)i);
+			return;
+		}
+		break;
 
-	// case PARAM_TYPE_FLOAT:
-	// 	if (!param_get(param, &f)) {
-	// 		PARAM_PRINT("%4.4f\n", (double)f);
-	// 		return;
-	// 	}
-	// 	break;
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &f)) {
+			PARAM_PRINT("%4.4f\n", (double)f);
+			return;
+		}
+		break;
 
-	// default:
-	// 	return;
-	// }
+	default:
+		return;
+	}
 
-	// PARAM_PRINT("<error fetching parameter %lu>\n", (unsigned long)param);
+	PARAM_PRINT("<error fetching parameter %lu>\n", (unsigned long)param);
 }
 
 static int
 do_set(const char *name, const char *val, bool fail_on_not_found)
 {
-// 	int32_t i;
-// 	float f;
-// 	param_t param = param_find(name);
+	int32_t i;
+	float f;
+	param_t param = param_find(name);
 
-// 	/* set nothing if parameter cannot be found */
-// 	if (param == PARAM_INVALID) {
-// 		/* param not found - fail silenty in scripts as it prevents booting */
-// 		//PX4_ERR("Parameter %s not found.", name);
-// 		return (fail_on_not_found) ? 1 : 0;
-// 	}
+	/* set nothing if parameter cannot be found */
+	if (param == PARAM_INVALID) {
+		/* param not found - fail silenty in scripts as it prevents booting */
+		//PX4_ERR("Parameter %s not found.", name);
+		return (fail_on_not_found) ? 1 : 0;
+	}
 
-// 	/*
-// 	 * Set parameter if type is known and conversion from string to value turns out fine
-// 	 */
+	/*
+	 * Set parameter if type is known and conversion from string to value turns out fine
+	 */
 
-// 	switch (param_type(param)) {
-// 	case PARAM_TYPE_INT32:
-// 		if (!param_get(param, &i)) {
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &i)) {
 
-// 			/* convert string */
-// 			char *end;
-// 			int32_t newval = strtol(val, &end, 10);
+			/* convert string */
+			char *end;
+			int32_t newval = strtol(val, &end, 10);
 
-// 			if (i != newval) {
-// 				PARAM_PRINT("%c %s: ",
-// 					    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-// 					    param_name(param));
-// 				PARAM_PRINT("curr: %ld", (long)i);
-// 				param_set(param, &newval);
-// 				PARAM_PRINT(" -> new: %ld\n", (long)newval);
-// 			}
-// 		}
+			if (i != newval) {
+				PARAM_PRINT("%c %s: ",
+					    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+					    param_name(param));
+				PARAM_PRINT("curr: %ld", (long)i);
+				param_set(param, &newval);
+				PARAM_PRINT(" -> new: %ld\n", (long)newval);
+			}
+		}
 
-// 		break;
+		break;
 
-// 	case PARAM_TYPE_FLOAT:
-// 		if (!param_get(param, &f)) {
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &f)) {
 
-// 			/* convert string */
-// 			char *end;
-// 			float newval = strtod(val, &end);
-// #pragma GCC diagnostic push
-// #pragma GCC diagnostic ignored "-Wfloat-equal"
+			/* convert string */
+			char *end;
+			float newval = strtod(val, &end);
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wfloat-equal"
 
-// 			if (f != newval) {
-// #pragma GCC diagnostic pop
-// 				PARAM_PRINT("%c %s: ",
-// 					    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-// 					    param_name(param));
-// 				PARAM_PRINT("curr: %4.4f", (double)f);
-// 				param_set(param, &newval);
-// 				PARAM_PRINT(" -> new: %4.4f\n", (double)newval);
-// 			}
+			if (f != newval) {
+#pragma GCC diagnostic pop
+				PARAM_PRINT("%c %s: ",
+					    param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+					    param_name(param));
+				PARAM_PRINT("curr: %4.4f", (double)f);
+				param_set(param, &newval);
+				PARAM_PRINT(" -> new: %4.4f\n", (double)newval);
+			}
 
-// 		}
+		}
 
-// 		break;
+		break;
 
-// 	default:
-// 		//PX4_ERR("<unknown / unsupported type %d>\n", 0 + param_type(param));
-// 		return 1;
-// 	}
+	default:
+		//PX4_ERR("<unknown / unsupported type %d>\n", 0 + param_type(param));
+		return 1;
+	}
 
 	return 0;
 }
@@ -786,91 +787,90 @@ do_set(const char *name, const char *val, bool fail_on_not_found)
 static int
 do_compare(const char *name, char *vals[], unsigned comparisons, enum COMPARE_OPERATOR cmp_op, enum COMPARE_ERROR_LEVEL err_level)
 {
-	// int32_t i;
-	// float f;
-	// param_t param = param_find(name);
+	int32_t i;
+	float f;
+	param_t param = param_find(name);
 
-	// /* set nothing if parameter cannot be found */
-	// if (param == PARAM_INVALID) {
-	// 	/* param not found */
-	// 	if(err_level == COMPARE_ERROR_LEVEL::DO_ERROR)
-	// 	{
-	// 		//PX4_ERR("Parameter %s not found", name);
-	// 	}
-	// 	return 1;
-	// }
+	/* set nothing if parameter cannot be found */
+	if (param == PARAM_INVALID) {
+		/* param not found */
+		if(err_level == COMPARE_ERROR_LEVEL::DO_ERROR)
+		{
+			//PX4_ERR("Parameter %s not found", name);
+		}
+		return 1;
+	}
 
-	// /*
-	//  * Set parameter if type is known and conversion from string to value turns out fine
-	//  */
+	/*
+	 * Set parameter if type is known and conversion from string to value turns out fine
+	 */
 
-	// int ret = 1;
+	int ret = 1;
 
-	// switch (param_type(param)) {
-	// case PARAM_TYPE_INT32:
-	// 	if (!param_get(param, &i)) {
+	switch (param_type(param)) {
+	case PARAM_TYPE_INT32:
+		if (!param_get(param, &i)) {
 
-	// 		/* convert string */
-	// 		char *end;
+			/* convert string */
+			char *end;
 
-	// 		for (unsigned k = 0; k < comparisons; k++) {
+			for (unsigned k = 0; k < comparisons; k++) {
 
-	// 			int j = strtol(vals[k], &end, 10);
+				int j = strtol(vals[k], &end, 10);
 
-	// 			if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (i == j)) ||
-	// 			    ((cmp_op == COMPARE_OPERATOR::GREATER) && (i > j))) {
-	// 				//PX4_DEBUG(" %ld: ", (long)i);
-	// 				ret = 0;
-	// 			}
-	// 		}
-	// 	}
+				if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (i == j)) ||
+				    ((cmp_op == COMPARE_OPERATOR::GREATER) && (i > j))) {
+					//PX4_DEBUG(" %ld: ", (long)i);
+					ret = 0;
+				}
+			}
+		}
 
-	// 	break;
+		break;
 
-	// case PARAM_TYPE_FLOAT:
-	// 	if (!param_get(param, &f)) {
+	case PARAM_TYPE_FLOAT:
+		if (!param_get(param, &f)) {
 
-	// 		/* convert string */
-	// 		char *end;
+			/* convert string */
+			char *end;
 
-	// 		for (unsigned k = 0; k < comparisons; k++) {
+			for (unsigned k = 0; k < comparisons; k++) {
 
-	// 			float g = strtod(vals[k], &end);
+				float g = strtod(vals[k], &end);
 
-	// 			if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (fabsf(f - g) < 1e-7f)) ||
-	// 			    ((cmp_op == COMPARE_OPERATOR::GREATER) && (f > g))) {
-	// 				//PX4_DEBUG(" %4.4f: ", (double)f);
-	// 				ret = 0;
-	// 			}
-	// 		}
-	// 	}
+				if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (fabsf(f - g) < 1e-7f)) ||
+				    ((cmp_op == COMPARE_OPERATOR::GREATER) && (f > g))) {
+					//PX4_DEBUG(" %4.4f: ", (double)f);
+					ret = 0;
+				}
+			}
+		}
 
-	// 	break;
+		break;
 
-	// default:
-	// 	//PX4_ERR("<unknown / unsupported type %d>", 0 + param_type(param));
-	// 	return 1;
-	// }
+	default:
+		//PX4_ERR("<unknown / unsupported type %d>", 0 + param_type(param));
+		return 1;
+	}
 
-	// if (ret == 0) {
-	// 	//PX4_DEBUG("%c %s: match\n",
-	// 	//	  param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-	// 	//	  param_name(param));
-	// }
+	if (ret == 0) {
+		//PX4_DEBUG("%c %s: match\n",
+		//	  param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+		//	  param_name(param));
+	}
 
-	//return ret;
-	return 0;
+	return ret;
 }
 
 static int
 do_reset_all(const char *excludes[], int num_excludes)
 {
-	// if (num_excludes > 0) {
-	// 	param_reset_excludes(excludes, num_excludes);
+	if (num_excludes > 0) {
+		param_reset_excludes(excludes, num_excludes);
 
-	// } else {
-	// 	param_reset_all();
-	// }
+	} else {
+		param_reset_all();
+	}
 
 	return 0;
 }
@@ -878,17 +878,17 @@ do_reset_all(const char *excludes[], int num_excludes)
 static int
 do_reset_specific(const char *resets[], int num_resets)
 {
-	// param_reset_specific(resets, num_resets);
+	param_reset_specific(resets, num_resets);
 	return 0;
 }
 
 static int
 do_touch(const char *params[], int num_params)
 {
-	// for (int i = 0; i < num_params; ++i) {
-	// 	if (param_find(params[i]) == PARAM_INVALID) {
-	// 		//PX4_ERR("param %s not found", params[i]);
-	// 	}
-	// }
+	for (int i = 0; i < num_params; ++i) {
+		if (param_find(params[i]) == PARAM_INVALID) {
+			//PX4_ERR("param %s not found", params[i]);
+		}
+	}
 	return 0;
 }

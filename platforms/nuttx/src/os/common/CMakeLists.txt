@@ -30,14 +30,24 @@
 # POSSIBILITY OF SUCH DAMAGE.
 #
 ############################################################################
-add_module(
-	MODULE systemcmds__param
-	MAIN param
-	COMPILE_FLAGS
-		-Wno-array-bounds
-		-Wno-unused-function
-		-Wno-unused-variable
-	SRCS
-		param.cpp
-	STACK_MAIN 2048
+
+# skip for os_layer support on an IO board
+if(NOT BOARD MATCHES "px4_io")
+
+	add_library(os_layer
+		os_tasks.cpp
+		os_init.cpp
 	)
+	target_link_libraries(os_layer
+		PRIVATE
+			#arch_board_reset
+			#arch_board_critmon
+			#arch_version
+			nuttx_apps
+			nuttx_sched
+			#px4_work_queue
+		)
+else()
+	add_library(os_layer ${SOURCE_DIR}/platforms/common/empty.c)
+endif()
+add_dependencies(os_layer prebuild_targets)

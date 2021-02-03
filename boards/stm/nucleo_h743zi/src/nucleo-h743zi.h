@@ -84,6 +84,14 @@
 #  undef HAVE_USBMONITOR
 #endif
 
+
+/* flash  */
+#if defined(CONFIG_MMCSD)
+#   define FLASH_BASED_PARAMS
+#endif
+
+
+
 /* procfs File System */
 
 #ifdef CONFIG_FS_PROCFS

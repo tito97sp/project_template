@@ -11,5 +11,5 @@ add_board(
 		hello_sub
 		hello_pub
 	SYSTEMCMDS
-	#	param
+		param
 	)

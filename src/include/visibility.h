@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- *   Copyright (C) 2012-2019  Development Team. All rights reserved.
+ *   Copyright (C) 2012-2019 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -12,7 +12,7 @@
  *    notice, this list of conditions and the following disclaimer in
  *    the documentation and/or other materials provided with the
  *    distribution.
- * 3. Neither the name nor the names of its contributors may be
+ * 3. Neither the name PX4 nor the names of its contributors may be
  *    used to endorse or promote products derived from this software
  *    without specific prior written permission.
  *
@@ -68,7 +68,7 @@
  * still needs to be used, thus we remap system_exit to exit.
  */
 #define system_exit exit
-#if !defined(__PX4_NUTTX)
+#if !defined(__NUTTX)
 #include <stdlib.h>
 #ifdef __cplusplus
 #include <cstdlib>
@@ -88,7 +88,7 @@
 /* We can't poison clock_settime/clock_gettime because they are
  * used in DriverFramework. */
 
-#if !defined(__PX4_NUTTX)
+#if !defined(__NUTTX)
 #include <pthread.h>
 // We can't include this for NuttX otherwise we get conflicts for read/write
 // symbols in cannode.
@@ -100,11 +100,11 @@
 
 /* We don't poison usleep and sleep because it is used in dependencies
  * like uavcan and DriverFramework. */
-#if !defined(__PX4_NUTTX)
+#if !defined(__NUTTX)
 #include <unistd.h>
 // We can't include this for NuttX otherwise we get conflicts for read/write
 // symbols in cannode.
-#endif // !defined(__PX4_NUTTX)
+#endif // !defined(__NUTTX)
 #define system_usleep usleep
 #define system_sleep sleep
 
@@ -113,7 +113,7 @@
  * px4_task_spawn_cmd() in px4_nuttx_tasks.c).
  * We need to include the headers declaring getenv() before the pragma,
  * otherwise it will trigger a poison error.  */
-#if defined(__PX4_NUTTX)
+#if defined(__NUTTX)
 #include <stdlib.h>
 #ifdef __cplusplus
 #include <cstdlib>
@@ -122,4 +122,4 @@
  * compile because many C++ files include stdlib.h and would
  * need to get changed. */
 #pragma GCC poison getenv setenv putenv
-#endif // defined(__PX4_NUTTX)
+#endif // defined(__NUTTX)

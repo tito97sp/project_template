@@ -43,6 +43,8 @@
 
 #include "nucleo-h743zi.h"
 
+#include <os_layer/os_init.h>
+
 /****************************************************************************
  * Pre-processor Definitions
  ****************************************************************************/
@@ -88,6 +90,7 @@ int board_app_initialize(uintptr_t arg)
   return OK;
 #else
   /* Perform board-specific initialization */
+  platform_init();
 
   return stm32_bringup();
 #endif
