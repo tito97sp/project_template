@@ -1,2 +1,4 @@
 build/
 build/*
+
+src/lib/parameters/__pycache__
