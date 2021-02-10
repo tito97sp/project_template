@@ -162,7 +162,6 @@ if (NOT "${BOARD}" MATCHES "px4_io")
  	endif()
 
 	target_link_libraries(parameters PRIVATE perf tinybson)
-	#target_link_libraries(parameters PRIVATE perf tinybson)
  	target_compile_definitions(parameters PRIVATE -DMODULE_NAME="parameters")
  	target_compile_options(parameters
  		PRIVATE
@@ -176,7 +175,7 @@ endif()
 add_dependencies(parameters prebuild_targets)
 
 if(${PLATFORM} STREQUAL "nuttx")
-	target_link_libraries(parameters PRIVATE tinybson nuttx_arch)
+	target_link_libraries(parameters PRIVATE tinybson)
 	#target_link_libraries(parameters PRIVATE flashparams tinybson)
 endif()
 
