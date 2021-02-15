@@ -150,10 +150,7 @@ if (TARGET parameters_xml)
 	add_custom_target(gen_package ALL DEPENDS ${fw_package})
 
 	# upload helper
-	# create upload target helper if NuttX USB CDCACM is present
-	if (CONFIG_CDCACM)
 		include(upload)
-	endif()
 
 endif()
 

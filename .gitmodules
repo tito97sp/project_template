@@ -6,3 +6,6 @@
 	path = platforms/nuttx/NuttX/apps
 	url = https://github.com/tito97sp/incubator-nuttx-apps.git
 	branch = tito_firmware_nuttx-1.0.0
+[submodule "Tools/openocd/openocd"]
+	path = Tools/openocd/openocd
+	url = https://repo.or.cz/openocd.git

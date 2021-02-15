@@ -7,7 +7,7 @@
 #include <uORB/Publication.hpp>
 #include <uORB/topics/hello.h>
 
-HelloSub::HelloSub(){}
+HelloSub::HelloSub() : SubscriptionCallback(ORB_ID(hello)){registerCallback();}
 
 int HelloSub::custom_command(int argc, char *argv[])
 {
@@ -90,21 +90,18 @@ HelloSub *HelloSub::instantiate(int argc, char *argv[])
 void HelloSub::run()
 {
 	printf("hello_sub module started\n");
-    //uORB::Subscription _hello_sub{(ORB_ID(hello))};
+    //uORB::SubscriptionCallback _hello_sub{(ORB_ID(hello))};
 
 	for(;;){
-		// if (_hello_sub.updated()) {
-		// 	hello_s hello;
+		//if (_hello_sub.updated()) {
+		//	hello_s hello;
 
-		// 	if (_hello_sub.copy(&hello)) {
-		// 		printf("hello number: %lu \n", hello.hello_number);
-				
-		// 	}
-		// }
-		// else{
-		printf("SUB: update\n");
+		//	if (_hello_sub.copy(&hello)) {
+		//		printf("hello number: %lu \n", hello.hello_number);
+		//	}
 		//}
-		sleep(1);
+		printf("SUB: update\n");
+		//sleep(1);
 	}
 	//int hello_sub_fd = orb_subscribe(ORB_ID(hello));
 
@@ -133,6 +130,22 @@ void HelloSub::run()
 	// 	}
 	// }
 	// orb_unsubscribe(hello_sub_fd);
+}
+
+void HelloSub::call()
+{
+	//if (_hello_sub.updated()) {
+ 	hello_s hello;
+
+		//	if (_hello_sub.copy(&hello)) {
+		//		printf("hello number: %lu \n", hello.hello_number);
+		//	}
+		//}
+		//printf("SUB: update\n");
+	if (copy(&hello))
+	{
+		printf("hello number: %lu \n", hello.hello_number);
+	}
 }
 
 int hello_sub_main(int argc, char *argv[])

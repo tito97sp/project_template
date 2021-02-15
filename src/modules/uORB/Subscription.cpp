@@ -36,7 +36,7 @@
  *
  */
 
-#include 	"Subscription.hpp"
+#include "Subscription.hpp"
 	
 //#include <px4_platform_common/defines.h>
 
@@ -66,11 +66,7 @@ bool Subscription::subscribe()
 				_node = node;
 				_node->add_internal_subscriber();
 
-				const unsigned curr_gen = _node->published_message_count();
-
-				// If there were any previous publications allow the subscriber to read them
-				//!(curr_gen<(unsigned)_node->get_queue_size())?(unsigned)_node->get_queue_size():curr_gen;
-				_last_generation = curr_gen - !(curr_gen<(unsigned)_node->get_queue_size())?(unsigned)_node->get_queue_size():curr_gen;
+				_last_generation = _node->get_initial_generation();
 
 				return true;
 			}

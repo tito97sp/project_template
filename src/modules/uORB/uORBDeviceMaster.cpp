@@ -42,6 +42,7 @@
 
 #include <stdio.h>
 #include <nuttx/semaphore.h>
+#include <platform_common/smartLock.hpp>
 
 #include <math.h>
 
@@ -89,7 +90,7 @@ int uORB::DeviceMaster::advertise(const struct orb_metadata *meta, bool is_adver
 		}
 	}
 
-	lock();
+	SmartLock smart_lock(_lock);
 
 	do {
 		/* if path is modifyable change try index */
@@ -189,7 +190,7 @@ void uORB::DeviceMaster::printStatistics()
 	unlock();
 
 	if (ret != 0) {
-		printf("addNewDeviceNodes failed (%i)", ret);
+		printf("addNewDeviceNodes failed (%i)\n", ret);
 		return;
 	}
 
@@ -268,8 +269,9 @@ int uORB::DeviceMaster::addNewDeviceNodes(DeviceNodeStatisticsData **first_node,
 			max_topic_name_length = name_length;
 		}
 
-		last_node->last_pub_msg_count = last_node->node->published_message_count();
-	}
+				// Pass in 0 to get the index of the latest published data
+		last_node->last_pub_msg_count = last_node->node->updates_available(0);
+			}
 
 	return 0;
 }
@@ -306,7 +308,7 @@ void uORB::DeviceMaster::showTop(char **topic_filter, int num_filters)
 
 	if (_node_list.empty()) {
 		unlock();
-		printf("no active topics");
+		printf("no active topics\n");
 		return;
 	}
 
@@ -320,7 +322,7 @@ void uORB::DeviceMaster::showTop(char **topic_filter, int num_filters)
 	unlock();
 
 	if (ret != 0) {
-		printf("addNewDeviceNodes failed (%i)", ret);
+		printf("addNewDeviceNodes failed (%i)\n", ret);
 	}
 
 #ifdef __PX4_QURT // QuRT has no poll()
@@ -345,18 +347,13 @@ void uORB::DeviceMaster::showTop(char **topic_filter, int num_filters)
 
 			//update the stats
 			hrt_abstime current_time = hrt_absolute_time();
-			float dt = (current_time - start_time) / 1.e6f;
-
-			//struct timespec *current_time;
-			//clock_gettime(CLOCK_MONOTONIC, current_time);
-			//float dt = (ts_to_abstime(current_time) - ts_to_abstime(start_time)) / 1.e6f;
-			
+			float dt = (current_time - start_time) / 1.e6f;	
 			cur_node = first_node;
 
 			while (cur_node) {
-				unsigned int num_msgs = cur_node->node->published_message_count();
-				cur_node->pub_msg_delta = roundf((num_msgs - cur_node->last_pub_msg_count) / dt);
-				cur_node->last_pub_msg_count = num_msgs;
+				unsigned int num_msgs = cur_node->node->updates_available(cur_node->last_pub_msg_count);
+				cur_node->pub_msg_delta = roundf(num_msgs / dt);
+				cur_node->last_pub_msg_count += num_msgs;
 				cur_node = cur_node->next;
 			}
 

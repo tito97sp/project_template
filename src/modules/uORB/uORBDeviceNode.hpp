@@ -35,13 +35,13 @@
 
 #include "uORBCommon.hpp"
 #include "uORBDeviceMaster.hpp"
-#include "topics/uORBTopics.hpp"
+
+#include <uORB/topics/uORBTopics.hpp>
 
 #include <lib/cdev/CDev.hpp>
 
-#include "containers/IntrusiveSortedList.hpp"
-#include "containers/List.hpp"
-
+#include <containers/IntrusiveSortedList.hpp>
+#include <containers/List.hpp>
 #include <platform_common/atomic.h>
 
 namespace uORB
@@ -190,7 +190,18 @@ public:
 
 	int8_t subscriber_count() const { return _subscriber_count; }
 
-	unsigned published_message_count() const { return _generation.load(); }
+	/**
+	 * Returns the number of updated data relative to the parameter 'generation'
+	 * We can get the correct value regardless of wrap-around or not.
+	 * @param generation The generation of subscriber
+	 */
+	unsigned updates_available(unsigned generation) const { return _generation.load() - generation; }
+
+	/**
+	 * Return the initial generation to the subscriber
+	 * @return The initial generation.
+	 */
+	unsigned get_initial_generation();
 
 	const orb_metadata *get_meta() const { return _meta; }
 
@@ -230,6 +241,7 @@ private:
 	const orb_metadata *_meta; /**< object metadata information */
 
 	uint8_t     *_data{nullptr};   /**< allocated object buffer */
+	bool _data_valid{false}; /**< At least one valid data */
 	osal::atomic<unsigned>  _generation{0};  /**< object generation count */
 	List<uORB::SubscriptionCallback *>	_callbacks;
 

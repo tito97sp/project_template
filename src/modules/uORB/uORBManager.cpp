@@ -38,6 +38,7 @@
 #include <stdarg.h>
 #include <fcntl.h>
 
+#include <os_layer/os_tasks.h>
 #include "uORBDeviceNode.hpp"
 #include "uORBUtils.hpp"
 #include "uORBManager.hpp"
@@ -93,7 +94,7 @@ uORB::DeviceMaster *uORB::Manager::get_device_master()
 		_device_master = new DeviceMaster();
 
 		if (_device_master == nullptr) {
-			printf("Failed to allocate DeviceMaster");
+			printf("Failed to allocate DeviceMaster\n");
 			errno = ENOMEM;
 		}
 	}
@@ -196,7 +197,7 @@ orb_advert_t uORB::Manager::orb_advertise_multi(const struct orb_metadata *meta,
 	int fd = node_open(meta, true, instance);
 
 	if (fd == -1) {
-		printf("%s advertise failed (%i)", meta->o_name, errno);
+		printf("%s advertise failed (%i)\n", meta->o_name, errno);
 		return nullptr;
 	}
 
@@ -206,7 +207,7 @@ orb_advert_t uORB::Manager::orb_advertise_multi(const struct orb_metadata *meta,
 	int result = ioctl(fd, ORBIOCSETQUEUESIZE, (unsigned long)queue_size);
 
 	if (result < 0 && queue_size > 1) {
-		printf("orb_advertise_multi: failed to set queue size");
+		printf("orb_advertise_multi: failed to set queue size\n");
 	}
 
 	/* get the advertiser handle and close the node */
@@ -216,7 +217,7 @@ orb_advert_t uORB::Manager::orb_advertise_multi(const struct orb_metadata *meta,
 	close(fd);
 
 	if (result == -1) {
-		printf("px4_ioctl ORBIOCGADVERTISER failed. fd = %d", fd);
+		printf("px4_ioctl ORBIOCGADVERTISER failed. fd = %d\n", fd);
 		return nullptr;
 	}
 
@@ -230,7 +231,7 @@ orb_advert_t uORB::Manager::orb_advertise_multi(const struct orb_metadata *meta,
 		result = orb_publish(meta, advertiser, data);
 
 		if (result == -1) {
-			printf("orb_publish failed %s", meta->o_name);
+			printf("orb_publish failed %s\n", meta->o_name);
 			return nullptr;
 		}
 	}

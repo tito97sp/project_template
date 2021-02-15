@@ -38,8 +38,8 @@
 
 #pragma once
 
-#include "SubscriptionInterval.hpp"
-#include "containers/List.hpp"
+#include <uORB/SubscriptionInterval.hpp>
+#include <containers/List.hpp>
 
 //#include <px4_platform_common/px4_work_queue/WorkItem.hpp>
 
@@ -69,22 +69,24 @@ public:
 
 	bool registerCallback()
 	{
-		if (_subscription.get_node() && _subscription.get_node()->register_callback(this)) {
-			// registered
-			_registered = true;
+		if (!_registered) {
+			if (_subscription.get_node() && _subscription.get_node()->register_callback(this)) {
+				// registered
+				_registered = true;
 
-		} else {
-			// force topic creation by subscribing with old API
-			int fd = orb_subscribe_multi(_subscription.get_topic(), _subscription.get_instance());
+			} else {
+				// force topic creation by subscribing with old API
+				int fd = orb_subscribe_multi(_subscription.get_topic(), _subscription.get_instance());
 
-			// try to register callback again
-			if (_subscription.subscribe()) {
-				if (_subscription.get_node() && _subscription.get_node()->register_callback(this)) {
-					_registered = true;
+				// try to register callback again
+				if (_subscription.subscribe()) {
+					if (_subscription.get_node() && _subscription.get_node()->register_callback(this)) {
+						_registered = true;
+					}
 				}
-			}
 
-			orb_unsubscribe(fd);
+				orb_unsubscribe(fd);
+			}
 		}
 
 		return _registered;
@@ -132,6 +134,8 @@ public:
 
 	virtual void call() = 0;
 
+	bool registered() const { return _registered; }
+	
 protected:
 
 	bool _registered{false};

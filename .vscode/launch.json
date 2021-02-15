@@ -10,7 +10,7 @@
             "servertype": "openocd",
             "device": "stm32h7x",
             "svdFile": "STM32H743x.svd",
-            "gdbPath": "/usr/bin/arm-none-eabi-gdb",
+            "gdbPath": "arm-none-eabi-gdb",
             "showDevDebugOutput": true,
             "configFiles": [
                 "interface/stlink.cfg",

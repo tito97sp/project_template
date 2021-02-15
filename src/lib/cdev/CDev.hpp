@@ -74,7 +74,7 @@ namespace cdev
 /**
  * Abstract class for any character device
  */
-class CDev
+class __EXPORT CDev
 {
 public:
 	/**

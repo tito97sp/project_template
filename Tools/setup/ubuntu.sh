@@ -127,6 +127,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		pkg-config \
 		screen \
 		vim-common \
+		minicom \
 		;
 
 	if [ -n "$USER" ]; then
@@ -134,9 +135,12 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		sudo usermod -a -G dialout $USER
 	fi
 
-	# arm-none-eabi-gcc
-	NUTTX_GCC_VERSION="9-2020-q2-update"
-	NUTTX_GCC_VERSION_SHORT="9-2020q2"
+	#arm-none-eabi-gcc
+	echo 
+	echo "Installing arm-none-eabi-gcc toolchain"
+
+	NUTTX_GCC_VERSION="6-2017-q2-update"
+	NUTTX_GCC_VERSION_SHORT="6-2017q2"
 
 	source $HOME/.profile # load changed path for the case the script is reran before relogin
 	if [ $(which arm-none-eabi-gcc) ]; then
@@ -144,23 +148,59 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		GCC_FOUND_VER=$(echo $GCC_VER_STR | grep -c "${NUTTX_GCC_VERSION}")
 	fi
 
-	if [[ "$GCC_FOUND_VER" == "1" ]]; then
-		echo "arm-none-eabi-gcc-${NUTTX_GCC_VERSION} found, skipping installation"
+	#if [[ "$GCC_FOUND_VER" == "1" ]]; then
+	  #echo "arm-none-eabi-gcc-${NUTTX_GCC_VERSION} found, skipping installation"
+
+	#else
+		echo "Installing arm-none-eabi-gcc-${NUTTX_GCC_VERSION}"
+		wget -O /tmp/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-linux.tar.bz2 https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/${NUTTX_GCC_VERSION_SHORT}/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-linux.tar.bz2 
+		
+		sudo tar -jxf /tmp/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-linux.tar.bz2 -C /opt/
+
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-g++ /usr/bin/arm-none-eabi-g++
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-cpp /usr/bin/arm-none-eabi-cpp
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-c++ /usr/bin/arm-none-eabi-c++
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-ar /usr/bin/arm-none-eabi-ar
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-as /usr/bin/arm-none-eabi-as
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-ld /usr/bin/arm-none-eabi-ld
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-objcopy /usr/bin/arm-none-eabi-objcopy
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-objdump /usr/bin/arm-none-eabi-objdump
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-gcc-ar /usr/bin/arm-none-eabi-gcc-ar
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-gcc-nm /usr/bin/arm-none-eabi-gcc-nm
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-gcc-ranlib /usr/bin/arm-none-eabi-gcc-ranlib
+		sudo ln -s /opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin/arm-none-eabi-strip /usr/bin/arm-none-eabi-gcc-strip
+
+
+		sudo ln -s /opt/gcc-arm-none-eabi-6-2017-q2-update/bin/arm-none-eabi-gcc-ar /usr/bin/arm-none-gcc-ar
+
+	 	# add arm-none-eabi-gcc to user's PATH
+	 	exportline="export PATH=/opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin:\$PATH"
+
+	 	if grep -Fxq "$exportline" $HOME/.profile; then
+	 		echo "${NUTTX_GCC_VERSION} path already set.";
+	 	else
+	 		echo $exportline >> $HOME/.profile;
+	 	fi
+	fi
+
+
+	#openocd uploader
+	if [ $(which openocd) ]; then
+		OPENOCD_VER_STR=$(openocd --version)
+		echo "openocd found, skipping installation"
 
 	else
-		echo "Installing arm-none-eabi-gcc-${NUTTX_GCC_VERSION}";
-		wget -O /tmp/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-linux.tar.bz2 https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/${NUTTX_GCC_VERSION_SHORT}/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-x86_64-linux.tar.bz2 && \
-			sudo tar -jxf /tmp/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}-linux.tar.bz2 -C /opt/;
+	 	echo "Installing openocd";
+		git clone https://repo.or.cz/openocd.git /opt/
 
-		# add arm-none-eabi-gcc to user's PATH
-		exportline="export PATH=/opt/gcc-arm-none-eabi-${NUTTX_GCC_VERSION}/bin:\$PATH"
+		(cd /opt/openocd/ && sudo bash bootstrap \
+		 	&& sudo bash configure \
+			&& sudo make install)
 
-		if grep -Fxq "$exportline" $HOME/.profile; then
-			echo "${NUTTX_GCC_VERSION} path already set.";
-		else
-			echo $exportline >> $HOME/.profile;
-		fi
 	fi
+
+
 fi
 
 # Simulation tools

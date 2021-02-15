@@ -38,16 +38,12 @@
 
 #pragma once
 
-#include "uORB.h"
-#include "topics/uORBTopics.hpp"
+#include <uORB/uORB.h>
+#include <uORB/topics/uORBTopics.hpp>
 
 #include "uORBDeviceNode.hpp"
 #include "uORBManager.hpp"
 #include "uORBUtils.hpp"
-
-#ifdef __cplusplus
-extern "C++" {
-#endif
 
 namespace uORB
 {
@@ -85,6 +81,30 @@ public:
 		subscribe();
 	}
 
+// Copy constructor
+	Subscription(const Subscription &other) : _orb_id(other._orb_id), _instance(other._instance) {}
+
+	// Move constructor
+	Subscription(const Subscription &&other) noexcept : _orb_id(other._orb_id), _instance(other._instance) {}
+
+	// copy assignment
+	Subscription &operator=(const Subscription &other)
+	{
+		unsubscribe();
+		_orb_id = other._orb_id;
+		_instance = other._instance;
+		return *this;
+	}
+
+	// move assignment
+	Subscription &operator=(Subscription &&other) noexcept
+	{
+		unsubscribe();
+		_orb_id = other._orb_id;
+		_instance = other._instance;
+		return *this;
+	}
+	
 	~Subscription()
 	{
 		unsubscribe();
@@ -114,7 +134,7 @@ public:
 	/**
 	 * Check if there is a new update.
 	 */
-	bool updated() { return advertised() && (_node->published_message_count() != _last_generation); }
+	bool updated() { return advertised() && _node->updates_available(_last_generation); }
 
 	/**
 	 * Update the struct
@@ -201,7 +221,3 @@ private:
 };
 
 } // namespace uORB
-
-#ifdef __cplusplus
-}  // end extern "C"
-#endif

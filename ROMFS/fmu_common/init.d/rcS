@@ -35,6 +35,7 @@ echo "uorb initialization"
 uorb start
 
 
+echo "mount /dev/mmcsd0 on /fs/microsd"
 #
 # Mount the mmcsd fatfs.
 #

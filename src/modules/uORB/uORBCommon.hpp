@@ -35,9 +35,9 @@
 #define _uORBCommon_hpp_
 
 #include <drivers/drv_orb_dev.h>
-#include <drivers/drv_hrt.h>
-#include "uORB.h"
 
+#include "uORB.h"
+#include <drivers/drv_hrt.h>
 
 
 namespace uORB

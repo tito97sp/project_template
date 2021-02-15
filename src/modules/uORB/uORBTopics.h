@@ -34,7 +34,7 @@
 #ifndef MODULES_UORB_UORBTOPICS_H_
 #define MODULES_UORB_UORBTOPICS_H_
 
-#include <nuttx/uORB/uORB.h>
+#include <uORB/uORB.h>
 
 /*
  * Returns count of all declared topics.

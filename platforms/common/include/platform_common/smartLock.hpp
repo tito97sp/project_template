@@ -1,6 +1,6 @@
 /****************************************************************************
  *
- *   Copyright (C) 2013-2020 PX4 Development Team. All rights reserved.
+ *   Copyright (c) 2016 PX4 Development Team. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -31,25 +31,38 @@
  *
  ****************************************************************************/
 
-#include "uORBTopics.hpp"
-#include "uORB.h"
+/**
+ * @file sem.hpp
+ *
+ * C++ synchronization helpers
+ */
+
+#pragma once
+
+#include "nuttx/semaphore.h"
 
 
-
-const constexpr struct orb_metadata *const uorb_topics_list[ORB_TOPICS_COUNT] = {
-
+/**
+ * @class Smart locking object that uses a semaphore. It automatically
+ * takes the lock when created and releases the lock when the object goes out of
+ * scope. Use like this:
+ *
+ *   px4_sem_t my_lock;
+ *   int ret = px4_sem_init(&my_lock, 0, 1);
+ *   ...
+ *
+ *   {
+ *       SmartLock smart_lock(my_lock);
+ *       //critical section start
+ *       ...
+ *       //critical section end
+ *   }
+ */
+class SmartLock
+{
+public:
+	SmartLock(sem_t &sem) : _sem(sem) { do {} while (sem_wait(&_sem) != 0); }
+	~SmartLock() { sem_post(&_sem); }
+private:
+	sem_t &_sem;
 };
-
-const struct orb_metadata *const *orb_get_topics()
-{
-	return uorb_topics_list;
-}
-
-const struct orb_metadata *get_orb_meta(ORB_ID id)
-{
-	if (id == ORB_ID::INVALID) {
-		return nullptr;
-	}
-
-	return uorb_topics_list[static_cast<uint8_t>(id)];
-}

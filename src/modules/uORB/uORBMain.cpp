@@ -47,38 +47,14 @@
 #include <sys/types.h>
 
 #include <lib/cdev/CDev.hpp>
-
-
 #include "uORBManager.hpp"
 #include "uORB.h"
 #include "uORBCommon.hpp"
 
-
-//***************************************************************************
-// Definitions
-//***************************************************************************
-// Configuration ************************************************************
-
-// Debug ********************************************************************
-// Non-standard debug that may be enabled just for testing the constructors
-
-
-//***************************************************************************
-// Private Data
-//***************************************************************************
-
-// Define a statically constructed CHellowWorld instance if C++ static
-// initializers are supported by the platform
+#include <platform_common/module.h>
 
 
 
-//***************************************************************************
-// Public Functions
-//***************************************************************************
-
-/****************************************************************************
- * Name: uorb_main
- ****************************************************************************/
 
 extern "C" { __EXPORT int uorb_main(int argc, char *argv[]); }
 
@@ -144,6 +120,4 @@ int uorb_main(int argc, FAR char *argv[]){
 
       //usage();
       return -EINVAL;
-
-    return 0;
 }

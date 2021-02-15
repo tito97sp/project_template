@@ -38,8 +38,7 @@
 
 #include "uORBDeviceNode.hpp"
 #include "uORBCommon.hpp"
-#include "topics/uORBTopics.hpp"
-
+#include <uORB/topics/uORBTopics.hpp>
 
 
 namespace uORB

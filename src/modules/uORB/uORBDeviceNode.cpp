@@ -46,8 +46,10 @@
 #include <cstdio>
 
 #include "uORBDeviceNode.hpp"
+
 #include "uORBUtils.hpp"
 #include "uORBManager.hpp"
+
 #include "SubscriptionCallback.hpp"
 
 #ifdef ORB_COMMUNICATOR
@@ -55,13 +57,48 @@
 #endif /* ORB_COMMUNICATOR */
 
 static uORB::SubscriptionInterval *filp_to_subscription(file *filp) { return static_cast<uORB::SubscriptionInterval *>(filp->f_priv); }
+// Determine the data range
+static inline bool is_in_range(unsigned left, unsigned value, unsigned right)
+{
+	if (right > left) {
+		return (left <= value) && (value <= right);
+
+	} else {  // Maybe the data overflowed and a wraparound occurred
+		return (left <= value) || (value <= right);
+	}
+}
+
+// round up to nearest power of two
+// Such as 0 => 1, 1 => 1, 2 => 2 ,3 => 4, 10 => 16, 60 => 64, 65...255 => 128
+// Note: When the input value > 128, the output is always 128
+static inline uint8_t round_pow_of_two_8(uint8_t n)
+{
+	if (n == 0) {
+		return 1;
+	}
+
+	// Avoid is already a power of 2
+	uint8_t value = n - 1;
+
+	// Fill 1
+	value |= value >> 1U;
+	value |= value >> 2U;
+	value |= value >> 4U;
+
+	// Unable to round-up, take the value of round-down
+	if (value == UINT8_MAX) {
+		value >>= 1U;
+	}
+
+	return value + 1;
+}
 
 uORB::DeviceNode::DeviceNode(const struct orb_metadata *meta, const uint8_t instance, const char *path,
 			     uint8_t queue_size) :
 	CDev(path),
 	_meta(meta),
 	_instance(instance),
-	_queue_size(queue_size)
+	_queue_size(round_pow_of_two_8(queue_size))
 {
 }
 
@@ -100,7 +137,7 @@ int uORB::DeviceNode::open(file *filp)
 		int ret = CDev::open(filp);
 
 		if (ret != 0) {
-			//PX4_ERR("CDev::open failed");
+			printf("CDev::open failed\n");
 			delete sd;
 		}
 
@@ -139,25 +176,23 @@ bool uORB::DeviceNode::copy(void *dst, unsigned &generation)
 			ATOMIC_ENTER;
 			const unsigned current_generation = _generation.load();
 
-			if (current_generation > generation + _queue_size) {
-				// Reader is too far behind: some messages are lost
-				generation = current_generation - _queue_size;
-			}
-
-			if ((current_generation == generation) && (generation > 0)) {
+			if (current_generation == generation) {
 				/* The subscriber already read the latest message, but nothing new was published yet.
 				* Return the previous message
 				*/
 				--generation;
 			}
 
+			// Compatible with normal and overflow conditions
+			if (!is_in_range(current_generation - _queue_size, generation, current_generation - 1)) {
+				// Reader is too far behind: some messages are lost
+				generation = current_generation - _queue_size;
+			}
 			memcpy(dst, _data + (_meta->o_size * (generation % _queue_size)), _meta->o_size);
 			ATOMIC_LEAVE;
 
-			if (generation < current_generation) {
 				++generation;
-			}
-
+			
 			return true;
 		}
 	}
@@ -187,6 +222,7 @@ ssize_t uORB::DeviceNode::write(file *filp, const char *buffer, size_t buflen)
 	 * Note that filp will usually be NULL.
 	 */
 	if (nullptr == _data) {
+
 
 		if (!up_interrupt_context()) {
 
@@ -223,6 +259,8 @@ ssize_t uORB::DeviceNode::write(file *filp, const char *buffer, size_t buflen)
 		item->call();
 	}
 
+	/* Mark at least one data has been published */
+	_data_valid = true;
 	ATOMIC_LEAVE;
 
 	/* notify any poll waiters */
@@ -399,9 +437,6 @@ bool uORB::DeviceNode::print_statistics(int max_topic_length)
 	printf("%2i %s %2i %4i %2i %4i %s\n", max_topic_length, get_meta()->o_name, (int)instance, (int)sub_count, \
 		     queue_size, get_meta()->o_size, get_devname());
 
-	//PX4_INFO_RAW("%-*s %2i %4i %2i %4i %s\n", max_topic_length, get_meta()->o_name, (int)instance, (int)sub_count,
-		     //queue_size, get_meta()->o_size, get_devname());
-
 	return true;
 }
 
@@ -500,9 +535,22 @@ int uORB::DeviceNode::update_queue_size(unsigned int queue_size)
 		return -1;
 	}
 
-	_queue_size = queue_size;
+	_queue_size = round_pow_of_two_8(queue_size);
 	return 0;
 }
+
+unsigned uORB::DeviceNode::get_initial_generation()
+{
+	ATOMIC_ENTER;
+
+	// If there any previous publications allow the subscriber to read them
+	unsigned generation = _generation.load() - (_data_valid ? 1 : 0);
+
+	ATOMIC_LEAVE;
+
+	return generation;
+}
+
 
 bool uORB::DeviceNode::register_callback(uORB::SubscriptionCallback *callback_sub)
 {

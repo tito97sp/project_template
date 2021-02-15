@@ -38,7 +38,7 @@
 
 #pragma once
 
-#include "uORB.h"
+#include <uORB/uORB.h>
 
 #include "uORBDeviceNode.hpp"
 #include "uORBManager.hpp"

@@ -1,13 +1,12 @@
 /**
- * Hello param 
+ * Hello_module param frequency 
  *
- * Hello param for testing 
+ * Hello_module param publish frequency
  *
  * @min 0
- * @max 1
- * @reboot_required true 
- * @boolean 
- * @group hello
+ * @max 2000
+ * @reboot_required false
+ * @group hello_pub
  */
 
-PARAM_DEFINE_INT32(HELLO_PARAM, 0);
+PARAM_DEFINE_INT32(HELLO_PARAM_FREQ, 0);

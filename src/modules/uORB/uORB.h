@@ -40,7 +40,6 @@
  */
 
 #include <sys/config.h>
-
 #include <sys/types.h>
 #include <sys/cdefs.h>
 #include <stdint.h>
@@ -64,7 +63,11 @@ typedef const struct orb_metadata *orb_id_t;
 /**
  * Maximum number of multi topic instances
  */
-#define ORB_MULTI_MAX_INSTANCES	4 // This must be < 10 (because it's the last char of the node path)
+#if defined(CONSTRAINED_MEMORY)
+# define ORB_MULTI_MAX_INSTANCES 4
+#else
+# define ORB_MULTI_MAX_INSTANCES 10
+#endif
 
 /**
  * Generates a pointer to the uORB metadata structure for
