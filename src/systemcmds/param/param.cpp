@@ -182,56 +182,56 @@ int
 param_main(int argc, char *argv[])
 {
 	if (argc >= 2) {
-	// 	if (!strcmp(argv[1], "save")) {
-	// 		if (argc >= 3) {
-	// 			return do_save(argv[2]);
-	// 			//return 0;
+		if (!strcmp(argv[1], "save")) {
+			if (argc >= 3) {
+				return do_save(argv[2]);
+				//return 0;
 
-	// 		} else {
-	// 			int ret = do_save_default();
+			} else {
+				int ret = do_save_default();
 
-	// 			//if (ret) {
-	// 				//PX4_ERR("Param save failed (%i)", ret);
-	// 			//	return 1;
+				//if (ret) {
+					//PX4_ERR("Param save failed (%i)", ret);
+				//	return 1;
 
-	// 			//} else {
-	// 				return 0;
-	// 			//}
-	// 		}
-	// 	}
+				//} else {
+					return 0;
+				//}
+			}
+		}
 	
-	// 	if (!strcmp(argv[1], "load")) {
-	// 		if (argc >= 3) {
-	// 			return do_load(argv[2]);
+		if (!strcmp(argv[1], "load")) {
+			if (argc >= 3) {
+				return do_load(argv[2]);
 
-	// 		} else {
-	// 			return do_load(param_get_default_file());
-	// 		}
-	// 	}
+			} else {
+				return do_load(param_get_default_file());
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "import")) {
-	// 		if (argc >= 3) {
-	// 			return do_import(argv[2]);
+		if (!strcmp(argv[1], "import")) {
+			if (argc >= 3) {
+				return do_import(argv[2]);
 
-	// 		} else {
-	// 			return do_import();
-	// 		}
-	// 	}
+			} else {
+				return do_import();
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "select")) {
-	// 		if (argc >= 3) {
-	// 			param_set_default_file(argv[2]);
+		if (!strcmp(argv[1], "select")) {
+			if (argc >= 3) {
+				param_set_default_file(argv[2]);
 
-	// 		} else {
-	// 			param_set_default_file(nullptr);
-	// 		}
+			} else {
+				param_set_default_file(nullptr);
+			}
 
-	// 		const char *default_file = param_get_default_file();
-	// 		if (default_file) {
-	// 			PX4_INFO("selected parameter default file %s", default_file);
-	// 		}
-	// 		return 0;
-	// 	}
+			const char *default_file = param_get_default_file();
+			if (default_file) {
+				//PX4_INFO("selected parameter default file %s", default_file);
+			}
+			return 0;
+		}
 
 	if (!strcmp(argv[1], "show")) {
 			if (argc >= 3) {
@@ -260,116 +260,115 @@ param_main(int argc, char *argv[])
 			}
 		}
 
-	// 	if (!strcmp(argv[1], "show-for-airframe")) {
-	// 		return do_show_for_airframe();
-	// 	}
+		if (!strcmp(argv[1], "show-for-airframe")) {
+			return do_show_for_airframe();
+		}
 
-	// 	if (!strcmp(argv[1], "status")) {
-	// 		param_print_status();
-	// 		return 0;
-	// 	}
+		if (!strcmp(argv[1], "status")) {
+			param_print_status();
+			return 0;
+		}
 
-	// 	if (!strcmp(argv[1], "set")) {
-	// 		if (argc >= 5) {
+		if (!strcmp(argv[1], "set")) {
+			if (argc >= 5) {
 
-	// 			/* if the fail switch is provided, fails the command if not found */
-	// 			bool fail = !strcmp(argv[4], "fail");
+				/* if the fail switch is provided, fails the command if not found */
+				bool fail = !strcmp(argv[4], "fail");
 
-	// 			return do_set(argv[2], argv[3], fail);
+				return do_set(argv[2], argv[3], fail);
 
-	// 		} else if (argc >= 4) {
-	// 			return do_set(argv[2], argv[3], false);
+			} else if (argc >= 4) {
+				return do_set(argv[2], argv[3], false);
 
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments.\nTry 'param set PARAM_NAME 3 [fail]'");
-	// 			return 1;
-	// 		}
-	// 	}
+			} else {
+				//PX4_ERR("not enough arguments.\nTry 'param set PARAM_NAME 3 [fail]'");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "compare")) {
-	// 		if(argc >= 5 && !strcmp(argv[2], "-s")) {
-	// 			return do_compare(argv[3], &argv[4], argc - 4, COMPARE_OPERATOR::EQUAL, COMPARE_ERROR_LEVEL::SILENT);
-	// 		} else if (argc >= 4) {
-	// 			return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::EQUAL, COMPARE_ERROR_LEVEL::DO_ERROR);
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments.\nTry 'param compare PARAM_NAME 3'");
-	// 			return 1;
-	// 		}
-	// 	}
+		if (!strcmp(argv[1], "compare")) {
+			if(argc >= 5 && !strcmp(argv[2], "-s")) {
+				return do_compare(argv[3], &argv[4], argc - 4, COMPARE_OPERATOR::EQUAL, COMPARE_ERROR_LEVEL::SILENT);
+			} else if (argc >= 4) {
+				return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::EQUAL, COMPARE_ERROR_LEVEL::DO_ERROR);
+			} else {
+				//PX4_ERR("not enough arguments.\nTry 'param compare PARAM_NAME 3'");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "greater")) {
-	// 		if(argc >= 5 && !strcmp(argv[2], "-s")) {
-	// 			return do_compare(argv[3], &argv[4], argc - 4, COMPARE_OPERATOR::GREATER, COMPARE_ERROR_LEVEL::SILENT);
-	// 		} else if (argc >= 4) {
-	// 			return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::GREATER, COMPARE_ERROR_LEVEL::DO_ERROR);
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments.\nTry 'param greater PARAM_NAME 3'");
-	// 			return 1;
-	// 		}
-	// 	}
+		if (!strcmp(argv[1], "greater")) {
+			if(argc >= 5 && !strcmp(argv[2], "-s")) {
+				return do_compare(argv[3], &argv[4], argc - 4, COMPARE_OPERATOR::GREATER, COMPARE_ERROR_LEVEL::SILENT);
+			} else if (argc >= 4) {
+				return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::GREATER, COMPARE_ERROR_LEVEL::DO_ERROR);
+			} else {
+				//PX4_ERR("not enough arguments.\nTry 'param greater PARAM_NAME 3'");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "reset")) {
-	// 		if (argc >= 3) {
-	// 			return do_reset_specific((const char **) &argv[2], argc - 2);
+		if (!strcmp(argv[1], "reset")) {
+			if (argc >= 3) {
+				return do_reset_specific((const char **) &argv[2], argc - 2);
 
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments (use 'param reset_all' to reset all).");
-	// 			return 1;
-	// 		}
-	// 	}
+			} else {
+				//PX4_ERR("not enough arguments (use 'param reset_all' to reset all).");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "reset_all")) {
-	// 		if (argc >= 3) {
-	// 			return do_reset_all((const char **) &argv[2], argc - 2);
+		if (!strcmp(argv[1], "reset_all")) {
+			if (argc >= 3) {
+				return do_reset_all((const char **) &argv[2], argc - 2);
 
-	// 		} else {
-	// 			return do_reset_all(nullptr, 0);
-	// 		}
-	// 	}
+			} else {
+				return do_reset_all(nullptr, 0);
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "touch")) {
-	// 		if (argc >= 3) {
-	// 			return do_touch((const char **) &argv[2], argc - 2);
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments.");
-	// 			return 1;
-	// 		}
-	// 	}
+		if (!strcmp(argv[1], "touch")) {
+			if (argc >= 3) {
+				return do_touch((const char **) &argv[2], argc - 2);
+			} else {
+				//PX4_ERR("not enough arguments.");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "index_used")) {
-	// 		if (argc >= 3) {
-	// 			return do_show_index(argv[2], true);
+		if (!strcmp(argv[1], "index_used")) {
+			if (argc >= 3) {
+				return do_show_index(argv[2], true);
 
-	// 		} else {
-	// 			//PX4_ERR("no index provided");
-	// 			return 1;
-	// 		}
-	// 	}
+			} else {
+				//PX4_ERR("no index provided");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "index")) {
-	// 		if (argc >= 3) {
-	// 			return do_show_index(argv[2], false);
+		if (!strcmp(argv[1], "index")) {
+			if (argc >= 3) {
+				return do_show_index(argv[2], false);
 
-	// 		} else {
-	// 			//PX4_ERR("no index provided");
-	// 			return 1;
-	// 		}
-	// 	}
+			} else {
+				//PX4_ERR("no index provided");
+				return 1;
+			}
+		}
 
-	// 	if (!strcmp(argv[1], "find")) {
-	// 		if (argc >= 3) {
-	// 			return do_find(argv[2]);
+		if (!strcmp(argv[1], "find")) {
+			if (argc >= 3) {
+				return do_find(argv[2]);
 
-	// 		} else {
-	// 			//PX4_ERR("not enough arguments.\nTry 'param find PARAM_NAME'");
-	// 			return 1;
-	// 		}
-	// 	}
+			} else {
+				//PX4_ERR("not enough arguments.\nTry 'param find PARAM_NAME'");
+				return 1;
+			}
+		}
 	}
 
-	// print_usage();
-	//return 1;
-	return 0;
+	print_usage();
+	return 1;
 }
 
 static int

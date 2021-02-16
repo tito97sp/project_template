@@ -4,11 +4,12 @@ Priority
 
 - Add INFO, DEBUG, ERROR message macros
 - Add module print macros (--help)
-- Test uORB Module.
 - Paremeters lib.
     - Add perf functionality
     - Add workqueue functionality.
     - Add flash functionality (CONFIG_FLASH)
+- uORB
+    - Add WorkQueue for SubscriptionCallbackWorkItem.
 - Add kconfig-front tool
 
 
@@ -17,3 +18,4 @@ Future
 ########
 - Documentation web page. 
 - Paremeters web page and modification tool
+- Include outboard communication protocol for external systems (mavlink, FastDDS).

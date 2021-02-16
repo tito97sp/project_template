@@ -485,11 +485,11 @@ param_name(param_t param)
 	return handle_in_range(param) ? param_info_base[param].name : nullptr;
 }
 
-// bool
-// param_is_volatile(param_t param)
-// {
-// 	return handle_in_range(param) ? param_info_base[param].volatile_param : false;
-// }
+bool
+param_is_volatile(param_t param)
+{
+	return handle_in_range(param) ? param_info_base[param].volatile_param : false;
+}
 
 bool
 param_value_is_default(param_t param)

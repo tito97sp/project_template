@@ -31,60 +31,66 @@
  *
  ****************************************************************************/
 
+/**
+ * @file module_params.h
+ *
+ * @class ModuleParams is a C++ base class for modules/classes using configuration parameters.
+ */
+
 #pragma once
 
-#include <getopt.h>
+#include <containers/List.hpp>
 
-#include <platform_common/module.h>
-#include <platform_common/module_params.h>
+#include "param.h"
 
-#include <uORB/uORB.h>
-#include <uORB/Subscription.hpp>
-#include <uORB/Publication.hpp>
-#include <uORB/topics/hello.h>
-#include <uORB/topics/parameter_update.h>
-      
-      
-//#include <px4_platform_common/module_params.h>
-
-
-extern "C" { __EXPORT int hello_pub_main(int argc, char *argv[]); }
-
-class HelloPub : public ModuleBase<HelloPub> , public ModuleParams
+class ModuleParams : public ListNode<ModuleParams *>
 {
 public:
-	HelloPub();
 
-	virtual ~HelloPub() = default;
+	ModuleParams(ModuleParams *parent) 
+	{
+		setParent(parent);
+	}
 
-	/** @see ModuleBase */
-	static int task_spawn(int argc, char *argv[]);
+	/**
+	 * @brief Sets the parent module. This is typically not required,
+	 *         only in cases where the parent cannot be set via constructor.
+	 */
+	void setParent(ModuleParams *parent)
+	{
+		if (parent) {
+			parent->_children.add(this);
+		}
+	}
 
-	/** @see ModuleBase */
-	static HelloPub *instantiate(int argc, char *argv[]);
+	virtual ~ModuleParams() = default;
 
-	/** @see ModuleBase */
-	static int custom_command(int argc, char *argv[]);
+	// Disallow copy construction and move assignment.
+	ModuleParams(const ModuleParams &) = delete;
+	ModuleParams &operator=(const ModuleParams &) = delete;
+	ModuleParams(ModuleParams &&) = delete;
+	ModuleParams &operator=(ModuleParams &&) = delete;
 
-	/** @see ModuleBase */
-	static int print_usage(const char *reason = nullptr);
+protected:
+	/**
+	 * @brief Call this method whenever the module gets a parameter change notification.
+	 *        It will automatically call updateParams() for all children, which then call updateParamsImpl().
+	 */
+	virtual void updateParams()
+	{
+		for (const auto &child : _children) {
+			child->updateParams();
+		}
 
-	/** @see ModuleBase::run() */
-	void run() override;
+		updateParamsImpl();
+	}
 
-	/** @see ModuleBase::print_status() */
-	int print_status() override;
+	/**
+	 * @brief The implementation for this is generated with the macro DEFINE_PARAMETERS()
+	 */
+	virtual void updateParamsImpl() {}
 
 private:
-
-	uORB::Publication<hello_s> hello_pub{ORB_ID(hello)};
-
-	uORB::Subscription _parameter_update_sub{ORB_ID(parameter_update)};
-
-
-	DEFINE_PARAMETERS(
-		(ParamInt<params::HELLO_PARAM_FREQ>) _hello_param
-	)
-
+	/** @list _children The module parameter list of inheriting classes. */
+	List<ModuleParams *> _children;
 };
-

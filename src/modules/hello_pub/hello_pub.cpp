@@ -37,8 +37,6 @@
 //#include <px4_platform_common/log.h>
 //#include <px4_platform_common/posix.h>
 
-//#include <uORB/topics/parameter_update.h>
-#include <uORB/topics/hello.h>
 
 
 
@@ -65,7 +63,6 @@ int HelloPub::custom_command(int argc, char *argv[])
 
 	return print_usage("unknown command\n");
 }
-
 
 int HelloPub::task_spawn(int argc, char *argv[])
 {
@@ -96,26 +93,37 @@ HelloPub *HelloPub::instantiate(int argc, char *argv[])
 	return instance;
 }
 
-HelloPub::HelloPub()
+HelloPub::HelloPub() : ModuleParams(nullptr)
 {
 }
 
 void HelloPub::run()
 {
 	printf("hello_pub module started\n");
-	uORB::Publication<hello_s> hello_pub{ORB_ID(hello)};
+	
 	struct hello_s hello{};
 
 	uint32_t iter = 0;
 
 	for(;;){
+		if (_parameter_update_sub.updated()) {
+			// clear update
+			parameter_update_s param_update;
+			_parameter_update_sub.copy(&param_update);
+
+			updateParams();
+		}
+		
+		
 		hello.hello_number = iter;
 		hello_pub.publish(hello);
 
 		iter++;
 
 		printf("PUB: iter = %lu\n", iter);
-		sleep(1);
+
+		unsigned int sleep_time = (unsigned int)(_hello_param.get()/1000);
+		sleep(sleep_time);
 	}
 }
 
