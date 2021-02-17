@@ -101,81 +101,81 @@ static int	do_find(const char *name);
 
 static void print_usage()
 {
-// 	PRINT_MODULE_DESCRIPTION(
-// 		R"DESCR_STR(
-// ### Description
-// Command to access and manipulate parameters via shell or script.
+	PRINT_MODULE_DESCRIPTION(
+		R"DESCR_STR(
+### Description
+Command to access and manipulate parameters via shell or script.
 
-// This is used for example in the startup script to set airframe-specific parameters.
+This is used for example in the startup script to set airframe-specific parameters.
 
-// Parameters are automatically saved when changed, eg. with `param set`. They are typically stored to FRAM
-// or to the SD card. `param select` can be used to change the storage location for subsequent saves (this will
-// need to be (re-)configured on every boot).
+Parameters are automatically saved when changed, eg. with `param set`. They are typically stored to FRAM
+or to the SD card. `param select` can be used to change the storage location for subsequent saves (this will
+need to be (re-)configured on every boot).
 
-// If the FLASH-based backend is enabled (which is done at compile time, e.g. for the Intel Aero or Omnibus),
-// `param select` has no effect and the default is always the FLASH backend. However `param save/load <file>`
-// can still be used to write to/read from files.
+If the FLASH-based backend is enabled (which is done at compile time, e.g. for the Intel Aero or Omnibus),
+`param select` has no effect and the default is always the FLASH backend. However `param save/load <file>`
+can still be used to write to/read from files.
 
-// Each parameter has a 'used' flag, which is set when it's read during boot. It is used to only show relevant
-// parameters to a ground control station.
+Each parameter has a 'used' flag, which is set when it's read during boot. It is used to only show relevant
+parameters to a ground control station.
 
-// ### Examples
-// Change the airframe and make sure the airframe's default parameters are loaded:
-// $ param set SYS_AUTOSTART 4001
-// $ param set SYS_AUTOCONFIG 1
-// $ reboot
-// )DESCR_STR");
+### Examples
+Change the airframe and make sure the airframe's default parameters are loaded:
+$ param set SYS_AUTOSTART 4001
+$ param set SYS_AUTOCONFIG 1
+$ reboot
+)DESCR_STR");
 
-// 	PRINT_MODULE_USAGE_NAME("param", "command");
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("load", "Load params from a file (overwrite all)");
-// 	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("import", "Import params from a file");
-// 	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("save", "Save params to a file");
-// 	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
+	PRINT_MODULE_USAGE_NAME("param", "command");
+	PRINT_MODULE_USAGE_COMMAND_DESCR("load", "Load params from a file (overwrite all)");
+	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("import", "Import params from a file");
+	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("save", "Save params to a file");
+	PRINT_MODULE_USAGE_ARG("<file>", "File name (use default if not given)", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("select", "Select default file");
-// 	PRINT_MODULE_USAGE_ARG("<file>", "File name (use <root>/eeprom/parameters if not given)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("select", "Select default file");
+	PRINT_MODULE_USAGE_ARG("<file>", "File name (use <root>/eeprom/parameters if not given)", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("show", "Show parameter values");
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('a', "Show all parameters (not just used)", true);
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('c', "Show only changed params (unused too)", true);
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('q', "quiet mode, print only param value (name needs to be exact)", true);
-// 	PRINT_MODULE_USAGE_ARG("<filter>", "Filter by param name (wildcard at end allowed, eg. sys_*)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("show", "Show parameter values");
+	PRINT_MODULE_USAGE_PARAM_FLAG('a', "Show all parameters (not just used)", true);
+	PRINT_MODULE_USAGE_PARAM_FLAG('c', "Show only changed params (unused too)", true);
+	PRINT_MODULE_USAGE_PARAM_FLAG('q', "quiet mode, print only param value (name needs to be exact)", true);
+	PRINT_MODULE_USAGE_ARG("<filter>", "Filter by param name (wildcard at end allowed, eg. sys_*)", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("show-for-airframe", "Show changed params for airframe config");
+	PRINT_MODULE_USAGE_COMMAND_DESCR("show-for-airframe", "Show changed params for airframe config");
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("status", "Print status of parameter system");
+	PRINT_MODULE_USAGE_COMMAND_DESCR("status", "Print status of parameter system");
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("set", "Set parameter to a value");
-// 	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to set", false);
-// 	PRINT_MODULE_USAGE_ARG("fail", "If provided, let the command fail if param is not found", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("set", "Set parameter to a value");
+	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to set", false);
+	PRINT_MODULE_USAGE_ARG("fail", "If provided, let the command fail if param is not found", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("compare", "Compare a param with a value. Command will succeed if equal");
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('s', "If provided, silent errors if parameter doesn't exists", true);
-// 	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("compare", "Compare a param with a value. Command will succeed if equal");
+	PRINT_MODULE_USAGE_PARAM_FLAG('s', "If provided, silent errors if parameter doesn't exists", true);
+	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("greater",
-// 					 "Compare a param with a value. Command will succeed if param is greater than the value");
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('s', "If provided, silent errors if parameter doesn't exists", true);
-// 	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("greater",
+					 "Compare a param with a value. Command will succeed if param is greater than the value");
+	PRINT_MODULE_USAGE_PARAM_FLAG('s', "If provided, silent errors if parameter doesn't exists", true);
+	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
 
-// 	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
+	PRINT_MODULE_USAGE_ARG("<param_name> <value>", "Parameter name and value to compare", false);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("touch", "Mark a parameter as used");
-// 	PRINT_MODULE_USAGE_ARG("<param_name1> [<param_name2>]", "Parameter name (one or more)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("touch", "Mark a parameter as used");
+	PRINT_MODULE_USAGE_ARG("<param_name1> [<param_name2>]", "Parameter name (one or more)", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("reset", "Reset only specified params to default");
-// 	PRINT_MODULE_USAGE_ARG("<param1> [<param2>]", "Parameter names to reset (wildcard at end allowed)", true);
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("reset_all", "Reset all params to default");
-// 	PRINT_MODULE_USAGE_ARG("<exclude1> [<exclude2>]", "Do not reset matching params (wildcard at end allowed)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("reset", "Reset only specified params to default");
+	PRINT_MODULE_USAGE_ARG("<param1> [<param2>]", "Parameter names to reset (wildcard at end allowed)", true);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("reset_all", "Reset all params to default");
+	PRINT_MODULE_USAGE_ARG("<exclude1> [<exclude2>]", "Do not reset matching params (wildcard at end allowed)", true);
 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("index", "Show param for a given index");
-// 	PRINT_MODULE_USAGE_ARG("<index>", "Index: an integer >= 0", false);
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("index_used", "Show used param for a given index");
-// 	PRINT_MODULE_USAGE_ARG("<index>", "Index: an integer >= 0", false);
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("find", "Show index of a param");
-// 	PRINT_MODULE_USAGE_ARG("<param>", "param name", false);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("index", "Show param for a given index");
+	PRINT_MODULE_USAGE_ARG("<index>", "Index: an integer >= 0", false);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("index_used", "Show used param for a given index");
+	PRINT_MODULE_USAGE_ARG("<index>", "Index: an integer >= 0", false);
+	PRINT_MODULE_USAGE_COMMAND_DESCR("find", "Show index of a param");
+	PRINT_MODULE_USAGE_ARG("<param>", "param name", false);
 }
 
 int
@@ -190,13 +190,13 @@ param_main(int argc, char *argv[])
 			} else {
 				int ret = do_save_default();
 
-				//if (ret) {
-					//PX4_ERR("Param save failed (%i)", ret);
-				//	return 1;
+				if (ret) {
+					ERR("Param save failed (%i)", ret);
+					return 1;
 
-				//} else {
+				} else {
 					return 0;
-				//}
+				}
 			}
 		}
 	
@@ -228,7 +228,7 @@ param_main(int argc, char *argv[])
 
 			const char *default_file = param_get_default_file();
 			if (default_file) {
-				//PX4_INFO("selected parameter default file %s", default_file);
+				INFO("selected parameter default file %s", default_file);
 			}
 			return 0;
 		}
@@ -281,7 +281,7 @@ param_main(int argc, char *argv[])
 				return do_set(argv[2], argv[3], false);
 
 			} else {
-				//PX4_ERR("not enough arguments.\nTry 'param set PARAM_NAME 3 [fail]'");
+				ERR("not enough arguments.\nTry 'param set PARAM_NAME 3 [fail]'");
 				return 1;
 			}
 		}
@@ -292,7 +292,7 @@ param_main(int argc, char *argv[])
 			} else if (argc >= 4) {
 				return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::EQUAL, COMPARE_ERROR_LEVEL::DO_ERROR);
 			} else {
-				//PX4_ERR("not enough arguments.\nTry 'param compare PARAM_NAME 3'");
+				ERR("not enough arguments.\nTry 'param compare PARAM_NAME 3'");
 				return 1;
 			}
 		}
@@ -303,7 +303,7 @@ param_main(int argc, char *argv[])
 			} else if (argc >= 4) {
 				return do_compare(argv[2], &argv[3], argc - 3, COMPARE_OPERATOR::GREATER, COMPARE_ERROR_LEVEL::DO_ERROR);
 			} else {
-				//PX4_ERR("not enough arguments.\nTry 'param greater PARAM_NAME 3'");
+				ERR("not enough arguments.\nTry 'param greater PARAM_NAME 3'");
 				return 1;
 			}
 		}
@@ -313,7 +313,7 @@ param_main(int argc, char *argv[])
 				return do_reset_specific((const char **) &argv[2], argc - 2);
 
 			} else {
-				//PX4_ERR("not enough arguments (use 'param reset_all' to reset all).");
+				ERR("not enough arguments (use 'param reset_all' to reset all).");
 				return 1;
 			}
 		}
@@ -331,7 +331,7 @@ param_main(int argc, char *argv[])
 			if (argc >= 3) {
 				return do_touch((const char **) &argv[2], argc - 2);
 			} else {
-				//PX4_ERR("not enough arguments.");
+				ERR("not enough arguments.");
 				return 1;
 			}
 		}
@@ -341,7 +341,7 @@ param_main(int argc, char *argv[])
 				return do_show_index(argv[2], true);
 
 			} else {
-				//PX4_ERR("no index provided");
+				ERR("no index provided");
 				return 1;
 			}
 		}
@@ -351,7 +351,7 @@ param_main(int argc, char *argv[])
 				return do_show_index(argv[2], false);
 
 			} else {
-				//PX4_ERR("no index provided");
+				ERR("no index provided");
 				return 1;
 			}
 		}
@@ -361,7 +361,7 @@ param_main(int argc, char *argv[])
 				return do_find(argv[2]);
 
 			} else {
-				//PX4_ERR("not enough arguments.\nTry 'param find PARAM_NAME'");
+				ERR("not enough arguments.\nTry 'param find PARAM_NAME'");
 				return 1;
 			}
 		}
@@ -378,7 +378,7 @@ do_save(const char *param_file_name)
 	int fd = open(param_file_name, O_WRONLY | O_CREAT, 0666);
 
 	if (fd < 0) {
-		//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+		ERR("open '%s' failed (%i)", param_file_name, errno);
 		return 1;
 	}
 
@@ -389,7 +389,7 @@ do_save(const char *param_file_name)
 #ifndef __QURT
 		(void)unlink(param_file_name);
 #endif
-		//PX4_ERR("exporting to '%s' failed (%i)", param_file_name, result);
+		ERR("exporting to '%s' failed (%i)", param_file_name, result);
 		return 1;
 	}
 
@@ -404,7 +404,7 @@ do_load(const char *param_file_name)
 		fd = open(param_file_name, O_RDONLY);
 
 		if (fd < 0) {
-			//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+			ERR("open '%s' failed (%i)", param_file_name, errno);
 			return 1;
 		}
 	}
@@ -416,9 +416,9 @@ do_load(const char *param_file_name)
 
 	if (result < 0) {
 		if (param_file_name) {
-			//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
+			ERR("importing from '%s' failed (%i)", param_file_name, result);
 		} else {
-			//PX4_ERR("importing failed (%i)", result);
+			ERR("importing failed (%i)", result);
 		}
 		return 1;
 	}
@@ -440,7 +440,7 @@ do_import(const char *param_file_name)
 		fd = open(param_file_name, O_RDONLY);
 
 		if (fd < 0) {
-			//PX4_ERR("open '%s' failed (%i)", param_file_name, errno);
+			ERR("open '%s' failed (%i)", param_file_name, errno);
 			return 1;
 		}
 	}
@@ -452,9 +452,9 @@ do_import(const char *param_file_name)
 
 	if (result < 0) {
 		if (param_file_name) {
-			//PX4_ERR("importing from '%s' failed (%i)", param_file_name, result);
+			ERR("importing from '%s' failed (%i)", param_file_name, result);
 		} else {
-			//PX4_ERR("importing failed (%i)", result);
+			ERR("importing failed (%i)", result);
 		}
 		return 1;
 	}
@@ -539,7 +539,7 @@ do_find(const char *name)
 	param_t ret = param_find_no_notification(name);
 
 	if (ret == PARAM_INVALID) {
-		//PX4_ERR("Parameter %s not found", name);
+		ERR("Parameter %s not found", name);
 		return 1;
 	}
 
@@ -564,7 +564,7 @@ do_show_index(const char *index, bool used_index)
 	}
 
 	if (param == PARAM_INVALID) {
-		//PX4_ERR("param not found for index %u", i);
+		ERR("param not found for index %u", i);
 		return 1;
 	}
 
@@ -619,7 +619,7 @@ do_show_print(void *arg, param_t param)
 
 			} else if (*ss == '*') {
 				if (*(ss + 1) != '\0') {
-					//PX4_WARN("* symbol only allowed at end of search string");
+					WARN("* symbol only allowed at end of search string");
 					// FIXME - should exit
 					return;
 				}
@@ -724,7 +724,7 @@ do_set(const char *name, const char *val, bool fail_on_not_found)
 	/* set nothing if parameter cannot be found */
 	if (param == PARAM_INVALID) {
 		/* param not found - fail silenty in scripts as it prevents booting */
-		//PX4_ERR("Parameter %s not found.", name);
+		ERR("Parameter %s not found.", name);
 		return (fail_on_not_found) ? 1 : 0;
 	}
 
@@ -776,7 +776,7 @@ do_set(const char *name, const char *val, bool fail_on_not_found)
 		break;
 
 	default:
-		//PX4_ERR("<unknown / unsupported type %d>\n", 0 + param_type(param));
+		ERR("<unknown / unsupported type %d>\n", 0 + param_type(param));
 		return 1;
 	}
 
@@ -795,7 +795,7 @@ do_compare(const char *name, char *vals[], unsigned comparisons, enum COMPARE_OP
 		/* param not found */
 		if(err_level == COMPARE_ERROR_LEVEL::DO_ERROR)
 		{
-			//PX4_ERR("Parameter %s not found", name);
+			ERR("Parameter %s not found", name);
 		}
 		return 1;
 	}
@@ -819,7 +819,7 @@ do_compare(const char *name, char *vals[], unsigned comparisons, enum COMPARE_OP
 
 				if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (i == j)) ||
 				    ((cmp_op == COMPARE_OPERATOR::GREATER) && (i > j))) {
-					//PX4_DEBUG(" %ld: ", (long)i);
+					DEBUG(" %ld: ", (long)i);
 					ret = 0;
 				}
 			}
@@ -839,7 +839,7 @@ do_compare(const char *name, char *vals[], unsigned comparisons, enum COMPARE_OP
 
 				if (((cmp_op == COMPARE_OPERATOR::EQUAL) && (fabsf(f - g) < 1e-7f)) ||
 				    ((cmp_op == COMPARE_OPERATOR::GREATER) && (f > g))) {
-					//PX4_DEBUG(" %4.4f: ", (double)f);
+					DEBUG(" %4.4f: ", (double)f);
 					ret = 0;
 				}
 			}
@@ -848,14 +848,14 @@ do_compare(const char *name, char *vals[], unsigned comparisons, enum COMPARE_OP
 		break;
 
 	default:
-		//PX4_ERR("<unknown / unsupported type %d>", 0 + param_type(param));
+		ERR("<unknown / unsupported type %d>", 0 + param_type(param));
 		return 1;
 	}
 
 	if (ret == 0) {
-		//PX4_DEBUG("%c %s: match\n",
-		//	  param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
-		//	  param_name(param));
+		DEBUG("%c %s: match\n",
+			  param_value_unsaved(param) ? '*' : (param_value_is_default(param) ? ' ' : '+'),
+			  param_name(param));
 	}
 
 	return ret;
@@ -886,7 +886,7 @@ do_touch(const char *params[], int num_params)
 {
 	for (int i = 0; i < num_params; ++i) {
 		if (param_find(params[i]) == PARAM_INVALID) {
-			//PX4_ERR("param %s not found", params[i]);
+			ERR("param %s not found", params[i]);
 		}
 	}
 	return 0;

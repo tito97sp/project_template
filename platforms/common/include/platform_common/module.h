@@ -32,7 +32,7 @@
  ****************************************************************************/
 
 /**
- * @file px4_module.h
+ * @file module.h
  */
 
 #pragma once
@@ -47,7 +47,7 @@
 #include <platform_common/atomic.h>
 #include <os_layer/os_tasks.h>
 
-//#include <px4_platform_common/log.h>
+#include <platform_common/log.h>
 //#include <systemlib/px4_macros.h>
 
 #ifdef __cplusplus
@@ -436,158 +436,154 @@ int ModuleBase<T>::_task_id = -1;
 #endif /* __cplusplus */
 
 
-//__BEGIN_DECLS
+__BEGIN_DECLS
 
-// /**
-//  * @brief Module documentation and command usage help methods.
-//  *        These are extracted with the Tools/px_process_module_doc.py
-//  *        script and must be kept in sync.
-//  */
+/**
+ * @brief Module documentation and command usage help methods.
+ *        These are extracted with the Tools/px_process_module_doc.py
+ *        script and must be kept in sync.
+ */
 
-// #ifdef __PX4_NUTTX
-// /**
-//  * @note Disable module description on NuttX to reduce Flash usage.
-//  *       There's a GCC bug (https://gcc.gnu.org/bugzilla/show_bug.cgi?id=55971), preventing us to use
-//  *       a macro, but GCC will remove the string as well with this empty inline method.
-//  * @param description The provided functionality of the module and potentially the most important parameters.
-//  */
-// static inline void PRINT_MODULE_DESCRIPTION(const char *description) {}
-// #else
+#ifdef __NUTTX
+/**
+ * @note Disable module description on NuttX to reduce Flash usage.
+ *       There's a GCC bug (https://gcc.gnu.org/bugzilla/show_bug.cgi?id=55971), preventing us to use
+ *       a macro, but GCC will remove the string as well with this empty inline method.
+ * @param description The provided functionality of the module and potentially the most important parameters.
+ */
+static inline void PRINT_MODULE_DESCRIPTION(const char *description) {}
+#else
 
-// /**
-//  * @brief Prints module documentation (will also be used for online documentation). It uses Markdown syntax
-//  *        and should include these sections:
-//  * - ### Description
-//  *   Provided functionality of the module and potentially the most important parameters.
-//  * - ### Implementation
-//  *   High-level implementation overview
-//  * - ### Examples
-//  *   Examples how to use the CLI interface (if it's non-trivial)
-//  *
-//  * In addition to the Markdown syntax, a line beginning with '$ ' can be used to mark a command:
-//  * $ module start -p param
-//  */
-// __EXPORT void PRINT_MODULE_DESCRIPTION(const char *description);
-// #endif
+/**
+ * @brief Prints module documentation (will also be used for online documentation). It uses Markdown syntax
+ *        and should include these sections:
+ * - ### Description
+ *   Provided functionality of the module and potentially the most important parameters.
+ * - ### Implementation
+ *   High-level implementation overview
+ * - ### Examples
+ *   Examples how to use the CLI interface (if it's non-trivial)
+ *
+ * In addition to the Markdown syntax, a line beginning with '$ ' can be used to mark a command:
+ * $ module start -p param
+ */
+__EXPORT void PRINT_MODULE_DESCRIPTION(const char *description);
+#endif
 
-// /**
-//  * @brief Prints the command name.
-//  * @param executable_name: command name used in scripts & CLI
-//  * @param category one of: driver, estimator, controller, system, communication, command, template
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_NAME(const char *executable_name, const char *category);
+/**
+ * @brief Prints the command name.
+ * @param executable_name: command name used in scripts & CLI
+ * @param category one of: driver, estimator, controller, system, communication, command, template
+ */
+__EXPORT void PRINT_MODULE_USAGE_NAME(const char *executable_name, const char *category);
 
-// /**
-//  * @brief Specify a subcategory (optional).
-//  * @param subcategory e.g. if the category is 'driver', subcategory can be 'distance_sensor'
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_SUBCATEGORY(const char *subcategory);
+/**
+ * @brief Specify a subcategory (optional).
+ * @param subcategory e.g. if the category is 'driver', subcategory can be 'distance_sensor'
+ */
+__EXPORT void PRINT_MODULE_USAGE_SUBCATEGORY(const char *subcategory);
 
-// /**
-//  * @brief Prints the name for a command without any sub-commands (@see PRINT_MODULE_USAGE_NAME()).
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_NAME_SIMPLE(const char *executable_name, const char *category);
+/**
+ * @brief Prints the name for a command without any sub-commands (@see PRINT_MODULE_USAGE_NAME()).
+ */
+__EXPORT void PRINT_MODULE_USAGE_NAME_SIMPLE(const char *executable_name, const char *category);
 
+/**
+ * @brief Prints a command with a short description what it does.
+ */
+__EXPORT void PRINT_MODULE_USAGE_COMMAND_DESCR(const char *name, const char *description);
 
-// /**
-//  * @brief Prints a command with a short description what it does.
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_COMMAND_DESCR(const char *name, const char *description);
+#define PRINT_MODULE_USAGE_COMMAND(name) PRINT_MODULE_USAGE_COMMAND_DESCR(name, NULL);
 
-// #define PRINT_MODULE_USAGE_COMMAND(name) 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR(name, NULL);
+/**
+ * @brief Prints the default commands: stop & status.
+ */
+#define PRINT_MODULE_USAGE_DEFAULT_COMMANDS() PRINT_MODULE_USAGE_COMMAND("stop"); PRINT_MODULE_USAGE_COMMAND_DESCR("status", "print status info");
 
-// /**
-//  * @brief Prints the default commands: stop & status.
-//  */
-// #define PRINT_MODULE_USAGE_DEFAULT_COMMANDS() 
-// 	PRINT_MODULE_USAGE_COMMAND("stop"); 
-// 	PRINT_MODULE_USAGE_COMMAND_DESCR("status", "print status info");
+/**
+ * Print default params for I2C or SPI drivers
+ * @param i2c_support true if the driver supports I2C
+ * @param spi_support true if the driver supports SPI
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_SPI_DRIVER(bool i2c_support, bool spi_support);
 
-// /**
-//  * Print default params for I2C or SPI drivers
-//  * @param i2c_support true if the driver supports I2C
-//  * @param spi_support true if the driver supports SPI
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_SPI_DRIVER(bool i2c_support, bool spi_support);
+/**
+ * Configurable I2C address (via -a <address>)
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_ADDRESS(uint8_t default_address);
 
-// /**
-//  * Configurable I2C address (via -a <address>)
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_ADDRESS(uint8_t default_address);
+/**
+ * -k flag
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_KEEP_RUNNING_FLAG(void);
 
-// /**
-//  * -k flag
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAMS_I2C_KEEP_RUNNING_FLAG(void);
+/** @note Each of the PRINT_MODULE_USAGE_PARAM_* methods apply to the previous PRINT_MODULE_USAGE_COMMAND_DESCR(). */
 
-// /** @note Each of the PRINT_MODULE_USAGE_PARAM_* methods apply to the previous PRINT_MODULE_USAGE_COMMAND_DESCR(). */
+/**
+ * @brief Prints an integer parameter.
+ * @param option_char The option character.
+ * @param default_val The parameter default value (set to -1 if not applicable).
+ * @param min_val The parameter minimum value.
+ * @param max_val The parameter value.
+ * @param description Pointer to the usage description.
+ * @param is_optional true if this parameter is optional
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAM_INT(char option_char, int default_val, int min_val, int max_val,
+		const char *description, bool is_optional);
 
-// /**
-//  * @brief Prints an integer parameter.
-//  * @param option_char The option character.
-//  * @param default_val The parameter default value (set to -1 if not applicable).
-//  * @param min_val The parameter minimum value.
-//  * @param max_val The parameter value.
-//  * @param description Pointer to the usage description.
-//  * @param is_optional true if this parameter is optional
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAM_INT(char option_char, int default_val, int min_val, int max_val,
-// 		const char *description, bool is_optional);
+/**
+ * @brief Prints a float parameter.
+ * @note See PRINT_MODULE_USAGE_PARAM_INT().
+ * @param default_val The parameter default value (set to NaN if not applicable).
+ * @param min_val The parameter minimum value.
+ * @param max_val The parameter maximum value.
+ * @param description Pointer to the usage description. Pointer to the usage description.
+ * @param is_optional true if this parameter is optional
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAM_FLOAT(char option_char, float default_val, float min_val, float max_val,
+		const char *description, bool is_optional);
 
-// /**
-//  * @brief Prints a float parameter.
-//  * @note See PRINT_MODULE_USAGE_PARAM_INT().
-//  * @param default_val The parameter default value (set to NaN if not applicable).
-//  * @param min_val The parameter minimum value.
-//  * @param max_val The parameter maximum value.
-//  * @param description Pointer to the usage description. Pointer to the usage description.
-//  * @param is_optional true if this parameter is optional
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAM_FLOAT(char option_char, float default_val, float min_val, float max_val,
-// 		const char *description, bool is_optional);
+/**
+ * @brief Prints a flag parameter, without any value.
+ * @note See PRINT_MODULE_USAGE_PARAM_INT().
+ * @param option_char The option character.
+ * @param description Pointer to the usage description.
+ * @param is_optional true if this parameter is optional
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAM_FLAG(char option_char, const char *description, bool is_optional);
 
-// /**
-//  * @brief Prints a flag parameter, without any value.
-//  * @note See PRINT_MODULE_USAGE_PARAM_INT().
-//  * @param option_char The option character.
-//  * @param description Pointer to the usage description.
-//  * @param is_optional true if this parameter is optional
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAM_FLAG(char option_char, const char *description, bool is_optional);
+/**
+ * @brief Prints a string parameter.
+ * @param option_char The option character.
+ * @param default_val The default value, can be nullptr.
+ * @param values The valid values, it has one of the following forms:
+ *               - nullptr: leave unspecified, or any value is valid
+ *               - "<file>" or "<file:dev>": a file or more specifically a device file (eg. serial device)
+ *               - "<topic_name>": uORB topic name
+ *               - "<value1> [<value2>]": a list of values
+ *               - "on|off": a concrete set of valid strings separated by "|".
+ * @param description Pointer to the usage description.
+ * @param is_optional True iff this parameter is optional.
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAM_STRING(char option_char, const char *default_val, const char *values,
+		const char *description, bool is_optional);
 
-// /**
-//  * @brief Prints a string parameter.
-//  * @param option_char The option character.
-//  * @param default_val The default value, can be nullptr.
-//  * @param values The valid values, it has one of the following forms:
-//  *               - nullptr: leave unspecified, or any value is valid
-//  *               - "<file>" or "<file:dev>": a file or more specifically a device file (eg. serial device)
-//  *               - "<topic_name>": uORB topic name
-//  *               - "<value1> [<value2>]": a list of values
-//  *               - "on|off": a concrete set of valid strings separated by "|".
-//  * @param description Pointer to the usage description.
-//  * @param is_optional True iff this parameter is optional.
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAM_STRING(char option_char, const char *default_val, const char *values,
-// 		const char *description, bool is_optional);
-
-// /**
-//  * @brief Prints a comment, that applies to the next arguments or parameters. For example to indicate that
-//  *        a parameter applies to several or all commands.
-//  * @param comment
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_PARAM_COMMENT(const char *comment);
+/**
+ * @brief Prints a comment, that applies to the next arguments or parameters. For example to indicate that
+ *        a parameter applies to several or all commands.
+ * @param comment
+ */
+__EXPORT void PRINT_MODULE_USAGE_PARAM_COMMENT(const char *comment);
 
 
-// /**
-//  * @brief Prints the definition for an argument, which does not have the typical -p <val> form,
-//  *        but for example 'param set <param> <value>'
-//  * @param values eg. "<file>", "<param> <value>" or "<value1> [<value2>]"
-//  * @param description Pointer to the usage description.
-//  * @param is_optional true if this parameter is optional
-//  */
-// __EXPORT void PRINT_MODULE_USAGE_ARG(const char *values, const char *description, bool is_optional);
+/**
+ * @brief Prints the definition for an argument, which does not have the typical -p <val> form,
+ *        but for example 'param set <param> <value>'
+ * @param values eg. "<file>", "<param> <value>" or "<value1> [<value2>]"
+ * @param description Pointer to the usage description.
+ * @param is_optional true if this parameter is optional
+ */
+__EXPORT void PRINT_MODULE_USAGE_ARG(const char *values, const char *description, bool is_optional);
 
 
-//__END_DECLS
+__END_DECLS

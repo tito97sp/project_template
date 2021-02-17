@@ -42,161 +42,161 @@
 
 #include <platform_common/module.h>
 //#include <px4_platform_common/defines.h>
-//#include <px4_platform_common/log.h>
+#include <platform_common/log.h>
 
 pthread_mutex_t modules_mutex = PTHREAD_MUTEX_INITIALIZER;
 
-// #ifndef __PX4_NUTTX
+#ifndef __NUTTX
 
-// void PRINT_MODULE_DESCRIPTION(const char *description)
-// {
-// 	// TODO: the output could be improved by:
-// 	// - mark titles in bold (lines starting with ##)
-// 	// - highlight commands (lines starting with $, or `cmd`)
-// 	PX4_INFO_RAW("%s\n\n", description);
-// }
+void PRINT_MODULE_DESCRIPTION(const char *description)
+{
+	// TODO: the output could be improved by:
+	// - mark titles in bold (lines starting with ##)
+	// - highlight commands (lines starting with $, or `cmd`)
+	INFO_RAW("%s\n\n", description);
+}
 
-// #endif /* __PX4_NUTTX */
+#endif /* __NUTTX */
 
-// void PRINT_MODULE_USAGE_NAME(const char *executable_name, const char *category)
-// {
-// 	PX4_INFO_RAW("Usage: %s <command> [arguments...]\n", executable_name);
-// 	PX4_INFO_RAW(" Commands:\n");
-// }
+void PRINT_MODULE_USAGE_NAME(const char *executable_name, const char *category)
+{
+	INFO_RAW("Usage: %s <command> [arguments...]\n", executable_name);
+	INFO_RAW(" Commands:\n");
+}
 
-// void PRINT_MODULE_USAGE_SUBCATEGORY(const char *subcategory)
-// {
-// 	(void)subcategory;
-// }
+void PRINT_MODULE_USAGE_SUBCATEGORY(const char *subcategory)
+{
+	(void)subcategory;
+}
 
-// void PRINT_MODULE_USAGE_NAME_SIMPLE(const char *executable_name, const char *category)
-// {
-// 	PX4_INFO_RAW("Usage: %s [arguments...]\n", executable_name);
-// }
+void PRINT_MODULE_USAGE_NAME_SIMPLE(const char *executable_name, const char *category)
+{
+	INFO_RAW("Usage: %s [arguments...]\n", executable_name);
+}
 
-// void PRINT_MODULE_USAGE_COMMAND_DESCR(const char *name, const char *description)
-// {
-// 	if (description) {
-// 		PX4_INFO_RAW("\n   %-13s %s\n", name, description);
+void PRINT_MODULE_USAGE_COMMAND_DESCR(const char *name, const char *description)
+{
+	if (description) {
+		INFO_RAW("\n   %-13s %s\n", name, description);
 
-// 	} else {
-// 		PX4_INFO_RAW("\n   %s\n", name);
-// 	}
-// }
+	} else {
+		INFO_RAW("\n   %s\n", name);
+	}
+}
 
-// void PRINT_MODULE_USAGE_PARAM_COMMENT(const char *comment)
-// {
-// 	PX4_INFO_RAW("\n %s\n", comment);
-// }
+void PRINT_MODULE_USAGE_PARAM_COMMENT(const char *comment)
+{
+	INFO_RAW("\n %s\n", comment);
+}
 
-// void PRINT_MODULE_USAGE_PARAMS_I2C_SPI_DRIVER(bool i2c_support, bool spi_support)
-// {
-// 	// Note: this must be kept in sync with Tools/px4moduledoc/srcparser.py
-// 	if (i2c_support) {
-// 		PRINT_MODULE_USAGE_PARAM_FLAG('I', "Internal I2C bus(es)", true);
-// 		PRINT_MODULE_USAGE_PARAM_FLAG('X', "External I2C bus(es)", true);
-// 	}
+void PRINT_MODULE_USAGE_PARAMS_I2C_SPI_DRIVER(bool i2c_support, bool spi_support)
+{
+	// Note: this must be kept in sync with Tools/px4moduledoc/srcparser.py
+	if (i2c_support) {
+		PRINT_MODULE_USAGE_PARAM_FLAG('I', "Internal I2C bus(es)", true);
+		PRINT_MODULE_USAGE_PARAM_FLAG('X', "External I2C bus(es)", true);
+	}
 
-// 	if (spi_support) {
-// 		PRINT_MODULE_USAGE_PARAM_FLAG('s', "Internal SPI bus(es)", true);
-// 		PRINT_MODULE_USAGE_PARAM_FLAG('S', "External SPI bus", true);
-// 	}
+	if (spi_support) {
+		PRINT_MODULE_USAGE_PARAM_FLAG('s', "Internal SPI bus(es)", true);
+		PRINT_MODULE_USAGE_PARAM_FLAG('S', "External SPI bus", true);
+	}
 
-// 	PRINT_MODULE_USAGE_PARAM_INT('b', -1, 0, 16, "board-specific bus (default=all) (external SPI: n-th bus (default=1))",
-// 				     true);
+	PRINT_MODULE_USAGE_PARAM_INT('b', -1, 0, 16, "board-specific bus (default=all) (external SPI: n-th bus (default=1))",
+				     true);
 
-// 	if (spi_support) {
-// 		PRINT_MODULE_USAGE_PARAM_INT('c', 1, 1, 10, "chip-select index (for external SPI)", true);
-// 		PRINT_MODULE_USAGE_PARAM_INT('m', -1, 0, 3, "SPI mode", true);
-// 	}
+	if (spi_support) {
+		PRINT_MODULE_USAGE_PARAM_INT('c', 1, 1, 10, "chip-select index (for external SPI)", true);
+		PRINT_MODULE_USAGE_PARAM_INT('m', -1, 0, 3, "SPI mode", true);
+	}
 
-// 	PRINT_MODULE_USAGE_PARAM_INT('f', -1, 0, 100000, "bus frequency in kHz", true);
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('q', "quiet startup (no message if no device found)", true);
-// }
+	PRINT_MODULE_USAGE_PARAM_INT('f', -1, 0, 100000, "bus frequency in kHz", true);
+	PRINT_MODULE_USAGE_PARAM_FLAG('q', "quiet startup (no message if no device found)", true);
+}
 
-// void PRINT_MODULE_USAGE_PARAMS_I2C_ADDRESS(uint8_t default_address)
-// {
-// 	PRINT_MODULE_USAGE_PARAM_INT('a', default_address, 0, 0xff, "I2C address", true);
-// }
+void PRINT_MODULE_USAGE_PARAMS_I2C_ADDRESS(uint8_t default_address)
+{
+	PRINT_MODULE_USAGE_PARAM_INT('a', default_address, 0, 0xff, "I2C address", true);
+}
 
-// void PRINT_MODULE_USAGE_PARAMS_I2C_KEEP_RUNNING_FLAG()
-// {
-// 	PRINT_MODULE_USAGE_PARAM_FLAG('k', "if initialization (probing) fails, keep retrying periodically", true);
-// }
+void PRINT_MODULE_USAGE_PARAMS_I2C_KEEP_RUNNING_FLAG()
+{
+	PRINT_MODULE_USAGE_PARAM_FLAG('k', "if initialization (probing) fails, keep retrying periodically", true);
+}
 
-// void PRINT_MODULE_USAGE_PARAM_INT(char option_char, int default_val, int min_val, int max_val,
-// 				  const char *description, bool is_optional)
-// {
-// 	if (is_optional) {
-// 		PX4_INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
+void PRINT_MODULE_USAGE_PARAM_INT(char option_char, int default_val, int min_val, int max_val,
+				  const char *description, bool is_optional)
+{
+	if (is_optional) {
+		INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
 
-// 		if (default_val != -1) {
-// 			PX4_INFO_RAW("                 default: %i\n", default_val);
-// 		}
+		if (default_val != -1) {
+			INFO_RAW("                 default: %i\n", default_val);
+		}
 
-// 	} else {
-// 		PX4_INFO_RAW("     -%c <val>    %s\n", option_char, description);
-// 	}
-// }
+	} else {
+		INFO_RAW("     -%c <val>    %s\n", option_char, description);
+	}
+}
 
-// void PRINT_MODULE_USAGE_PARAM_FLOAT(char option_char, float default_val, float min_val, float max_val,
-// 				    const char *description, bool is_optional)
-// {
-// 	if (is_optional) {
-// 		PX4_INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
+void PRINT_MODULE_USAGE_PARAM_FLOAT(char option_char, float default_val, float min_val, float max_val,
+				    const char *description, bool is_optional)
+{
+	if (is_optional) {
+		INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
 
-// 		if (PX4_ISFINITE(default_val)) {
-// 			PX4_INFO_RAW("                 default: %.1f\n", (double)default_val);
-// 		}
+		if (__builtin_isfinite(default_val)) {
+		    INFO_RAW("                 default: %.1f\n", (double)default_val);
+		}
 
-// 	} else {
-// 		PX4_INFO_RAW("     -%c <val>    %s\n", option_char, description);
-// 	}
-// }
+	} else {
+		INFO_RAW("     -%c <val>    %s\n", option_char, description);
+	}
+}
 
-// void PRINT_MODULE_USAGE_PARAM_FLAG(char option_char, const char *description, bool is_optional)
-// {
-// 	if (is_optional) {
-// 		PX4_INFO_RAW("     [-%c]        %s\n", option_char, description);
+void PRINT_MODULE_USAGE_PARAM_FLAG(char option_char, const char *description, bool is_optional)
+{
+	if (is_optional) {
+		INFO_RAW("     [-%c]        %s\n", option_char, description);
 
-// 	} else {
-// 		PX4_INFO_RAW("     -%c          %s\n", option_char, description);
-// 	}
-// }
+	} else {
+		INFO_RAW("     -%c          %s\n", option_char, description);
+	}
+}
 
-// void PRINT_MODULE_USAGE_PARAM_STRING(char option_char, const char *default_val, const char *values,
-// 				     const char *description, bool is_optional)
-// {
-// 	if (is_optional) {
-// 		PX4_INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
+void PRINT_MODULE_USAGE_PARAM_STRING(char option_char, const char *default_val, const char *values,
+				     const char *description, bool is_optional)
+{
+	if (is_optional) {
+		INFO_RAW("     [-%c <val>]  %s\n", option_char, description);
 
-// 	} else {
-// 		PX4_INFO_RAW("     -%c <val>    %s\n", option_char, description);
-// 	}
+	} else {
+		INFO_RAW("     -%c <val>    %s\n", option_char, description);
+	}
 
-// 	if (values) {
-// 		if (default_val) {
-// 			PX4_INFO_RAW("                 values: %s, default: %s\n", values, default_val);
+	if (values) {
+		if (default_val) {
+			INFO_RAW("                 values: %s, default: %s\n", values, default_val);
 
-// 		} else {
-// 			PX4_INFO_RAW("                 values: %s\n", values);
-// 		}
+		} else {
+			INFO_RAW("                 values: %s\n", values);
+		}
 
-// 	} else {
-// 		if (default_val) {
-// 			PX4_INFO_RAW("                 default: %s\n", default_val);
-// 		}
-// 	}
-// }
+	} else {
+		if (default_val) {
+			INFO_RAW("                 default: %s\n", default_val);
+		}
+	}
+}
 
 
-// void PRINT_MODULE_USAGE_ARG(const char *values, const char *description, bool is_optional)
-// {
-// 	if (is_optional) {
-// 		PX4_INFO_RAW("     [%-9s] %s\n", values, description);
+void PRINT_MODULE_USAGE_ARG(const char *values, const char *description, bool is_optional)
+{
+	if (is_optional) {
+		INFO_RAW("     [%-9s] %s\n", values, description);
 
-// 	} else {
-// 		PX4_INFO_RAW("     %-11s %s\n", values, description);
-// 	}
-// }
+	} else {
+		INFO_RAW("     %-11s %s\n", values, description);
+	}
+}
 

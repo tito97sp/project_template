@@ -1,9 +1,9 @@
 set(SRCS)
 
 if (NOT "${PLATFORM}" MATCHES "qurt" AND NOT "${BOARD}" MATCHES "io-v2" AND NOT "${BOARD_LABEL}" MATCHES "bootloader")
-	#list(APPEND SRCS
-	#	px4_log.cpp
-	#	)
+	list(APPEND SRCS
+		log.cpp
+	)
 endif()
 
 add_library(platform_common

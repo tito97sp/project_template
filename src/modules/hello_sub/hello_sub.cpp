@@ -100,7 +100,7 @@ void HelloSub::run()
 		//		printf("hello number: %lu \n", hello.hello_number);
 		//	}
 		//}
-		printf("SUB: update\n");
+		//printf("SUB: update\n");
 		//sleep(1);
 	}
 	//int hello_sub_fd = orb_subscribe(ORB_ID(hello));

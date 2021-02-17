@@ -34,7 +34,7 @@
 #include "hello_pub.h"
 
 //#include <px4_platform_common/getopt.h>
-//#include <px4_platform_common/log.h>
+#include <platform_common/log.h>
 //#include <px4_platform_common/posix.h>
 
 
@@ -99,7 +99,7 @@ HelloPub::HelloPub() : ModuleParams(nullptr)
 
 void HelloPub::run()
 {
-	printf("hello_pub module started\n");
+	INFO("hello_pub module started");
 	
 	struct hello_s hello{};
 
@@ -120,7 +120,7 @@ void HelloPub::run()
 
 		iter++;
 
-		printf("PUB: iter = %lu\n", iter);
+		//printf("PUB: iter = %lu\n", iter);
 
 		unsigned int sleep_time = (unsigned int)(_hello_param.get()/1000);
 		sleep(sleep_time);
