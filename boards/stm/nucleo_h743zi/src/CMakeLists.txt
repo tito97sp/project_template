@@ -64,7 +64,7 @@ else()
 		stm32_mmcsd.c
 		stm32_romfs_initialize.c
 		stm32_spi.c
-		stm32_bluefruit.c
+		#stm32_bluefruit.c
 		#stm32_ssd1306.c
 		#stm32_uid.c
 		)

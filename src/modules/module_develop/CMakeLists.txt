@@ -45,7 +45,7 @@ add_module(
 	DEPENDS
 		uORB
 	COMPILE_FLAGS
-		-Wno-permossive
+		-Wno-permissive
 	)
 
 

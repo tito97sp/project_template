@@ -26,6 +26,7 @@
 
 // Shared type includes
 #include "multiword_types.h"
+#include "MW_uORB_busstruct_conversion.h"
 
 // Macros for accessing real-time model data structure
 #ifndef rtmGetErrorStatus
