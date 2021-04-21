@@ -143,10 +143,6 @@
 #define GPIO_BTN_USER  (GPIO_INPUT | GPIO_FLOAT | GPIO_EXTI | GPIO_PORTC | GPIO_PIN13)
 
 
-/* SPI chip selects */
-#define GPIO_SDCARD_CS   (GPIO_OUTPUT|GPIO_PULLUP|GPIO_OUTPUT_SET|GPIO_SPEED_50MHz|GPIO_PORTD|GPIO_PIN14)
-
-
 
 /* USB OTG FS
  *
@@ -184,9 +180,15 @@
 /* Example, used free Ports on the board */
 
 #define GPIO_IN1          (GPIO_INPUT | GPIO_FLOAT | GPIO_PORTE | GPIO_PIN2)
-#define GPIO_OUT1         (GPIO_OUTPUT | GPIO_PUSHPULL | GPIO_SPEED_50MHz | \
-                           GPIO_OUTPUT_SET | GPIO_PORTE | GPIO_PIN4)
+#define GPIO_OUT1         (GPIO_OUTPUT | GPIO_PUSHPULL | GPIO_SPEED_50MHz | GPIO_OUTPUT_SET | GPIO_PORTE | GPIO_PIN4)
 #define GPIO_INT1         (GPIO_INPUT | GPIO_FLOAT | GPIO_PORTE | GPIO_PIN5)
+
+
+/* MICRO-SD BOARD */
+
+#ifdef CONFIG_MMCSD
+#define GPIO_SDCARD_CS   (GPIO_OUTPUT | GPIO_PULLUP | GPIO_SPEED_50MHz | GPIO_OUTPUT_SET | GPIO_PORTD | GPIO_PIN14)       /* PD14 */ 
+#endif
 
 /* X-NUCLEO IKS01A2 */
 
@@ -200,12 +202,19 @@
  * IRQ - PD15 (D9)
  */
 
-#define GPIO_NRF24L01_CS   (GPIO_OUTPUT | GPIO_SPEED_50MHz| \
-                            GPIO_OUTPUT_SET | GPIO_PORTA | GPIO_PIN4)
-#define GPIO_NRF24L01_CE   (GPIO_OUTPUT | GPIO_SPEED_50MHz| \
-                            GPIO_OUTPUT_CLEAR | GPIO_PORTF | GPIO_PIN12)
+#define GPIO_NRF24L01_CS   (GPIO_OUTPUT | GPIO_SPEED_50MHz| GPIO_OUTPUT_SET | GPIO_PORTA | GPIO_PIN4)
+#define GPIO_NRF24L01_CE   (GPIO_OUTPUT | GPIO_SPEED_50MHz| GPIO_OUTPUT_CLEAR | GPIO_PORTF | GPIO_PIN12)
 #define GPIO_NRF24L01_IRQ  (GPIO_INPUT | GPIO_FLOAT | GPIO_PORTD | GPIO_PIN15)
 
+/* BLUEFRUIT
+ * CS  - PA15 (D9)
+ * CE  - PF12 (D8)
+ * IRQ - PB4  (D7)
+ */
+
+#define GPIO_BLUEFRUIT_CS   (GPIO_OUTPUT | GPIO_SPEED_50MHz| GPIO_OUTPUT_SET | GPIO_PORTD | GPIO_PIN15)
+#define GPIO_BLUEFRUIT_CE   (GPIO_OUTPUT | GPIO_SPEED_50MHz| GPIO_OUTPUT_CLEAR | GPIO_PORTF | GPIO_PIN12)
+#define GPIO_BLUEFRUIT_IRQ  (GPIO_INPUT | GPIO_FLOAT | GPIO_PORTF | GPIO_PIN13)
 
 
 
@@ -359,6 +368,18 @@ int stm32_lsm303agr_initialize(char *devpath);
 #ifdef CONFIG_WL_NRF24L01
 int stm32_wlinitialize(void);
 #endif
+
+/****************************************************************************
+ * Name: stm32_wlinitialize
+ *
+ * Description:
+ *   Initialize NRF24L01 wireless interaface.
+ ****************************************************************************/
+
+#ifdef CONFIG_WL_BLUEFRUIT
+int stm32_blfrinitialize(void);
+#endif
+
 
 /****************************************************************************
  * Name: stm32_lsm9ds1_initialize

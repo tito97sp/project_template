@@ -1,0 +1,37 @@
+
+                NUCLEO-H743Z1
+
+                                                                                           _ _
+                                                                                    PC6   |_|_|   PB8       (I2C1_SCL)
+                                                                                   PB15   |_|_|   PB9       (I2C1_SDA)
+                                                                                   PB13   |_|_|   AVDD
+                                   _ _                                             PB12   |_|_|   GND
+                             NC   |_|_|   PC8                                      PB15   |_|_|   PA5       (SPI1_SCK)
+                          IOREF   |_|_|   PC9                                       PC7   |_|_|   PA6       (SPI1_MISO)
+                          RESET   |_|_|   PC10                      (SPI3_MOSI)     PB5   |_|_|   PA7(PB5)  (SPI1_MOSI)
+                            3V3   |_|_|   PC11                       (SPI3_SCK)     PB3   |_|_|   PD14      (SDCARD_CS)
+                             5V   |_|_|   PC12                       (SPI3_NSS)     PA4   |_|_|   PD15      (BLUEFRUIT_CS)    
+                            GND   |_|_|   PD2                       (SPI3_MISO)     PB4   |_|_|   PF12      (BLUEFRUIT_CE)
+                            GND   |_|_|   PG2                                              _ _ 
+                            VIN   |_|_|   PG3                                      AVDD   |_|_|   PF13      (BLUEFRUIT_IRQ)
+                                   _ _                                             AGND   |_|_|   PE9       
+                            PA3   |_|_|   PD7                                       GND   |_|_|   PE11     
+                            PC0   |_|_|   PD6                                       PB1   |_|_|   PF14      
+                            PC3   |_|_|   PD5                                       PC2   |_|_|   PE13      
+                            PF3   |_|_|   PD4                                       PF4   |_|_|   PF15
+                            PF5   |_|_|   PD3                                       PB6   |_|_|   PG14      (USART6_TX)
+                           PF10   |_|_|   GND                                       PB2   |_|_|   PG9       (USART6_RX)
+                             NC   |_|_|   PE2                                       GND   |_|_|   PE8       
+                            PA7   |_|_|   PE4                                      PD13   |_|_|   PE7
+          (I2C2_SMBA)       PF2   |_|_|   PE5                                      PD12   |_|_|   GND
+           (I2C2_SCL)       PF1   |_|_|   PE6                                      PD11   |_|_|   PE10
+           (I2C2_SDA)       PF0   |_|_|   PE3                                       PE2   |_|_|   PE12
+                            GND   |_|_|   PF8                                       GND   |_|_|   PE14     
+                            PD0   |_|_|   PF7                                       PA0   |_|_|   PE15
+                            PD1   |_|_|   PF9                            (LED1)     PB0   |_|_|   PB10
+                            PG0   |_|_|   PG1                                       PE0   |_|_|   PB11
+
+  
+
+- Depending on the soldering layout the Morpho attached pins can be different from the standar. Those exceptions are represented as follows:
+       Example: PA7(PB5). --> PA7 (D11) is attached to PB5. 

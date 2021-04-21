@@ -10,6 +10,8 @@ add_board(
 	MODULES
 		hello_sub
 		hello_pub
+		blue_daemon
+		module_develop
 	SYSTEMCMDS
 		param
 	)

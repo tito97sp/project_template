@@ -1,0 +1,34 @@
+
+                NUCLEO-H743Z1
+
+                                                _ _
+                                         PC6   |_|_|   PB8 
+                                        PB15   |_|_|   PB9
+                                        PB13   |_|_|   AVDD
+         _ _                            PB12   |_|_|   GND
+   NC   |_|_|   PC8                     PB15   |_|_|   PA5
+IOREF   |_|_|   PC9                      PC7   |_|_|   PA6
+RESET   |_|_|   PC10                     PB5   |_|_|   PA7
+  3V3   |_|_|   PC11                     PB3   |_|_|   PD14
+   5V   |_|_|   PC12                     PA4   |_|_|   PD15
+  GND   |_|_|   PD2                      PB4   |_|_|   PF12
+  GND   |_|_|   PG2                             _ _ 
+  VIN   |_|_|   PG3                     AVDD   |_|_|   PF13
+         _ _                            AGND   |_|_|   PE9
+  PA3   |_|_|   PD7                      GND   |_|_|   PE11
+  PC0   |_|_|   PD6                      PB1   |_|_|   PF14
+  PC3   |_|_|   PD5                      PC2   |_|_|   PE13
+  PF3   |_|_|   PD4                      PF4   |_|_|   PF15
+  PF5   |_|_|   PD3                      PB6   |_|_|   PG14
+ PF10   |_|_|   GND                      PB2   |_|_|   PG9
+   NC   |_|_|   PE2                      GND   |_|_|   PE8
+  PA7   |_|_|   PE4                     PD13   |_|_|   PE7
+  PF2   |_|_|   PE5                     PD12   |_|_|   GND
+  PF1   |_|_|   PE6                     PD11   |_|_|   PE10
+  PF0   |_|_|   PE3                      PE2   |_|_|   PE12
+  GND   |_|_|   PF8                      GND   |_|_|   PE14
+  PD0   |_|_|   PF7                      PA0   |_|_|   PE15
+  PD1   |_|_|   PF9                      PB0   |_|_|   PB10
+  PG0   |_|_|   PG1                      PE0   |_|_|   PB11
+
+  

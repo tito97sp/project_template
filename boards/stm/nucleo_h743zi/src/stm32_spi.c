@@ -76,9 +76,16 @@ void stm32_spidev_initialize(void)
    *       architecture.
    */
 #ifdef CONFIG_STM32H7_SPI1
+
 #ifdef CONFIG_MMCSD_SPI
+  spiinfo("Configure GPIO for SPI1 MMCSD_CS\n");
   stm32_configgpio(GPIO_SDCARD_CS);           /* SD/MMC Card chip select */
 #endif
+#ifdef CONFIG_WL_BLUEFRUIT
+  spiinfo("Configure GPIO for SPI1 BLUEFRUIT_CS\n");
+  stm32_configgpio(GPIO_BLUEFRUIT_CS);
+#endif
+
 #endif
 
 #ifdef CONFIG_STM32H7_SPI3
@@ -121,27 +128,46 @@ void stm32_spidev_initialize(void)
 #ifdef CONFIG_STM32H7_SPI1
 void stm32_spi1select(FAR struct spi_dev_s *dev, uint32_t devid, bool selected)
 {
-  #ifdef CONFIG_MMCSD_SPI
-  if (devid == SPIDEV_MMCSD(0))
-    {
-      stm32_gpiowrite(GPIO_SDCARD_CS, !selected);
-    }
-  #endif
-
-  spiinfo("devid: %08lx CS: %s\n",
-          (unsigned long)devid, selected ? "assert" : "de-assert");
+  switch (devid)
+  {
+#ifdef CONFIG_MMCSD_SPI
+  case SPIDEV_MMCSD(0):
+    spiinfo("devid: %08lx CS: %s\n", (unsigned long)devid, selected ? "assert" : "de-assert");
+    stm32_gpiowrite(GPIO_SDCARD_CS, !selected);
+    break;
+#endif
+#ifdef CONFIG_WL_BLUEFRUIT
+  case SPIDEV_WIRELESS(0):
+    spiinfo("devid: %08lx CS: %s\n", (unsigned long)devid, selected ? "assert" : "de-assert");
+    stm32_gpiowrite(GPIO_BLUEFRUIT_CS, !selected);
+    break;
+#endif
+  default:
+    break;
+  }
 }
 
 uint8_t stm32_spi1status(FAR struct spi_dev_s *dev, uint32_t devid)
 {
   uint8_t status = 0;
-  
-  #ifdef CONFIG_MMCSD_SPI
-    if (devid == SPIDEV_MMCSD(0))
-    {
-        status |= SPI_STATUS_PRESENT;
-    }
-  #endif
+  switch (devid)
+  {
+
+#ifdef CONFIG_MMCSD_SPI
+  case SPIDEV_MMCSD(0):
+    status |= SPI_STATUS_PRESENT;
+    break;
+#endif
+
+#ifdef CONFIG_WL_BLUEFRUIT
+  case SPIDEV_WIRELESS(0):
+    status |= SPI_STATUS_PRESENT;
+    break;
+#endif
+
+  default:
+    break;
+  }
   return status;
 }
 #endif

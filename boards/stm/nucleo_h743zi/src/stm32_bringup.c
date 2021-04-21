@@ -352,6 +352,16 @@ int stm32_bringup(void)
     }
 #endif /* CONFIG_WL_NRF24L01 */
 
+#ifdef CONFIG_WL_BLUEFRUIT
+  ret = stm32_blfrinitialize();
+  if (ret < 0)
+    {
+      syslog(LOG_ERR, "ERROR: Failed to initialize wireless driver: %d\n",
+             ret);
+    }
+#endif /* CONFIG_WL_BLUEFRUIT */
+
+
 #if defined(CONFIG_CDCACM) && !defined(CONFIG_CDCACM_CONSOLE)
   /* Initialize CDCACM */
 
