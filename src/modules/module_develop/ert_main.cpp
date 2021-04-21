@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'matlab_module'.
 //
-// Model version                  : 1.21
+// Model version                  : 1.7
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Mon Apr 19 22:22:06 2021
+// C/C++ source code generated on : Wed Apr 21 18:10:14 2021
 //
 // Target selection: nuttx_ec.tlc
 // Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -24,7 +24,7 @@
 #include <platform_common/log.h>
 #include "ert_main.h"
 #include "matlab_module.h"
-#define STEP_SIZE                      10000000UL                // Sample Time in microseconds 
+#define STEP_SIZE                      200000UL                  // Sample Time in microseconds 
 
 static pthread_mutex_t matlab_module_mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t matlab_module_condition = PTHREAD_COND_INITIALIZER;

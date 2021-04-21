@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'matlab_module'.
 //
-// Model version                  : 1.21
+// Model version                  : 1.7
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Mon Apr 19 22:22:06 2021
+// C/C++ source code generated on : Wed Apr 21 18:10:14 2021
 //
 // Target selection: nuttx_ec.tlc
 // Embedded hardware selection: Intel->x86-64 (Windows64)

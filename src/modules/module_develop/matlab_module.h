@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'matlab_module'.
 //
-// Model version                  : 1.21
+// Model version                  : 1.7
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Mon Apr 19 22:22:06 2021
+// C/C++ source code generated on : Wed Apr 21 18:10:14 2021
 //
 // Target selection: nuttx_ec.tlc
 // Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -18,8 +18,6 @@
 //
 #ifndef RTW_HEADER_matlab_module_h_
 #define RTW_HEADER_matlab_module_h_
-#include <cmath>
-#include <math.h>
 #include <poll.h>
 #include <uORB/uORB.h>
 #include "rtwtypes.h"
@@ -38,17 +36,14 @@
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
 
-// Block states (default storage) for system '<S1>/SinkBlock'
-struct DW_SinkBlock_matlab_module_T {
-  nuttx_internal_block_Publishe_T obj; // '<S1>/SinkBlock'
-  boolean_T objisempty;                // '<S1>/SinkBlock'
-};
-
 // Block states (default storage) for system '<Root>'
 struct DW_matlab_module_T {
-  int32_T counter;                     // '<Root>/Sine Wave'
-  DW_SinkBlock_matlab_module_T SinkBlock_f;// '<S1>/SinkBlock'
-  DW_SinkBlock_matlab_module_T SinkBlock;// '<S1>/SinkBlock'
+  nuttx_internal_block_Publishe_T obj; // '<S1>/SinkBlock'
+};
+
+// Invariant block signals (default storage)
+struct ConstB_matlab_module_T {
+  nuttx_Bus_log_message BusAssignment; // '<Root>/Bus Assignment'
 };
 
 // Real-time Model Data Structure
@@ -58,10 +53,7 @@ struct tag_RTM_matlab_module_T {
 
 // Block states (default storage)
 extern struct DW_matlab_module_T matlab_module_DW;
-
-// External data declarations for dependent source files
-extern const uint64m_T matlab_module_uint64_GND;// uint64m_T ground
-extern const log_message_s matlab_module_rtZnuttx_Bus_log_message;// nuttx_Bus_log_message ground 
+extern const ConstB_matlab_module_T matlab_module_ConstB;// constant block i/o
 
 #ifdef __cplusplus
 
@@ -108,9 +100,8 @@ extern "C" {
 //  Here is the system hierarchy for this model
 //
 //  '<Root>' : 'matlab_module'
-//  '<S1>'   : 'matlab_module/Publisher1'
-//  '<S2>'   : 'matlab_module/Publisher2'
-//  '<S3>'   : 'matlab_module/uORB Topic'
+//  '<S1>'   : 'matlab_module/uORB Publish'
+//  '<S2>'   : 'matlab_module/uORB Topic'
 
 #endif                                 // RTW_HEADER_matlab_module_h_
 

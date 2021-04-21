@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'matlab_module'.
 //
-// Model version                  : 1.21
+// Model version                  : 1.7
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Mon Apr 19 22:22:06 2021
+// C/C++ source code generated on : Wed Apr 21 18:10:14 2021
 //
 // Target selection: nuttx_ec.tlc
 // Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -19,7 +19,21 @@
 #include "matlab_module.h"
 #include "matlab_module_private.h"
 
-const uint64m_T matlab_module_uint64_GND = { { 0UL, 0UL } };// uint64m_T ground
+// Invariant block signals (default storage)
+const ConstB_matlab_module_T matlab_module_ConstB = {
+  {
+    { { 0x1UL, 0UL } },
+    0U,
+
+    { 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
+      0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U }
+  }                                    // '<Root>/Bus Assignment'
+};
 
 //
 // File trailer for generated code.
