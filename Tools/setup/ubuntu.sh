@@ -77,6 +77,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends i
 	ccache \
 	cmake \
 	cppcheck \
+	genromfs\
 	file \
 	g++ \
 	gcc \
@@ -182,7 +183,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 	 	else
 	 		echo $exportline >> $HOME/.profile;
 	 	fi
-	fi
+	
 
 
 	#openocd uploader
@@ -192,7 +193,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 
 	else
 	 	echo "Installing openocd";
-		git clone https://repo.or.cz/openocd.git /opt/
+		git clone https://repo.or.cz/openocd.git /opt/openocd/
 
 		(cd /opt/openocd/ && sudo bash bootstrap \
 		 	&& sudo bash configure \
