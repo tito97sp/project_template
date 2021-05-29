@@ -193,7 +193,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 
 	else
 	 	echo "Installing openocd";
-		git clone https://repo.or.cz/openocd.git /opt/openocd/
+		sudo git clone https://repo.or.cz/openocd.git /opt/openocd/
 
 		(cd /opt/openocd/ && sudo bash bootstrap \
 		 	&& sudo bash configure \
