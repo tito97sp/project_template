@@ -129,6 +129,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		screen \
 		vim-common \
 		minicom \
+		kconfig-frontends \
 		;
 
 	if [ -n "$USER" ]; then
@@ -198,6 +199,8 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 		(cd /opt/openocd/ && sudo bash bootstrap \
 		 	&& sudo bash configure \
 			&& sudo make install)
+
+		(cd /opt/openocd/contrib/ && sudo cp 60-openocd.rules /etc/udev/rules.d/)
 
 	fi
 
