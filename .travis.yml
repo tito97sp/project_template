@@ -14,11 +14,10 @@ jobs:
   include:
   - stage: setup_env
     script: 
+      - cd $TRAVIS_BUILD_DIR
       - cd Tools/setup
       - ./ubuntu.sh
-  
-  - stage: build
-    script:
+      - cd $TRAVIS_BUILD_DIR
       - cmake --configure .
       - cmake --build .
       - cd build
