@@ -2,5 +2,22 @@ language: cpp
 
 sudo: required
 
+branches:
+  only:
+  - master
+
+matrix:
+  include:
+  # Linux builds
+  - os: linux
+    compiler: gcc
+    dist: bionic 
+
+  - name: setup_env
+    script: 
+      - cd Tools/setup
+      - ./ubuntu.sh
+    
+
 script:
   -   echo "hello from travis "
