@@ -3,4 +3,4 @@ language: cpp
 sudo: required
 
 script:
-  -   echo "hello from travis"
+  -   echo "hello from travis "
