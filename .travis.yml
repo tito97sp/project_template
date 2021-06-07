@@ -20,8 +20,6 @@ jobs:
       - cd $TRAVIS_BUILD_DIR
       - cmake --configure .
       - cmake --build .
-      - cd build
-      - make all
     
   
 script:
