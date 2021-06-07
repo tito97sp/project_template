@@ -41,7 +41,7 @@
 #include <uORB/uORB.h>
 #include <uORB/Subscription.hpp>
 #include <uORB/Publication.hpp>
-#include <uORB/topics/hellose.h>
+#include <uORB/topics/hello.h>
 #include <uORB/topics/parameter_update.h>
       
       
