@@ -12,12 +12,12 @@ dist: bionic
 
 jobs:
   include:
-  - name: setup_env
+  - stage: setup_env
     script: 
       - cd Tools/setup
       - ./ubuntu.sh
   
-  - name: build
+  - stage: build
     script:
       - cmake --configure .
       - cmake --build .
