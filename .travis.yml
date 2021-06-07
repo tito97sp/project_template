@@ -2,10 +2,6 @@ language: cpp
 
 sudo: required
 
-branches:
-  only:
-  - master
-
 os: linux
 compiler: gcc
 dist: bionic 
