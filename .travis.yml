@@ -19,6 +19,7 @@ jobs:
   
   - name: build
     script:
+      - cmake --configure .
       - cmake --build .
       - cd build
       - make all
