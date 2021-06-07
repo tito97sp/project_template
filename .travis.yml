@@ -6,18 +6,23 @@ branches:
   only:
   - master
 
-matrix:
-  include:
-  # Linux builds
-  - os: linux
-    compiler: gcc
-    dist: bionic 
+os: linux
+compiler: gcc
+dist: bionic 
 
+jobs:
+  include:
   - name: setup_env
     script: 
       - cd Tools/setup
       - ./ubuntu.sh
+  
+  - name: build
+    script:
+      - cmake --build
+      - cd build
+      - make all
     
-
+  
 script:
   -   echo "hello from travis "
