@@ -10,7 +10,7 @@ branches:
   - master
 
 before_install:
-  - docker pull tito97sp/project_template-dev-base-bionic:1.0.0 .
+  - docker pull tito97sp/project_template-dev-base-bionic:1.0.0 
   - docker run -d -p 127.0.0.1:80:4567 tito97sp/project_template-dev-base-bionic /bin/sh -c "cd /root/project_template-dev-base-bionic; bundle exec foreman start;"
   - docker ps -a
   - docker run tito97sp/project_template-dev-base-bionic /bin/sh -c "cd /root/project_template-dev-base-bionic; bundle exec foreman start;"
