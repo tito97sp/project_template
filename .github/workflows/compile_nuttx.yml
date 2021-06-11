@@ -25,7 +25,7 @@ jobs:
         
     - name: make ${{matrix.config}}
       run: |
-        .Tools/setup/ubuntu.sh 
+        ./Tools/setup/ubuntu.sh 
         mkdir build && cd build
         cmake ../
         make ${{matrix.config}}
