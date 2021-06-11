@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    container: tito97sp/project_template-dev-base-bionic:1.0.0
+    container: tito97sp/project_template-dev-base-bionic:1.0.1
     strategy:
       matrix:
         config: [
