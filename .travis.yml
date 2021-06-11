@@ -11,20 +11,17 @@ branches:
 
 before_install:
   - docker pull tito97sp/project_template-dev-base-bionic:1.0.0 
-  - docker run -d -p 127.0.0.1:80:4567 tito97sp/project_template-dev-base-bionic:1.0.0 /bin/sh -c "cd /root/project_template-dev-base-bionic; bundle exec foreman start;"
+  - docker run -d -p 127.0.0.1:80:4567 tito97sp/project_template-dev-base-bionic:1.0.0 /bin/sh -c "cd /root/project_template-dev-base-bionic;"
   - docker ps -a
-  - docker run tito97sp/project_template-dev-base-bionic:1.0.0 /bin/sh -c "cd /root/project_template-dev-base-bionic; bundle exec foreman start;"
+  - docker run tito97sp/project_template-dev-base-bionic:1.0.0 /bin/sh -c "cd /root/project_template-dev-base-bionic;"
 
 jobs:
   include:
   - stage: setup_env
     script: 
       - cd $TRAVIS_BUILD_DIR
-      - cd Tools/setup
-      - ./ubuntu.sh
-      - cd $TRAVIS_BUILD_DIR
-      - cmake --configure .
-      - cmake --build .
+      - docker run -t tito97sp/project_template-dev-base-bionic /bin/bash -c "cmake --configure ."
+      - docker run -t tito97sp/project_template-dev-base-bionic /bin/bash -c "cmake --build ."
     
   
 script:
