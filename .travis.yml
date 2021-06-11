@@ -2,13 +2,12 @@ language: cpp
 
 sudo: required
 
+services:
+  - docker
+
 branches:
   only:
   - master
-
-os: linux
-compiler: gcc
-dist: bionic 
 
 jobs:
   include:
