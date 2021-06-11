@@ -25,6 +25,7 @@ jobs:
         
     - name: make ${{matrix.config}}
       run: |
+        pip3 install --user empy
         mkdir build && cd build
         cmake ../
         make ${{matrix.config}}
