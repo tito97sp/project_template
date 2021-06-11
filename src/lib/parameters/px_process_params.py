@@ -54,11 +54,12 @@ import re
 import json
 import codecs
 
+
 def SaveCompressed(filename):
     #create gz compressed version
     gz_filename=filename+'.gz'
-    with gzip.open(gz_filename, 'wt') as f:
-        with open(filename, 'r') as content_file:
+    with gzip.open(gz_filename, 'wt', encoding='utf-8') as f:
+        with open(filename, 'r', encoding='utf-8') as content_file:
             f.write(content_file.read())
 
 
