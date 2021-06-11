@@ -26,6 +26,6 @@ jobs:
     - name: make ${{matrix.config}}
       run: |
         mkdir build && cd build
-        cmake --configure .
+        cmake ../
         make ${{matrix.config}}
    
