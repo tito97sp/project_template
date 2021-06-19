@@ -16,17 +16,16 @@ jobs:
     strategy:
       matrix:
         config: [
-          all
+          stm_nucleo_h743zi
           ]
     steps:
     - uses: actions/checkout@v1
       with:
         token: ${{secrets.ACCESS_TOKEN}}
-        
-    - name: make ${{matrix.config}}
-      run: |
-        ./Tools/setup/ubuntu.sh 
-        mkdir build && cd build
-        cmake ../
-        make ${{matrix.config}}
+    
+    - name: setup_env
+      run: ./Tools/setup/ubuntu.sh 
+
+    - name: make ${{matrix.config}} 
+      run: make ${{matrix.config}} NO_NINJA_BUILD=1
    
