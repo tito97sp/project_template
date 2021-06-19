@@ -33,8 +33,7 @@ define_property(GLOBAL PROPERTY MODULE_PATHS
 # configuration
 #
 
-set(CONFIG "stm_nucleo_h743zi_default.cmake" CACHE STRING "desired configuration")
-#set(CONFIG "px4_fmu-v5_default.cmake" CACHE STRING "desired configuration")
+#set(CONFIG "stm_nucleo_h743zi_default.cmake" CACHE STRING "desired configuration")
 
 include(add_module)
 set(config_module_list)
@@ -164,37 +163,51 @@ endif()
 #
 
 # optionally enable cmake testing (supported only on posix)
-option(CMAKE_TESTING "Configure test targets" OFF)
-if(${CONFIG} STREQUAL "px4_sitl_test")
-	set(CMAKE_TESTING ON)
-endif()
-if(CMAKE_TESTING)
-	include(CTest) # sets BUILD_TESTING variable
-endif()
 
-# enable test filtering to run only specific tests with the ctest -R regex functionality
-set(TESTFILTER "" CACHE STRING "Filter string for ctest to selectively only run specific tests (ctest -R)")
+# option(CMAKE_TESTING "Configure test targets" OFF)
 
-# if testing is enabled download and configure gtest
-list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/cmake/gtest/)
-include(add_gtest)
-if(BUILD_TESTING)
-	include(gtest)
+# set(TESTING_ON "")
 
-	add_custom_target(test_results
-			COMMAND GTEST_COLOR=1 ${CMAKE_CTEST_COMMAND} --output-on-failure -T Test -R ${TESTFILTER} USES_TERMINAL
-			DEPENDS
-				#px4
-				#examples__dyn_hello
-				#test_mixer_multirotor
-			USES_TERMINAL
-			COMMENT "Running tests"
-			WORKING_DIRECTORY ${BINARY_DIR})
-	set_target_properties(test_results PROPERTIES EXCLUDE_FROM_ALL TRUE)
-endif()
+# if(${TESTING_ON} STREQUAL "TRUE")
+# 	set(CMAKE_TESTING ON)
+# endif()
+# if(CMAKE_TESTING)
+# 	include(CTest) # sets BUILD_TESTING variable
+# 	include(FetchContent)
+# 	FetchContent_Declare(
+# 	  googletest
+# 	  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+# 	)
+	
+# 	set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+# 	FetchContent_MakeAvailable(googletest)
+
+# endif()
 
 
+# # enable test filtering to run only specific tests with the ctest -R regex functionality
+# set(TESTFILTER "" CACHE STRING "Filter string for ctest to selectively only run specific tests (ctest -R)")
 
+# # if testing is enabled download and configure gtest
+# list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/cmake/gtest/)
+# include(add_gtest)
+# if(BUILD_TESTING)
+# 	# include(gtest)
+
+# 	# add_custom_target(test_results
+# 	# 		COMMAND GTEST_COLOR=1 ${CMAKE_CTEST_COMMAND} --output-on-failure -T Test -R ${TESTFILTER} USES_TERMINAL
+# 	# 		DEPENDS
+# 	# 			#px4
+# 	# 			#examples__dyn_hello
+# 	# 			#test_mixer_multirotor
+# 	# 		USES_TERMINAL
+# 	# 		COMMENT "Running tests"
+# 	# 		WORKING_DIRECTORY ${BINARY_DIR})
+# 	# set_target_properties(test_results PROPERTIES EXCLUDE_FROM_ALL TRUE)
+# endif()
+
+
+# add_subdirectory(test)
 #=============================================================================
 # subdirectories
 #
