@@ -1,7 +1,7 @@
 [submodule "platforms/nuttx/NuttX/nuttx"]
 	path = platforms/nuttx/NuttX/nuttx
 	url = https://github.com/tito97sp/incubator-nuttx.git
-	branch = tito_firmware_nuttx-10.1.0
+	branch = tito_firmware_nuttx-1.0.0
 [submodule "platforms/nuttx/NuttX/apps"]
 	path = platforms/nuttx/NuttX/apps
 	url = https://github.com/tito97sp/incubator-nuttx-apps.git
