@@ -26,6 +26,7 @@
 #			[ TESTING ]
 #			[ LINKER_PREFIX <string> ]
 #			[ EMBEDDED_METADATA <string> ]
+#			[ ETHERNET ]
 #			)
 #
 #	Input:
@@ -49,6 +50,7 @@
 #		CONSTRAINED_FLASH	: flag to enable constrained flash options (eg limit init script status text)
 #		TESTING				: flag to enable automatic inclusion of testing modules
 #		LINKER_PREFIX		: optional to prefix on the Linker script.
+#		ETHERNET		: flag to indicate that ethernet is enabled
 #
 #
 #	Example:
@@ -124,7 +126,9 @@ function(add_board)
 		OPTIONS
 			BUILD_BOOTLOADER
 			CONSTRAINED_FLASH
+			CONSTRAINED_MEMORY
 			TESTING
+			ETHERNET
 		REQUIRED
 			PLATFORM
 			VENDOR
@@ -218,6 +222,9 @@ function(add_board)
 
 	if(TESTING)
 		set(TESTING "1" CACHE INTERNAL "testing enabled" FORCE)
+	endif()
+	if(ETHERNET)
+		set(ETHERNET "1" CACHE INTERNAL "ethernet enabled" FORCE)
 	endif()
 
 	if(LINKER_PREFIX)
