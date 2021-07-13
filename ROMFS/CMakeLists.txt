@@ -36,6 +36,9 @@ message(STATUS "ROMFS: ${config_romfs_root}")
 set(romfs_src_dir ${SOURCE_DIR}/ROMFS/${config_romfs_root})
 set(romfs_gen_root_dir ${BINARY_DIR}/etc)
 
+file(RELATIVE_PATH romfs_path_relative ${SOURCE_DIR} ${romfs_src_dir})
+message(STATUS "ROMFS: ${romfs_path_relative}")
+
 set_property(GLOBAL PROPERTY ROMFS_FILES)
 set_property(GLOBAL PROPERTY ROMFS_CMAKE_FILES)
 
@@ -81,6 +84,9 @@ file(GLOB jinja_templates ${SOURCE_DIR}/Tools/serial/*.jinja)
 if (constrained_flash_build)
 	set(added_arguments --constrained-flash)
 endif()
+if(ETHERNET)
+	set(added_arguments ${added_arguments} --ethernet)
+endif()
 # create list of relative romfs file names
 set(romfs_copy_files_relative)
 foreach(romfs_file IN LISTS romfs_copy_files)
@@ -112,6 +118,7 @@ add_custom_command(
 set(romfs_extract_stamp ${CMAKE_CURRENT_BINARY_DIR}/romfs_extract.stamp)
 add_custom_command(
 	OUTPUT ${romfs_extract_stamp}
+	COMMAND ${CMAKE_COMMAND} -E remove_directory ${romfs_gen_root_dir}/*
 	COMMAND ${CMAKE_COMMAND} -E tar xf ${romfs_tar_file}
 	COMMAND ${CMAKE_COMMAND} -E touch ${romfs_extract_stamp}
 	WORKING_DIRECTORY ${romfs_gen_root_dir}
@@ -141,20 +148,58 @@ add_custom_command(
 # copy extras into ROMFS
 set(extras_dependencies)
 
-# copy px4io binary if configured
+# copy io binary if configured
 if(config_io_board)
 	list(APPEND extras_dependencies
 		copy_px4io_bin
 		${fw_io_bin}
 	)
+	file(RELATIVE_PATH iofw_file_relative ${SOURCE_DIR} ${fw_io_bin})
+	message(STATUS "ROMFS:  Adding ${iofw_file_relative} -> /etc/extras/${config_io_board}.bin")
 endif()
 
-if(config_build_bootloader)
+
+# board bootloader (built or included)
+if(TARGET copy_bootloader_bin)
+
+	if(board_bootloader_firmware)
+		file(RELATIVE_PATH bl_file_relative ${SOURCE_DIR} ${board_bootloader_firmware})
+		message(STATUS "ROMFS:  Adding ${bl_file_relative} -> /etc/extras/bootloader.bin")
+	else()
+		file(RELATIVE_PATH bl_file_relative ${SOURCE_DIR} ${bootloader_bin})
+		message(STATUS "ROMFS:  Adding ${bl_file_relative} -> /etc/extras/bootloader.bin")
+	endif()
+
 	list(APPEND extras_dependencies
 		copy_bootloader_bin
 		${bootloader_bin}
 	)
 endif()
+
+
+# optional board architecture defaults
+set(board_arch_rc_file "rc.board_arch_defaults")
+if(EXISTS "${SOURCE_DIR}/platforms/${PLATFORM}/init/${CONFIG_ARCH_CHIP}/${board_arch_rc_file}")
+	file(RELATIVE_PATH rc_file_relative ${SOURCE_DIR} ${SOURCE_DIR}/platforms/${PLATFORM}/init/${CONFIG_ARCH_CHIP}/${board_arch_rc_file})
+	message(STATUS "ROMFS:  Adding ${rc_file_relative} -> /etc/init.d/${board_arch_rc_file}")
+
+	add_custom_command(
+		OUTPUT
+			${romfs_gen_root_dir}/init.d/${board_arch_rc_file}
+			${board_arch_rc_file}.stamp
+		COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_DIR}/platforms/${PLATFORM}/init/${CONFIG_ARCH_CHIP}/${board_arch_rc_file} ${romfs_gen_root_dir}/init.d/${board_arch_rc_file}
+		COMMAND ${CMAKE_COMMAND} -E touch ${board_arch_rc_file}.stamp
+		DEPENDS
+			${SOURCE_DIR}/platforms/${PLATFORM}/init/${CONFIG_ARCH_CHIP}/${board_arch_rc_file}
+			romfs_copy.stamp
+		COMMENT "ROMFS: copying ${board_arch_rc_file}"
+	)
+
+	list(APPEND extras_dependencies
+		${board_arch_rc_file}.stamp
+	)
+endif()
+
 
 set(OPTIONAL_BOARD_RC)
 list(APPEND OPTIONAL_BOARD_RC
@@ -167,7 +212,8 @@ list(APPEND OPTIONAL_BOARD_RC
 foreach(board_rc_file ${OPTIONAL_BOARD_RC})
 
 	if(EXISTS "${BOARD_DIR}/init/${board_rc_file}")
-		message(STATUS "ROMFS: Adding ${board_rc_file}")
+		file(RELATIVE_PATH rc_file_relative ${SOURCE_DIR} ${BOARD_DIR}/init/${board_rc_file})
+		message(STATUS "ROMFS: Adding ${rc_file_relative} -> /etc/init.d/${board_rc_file}")
 
 		add_custom_command(
 			OUTPUT
@@ -294,7 +340,6 @@ elseif("${CONFIG_FS_ROMFS}" STREQUAL "y")
 	set_target_properties(romfs PROPERTIES LINKER_LANGUAGE C)
 endif()
 
-add_custom_target(create_romfs DEPENDS romfs)
 
 
 # shellcheck
