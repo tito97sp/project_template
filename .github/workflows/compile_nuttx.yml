@@ -27,5 +27,5 @@ jobs:
       run: ./Tools/setup/ubuntu.sh 
 
     - name: make ${{matrix.config}} 
-      run: make ${{matrix.config}} NO_NINJA_BUILD=1
+      run: make ${{matrix.config}} 
    
