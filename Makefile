@@ -41,17 +41,13 @@ j := $(shell ps T | sed -n 's|.*$(MAKE_PID).*$(MAKE).* \(-j\|--jobs\) *\([0-9][0
 # Default j for clang-tidy
 j_clang_tidy := $(or $(j),4)
 
-NINJA_BIN := ninja
-ifndef NO_NINJA_BUILD
-	NINJA_BUILD := $(shell $(NINJA_BIN) --version 2>/dev/null)
 
-	ifndef NINJA_BUILD
-		NINJA_BIN := ninja-build
-		NINJA_BUILD := $(shell $(NINJA_BIN) --version 2>/dev/null)
-	endif
-endif
+NINJA_BIN := ninja
 
 ifdef NINJA_BUILD
+	NINJA_BUILD := $(shell $(NINJA_BIN) --version 2>/dev/null)
+	NINJA_BIN := ninja-build
+
 	QPRO_CMAKE_GENERATOR := Ninja
 	QPRO_MAKE := $(NINJA_BIN)
 
@@ -78,6 +74,8 @@ else
 	QPRO_MAKE = $(MAKE)
 	QPRO_MAKE_ARGS = -j$(j) --no-print-directory
 endif
+
+
 
 SRC_DIR := $(shell dirname "$(realpath $(lastword $(MAKEFILE_LIST)))")
 
