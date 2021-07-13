@@ -157,6 +157,19 @@ if(EXISTS ${BOARD_DIR}/cmake/init.cmake)
 	include(${BOARD_DIR}/cmake/init.cmake)
 endif()
 
+#=============================================================================
+# external modules
+#
+set(external_module_paths)
+if (NOT EXTERNAL_MODULES_LOCATION STREQUAL "")
+	message(STATUS "External modules: ${EXTERNAL_MODULES_LOCATION}")
+	add_subdirectory("${EXTERNAL_MODULES_LOCATION}/src" external_modules)
+
+	foreach(external_module ${config_module_list_external})
+		add_subdirectory(${EXTERNAL_MODULES_LOCATION}/src/${external_module} external_modules/${external_module})
+		list(APPEND external_module_paths ${EXTERNAL_MODULES_LOCATION}/src/${external_module})
+	endforeach()
+endif()
 
 #=============================================================================
 # Testing - Automatic unit and integration testing with CTest
