@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customcheck>
+   <checkdata>
+<!--Verbose accelerator builds (AccelVerboseBuild)--><PositiveModelParameterConstraint>
+         <parameter>AccelVerboseBuild</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Base storage type for automatically created enumerations (ActiveStateOutputEnumStorageType)--><PositiveModelParameterConstraint>
+         <parameter>ActiveStateOutputEnumStorageType</parameter>
+         <value>Native Integer</value>
+      </PositiveModelParameterConstraint>
+      <!--Disable incompatible optimizations (AdvancedOptControl)--><PositiveModelParameterConstraint>
+         <parameter>AdvancedOptControl</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Algebraic loop (AlgebraicLoopMsg)--><PositiveModelParameterConstraint>
+         <parameter>AlgebraicLoopMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Allow automatic unit conversions (AllowAutomaticUnitConversions)--><PositiveModelParameterConstraint>
+         <parameter>AllowAutomaticUnitConversions</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Allow symbolic dimension specification (AllowSymbolicDim)--><PositiveModelParameterConstraint>
+         <parameter>AllowSymbolicDim</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Allowed unit systems (AllowedUnitSystems)--><PositiveModelParameterConstraint>
+         <parameter>AllowedUnitSystems</parameter>
+         <value>all</value>
+      </PositiveModelParameterConstraint>
+      <!--Arithmetic operations in variant conditions (ArithmeticOperatorsInVariantConditions)--><PositiveModelParameterConstraint>
+         <parameter>ArithmeticOperatorsInVariantConditions</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Array bounds exceeded (ArrayBoundsChecking)--><PositiveModelParameterConstraint>
+         <parameter>ArrayBoundsChecking</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Array layout (ArrayLayout)--><PositiveModelParameterConstraint>
+         <parameter>ArrayLayout</parameter>
+         <value>Column-major</value>
+      </PositiveModelParameterConstraint>
+      <!--Minimize algebraic loop (ArtificialAlgebraicLoopMsg)--><PositiveModelParameterConstraint>
+         <parameter>ArtificialAlgebraicLoopMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Model Verification block enabling (AssertControl)--><PositiveModelParameterConstraint>
+         <parameter>AssertControl</parameter>
+         <value>UseLocalSettings</value>
+      </PositiveModelParameterConstraint>
+      <!--Automatically handle rate transition for data transfer (AutoInsertRateTranBlk)--><PositiveModelParameterConstraint>
+         <parameter>AutoInsertRateTranBlk</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Operator to represent Bitwise and Logical Operator blocks (BitwiseOrLogicalOp)--><PositiveModelParameterConstraint>
+         <parameter>BitwiseOrLogicalOp</parameter>
+         <value>Same as modeled</value>
+      </PositiveModelParameterConstraint>
+      <!--Trace to model using (BlockCommentType)--><PositiveModelParameterConstraint>
+         <parameter>BlockCommentType</parameter>
+         <value>BlockPathComment</value>
+      </PositiveModelParameterConstraint>
+      <!--Block priority violation (BlockPriorityViolationMsg)--><PositiveModelParameterConstraint>
+         <parameter>BlockPriorityViolationMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Block reduction (BlockReduction)--><PositiveModelParameterConstraint>
+         <parameter>BlockReduction</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Implement logic signals as Boolean data (vs. double) (BooleanDataType)--><PositiveModelParameterConstraint>
+         <parameter>BooleanDataType</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Boolean false identifier (BooleanFalseId)--><PositiveModelParameterConstraint>
+         <parameter>BooleanFalseId</parameter>
+         <value>false</value>
+      </PositiveModelParameterConstraint>
+      <!--Boolean true identifier (BooleanTrueId)--><PositiveModelParameterConstraint>
+         <parameter>BooleanTrueId</parameter>
+         <value>true</value>
+      </PositiveModelParameterConstraint>
+      <!--Buffer for reusable subsystems (BufferReusableBoundary)--><PositiveModelParameterConstraint>
+         <parameter>BufferReusableBoundary</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Build configuration (BuildConfiguration)--><PositiveModelParameterConstraint>
+         <parameter>BuildConfiguration</parameter>
+         <value>Faster Runs</value>
+      </PositiveModelParameterConstraint>
+      <!--Repair bus selections (BusNameAdapt)--><PositiveModelParameterConstraint>
+         <parameter>BusNameAdapt</parameter>
+         <value>WarnAndRepair</value>
+      </PositiveModelParameterConstraint>
+      <!--Element name mismatch (BusObjectLabelMismatch)--><PositiveModelParameterConstraint>
+         <parameter>BusObjectLabelMismatch</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Casting modes (CastingMode)--><PositiveModelParameterConstraint>
+         <parameter>CastingMode</parameter>
+         <value>Nominal</value>
+      </PositiveModelParameterConstraint>
+      <!--Division by singular matrix (CheckMatrixSingularityMsg)--><PositiveModelParameterConstraint>
+         <parameter>CheckMatrixSingularityMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Check model before generating code (CheckMdlBeforeBuild)--><PositiveModelParameterConstraint>
+         <parameter>CheckMdlBeforeBuild</parameter>
+         <value>Off</value>
+      </PositiveModelParameterConstraint>
+      <!--Third-party tool (CodeCoverageSettings)--><PositiveModelParameterConstraint>
+         <parameter>CodeCoverageSettings</parameter>
+         <value>
+            <TopModelCoverage>off</TopModelCoverage>
+            <ReferencedModelCoverage>off</ReferencedModelCoverage>
+            <CoverageTool>None</CoverageTool>
+         </value>
+      </PositiveModelParameterConstraint>
+      <!--Measure task execution time (CodeExecutionProfiling)--><PositiveModelParameterConstraint>
+         <parameter>CodeExecutionProfiling</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Code interface packaging (CodeInterfacePackaging)--><PositiveModelParameterConstraint>
+         <parameter>CodeInterfacePackaging</parameter>
+         <value>Nonreusable function</value>
+      </PositiveModelParameterConstraint>
+      <!--Measure function execution times (CodeProfilingInstrumentation)--><PositiveModelParameterConstraint>
+         <parameter>CodeProfilingInstrumentation</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Code replacement library (CodeReplacementLibrary)--><PositiveModelParameterConstraint>
+         <parameter>CodeReplacementLibrary</parameter>
+         <value>None</value>
+      </PositiveModelParameterConstraint>
+      <!--Single output/update function (CombineOutputUpdateFcns)--><PositiveModelParameterConstraint>
+         <parameter>CombineOutputUpdateFcns</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Combine signal/state structures (CombineSignalStateStructs)--><PositiveModelParameterConstraint>
+         <parameter>CombineSignalStateStructs</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Comment style (CommentStyle)--><PositiveModelParameterConstraint>
+         <parameter>CommentStyle</parameter>
+         <value>Auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Compile-time recursion limit for MATLAB functions (CompileTimeRecursionLimit)--><PositiveModelParameterConstraint>
+         <parameter>CompileTimeRecursionLimit</parameter>
+         <value>50</value>
+      </PositiveModelParameterConstraint>
+      <!--Allow tasks to execute concurrently on target (ConcurrentTasks)--><PositiveModelParameterConstraint>
+         <parameter>ConcurrentTasks</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Conditional input branch execution (ConditionallyExecuteInputs)--><PositiveModelParameterConstraint>
+         <parameter>ConditionallyExecuteInputs</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Solver data inconsistency (ConsistencyChecking)--><PositiveModelParameterConstraint>
+         <parameter>ConsistencyChecking</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Convert if-elseif-else patterns to switch-case statements (ConvertIfToSwitch)--><PositiveModelParameterConstraint>
+         <parameter>ConvertIfToSwitch</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable coverage analysis (CovEnable)--><PositiveModelParameterConstraint>
+         <parameter>CovEnable</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Record coverage for referenced models (CovModelRefEnable)--><PositiveModelParameterConstraint>
+         <parameter>CovModelRefEnable</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Create block (CreateSILPILBlock)--><PositiveModelParameterConstraint>
+         <parameter>CreateSILPILBlock</parameter>
+         <value>PIL</value>
+      </PositiveModelParameterConstraint>
+      <!--Custom BLAS library callback (CustomBLASCallback)--><PositiveModelParameterConstraint>
+         <parameter>CustomBLASCallback</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Specify by function... (CustomCodeFunctionArrayLayout)--><PositiveModelParameterConstraint>
+         <parameter>CustomCodeFunctionArrayLayout</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Undefined function handling (CustomCodeUndefinedFunction)--><PositiveModelParameterConstraint>
+         <parameter>CustomCodeUndefinedFunction</parameter>
+         <value>FilterOut</value>
+      </PositiveModelParameterConstraint>
+      <!--Defines (CustomDefine)--><PositiveModelParameterConstraint>
+         <parameter>CustomDefine</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Custom FFT library callback (CustomFFTCallback)--><PositiveModelParameterConstraint>
+         <parameter>CustomFFTCallback</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Header file (CustomHeaderCode)--><PositiveModelParameterConstraint>
+         <parameter>CustomHeaderCode</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Include directories (CustomInclude)--><PositiveModelParameterConstraint>
+         <parameter>CustomInclude</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Initialize function (CustomInitializer)--><PositiveModelParameterConstraint>
+         <parameter>CustomInitializer</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Custom LAPACK library callback (CustomLAPACKCallback)--><PositiveModelParameterConstraint>
+         <parameter>CustomLAPACKCallback</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Libraries (CustomLibrary)--><PositiveModelParameterConstraint>
+         <parameter>CustomLibrary</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Source files (CustomSource)--><PositiveModelParameterConstraint>
+         <parameter>CustomSource</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Source file (CustomSourceCode)--><PositiveModelParameterConstraint>
+         <parameter>CustomSourceCode</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Local block output variables (CustomSymbolStrBlkIO)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrBlkIO</parameter>
+         <value>rtb_$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--EMX array utility functions identifier format (CustomSymbolStrEmxFcn)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrEmxFcn</parameter>
+         <value>emx$M$N</value>
+      </PositiveModelParameterConstraint>
+      <!--EMX array types identifier format (CustomSymbolStrEmxType)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrEmxType</parameter>
+         <value>emxArray_$M$N</value>
+      </PositiveModelParameterConstraint>
+      <!--Subsystem methods (CustomSymbolStrFcn)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrFcn</parameter>
+         <value>$R$N$M$F</value>
+      </PositiveModelParameterConstraint>
+      <!--Subsystem method arguments (CustomSymbolStrFcnArg)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrFcnArg</parameter>
+         <value>rt$I$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--Field name of global types (CustomSymbolStrField)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrField</parameter>
+         <value>$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--Global variables (CustomSymbolStrGlobalVar)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrGlobalVar</parameter>
+         <value>$R$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--Constant macros (CustomSymbolStrMacro)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrMacro</parameter>
+         <value>$R$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--Local temporary variables (CustomSymbolStrTmpVar)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrTmpVar</parameter>
+         <value>$N$M</value>
+      </PositiveModelParameterConstraint>
+      <!--Global types (CustomSymbolStrType)--><PositiveModelParameterConstraint>
+         <parameter>CustomSymbolStrType</parameter>
+         <value>$N$R$M_T</value>
+      </PositiveModelParameterConstraint>
+      <!--Terminate function (CustomTerminator)--><PositiveModelParameterConstraint>
+         <parameter>CustomTerminator</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Custom token text (CustomUserTokenString)--><PositiveModelParameterConstraint>
+         <parameter>CustomUserTokenString</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Implement each data store block as a unique access point (DSAsUniqueAccess)--><PositiveModelParameterConstraint>
+         <parameter>DSAsUniqueAccess</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Data stores (DSMLogging)--><PositiveModelParameterConstraint>
+         <parameter>DSMLogging</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Data stores logging name (DSMLoggingName)--><PositiveModelParameterConstraint>
+         <parameter>DSMLoggingName</parameter>
+         <value>dsmout</value>
+      </PositiveModelParameterConstraint>
+      <!--Dataset signal format (DatasetSignalFormat)--><PositiveModelParameterConstraint>
+         <parameter>DatasetSignalFormat</parameter>
+         <value>timeseries</value>
+      </PositiveModelParameterConstraint>
+      <!--FMU Import blocks (DebugExecutionForFMUViaOutOfProcess)--><PositiveModelParameterConstraint>
+         <parameter>DebugExecutionForFMUViaOutOfProcess</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Decimation (Decimation)--><PositiveModelParameterConstraint>
+         <parameter>Decimation</parameter>
+         <value>1</value>
+      </PositiveModelParameterConstraint>
+      <!--Default function array layout (DefaultCustomCodeFunctionArrayLayout)--><PositiveModelParameterConstraint>
+         <parameter>DefaultCustomCodeFunctionArrayLayout</parameter>
+         <value>NotSpecified</value>
+      </PositiveModelParameterConstraint>
+      <!--Default parameter behavior (DefaultParameterBehavior)--><PositiveModelParameterConstraint>
+         <parameter>DefaultParameterBehavior</parameter>
+         <value>Tunable</value>
+      </PositiveModelParameterConstraint>
+      <!--Default for underspecified data type (DefaultUnderspecifiedDataType)--><PositiveModelParameterConstraint>
+         <parameter>DefaultUnderspecifiedDataType</parameter>
+         <value>double</value>
+      </PositiveModelParameterConstraint>
+      <!--#define naming (DefineNamingRule)--><PositiveModelParameterConstraint>
+         <parameter>DefineNamingRule</parameter>
+         <value>None</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulation behavior for denormal numbers (DenormalBehavior)--><PositiveModelParameterConstraint>
+         <parameter>DenormalBehavior</parameter>
+         <value>GradualUnderflow</value>
+      </PositiveModelParameterConstraint>
+      <!--Buffer size of dynamically-sized string (bytes) (DynamicStringBufferSize)--><PositiveModelParameterConstraint>
+         <parameter>DynamicStringBufferSize</parameter>
+         <value>256</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable custom file banner (ERTCustomFileBanners)--><PositiveModelParameterConstraint>
+         <parameter>ERTCustomFileBanners</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--File customization template (ERTCustomFileTemplate)--><PositiveModelParameterConstraint>
+         <parameter>ERTCustomFileTemplate</parameter>
+         <value>codertarget_file_process.tlc</value>
+      </PositiveModelParameterConstraint>
+      <!--Data files (ERTDataFileRootName)--><PositiveModelParameterConstraint>
+         <parameter>ERTDataFileRootName</parameter>
+         <value>$R_data</value>
+      </PositiveModelParameterConstraint>
+      <!--Header file template (ERTDataHdrFileTemplate)--><PositiveModelParameterConstraint>
+         <parameter>ERTDataHdrFileTemplate</parameter>
+         <value>ert_code_template.cgt</value>
+      </PositiveModelParameterConstraint>
+      <!--Source file template (ERTDataSrcFileTemplate)--><PositiveModelParameterConstraint>
+         <parameter>ERTDataSrcFileTemplate</parameter>
+         <value>ert_code_template.cgt</value>
+      </PositiveModelParameterConstraint>
+      <!--File packaging format (ERTFilePackagingFormat)--><PositiveModelParameterConstraint>
+         <parameter>ERTFilePackagingFormat</parameter>
+         <value>Modular</value>
+      </PositiveModelParameterConstraint>
+      <!--Header file template (ERTHdrFileBannerTemplate)--><PositiveModelParameterConstraint>
+         <parameter>ERTHdrFileBannerTemplate</parameter>
+         <value>ert_code_template.cgt</value>
+      </PositiveModelParameterConstraint>
+      <!--Header files (ERTHeaderFileRootName)--><PositiveModelParameterConstraint>
+         <parameter>ERTHeaderFileRootName</parameter>
+         <value>$R$E</value>
+      </PositiveModelParameterConstraint>
+      <!--Source files (ERTSourceFileRootName)--><PositiveModelParameterConstraint>
+         <parameter>ERTSourceFileRootName</parameter>
+         <value>$R$E</value>
+      </PositiveModelParameterConstraint>
+      <!--Source file template (ERTSrcFileBannerTemplate)--><PositiveModelParameterConstraint>
+         <parameter>ERTSrcFileBannerTemplate</parameter>
+         <value>ert_code_template.cgt</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove code from floating-point to integer conversions that wraps out-of-range values (EfficientFloat2IntCast)--><PositiveModelParameterConstraint>
+         <parameter>EfficientFloat2IntCast</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove code from floating-point to integer conversions with saturation that maps NaN to zero (EfficientMapNaN2IntZero)--><PositiveModelParameterConstraint>
+         <parameter>EfficientMapNaN2IntZero</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove code from tunable parameter expressions that saturates out-of-range values (EfficientTunableParamExpr)--><PositiveModelParameterConstraint>
+         <parameter>EfficientTunableParamExpr</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Custom comments (MPT objects only) (EnableCustomComments)--><PositiveModelParameterConstraint>
+         <parameter>EnableCustomComments</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Use owner from data object for data definition placement (EnableDataOwnership)--><PositiveModelParameterConstraint>
+         <parameter>EnableDataOwnership</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Treat each discrete rate as a separate task (EnableMultiTasking)--><PositiveModelParameterConstraint>
+         <parameter>EnableMultiTasking</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable parallel model reference builds (EnableParallelModelReferenceBuilds)--><PositiveModelParameterConstraint>
+         <parameter>EnableParallelModelReferenceBuilds</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable strict scheduling checks for referenced models (EnableRefExpFcnMdlSchedulingChecks)--><PositiveModelParameterConstraint>
+         <parameter>EnableRefExpFcnMdlSchedulingChecks</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable run-time recursion for MATLAB functions (EnableRuntimeRecursion)--><PositiveModelParameterConstraint>
+         <parameter>EnableRuntimeRecursion</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Replace multiplications by powers of two with signed bitwise shifts (EnableSignedLeftShifts)--><PositiveModelParameterConstraint>
+         <parameter>EnableSignedLeftShifts</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Allow right shifts on signed integers (EnableSignedRightShifts)--><PositiveModelParameterConstraint>
+         <parameter>EnableSignedRightShifts</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Replace data type names in the generated code (EnableUserReplacementTypes)--><PositiveModelParameterConstraint>
+         <parameter>EnableUserReplacementTypes</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Duplicate enumeration member names (EnumMemberNameClash)--><PositiveModelParameterConstraint>
+         <parameter>EnumMemberNameClash</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Existing shared code (ExistingSharedCode)--><PositiveModelParameterConstraint>
+         <parameter>ExistingSharedCode</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Context-dependent inputs (FcnCallInpInsideContextMsg)--><PositiveModelParameterConstraint>
+         <parameter>FcnCallInpInsideContextMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Fixed-step size (fundamental sample time) (FixedStep)--><PositiveModelParameterConstraint>
+         <parameter>FixedStep</parameter>
+         <value>auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect overflow (FixptConstOverflowMsg)--><PositiveModelParameterConstraint>
+         <parameter>FixptConstOverflowMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect precision loss (FixptConstPrecisionLossMsg)--><PositiveModelParameterConstraint>
+         <parameter>FixptConstPrecisionLossMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect underflow (FixptConstUnderflowMsg)--><PositiveModelParameterConstraint>
+         <parameter>FixptConstUnderflowMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Combine output and update methods for code generation and simulation (ForceCombineOutputUpdateInSim)--><PositiveModelParameterConstraint>
+         <parameter>ForceCombineOutputUpdateInSim</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Verbose comments for 'Model default' storage class (ForceParamTrailComments)--><PositiveModelParameterConstraint>
+         <parameter>ForceParamTrailComments</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Block behavior depends on frame status of signal (FrameProcessingCompatibilityMsg)--><PositiveModelParameterConstraint>
+         <parameter>FrameProcessingCompatibilityMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Classic call interface (GRTInterface)--><PositiveModelParameterConstraint>
+         <parameter>GRTInterface</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Gain parameters inherit a built-in integer type that is lossless (GainParamInheritBuiltInType)--><PositiveModelParameterConstraint>
+         <parameter>GainParamInheritBuiltInType</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Generate code only (GenCodeOnly)--><PositiveModelParameterConstraint>
+         <parameter>GenCodeOnly</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--ASAP2 interface (GenerateASAP2)--><PositiveModelParameterConstraint>
+         <parameter>GenerateASAP2</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Generate static code metrics (GenerateCodeMetricsReport)--><PositiveModelParameterConstraint>
+         <parameter>GenerateCodeMetricsReport</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Include comments (GenerateComments)--><PositiveModelParameterConstraint>
+         <parameter>GenerateComments</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Generate full file banner (GenerateFullHeader)--><PositiveModelParameterConstraint>
+         <parameter>GenerateFullHeader</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Create code generation report (GenerateReport)--><PositiveModelParameterConstraint>
+         <parameter>GenerateReport</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Generate an example main program (GenerateSampleERTMain)--><PositiveModelParameterConstraint>
+         <parameter>GenerateSampleERTMain</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Data definition (GlobalDataDefinition)--><PositiveModelParameterConstraint>
+         <parameter>GlobalDataDefinition</parameter>
+         <value>Auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Data declaration (GlobalDataReference)--><PositiveModelParameterConstraint>
+         <parameter>GlobalDataReference</parameter>
+         <value>Auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Hardware board (HardwareBoard)--><PositiveModelParameterConstraint>
+         <parameter>HardwareBoard</parameter>
+         <value>Nuttx STM32H743ZI</value>
+      </PositiveModelParameterConstraint>
+      <!--Ignore custom storage classes (IgnoreCustomStorageClasses)--><PositiveModelParameterConstraint>
+         <parameter>IgnoreCustomStorageClasses</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Ignore test point signals (IgnoreTestpoints)--><PositiveModelParameterConstraint>
+         <parameter>IgnoreTestpoints</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Ignored zero crossings (IgnoredZcDiagnostic)--><PositiveModelParameterConstraint>
+         <parameter>IgnoredZcDiagnostic</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--#include file delimiter (IncludeFileDelimiter)--><PositiveModelParameterConstraint>
+         <parameter>IncludeFileDelimiter</parameter>
+         <value>Auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Terminate function required (IncludeMdlTerminateFcn)--><PositiveModelParameterConstraint>
+         <parameter>IncludeMdlTerminateFcn</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Indent size (IndentSize)--><PositiveModelParameterConstraint>
+         <parameter>IndentSize</parameter>
+         <value>2</value>
+      </PositiveModelParameterConstraint>
+      <!--Indent style (IndentStyle)--><PositiveModelParameterConstraint>
+         <parameter>IndentStyle</parameter>
+         <value>K&amp;R</value>
+      </PositiveModelParameterConstraint>
+      <!--Create preprocessor directive in rtwtypes.h (InferredTypesCompatibility)--><PositiveModelParameterConstraint>
+         <parameter>InferredTypesCompatibility</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Source block specifies -1 sample time (InheritedTsInSrcMsg)--><PositiveModelParameterConstraint>
+         <parameter>InheritedTsInSrcMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Use memset to initialize floats and doubles to 0.0 (InitFltsAndDblsToZero)--><PositiveModelParameterConstraint>
+         <parameter>InitFltsAndDblsToZero</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Initial state is array (InitInArrayFormatMsg)--><PositiveModelParameterConstraint>
+         <parameter>InitInArrayFormatMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Generate scalar inlined parameters as (InlinedPrmAccess)--><PositiveModelParameterConstraint>
+         <parameter>InlinedPrmAccess</parameter>
+         <value>Literals</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulink block descriptions (InsertBlockDesc)--><PositiveModelParameterConstraint>
+         <parameter>InsertBlockDesc</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Insert Polyspace comments (InsertPolySpaceComments)--><PositiveModelParameterConstraint>
+         <parameter>InsertPolySpaceComments</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Record logged workspace data in Simulation Data Inspector (InspectSignalLogs)--><PositiveModelParameterConstraint>
+         <parameter>InspectSignalLogs</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--32-bit integer to single precision float conversion (Int32ToFloatConvMsg)--><PositiveModelParameterConstraint>
+         <parameter>Int32ToFloatConvMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Wrap on overflow (IntegerOverflowMsg)--><PositiveModelParameterConstraint>
+         <parameter>IntegerOverflowMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Saturate on overflow (IntegerSaturationMsg)--><PositiveModelParameterConstraint>
+         <parameter>IntegerSaturationMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--System-generated identifiers (InternalIdentifier)--><PositiveModelParameterConstraint>
+         <parameter>InternalIdentifier</parameter>
+         <value>Shortened</value>
+      </PositiveModelParameterConstraint>
+      <!--LUT object struct order for even spacing specification (LUTObjectStructOrderEvenSpacing)--><PositiveModelParameterConstraint>
+         <parameter>LUTObjectStructOrderEvenSpacing</parameter>
+         <value>Size,Breakpoints,Table</value>
+      </PositiveModelParameterConstraint>
+      <!--LUT object struct order for explicit value specification (LUTObjectStructOrderExplicitValues)--><PositiveModelParameterConstraint>
+         <parameter>LUTObjectStructOrderExplicitValues</parameter>
+         <value>Size,Breakpoints,Table</value>
+      </PositiveModelParameterConstraint>
+      <!--Use signal labels to guide buffer reuse (LabelGuidedReuse)--><PositiveModelParameterConstraint>
+         <parameter>LabelGuidedReuse</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Application lifespan (days) (LifeSpan)--><PositiveModelParameterConstraint>
+         <parameter>LifeSpan</parameter>
+         <value>auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Limit data points to last (LimitDataPoints)--><PositiveModelParameterConstraint>
+         <parameter>LimitDataPoints</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Input (LoadExternalInput)--><PositiveModelParameterConstraint>
+         <parameter>LoadExternalInput</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Initial state (LoadInitialState)--><PositiveModelParameterConstraint>
+         <parameter>LoadInitialState</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Logging intervals (LoggingIntervals)--><PositiveModelParameterConstraint>
+         <parameter>LoggingIntervals</parameter>
+         <value>[-inf, inf]</value>
+      </PositiveModelParameterConstraint>
+      <!--Log Dataset data to file (LoggingToFile)--><PositiveModelParameterConstraint>
+         <parameter>LoggingToFile</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Dynamic memory allocation in MATLAB functions (MATLABDynamicMemAlloc)--><PositiveModelParameterConstraint>
+         <parameter>MATLABDynamicMemAlloc</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--MATLAB user comments (MATLABFcnDesc)--><PositiveModelParameterConstraint>
+         <parameter>MATLABFcnDesc</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--MATLAB source code as comments (MATLABSourceComments)--><PositiveModelParameterConstraint>
+         <parameter>MATLABSourceComments</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Minimum mangle length (MangleLength)--><PositiveModelParameterConstraint>
+         <parameter>MangleLength</parameter>
+         <value>1</value>
+      </PositiveModelParameterConstraint>
+      <!--Masked zero crossings (MaskedZcDiagnostic)--><PositiveModelParameterConstraint>
+         <parameter>MaskedZcDiagnostic</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--MAT-file logging (MatFileLogging)--><PositiveModelParameterConstraint>
+         <parameter>MatFileLogging</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Consecutive zero crossings violation (MaxConsecutiveZCsMsg)--><PositiveModelParameterConstraint>
+         <parameter>MaxConsecutiveZCsMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--16-bit integer maximum identifier (MaxIdInt16)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdInt16</parameter>
+         <value>MAX_int16_T</value>
+      </PositiveModelParameterConstraint>
+      <!--32-bit integer maximum identifier (MaxIdInt32)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdInt32</parameter>
+         <value>MAX_int32_T</value>
+      </PositiveModelParameterConstraint>
+      <!--64-bit integer maximum identifier (MaxIdInt64)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdInt64</parameter>
+         <value>MAX_int64_T</value>
+      </PositiveModelParameterConstraint>
+      <!--8-bit integer maximum identifier (MaxIdInt8)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdInt8</parameter>
+         <value>MAX_int8_T</value>
+      </PositiveModelParameterConstraint>
+      <!--Maximum identifier length (MaxIdLength)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdLength</parameter>
+         <value>31</value>
+      </PositiveModelParameterConstraint>
+      <!--16-bit unsigned integer maximum identifier (MaxIdUint16)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdUint16</parameter>
+         <value>MAX_uint16_T</value>
+      </PositiveModelParameterConstraint>
+      <!--32-bit unsigned integer maximum identifier (MaxIdUint32)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdUint32</parameter>
+         <value>MAX_uint32_T</value>
+      </PositiveModelParameterConstraint>
+      <!--64-bit unsigned integer maximum identifier (MaxIdUint64)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdUint64</parameter>
+         <value>MAX_uint64_T</value>
+      </PositiveModelParameterConstraint>
+      <!--8-bit unsigned integer maximum identifier (MaxIdUint8)--><PositiveModelParameterConstraint>
+         <parameter>MaxIdUint8</parameter>
+         <value>MAX_uint8_T</value>
+      </PositiveModelParameterConstraint>
+      <!--Maximum line width (MaxLineWidth)--><PositiveModelParameterConstraint>
+         <parameter>MaxLineWidth</parameter>
+         <value>80</value>
+      </PositiveModelParameterConstraint>
+      <!--Maximum stack size (bytes) (MaxStackSize)--><PositiveModelParameterConstraint>
+         <parameter>MaxStackSize</parameter>
+         <value>64</value>
+      </PositiveModelParameterConstraint>
+      <!--Memcpy threshold (bytes) (MemcpyThreshold)--><PositiveModelParameterConstraint>
+         <parameter>MemcpyThreshold</parameter>
+         <value>64</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect multiple driving blocks executing at the same time step (MergeDetectMultiDrivingBlocksExec)--><PositiveModelParameterConstraint>
+         <parameter>MergeDetectMultiDrivingBlocksExec</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--16-bit integer minimum identifier (MinIdInt16)--><PositiveModelParameterConstraint>
+         <parameter>MinIdInt16</parameter>
+         <value>MIN_int16_T</value>
+      </PositiveModelParameterConstraint>
+      <!--32-bit integer minimum identifier (MinIdInt32)--><PositiveModelParameterConstraint>
+         <parameter>MinIdInt32</parameter>
+         <value>MIN_int32_T</value>
+      </PositiveModelParameterConstraint>
+      <!--64-bit integer minimum identifier (MinIdInt64)--><PositiveModelParameterConstraint>
+         <parameter>MinIdInt64</parameter>
+         <value>MIN_int64_T</value>
+      </PositiveModelParameterConstraint>
+      <!--8-bit integer minimum identifier (MinIdInt8)--><PositiveModelParameterConstraint>
+         <parameter>MinIdInt8</parameter>
+         <value>MIN_int8_T</value>
+      </PositiveModelParameterConstraint>
+      <!--Min step size violation (MinStepSizeMsg)--><PositiveModelParameterConstraint>
+         <parameter>MinStepSizeMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Model dependencies (ModelDependencies)--><PositiveModelParameterConstraint>
+         <parameter>ModelDependencies</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Unsupported data logging (ModelReferenceDataLoggingMessage)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceDataLoggingMessage</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Extraneous discrete derivative signals (ModelReferenceExtraNoncontSigs)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceExtraNoncontSigs</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Port and parameter mismatch (ModelReferenceIOMismatchMessage)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceIOMismatchMessage</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Invalid root Inport/Outport block connection (ModelReferenceIOMsg)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceIOMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Minimize algebraic loop occurrences (ModelReferenceMinAlgLoopOccurrences)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceMinAlgLoopOccurrences</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Total number of instances allowed per top model (ModelReferenceNumInstancesAllowed)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceNumInstancesAllowed</parameter>
+         <value>Multi</value>
+      </PositiveModelParameterConstraint>
+      <!--Pass fixed-size scalar root inputs by value for code generation (ModelReferencePassRootInputsByReference)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferencePassRootInputsByReference</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Insufficient maximum identifier length (ModelReferenceSymbolNameMessage)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceSymbolNameMessage</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Model block version mismatch (ModelReferenceVersionMismatchMessage)--><PositiveModelParameterConstraint>
+         <parameter>ModelReferenceVersionMismatchMessage</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Multitask conditionally executed subsystem (MultiTaskCondExecSysMsg)--><PositiveModelParameterConstraint>
+         <parameter>MultiTaskCondExecSysMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Multitask data store (MultiTaskDSMMsg)--><PositiveModelParameterConstraint>
+         <parameter>MultiTaskDSMMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Multitask rate transition (MultiTaskRateTransMsg)--><PositiveModelParameterConstraint>
+         <parameter>MultiTaskRateTransMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Multiword type definitions (MultiwordTypeDef)--><PositiveModelParameterConstraint>
+         <parameter>MultiwordTypeDef</parameter>
+         <value>System defined</value>
+      </PositiveModelParameterConstraint>
+      <!--Newline style (NewlineStyle)--><PositiveModelParameterConstraint>
+         <parameter>NewlineStyle</parameter>
+         <value>Default</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove code that protects against division arithmetic exceptions (NoFixptDivByZeroProtection)--><PositiveModelParameterConstraint>
+         <parameter>NoFixptDivByZeroProtection</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Non-bus signals treated as bus signals (NonBusSignalsTreatedAsBus)--><PositiveModelParameterConstraint>
+         <parameter>NonBusSignalsTreatedAsBus</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Operating point object from a different release (NonCurrentReleaseOperatingPointMsg)--><PositiveModelParameterConstraint>
+         <parameter>NonCurrentReleaseOperatingPointMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Prioritized objectives (ObjectivePriorities)--><PositiveModelParameterConstraint>
+         <parameter>ObjectivePriorities</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Operating point restore interface checksum mismatch (OperatingPointInterfaceChecksumMismatchMsg)--><PositiveModelParameterConstraint>
+         <parameter>OperatingPointInterfaceChecksumMismatchMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Operator annotations (OperatorAnnotations)--><PositiveModelParameterConstraint>
+         <parameter>OperatorAnnotations</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Specify custom optimizations (OptimizationCustomize)--><PositiveModelParameterConstraint>
+         <parameter>OptimizationCustomize</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Level (OptimizationLevel)--><PositiveModelParameterConstraint>
+         <parameter>OptimizationLevel</parameter>
+         <value>level2</value>
+      </PositiveModelParameterConstraint>
+      <!--Priority (OptimizationPriority)--><PositiveModelParameterConstraint>
+         <parameter>OptimizationPriority</parameter>
+         <value>Balanced</value>
+      </PositiveModelParameterConstraint>
+      <!--Output variable (OutputSaveName)--><PositiveModelParameterConstraint>
+         <parameter>OutputSaveName</parameter>
+         <value>yout</value>
+      </PositiveModelParameterConstraint>
+      <!--Package code and artifacts (PackageGeneratedCodeAndArtifacts)--><PositiveModelParameterConstraint>
+         <parameter>PackageGeneratedCodeAndArtifacts</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Perform consistency check on parallel pool (ParallelModelReferenceErrorOnInvalidPool)--><PositiveModelParameterConstraint>
+         <parameter>ParallelModelReferenceErrorOnInvalidPool</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Parameter naming (ParamNamingRule)--><PositiveModelParameterConstraint>
+         <parameter>ParamNamingRule</parameter>
+         <value>None</value>
+      </PositiveModelParameterConstraint>
+      <!--Parameter tune level (ParamTuneLevel)--><PositiveModelParameterConstraint>
+         <parameter>ParamTuneLevel</parameter>
+         <value>10</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect downcast (ParameterDowncastMsg)--><PositiveModelParameterConstraint>
+         <parameter>ParameterDowncastMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect overflow (ParameterOverflowMsg)--><PositiveModelParameterConstraint>
+         <parameter>ParameterOverflowMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect precision loss (ParameterPrecisionLossMsg)--><PositiveModelParameterConstraint>
+         <parameter>ParameterPrecisionLossMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect loss of tunability (ParameterTunabilityLossMsg)--><PositiveModelParameterConstraint>
+         <parameter>ParameterTunabilityLossMsg</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect underflow (ParameterUnderflowMsg)--><PositiveModelParameterConstraint>
+         <parameter>ParameterUnderflowMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Parentheses level (ParenthesesLevel)--><PositiveModelParameterConstraint>
+         <parameter>ParenthesesLevel</parameter>
+         <value>Nominal</value>
+      </PositiveModelParameterConstraint>
+      <!--Pass reusable subsystem outputs as (PassReuseOutputArgsAs)--><PositiveModelParameterConstraint>
+         <parameter>PassReuseOutputArgsAs</parameter>
+         <value>Individual arguments</value>
+      </PositiveModelParameterConstraint>
+      <!--Maximum number of arguments for subsystem outputs (PassReuseOutputArgsThreshold)--><PositiveModelParameterConstraint>
+         <parameter>PassReuseOutputArgsThreshold</parameter>
+         <value>12</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable portable word sizes (PortableWordSizes)--><PositiveModelParameterConstraint>
+         <parameter>PortableWordSizes</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Higher priority value indicates higher task priority (PositivePriorityOrder)--><PositiveModelParameterConstraint>
+         <parameter>PositivePriorityOrder</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Post code generation command (PostCodeGenCommand)--><PositiveModelParameterConstraint>
+         <parameter>PostCodeGenCommand</parameter>
+         <value>codertarget.postCodeGenHookCommand(h)</value>
+      </PositiveModelParameterConstraint>
+      <!--Behavior when pregenerated library subsystem code is missing (PregeneratedLibrarySubsystemCodeDiagnostic)--><PositiveModelParameterConstraint>
+         <parameter>PregeneratedLibrarySubsystemCodeDiagnostic</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Preserve operand order in expression (PreserveExpressionOrder)--><PositiveModelParameterConstraint>
+         <parameter>PreserveExpressionOrder</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Preserve extern keyword in function declarations (PreserveExternInFcnDecls)--><PositiveModelParameterConstraint>
+         <parameter>PreserveExternInFcnDecls</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Preserve condition expression in if statement (PreserveIfCondition)--><PositiveModelParameterConstraint>
+         <parameter>PreserveIfCondition</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Byte ordering (ProdEndianess)--><PositiveModelParameterConstraint>
+         <parameter>ProdEndianess</parameter>
+         <value>LittleEndian</value>
+      </PositiveModelParameterConstraint>
+      <!--Test hardware is the same as production hardware (ProdEqTarget)--><PositiveModelParameterConstraint>
+         <parameter>ProdEqTarget</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Signed integer division rounds to (ProdIntDivRoundTo)--><PositiveModelParameterConstraint>
+         <parameter>ProdIntDivRoundTo</parameter>
+         <value>Zero</value>
+      </PositiveModelParameterConstraint>
+      <!--Support long long (ProdLongLongMode)--><PositiveModelParameterConstraint>
+         <parameter>ProdLongLongMode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Shift right on a signed integer as arithmetic shift (ProdShiftRightIntArith)--><PositiveModelParameterConstraint>
+         <parameter>ProdShiftRightIntArith</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Profile TLC (ProfileTLC)--><PositiveModelParameterConstraint>
+         <parameter>ProfileTLC</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Propagate all signal labels out of the model (PropagateSignalLabelsOutOfModel)--><PositiveModelParameterConstraint>
+         <parameter>PropagateSignalLabelsOutOfModel</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Propagate sizes of variable-size signals (PropagateVarSize)--><PositiveModelParameterConstraint>
+         <parameter>PropagateVarSize</parameter>
+         <value>Infer from blocks in model</value>
+      </PositiveModelParameterConstraint>
+      <!--floating-point numbers (PurelyIntegerCode)--><PositiveModelParameterConstraint>
+         <parameter>PurelyIntegerCode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect ambiguous custom storage class final values (RCSCObservableMsg)--><PositiveModelParameterConstraint>
+         <parameter>RCSCObservableMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect non-reused custom storage classes (RCSCRenamedMsg)--><PositiveModelParameterConstraint>
+         <parameter>RCSCRenamedMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--"rt" prefix for identifiers (RTPrefix)--><PositiveModelParameterConstraint>
+         <parameter>RTPrefix</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--parameters (RTWCAPIParams)--><PositiveModelParameterConstraint>
+         <parameter>RTWCAPIParams</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--root-level I/O (RTWCAPIRootIO)--><PositiveModelParameterConstraint>
+         <parameter>RTWCAPIRootIO</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--signals (RTWCAPISignals)--><PositiveModelParameterConstraint>
+         <parameter>RTWCAPISignals</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--states (RTWCAPIStates)--><PositiveModelParameterConstraint>
+         <parameter>RTWCAPIStates</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Use the same custom code settings as Simulation Target (RTWUseSimCustomCode)--><PositiveModelParameterConstraint>
+         <parameter>RTWUseSimCustomCode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Verbose build (RTWVerbose)--><PositiveModelParameterConstraint>
+         <parameter>RTWVerbose</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Rate Transition block code (RateTransitionBlockCode)--><PositiveModelParameterConstraint>
+         <parameter>RateTransitionBlockCode</parameter>
+         <value>Inline</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect read before write (ReadBeforeWriteMsg)--><PositiveModelParameterConstraint>
+         <parameter>ReadBeforeWriteMsg</parameter>
+         <value>UseLocalSettings</value>
+      </PositiveModelParameterConstraint>
+      <!--Record coverage for this model (RecordCoverage)--><PositiveModelParameterConstraint>
+         <parameter>RecordCoverage</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove disable function (RemoveDisableFunc)--><PositiveModelParameterConstraint>
+         <parameter>RemoveDisableFunc</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove reset function (RemoveResetFunc)--><PositiveModelParameterConstraint>
+         <parameter>RemoveResetFunc</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Requirements in block comments (ReqsInCode)--><PositiveModelParameterConstraint>
+         <parameter>ReqsInCode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Reserved names (ReservedNameArray)--><PositiveModelParameterConstraint>
+         <parameter>ReservedNameArray</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Retain .rtw file (RetainRTWFile)--><PositiveModelParameterConstraint>
+         <parameter>RetainRTWFile</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Single simulation output (ReturnWorkspaceOutputs)--><PositiveModelParameterConstraint>
+         <parameter>ReturnWorkspaceOutputs</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulation output variable (ReturnWorkspaceOutputsName)--><PositiveModelParameterConstraint>
+         <parameter>ReturnWorkspaceOutputsName</parameter>
+         <value>out</value>
+      </PositiveModelParameterConstraint>
+      <!--Loop unrolling threshold (RollThreshold)--><PositiveModelParameterConstraint>
+         <parameter>RollThreshold</parameter>
+         <value>5</value>
+      </PositiveModelParameterConstraint>
+      <!--Unspecified bus object at root Outport block (RootOutportRequireBusObject)--><PositiveModelParameterConstraint>
+         <parameter>RootOutportRequireBusObject</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Stateflow object descriptions (SFDataObjDesc)--><PositiveModelParameterConstraint>
+         <parameter>SFDataObjDesc</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--'Execute-at-initialization' disabled in presence of input events (SFExecutionAtInitializationDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFExecutionAtInitializationDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Invalid input data access in chart initialization (SFInvalidInputDataAccessInChartInitDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFInvalidInputDataAccessInChartInitDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Use of machine-parented data instead of Data Store Memory (SFMachineParentedDataDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFMachineParentedDataDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--No unconditional default transitions (SFNoUnconditionalDefaultTransitionDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFNoUnconditionalDefaultTransitionDiag</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Read-before-write to output in Moore chart (SFOutputUsedAsStateInMooreChartDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFOutputUsedAsStateInMooreChartDiag</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Self-transition on leaf state (SFSelfTransitionDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFSelfTransitionDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Echo expressions without semicolons (SFSimEcho)--><PositiveModelParameterConstraint>
+         <parameter>SFSimEcho</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Allow setting breakpoints during simulation (SFSimEnableDebug)--><PositiveModelParameterConstraint>
+         <parameter>SFSimEnableDebug</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Absolute time temporal value shorter than sampling period (SFTemporalDelaySmallerThanSampleTimeDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFTemporalDelaySmallerThanSampleTimeDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Transition action specified before condition action (SFTransitionActionBeforeConditionDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFTransitionActionBeforeConditionDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Transition outside natural parent (SFTransitionOutsideNaturalParentDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFTransitionOutsideNaturalParentDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Undirected event broadcasts (SFUndirectedBroadcastEventsDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFUndirectedBroadcastEventsDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unexpected backtracking (SFUnexpectedBacktrackingDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFUnexpectedBacktrackingDiag</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--Unreachable execution path (SFUnreachableExecutionPathDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFUnreachableExecutionPathDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unused data, events, messages and functions (SFUnusedDataAndEventsDiag)--><PositiveModelParameterConstraint>
+         <parameter>SFUnusedDataAndEventsDiag</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--S-function upgrades needed (SFcnCompatibilityMsg)--><PositiveModelParameterConstraint>
+         <parameter>SFcnCompatibilityMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable source-level debugging for SIL (SILDebugging)--><PositiveModelParameterConstraint>
+         <parameter>SILDebugging</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Periodic sample time constraint (SampleTimeConstraint)--><PositiveModelParameterConstraint>
+         <parameter>SampleTimeConstraint</parameter>
+         <value>Unconstrained</value>
+      </PositiveModelParameterConstraint>
+      <!--Final states (SaveFinalState)--><PositiveModelParameterConstraint>
+         <parameter>SaveFinalState</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Format (SaveFormat)--><PositiveModelParameterConstraint>
+         <parameter>SaveFormat</parameter>
+         <value>Dataset</value>
+      </PositiveModelParameterConstraint>
+      <!--Output (SaveOutput)--><PositiveModelParameterConstraint>
+         <parameter>SaveOutput</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--States (SaveState)--><PositiveModelParameterConstraint>
+         <parameter>SaveState</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Time (SaveTime)--><PositiveModelParameterConstraint>
+         <parameter>SaveTime</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Block diagram contains disabled library links (SaveWithDisabledLinksMsg)--><PositiveModelParameterConstraint>
+         <parameter>SaveWithDisabledLinksMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Block diagram contains parameterized library links (SaveWithParameterizedLinksMsg)--><PositiveModelParameterConstraint>
+         <parameter>SaveWithParameterizedLinksMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Shared checksum length (SharedChecksumLength)--><PositiveModelParameterConstraint>
+         <parameter>SharedChecksumLength</parameter>
+         <value>8</value>
+      </PositiveModelParameterConstraint>
+      <!--Show eliminated blocks (ShowEliminatedStatement)--><PositiveModelParameterConstraint>
+         <parameter>ShowEliminatedStatement</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Enforce sample times specified by Signal Specification blocks (SigSpecEnsureSampleTimeMsg)--><PositiveModelParameterConstraint>
+         <parameter>SigSpecEnsureSampleTimeMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal display level (SignalDisplayLevel)--><PositiveModelParameterConstraint>
+         <parameter>SignalDisplayLevel</parameter>
+         <value>10</value>
+      </PositiveModelParameterConstraint>
+      <!--Inf or NaN block output (SignalInfNanChecking)--><PositiveModelParameterConstraint>
+         <parameter>SignalInfNanChecking</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal label mismatch (SignalLabelMismatchMsg)--><PositiveModelParameterConstraint>
+         <parameter>SignalLabelMismatchMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal logging (SignalLogging)--><PositiveModelParameterConstraint>
+         <parameter>SignalLogging</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal logging name (SignalLoggingName)--><PositiveModelParameterConstraint>
+         <parameter>SignalLoggingName</parameter>
+         <value>logsout</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal naming (SignalNamingRule)--><PositiveModelParameterConstraint>
+         <parameter>SignalNamingRule</parameter>
+         <value>None</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulation range checking (SignalRangeChecking)--><PositiveModelParameterConstraint>
+         <parameter>SignalRangeChecking</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Signal resolution (SignalResolutionControl)--><PositiveModelParameterConstraint>
+         <parameter>SignalResolutionControl</parameter>
+         <value>UseLocalSettings</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable custom code analysis (SimAnalyzeCustomCode)--><PositiveModelParameterConstraint>
+         <parameter>SimAnalyzeCustomCode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulation target build mode (SimBuildMode)--><PositiveModelParameterConstraint>
+         <parameter>SimBuildMode</parameter>
+         <value>sf_incremental_build</value>
+      </PositiveModelParameterConstraint>
+      <!--Compiler optimization level (SimCompilerOptimization)--><PositiveModelParameterConstraint>
+         <parameter>SimCompilerOptimization</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Ensure responsiveness (SimCtrlC)--><PositiveModelParameterConstraint>
+         <parameter>SimCtrlC</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Header file (SimCustomHeaderCode)--><PositiveModelParameterConstraint>
+         <parameter>SimCustomHeaderCode</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Initialize function (SimCustomInitializer)--><PositiveModelParameterConstraint>
+         <parameter>SimCustomInitializer</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Source file (SimCustomSourceCode)--><PositiveModelParameterConstraint>
+         <parameter>SimCustomSourceCode</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Terminate function (SimCustomTerminator)--><PositiveModelParameterConstraint>
+         <parameter>SimCustomTerminator</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Generate typedefs for imported bus and enumeration types (SimGenImportedTypeDefs)--><PositiveModelParameterConstraint>
+         <parameter>SimGenImportedTypeDefs</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Ensure memory integrity (SimIntegrity)--><PositiveModelParameterConstraint>
+         <parameter>SimIntegrity</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Import custom code (SimParseCustomCode)--><PositiveModelParameterConstraint>
+         <parameter>SimParseCustomCode</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Reserved names (SimReservedNameArray)--><PositiveModelParameterConstraint>
+         <parameter>SimReservedNameArray</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Defines (SimUserDefines)--><PositiveModelParameterConstraint>
+         <parameter>SimUserDefines</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Include directories (SimUserIncludeDirs)--><PositiveModelParameterConstraint>
+         <parameter>SimUserIncludeDirs</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Libraries (SimUserLibraries)--><PositiveModelParameterConstraint>
+         <parameter>SimUserLibraries</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Source files (SimUserSources)--><PositiveModelParameterConstraint>
+         <parameter>SimUserSources</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Simulink block comments (SimulinkBlockComments)--><PositiveModelParameterConstraint>
+         <parameter>SimulinkBlockComments</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Simulink data object descriptions (SimulinkDataObjDesc)--><PositiveModelParameterConstraint>
+         <parameter>SimulinkDataObjDesc</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Single task rate transition (SingleTaskRateTransMsg)--><PositiveModelParameterConstraint>
+         <parameter>SingleTaskRateTransMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Solver (Solver)--><PositiveModelParameterConstraint>
+         <parameter>Solver</parameter>
+         <value>FixedStepDiscrete</value>
+      </PositiveModelParameterConstraint>
+      <!--Automatic solver parameter selection (SolverPrmCheckMsg)--><PositiveModelParameterConstraint>
+         <parameter>SolverPrmCheckMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Type (SolverType)--><PositiveModelParameterConstraint>
+         <parameter>SolverType</parameter>
+         <value>Fixed-step</value>
+      </PositiveModelParameterConstraint>
+      <!--Start time (StartTime)--><PositiveModelParameterConstraint>
+         <parameter>StartTime</parameter>
+         <value>0.0</value>
+      </PositiveModelParameterConstraint>
+      <!--State name clash (StateNameClashWarn)--><PositiveModelParameterConstraint>
+         <parameter>StateNameClashWarn</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Stateflow object comments (StateflowObjectComments)--><PositiveModelParameterConstraint>
+         <parameter>StateflowObjectComments</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Stop time (StopTime)--><PositiveModelParameterConstraint>
+         <parameter>StopTime</parameter>
+         <value>inf</value>
+      </PositiveModelParameterConstraint>
+      <!--Bus signal treated as vector (StrictBusMsg)--><PositiveModelParameterConstraint>
+         <parameter>StrictBusMsg</parameter>
+         <value>ErrorLevel1</value>
+      </PositiveModelParameterConstraint>
+      <!--String truncation checking (StringTruncationChecking)--><PositiveModelParameterConstraint>
+         <parameter>StringTruncationChecking</parameter>
+         <value>error</value>
+      </PositiveModelParameterConstraint>
+      <!--absolute time (SupportAbsoluteTime)--><PositiveModelParameterConstraint>
+         <parameter>SupportAbsoluteTime</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--complex numbers (SupportComplex)--><PositiveModelParameterConstraint>
+         <parameter>SupportComplex</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--continuous time (SupportContinuousTime)--><PositiveModelParameterConstraint>
+         <parameter>SupportContinuousTime</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--Include custom code for referenced models (SupportModelReferenceSimTargetCustomCode)--><PositiveModelParameterConstraint>
+         <parameter>SupportModelReferenceSimTargetCustomCode</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--non-finite numbers (SupportNonFinite)--><PositiveModelParameterConstraint>
+         <parameter>SupportNonFinite</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--non-inlined S-functions (SupportNonInlinedSFcns)--><PositiveModelParameterConstraint>
+         <parameter>SupportNonInlinedSFcns</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--variable-size signals (SupportVariableSizeSignals)--><PositiveModelParameterConstraint>
+         <parameter>SupportVariableSizeSignals</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove error status field in real-time model data structure (SuppressErrorStatus)--><PositiveModelParameterConstraint>
+         <parameter>SuppressErrorStatus</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Suppress generation of default cases for Stateflow switch statements if unreachable (SuppressUnreachableDefaultCases)--><PositiveModelParameterConstraint>
+         <parameter>SuppressUnreachableDefaultCases</parameter>
+         <value>on</value>
+      </PositiveModelParameterConstraint>
+      <!--System target file (SystemTargetFile)--><PositiveModelParameterConstraint>
+         <parameter>SystemTargetFile</parameter>
+         <value>ert.tlc</value>
+      </PositiveModelParameterConstraint>
+      <!--Enable TLC assertion (TLCAssert)--><PositiveModelParameterConstraint>
+         <parameter>TLCAssert</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Start TLC coverage when generating code (TLCCoverage)--><PositiveModelParameterConstraint>
+         <parameter>TLCCoverage</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Start TLC debugger when generating code (TLCDebug)--><PositiveModelParameterConstraint>
+         <parameter>TLCDebug</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--TLC options (TLCOptions)--><PositiveModelParameterConstraint>
+         <parameter>TLCOptions</parameter>
+         <value>-aInlineSetEventsForThisBaseRateFcn=TLC_FALSE -aSuppressMultiTaskScheduler=TLC_FALSE     -aRateBasedStepFcn=1</value>
+      </PositiveModelParameterConstraint>
+      <!--Language (TargetLang)--><PositiveModelParameterConstraint>
+         <parameter>TargetLang</parameter>
+         <value>C</value>
+      </PositiveModelParameterConstraint>
+      <!--Standard math library (TargetLangStandard)--><PositiveModelParameterConstraint>
+         <parameter>TargetLangStandard</parameter>
+         <value>C89/C90 (ANSI)</value>
+      </PositiveModelParameterConstraint>
+      <!--Suffix applied to target library name (TargetLibSuffix)--><PositiveModelParameterConstraint>
+         <parameter>TargetLibSuffix</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Precompiled library location (TargetPreCompLibLocation)--><PositiveModelParameterConstraint>
+         <parameter>TargetPreCompLibLocation</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Maximum bits for signed integer in C preprocessor (TargetPreprocMaxBitsSint)--><PositiveModelParameterConstraint>
+         <parameter>TargetPreprocMaxBitsSint</parameter>
+         <value>32</value>
+      </PositiveModelParameterConstraint>
+      <!--Maximum bits for unsigned integer in C preprocessor (TargetPreprocMaxBitsUint)--><PositiveModelParameterConstraint>
+         <parameter>TargetPreprocMaxBitsUint</parameter>
+         <value>32</value>
+      </PositiveModelParameterConstraint>
+      <!--Tasks with equal priority (TasksWithSamePriorityMsg)--><PositiveModelParameterConstraint>
+         <parameter>TasksWithSamePriorityMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Sample hit time adjusting (TimeAdjustmentMsg)--><PositiveModelParameterConstraint>
+         <parameter>TimeAdjustmentMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Time variable (TimeSaveName)--><PositiveModelParameterConstraint>
+         <parameter>TimeSaveName</parameter>
+         <value>tout</value>
+      </PositiveModelParameterConstraint>
+      <!--Toolchain (Toolchain)--><PositiveModelParameterConstraint>
+         <parameter>Toolchain</parameter>
+         <value>Automatically locate an installed toolchain</value>
+      </PositiveModelParameterConstraint>
+      <!--Type limit identifier replacement header file (TypeLimitIdReplacementHeaderFile)--><PositiveModelParameterConstraint>
+         <parameter>TypeLimitIdReplacementHeaderFile</parameter>
+         <value/>
+      </PositiveModelParameterConstraint>
+      <!--Unconnected block input ports (UnconnectedInputMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnconnectedInputMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unconnected line (UnconnectedLineMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnconnectedLineMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unconnected block output ports (UnconnectedOutputMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnconnectedOutputMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Underspecified data types (UnderSpecifiedDataTypeMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnderSpecifiedDataTypeMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Underspecified dimensions (UnderSpecifiedDimensionMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnderSpecifiedDimensionMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Underspecified initialization detection (UnderspecifiedInitializationDetection)--><PositiveModelParameterConstraint>
+         <parameter>UnderspecifiedInitializationDetection</parameter>
+         <value>Simplified</value>
+      </PositiveModelParameterConstraint>
+      <!--Duplicate data store names (UniqueDataStoreMsg)--><PositiveModelParameterConstraint>
+         <parameter>UniqueDataStoreMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Units inconsistency messages (UnitsInconsistencyMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnitsInconsistencyMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unspecified inheritability of sample time (UnknownTsInhSupMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnknownTsInhSupMsg</parameter>
+         <value>warning</value>
+      </PositiveModelParameterConstraint>
+      <!--Unnecessary type conversions (UnnecessaryDatatypeConvMsg)--><PositiveModelParameterConstraint>
+         <parameter>UnnecessaryDatatypeConvMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Rebuild (UpdateModelReferenceTargets)--><PositiveModelParameterConstraint>
+         <parameter>UpdateModelReferenceTargets</parameter>
+         <value>IfOutOfDateOrStructuralChange</value>
+      </PositiveModelParameterConstraint>
+      <!--Use division for fixed-point net slope computation (UseDivisionForNetSlopeComputation)--><PositiveModelParameterConstraint>
+         <parameter>UseDivisionForNetSlopeComputation</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Use floating-point multiplication to handle net slope corrections (UseFloatMulNetSlope)--><PositiveModelParameterConstraint>
+         <parameter>UseFloatMulNetSlope</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Use algorithms optimized for row-major array layout (UseRowMajorAlgorithm)--><PositiveModelParameterConstraint>
+         <parameter>UseRowMajorAlgorithm</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Use the same reserved names as Simulation Target (UseSimReservedNames)--><PositiveModelParameterConstraint>
+         <parameter>UseSimReservedNames</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Optimize using the specified minimum and maximum values (UseSpecifiedMinMax)--><PositiveModelParameterConstraint>
+         <parameter>UseSpecifiedMinMax</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Shared code placement (UtilityFuncGeneration)--><PositiveModelParameterConstraint>
+         <parameter>UtilityFuncGeneration</parameter>
+         <value>Auto</value>
+      </PositiveModelParameterConstraint>
+      <!--Vector/matrix block input conversion (VectorMatrixConversionMsg)--><PositiveModelParameterConstraint>
+         <parameter>VectorMatrixConversionMsg</parameter>
+         <value>none</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect write after read (WriteAfterReadMsg)--><PositiveModelParameterConstraint>
+         <parameter>WriteAfterReadMsg</parameter>
+         <value>UseLocalSettings</value>
+      </PositiveModelParameterConstraint>
+      <!--Detect write after write (WriteAfterWriteMsg)--><PositiveModelParameterConstraint>
+         <parameter>WriteAfterWriteMsg</parameter>
+         <value>UseLocalSettings</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove root level I/O zero initialization (ZeroExternalMemoryAtStartup)--><PositiveModelParameterConstraint>
+         <parameter>ZeroExternalMemoryAtStartup</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+      <!--Remove internal data zero initialization (ZeroInternalMemoryAtStartup)--><PositiveModelParameterConstraint>
+         <parameter>ZeroInternalMemoryAtStartup</parameter>
+         <value>off</value>
+      </PositiveModelParameterConstraint>
+   </checkdata>
+</customcheck>

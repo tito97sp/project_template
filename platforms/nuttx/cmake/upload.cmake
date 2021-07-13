@@ -15,19 +15,14 @@ else()
 
 
     if(${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Linux")
-        add_custom_target(${BOARD}_server
-        COMMAND openocd -f interface/${OPENOCD_INTERFACE} -f target/${OPENOCD_TARGET}
-        WORKING_DIRECTORY ${BINARY_DIR}
-        USES_TERMINAL
-        )
-        
-        add_custom_target(${BOARD}_upload
+        add_custom_target(upload
         COMMAND openocd -f interface/${OPENOCD_INTERFACE} -f target/${OPENOCD_TARGET} -c init -c "reset halt" -c "flash write_image erase ${BOARD}.bin ${OPENOCD_FLASH_ADD}"
         WORKING_DIRECTORY ${BINARY_DIR}
         DEPENDS 
             ${BINARY_DIR}/${BOARD}.bin
         USES_TERMINAL
         )
+
 
     endif()
 endif()
