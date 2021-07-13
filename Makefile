@@ -200,18 +200,18 @@ endef
 .PHONY: tests tests_coverage 
 
 tests:
-	$(eval CMAKE_ARGS += -DCONFIG=qpro_sitl_test)
+	$(eval CMAKE_ARGS += -DCONFIG=host_posix_test)
 	$(eval CMAKE_ARGS += -DTESTFILTER=$(TESTFILTER))
 	$(eval ARGS += test_results)
 	$(eval ASAN_OPTIONS += color=always:check_initialization_order=1:detect_stack_use_after_return=1)
 	$(eval UBSAN_OPTIONS += color=always)
-	$(call cmake-build,qpro_sitl_test)
+	$(call cmake-build,host_posix_test)
 
 tests_coverage:
 	@$(MAKE) clean
 	@$(MAKE) --no-print-directory tests QPRO_CMAKE_BUILD_TYPE=Coverage
 	@mkdir -p coverage
-	@lcov --directory build/qpro_sitl_test --base-directory build/qpro_sitl_test --gcov-tool gcov --capture -o coverage/lcov.info
+	@lcov --directory build/host_posix_test --base-directory build/host_posix_test --gcov-tool gcov --capture -o coverage/lcov.info
 
 
 # Cleanup

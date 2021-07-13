@@ -164,50 +164,36 @@ endif()
 
 # optionally enable cmake testing (supported only on posix)
 
-# option(CMAKE_TESTING "Configure test targets" OFF)
+option(CMAKE_TESTING "Configure test targets" OFF)
 
-# set(TESTING_ON "")
+if(${CONFIG} STREQUAL "host_posix_test")
+	set(CMAKE_TESTING ON)
+endif()
+if(CMAKE_TESTING)
+	include(CTest) # sets BUILD_TESTING variable
+endif()
 
-# if(${TESTING_ON} STREQUAL "TRUE")
-# 	set(CMAKE_TESTING ON)
-# endif()
-# if(CMAKE_TESTING)
-# 	include(CTest) # sets BUILD_TESTING variable
-# 	include(FetchContent)
-# 	FetchContent_Declare(
-# 	  googletest
-# 	  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
-# 	)
-	
-# 	set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-# 	FetchContent_MakeAvailable(googletest)
+# enable test filtering to run only specific tests with the ctest -R regex functionality
+set(TESTFILTER "" CACHE STRING "Filter string for ctest to selectively only run specific tests (ctest -R)")
 
-# endif()
+# if testing is enabled download and configure gtest
+list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/cmake/gtest/)
+include(add_gtest)
+if(BUILD_TESTING)
+	message(STATUS "BUILD_TESTING")
+	include(gtest)
 
+	add_custom_target(test_results
+			COMMAND GTEST_COLOR=1 ${CMAKE_CTEST_COMMAND} --output-on-failure -T Test -R ${TESTFILTER} USES_TERMINAL
+			USES_TERMINAL
+			COMMENT "Running tests"
+			WORKING_DIRECTORY ${BINARY_DIR})
+	set_target_properties(test_results PROPERTIES EXCLUDE_FROM_ALL TRUE)
 
-# # enable test filtering to run only specific tests with the ctest -R regex functionality
-# set(TESTFILTER "" CACHE STRING "Filter string for ctest to selectively only run specific tests (ctest -R)")
+	add_subdirectory(test)
 
-# # if testing is enabled download and configure gtest
-# list(APPEND CMAKE_MODULE_PATH ${SOURCE_DIR}/cmake/gtest/)
-# include(add_gtest)
-# if(BUILD_TESTING)
-# 	# include(gtest)
+endif()
 
-# 	# add_custom_target(test_results
-# 	# 		COMMAND GTEST_COLOR=1 ${CMAKE_CTEST_COMMAND} --output-on-failure -T Test -R ${TESTFILTER} USES_TERMINAL
-# 	# 		DEPENDS
-# 	# 			#px4
-# 	# 			#examples__dyn_hello
-# 	# 			#test_mixer_multirotor
-# 	# 		USES_TERMINAL
-# 	# 		COMMENT "Running tests"
-# 	# 		WORKING_DIRECTORY ${BINARY_DIR})
-# 	# set_target_properties(test_results PROPERTIES EXCLUDE_FROM_ALL TRUE)
-# endif()
-
-
-# add_subdirectory(test)
 #=============================================================================
 # subdirectories
 #
@@ -221,7 +207,7 @@ add_subdirectory(platforms EXCLUDE_FROM_ALL)
 add_subdirectory(src/modules/uORB EXCLUDE_FROM_ALL) # TODO: platform layer
 
 if(EXISTS "${BOARD_DIR}/CMakeLists.txt")
-	add_subdirectory(${BOARD_DIR})
+ 	add_subdirectory(${BOARD_DIR})
 endif()
 
 foreach(module ${config_module_list})
@@ -263,5 +249,3 @@ add_custom_target(uorb_graph DEPENDS ${uorb_graph_config})
 # doxygen
 #
 include(doxygen/doxygen)
-
-

@@ -1,0 +1,30 @@
+%implements s1_b0_3lu4h_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(1)>\
+%<SLibCG_TrackEI(0)>\
+/* Outputs for Atomic SubSystem: '<Root>/Subsystem' */
+/* Outport: '<Root>/Out1' incorporates:
+ *  Inport: '<Root>/In1'
+ *  Inport: '<Root>/In2'
+ *  Sum: '<S1>/Add'
+ */
+/*@>c2a*/Subsystem_Y./*@>d54*/Out1/*@>12b*/ = static_cast<int16_T>(/*@>c03*/Subsystem_U./*@>d4e*/In1/*@>831*/ + /*@>c08*/Subsystem_U./*@>d51*/In2);
+/* End of Outputs for SubSystem: '<Root>/Subsystem' */
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 0, fcnProtoType)>
+%endfunction
