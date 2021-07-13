@@ -3,7 +3,7 @@ add_board(
 	PLATFORM nuttx
 	VENDOR stm
 	MODEL nucleo-h743zi
-	LABEL default
+	LABEL netnsh
 	TOOLCHAIN arm-none-eabi
 	ARCHITECTURE cortex-m7
 	ROMFSROOT fmu_common
